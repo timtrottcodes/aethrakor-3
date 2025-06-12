@@ -1,0 +1,1810 @@
+[
+  {
+    "stageNumber": 1,
+    "title": "Chapter 1: The Farm - Stage 1",
+    "image": "farm-field.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The sun dipped low over the golden fields, casting long shadows across rows of wheat. A young farmhand named Caelan stood at the edge of the family land, wiping sweat from their brow, unaware that fate was already galloping toward them.",
+        "image": ""
+      },
+      {
+        "name": "Narrator",
+        "lines": "From the dirt path beyond the scarecrow-strewn fence came a rider clad in emerald and silver, the royal colors of King Alaric's court. The rider dismounted, bearing a scroll bound with wax and bearing the King's seal.",
+        "image": ""
+      },
+      {
+        "name": "Stranger",
+        "lines": "You are Caelan of the West Vale?",
+        "image": "stranger"
+      },
+      {
+        "name": "Caelan",
+        "lines": "I am",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The scroll trembles in your hands as you break the seal. “Your blood bears the mark of the gods,” it read. “Destiny calls you to rescue the Princess from the evil Lich King.”",
+        "image": ""
+      },
+      {
+        "name": "Narrator",
+        "lines": "The next morning, Caelan gathered together a group of friends and headed out from the farm. The journey would span forests thick with wolves, mountains haunted by spirits, and deserts scorched by fire. But the message was clear—they were the last descendant of the Old Gods, and the world once again needed their power.",
+        "image": ""
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Wild Boar"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 2,
+    "title": "Chapter 1: The Farm - Stage 2",
+    "image": "farm-field-buildings.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Skeleton"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 3,
+    "title": "Chapter 1: The Farm - Stage 3",
+    "image": "farm-buildings.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Giant Rat", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Forest Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Giant Rat", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Giant Rat", "Forest Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 4,
+    "title": "Chapter 1: The Farm - Stage 4",
+    "image": "farm-field-forest-in-distance.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wild Boar", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Cave Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 5,
+    "title": "Chapter 1: The Farm - Stage 5",
+    "image": "farm-entrance-to-forest.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Goblin"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Forest Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Forest Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 6,
+    "title": "Chapter 1: The Farm - Stage 6",
+    "image": "forest-path.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Giant Rat", "Goblin"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wild Boar", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Ghoul"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 7,
+    "title": "Chapter 1: The Farm - Stage 7",
+    "image": "forest-path-stream.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Goblin"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Forest Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wild Boar", "Ghoul"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 8,
+    "title": "Chapter 1: The Farm - Stage 8",
+    "image": "forest-path-old-hut.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Goblin"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Scout"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 9,
+    "title": "Chapter 1: The Farm - Stage 9",
+    "image": "forest-path-old-trees.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Forest Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Bat", "Giant Rat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Skeleton"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 10,
+    "title": "Chapter 1: The Farm - Stage 10",
+    "image": "forest-path-into-ancient-forest.png",
+    "description": "Our farmhand receives an unexpected royal summons.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Wild Boar", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wild Boar", "Forest Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Forest Spider", "Wild Boar"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Goblin", "Bat"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Wild Boar"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 11,
+    "title": "Chapter 2: The Forest - Stage 1",
+    "image": "ancient-forest-path.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Wolf"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 12,
+    "title": "Chapter 2: The Forest - Stage 2",
+    "image": "ancient-forest-mountains.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Cave Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 13,
+    "title": "Chapter 2: The Forest - Stage 3",
+    "image": "ancient-forest-path-old-hut.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Wolf"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 14,
+    "title": "Chapter 2: The Forest - Stage 4",
+    "image": "ancient-forest-mountain-path.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Haunted Armor"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 15,
+    "title": "Chapter 2: The Forest - Stage 5",
+    "image": "mountain-path-alpine.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Dark Acolyte"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 16,
+    "title": "Chapter 2: The Forest - Stage 6",
+    "image": "mountain-path-caves.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Undead Knight"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 17,
+    "title": "Chapter 2: The Forest - Stage 7",
+    "image": "mountain-path-treacherous.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Dread Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 18,
+    "title": "Chapter 2: The Forest - Stage 8",
+    "image": "mountain-path-ice-snow.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Orc Scout"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 19,
+    "title": "Chapter 2: The Forest - Stage 9",
+    "image": "mountain-path-citidel-visible.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Dark Acolyte"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 20,
+    "title": "Chapter 2: The Forest - Stage 10",
+    "image": "citidel-doorway-entrance.png",
+    "description": "The journey begins in the tangled woods.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Undead Knight"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 21,
+    "title": "Chapter 3: Haunted Forest - Stage 1",
+    "image": "citidel-inner.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Orc Warrior"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 22,
+    "title": "Chapter 3: Haunted Forest - Stage 2",
+    "image": "citidel-main-hall.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Dread Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 23,
+    "title": "Chapter 3: Haunted Forest - Stage 3",
+    "image": "citidel-crypts.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Orc Scout"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 24,
+    "title": "Chapter 3: Haunted Forest - Stage 4",
+    "image": "citidel-gatehouse.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Skeleton"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 25,
+    "title": "Chapter 3: Haunted Forest - Stage 5",
+    "image": "ashen-wastes-path.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Cave Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 26,
+    "title": "Chapter 3: Haunted Forest - Stage 6",
+    "image": "ashen-wastes-volcano.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Skeleton"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 27,
+    "title": "Chapter 3: Haunted Forest - Stage 7",
+    "image": "ashen-wastes-river-of-lava.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Wolf"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 28,
+    "title": "Chapter 3: Haunted Forest - Stage 8",
+    "image": "ashen-wastes-volcano-path.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Skeleton"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 29,
+    "title": "Chapter 3: Haunted Forest - Stage 9",
+    "image": "ashen-wastes-fortress.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Wolf", "Skeleton"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Cave Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Orc Scout"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Ghoul"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ghoul", "Wolf"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 30,
+    "title": "Chapter 3: Haunted Forest - Stage 10",
+    "image": "fortress-entrance-.png",
+    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Wolf"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Skeleton", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Cave Spider", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Scout", "Orc Warrior"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 31,
+    "title": "Chapter 4: The Mountain Fortress - Stage 1",
+    "image": "fortress-courtyard.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Orc Warrior"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 32,
+    "title": "Chapter 4: The Mountain Fortress - Stage 2",
+    "image": "fortress-inner-courtyard.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Haunted Armor"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Frost Wraith"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 33,
+    "title": "Chapter 4: The Mountain Fortress - Stage 3",
+    "image": "fortress-.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Hellhound"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 34,
+    "title": "Chapter 4: The Mountain Fortress - Stage 4",
+    "image": "fortress-gatehouse.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Fire Elemental"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 35,
+    "title": "Chapter 4: The Mountain Fortress - Stage 5",
+    "image": "exploring-fortress-crypts.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Lich Acolyte"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 36,
+    "title": "Chapter 4: The Mountain Fortress - Stage 6",
+    "image": "exploring-fortress-main-hall.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Hellhound"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 37,
+    "title": "Chapter 4: The Mountain Fortress - Stage 7",
+    "image": "exploring-fortress-armory.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Haunted Armor"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Dread Spider"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Frost Wraith"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 38,
+    "title": "Chapter 4: The Mountain Fortress - Stage 8",
+    "image": "exploring-fortress-corridor.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Haunted Armor"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Dread Spider"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 39,
+    "title": "Chapter 4: The Mountain Fortress - Stage 9",
+    "image": "exploring-fortress-stairs.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Dark Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Haunted Armor", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dread Spider", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Hellhound"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 40,
+    "title": "Chapter 4: The Mountain Fortress - Stage 10",
+    "image": "exploring-fortress-hall.png",
+    "description": "High in the mountains, an ancient stronghold awaits.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Orc Warrior", "Undead Knight"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Dark Acolyte", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Undead Knight", "Orc Warrior"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Frost Wraith", "Fire Elemental"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 41,
+    "title": "Chapter 5: The Lich King's Domain - Stage 1",
+    "image": "exploring-fortress-corridor.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich King", "Infernal Reaper"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 42,
+    "title": "Chapter 5: The Lich King's Domain - Stage 2",
+    "image": "exploring-fortress-hall-2.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Frost Wraith", "Lich Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Hellhound"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich King", "Hellhound"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 43,
+    "title": "Chapter 5: The Lich King's Domain - Stage 3",
+    "image": "exploring-fortress-corridor-2.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Fire Elemental", "Frost Wraith"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Hellhound"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Infernal Reaper", "Lich King"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 44,
+    "title": "Chapter 5: The Lich King's Domain - Stage 4",
+    "image": "exploring-fortress-stairs-2.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Fire Elemental", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Lich Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Infernal Reaper", "Demon Lord Xarn"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 45,
+    "title": "Chapter 5: The Lich King's Domain - Stage 5",
+    "image": "throneroom-advance-1.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Infernal Reaper", "Hellhound"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 46,
+    "title": "Chapter 5: The Lich King's Domain - Stage 6",
+    "image": "throneroom-advance-2.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Frost Wraith", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Frost Wraith", "Hellhound"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Frost Wraith"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Lich King"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 47,
+    "title": "Chapter 5: The Lich King's Domain - Stage 7",
+    "image": "throneroom-advance-3.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Frost Wraith"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Demon Lord Xarn", "Elite Orc Commander"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 48,
+    "title": "Chapter 5: The Lich King's Domain - Stage 8",
+    "image": "throneroom-advance-4.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Lich Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich King", "Lich Acolyte"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 49,
+    "title": "Chapter 5: The Lich King's Domain - Stage 9",
+    "image": "throneroom-advance-5.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Lich Acolyte", "Fire Elemental"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Frost Wraith", "Hellhound"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Fire Elemental", "Ogre Brute"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Named Warrior Thrag"]
+      }
+    ]
+  },
+  {
+    "stageNumber": 50,
+    "title": "Chapter 5: The Lich King's Domain - Stage 10",
+    "image": "final-battle-with-lich-king.png",
+    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "story": [
+      {
+        "name": "Narrator",
+        "lines": "The journey continues...",
+        "image": "narrator"
+      },
+      {
+        "name": "Hero",
+        "lines": "I must see this through, no matter the cost.",
+        "image": "hero"
+      }
+    ],
+    "steps": [
+      {
+        "type": "random",
+        "enemies": ["Ogre Brute", "Lich Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Hellhound", "Lich Acolyte"]
+      },
+      {
+        "type": "random",
+        "enemies": ["Lich King", "Hellhound"]
+      }
+    ]
+  }
+]

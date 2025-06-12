@@ -1,0 +1,502 @@
+[
+  {
+    "id": "card_foot_soldier",
+    "name": "Town Foot Soldier",
+    "description": "A dependable militia fighter trained to hold the line in village skirmishes.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_archer",
+    "name": "Village Archer",
+    "description": "A hunter turned archer, skilled at striking from the treeline.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_apprentice_mage",
+    "name": "Apprentice Mage",
+    "description": "A novice in the arcane arts, eager to prove their worth with basic spells.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_squire",
+    "name": "Loyal Squire",
+    "description": "A young hopeful clad in hand-me-down armor, ready to serve and learn.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_wild_scout",
+    "name": "Wildlands Scout",
+    "description": "A nimble traveler of the forest paths, skilled in tracking and survival.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_healer_initiate",
+    "name": "Healer Initiate",
+    "description": "A temple trainee with minor restorative magic and herbal knowledge.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_farm_guard",
+    "name": "Farmstead Guard",
+    "description": "A pitchfork-wielding defender of fields and family.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_brawler",
+    "name": "Tavern Brawler",
+    "description": "Tough as nails and fueled by ale, this brawler handles trouble with fists.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_woodland_hermit",
+    "name": "Woodland Hermit",
+    "description": "An odd recluse with strange charms and a squirrel companion.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_messenger",
+    "name": "Swift Messenger",
+    "description": "A runner who knows the roads and relays messages under any threat.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_duskblade_knight",
+    "name": "Duskblade Knight",
+    "description": "A disciplined warrior trained in both blade and shadow, guarding the kingdom's borders at twilight.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ember_seer",
+    "name": "Ember Seer",
+    "description": "A fire-touched mage who sees fate in the flames and scorches foes with ember curses.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_stonewarden",
+    "name": "Stonewarden",
+    "description": "Clad in rune-inscribed stoneplate, this guardian channels ancient power to shield allies.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 3,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_windrider_scout",
+    "name": "Windrider Scout",
+    "description": "An elite outrider who can traverse the wilds at remarkable speed, warning of danger before it arrives.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_veil_cleric",
+    "name": "Veil Cleric",
+    "description": "A quiet priest of the lunar veil, adept in warding magics and subtle healing rituals.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 2,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_runeblade_apprentice",
+    "name": "Runeblade Apprentice",
+    "description": "A student of ancient sword-magic, capable of infusing strikes with unstable arcane energy.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_battle_ranger",
+    "name": "Battle Ranger",
+    "description": "Equally skilled with bow and blade, this seasoned woodsman strikes swiftly from cover.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ashen_warlock",
+    "name": "Ashen Warlock",
+    "description": "Draped in cinders and whispered pacts, the warlock summons minor spirits to do their bidding.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_glaivemaster",
+    "name": "Glaivemaster",
+    "description": "A disciplined martial artist whose sweeping glaive forms keep foes at bay with deadly precision.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_gravetender",
+    "name": "Gravetender",
+    "description": "A somber caretaker who communes with the dead and commands protective bone wards.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 3,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_solar_paladin",
+    "name": "Solar Paladin",
+    "description": "A radiant champion of the sun, wielding divine light to smite darkness and protect allies.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_shadowblade_assassin",
+    "name": "Shadowblade Assassin",
+    "description": "A master of stealth and lethal precision, striking swiftly from the shadows with deadly grace.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_emberstorm_sorcerer",
+    "name": "Emberstorm Sorcerer",
+    "description": "Harnesses the fury of blazing storms, unleashing fiery chaos upon enemies in a torrent of destruction.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_frostguard_warden",
+    "name": "Frostguard Warden",
+    "description": "A stalwart defender forged in icy realms, freezing foes in place and shielding comrades from harm.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_dawnseeker_ranger",
+    "name": "Dawnseeker Ranger",
+    "description": "An elite tracker who blends with the morning light, delivering precise strikes before foes can react.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ironfist_berserker",
+    "name": "Ironfist Berserker",
+    "description": "A fearsome warrior who channels raw fury into devastating blows that crush all in their path.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_mystic_seer",
+    "name": "Mystic Seer",
+    "description": "A sage with deep foresight, weaving arcane knowledge to manipulate the battlefield's flow.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_voidblade_duelist",
+    "name": "Voidblade Duelist",
+    "description": "Wields a blade forged from the void itself, striking with supernatural speed and precision.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_stormbreaker_champion",
+    "name": "Stormbreaker Champion",
+    "description": "Calls down lightning to empower their strikes, breaking enemy ranks with electrifying force.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_gloomwarden",
+    "name": "Gloomwarden",
+    "description": "A shadowy sentinel who guards forgotten places, unleashing darkness to blind and weaken foes.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_stormlord_valerian",
+    "name": "Stormlord Valerian",
+    "description": "A legendary commander who commands thunder and lightning, devastating enemies with storm fury.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 12,
+    "health": 24,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_blade_dancer_elyra",
+    "name": "Blade Dancer Elyra",
+    "description": "A graceful warrior whose deadly swordplay weaves through enemies with unmatched speed and precision.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 11,
+    "health": 22,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_arcane_sentinel",
+    "name": "Arcane Sentinel",
+    "description": "A towering guardian infused with arcane energy, shielding allies and unleashing magical blasts.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 10,
+    "health": 20,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ember_revenant",
+    "name": "Ember Revenant",
+    "description": "A fiery spirit risen from ashes, burning enemies with relentless fury and unyielding resolve.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 13,
+    "health": 26,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_frostborn_warlord",
+    "name": "Frostborn Warlord",
+    "description": "An ice-clad conqueror who freezes the battlefield, shattering foes with brutal strikes.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 12,
+    "health": 24,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_shadowbane_inquisitor",
+    "name": "Shadowbane Inquisitor",
+    "description": "Hunter of darkness who purges evil with holy wrath and unbreakable conviction.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 11,
+    "health": 22,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_soulforge_blacksmith",
+    "name": "Soulforge Blacksmith",
+    "description": "Master craftsman whose enchanted weapons bring death and despair to enemies.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 9,
+    "health": 18,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ironclad_paladin",
+    "name": "Ironclad Paladin",
+    "description": "A bastion of defense clad in impenetrable armor, standing firm against overwhelming odds.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 10,
+    "health": 20,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_windrunner_scout",
+    "name": "Windrunner Scout",
+    "description": "Fleet-footed and sharp-eyed, strikes first and vanishes before enemies can retaliate.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 9,
+    "health": 18,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_thunderstrike_champion",
+    "name": "Thunderstrike Champion",
+    "description": "Calls the fury of storms down upon foes, crushing them with electrifying might.",
+    "rarity": "Epic",
+    "cost": 8,
+    "attack": 12,
+    "health": 24,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_aurion_stormbreaker",
+    "name": "Aurion Stormbreaker",
+    "description": "The fabled hero who shattered the sky's wrath, wielding thunder to protect the realms.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 18,
+    "health": 36,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_seraphina_dawnblade",
+    "name": "Seraphina Dawnblade",
+    "description": "A radiant warrior whose sword shines with the light of dawn, banishing darkness.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 17,
+    "health": 34,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_valdris_shadowbane",
+    "name": "Valdris Shadowbane",
+    "description": "The relentless hunter of shadows, feared by evil and revered by allies.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 16,
+    "health": 32,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_lyra_windwhisper",
+    "name": "Lyra Windwhisper",
+    "description": "A mystic archer who commands the winds, striking silently and vanishing like the breeze.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 15,
+    "health": 30,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_drakor_ironfist",
+    "name": "Drakor Ironfist",
+    "description": "A titan of strength whose fists crush mountains and enemies alike.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 19,
+    "health": 38,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_elowen_moonshadow",
+    "name": "Elowen Moonshadow",
+    "description": "An elusive assassin who blends with the night, striking with deadly precision.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 16,
+    "health": 32,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_thalor_fireheart",
+    "name": "Thalor Fireheart",
+    "description": "A fierce pyromancer whose burning passion ignites the battlefield.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 18,
+    "health": 36,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_isolde_soulwarden",
+    "name": "Isolde Soulwarden",
+    "description": "Guardian of the sacred realm, wielding holy power to heal and protect.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 14,
+    "health": 28,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ragnar_thundermaul",
+    "name": "Ragnar Thundermaul",
+    "description": "Warlord of the storm clans, smashing foes with the might of the tempest.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 19,
+    "health": 38,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_lyssara_everlight",
+    "name": "Lyssara Everlight",
+    "description": "A beacon of hope and justice, whose presence inspires allies to victory.",
+    "rarity": "Legendary",
+    "cost": 12,
+    "attack": 15,
+    "health": 30,
+    "specialAbility": "None"
+  }
+]
