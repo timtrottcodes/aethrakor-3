@@ -60,7 +60,6 @@ export function renderPlayerCard(
       .setInteractive({ useHandCursor: true })
       .setVisible(true);
     hitArea.on("pointerdown", () => {
-      console.log("Card clicked:", card);
       onClick();
     });
     container.add(hitArea);

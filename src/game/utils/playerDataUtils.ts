@@ -53,7 +53,8 @@ function newPlayer() {
     equippedCards: [],
     progress: {
       completedStages: [],
-      currentStage: 1
+      currentStage: 1,
+      currentStep: 0
     }
   };
 

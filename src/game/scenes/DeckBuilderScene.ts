@@ -1,18 +1,21 @@
 import Phaser from "phaser";
-import { Card, CardFace, PlayerData, Rarity } from "../objects/objects";
+import { Card, CardFace, PlayerData, Rarity, rarityOrder, SpecialAbility } from "../objects/objects";
 import { renderPlayerCard } from "../utils/renderPlayerCard";
 import { getMaxCardCost, loadPlayerData, savePlayerData } from "../utils/playerDataUtils";
 import { CardManager } from "../objects/CardManager";
+import { GlobalState } from '../objects/globalState';
+import { createFantasyButton } from "../utils/button";
 
 export default class DeckBuilderScene extends Phaser.Scene {
   private playerData!: PlayerData;
   private cardManager: CardManager;
   private collectionCardsContainers: Phaser.GameObjects.Container[] = [];
-  private confirmButton!: Phaser.GameObjects.Text;
   private equippedGroup!: Phaser.GameObjects.Group;
   private collectionContainer: Phaser.GameObjects.Container;
-
+  private listBackground: Phaser.GameObjects.Rectangle;
   private maxEquippedCards = 5;
+  private isValidDeck: boolean = false;
+  private pointsText?: Phaser.GameObjects.Text;
 
   constructor() {
     super("DeckBuilderScene");
@@ -22,40 +25,45 @@ export default class DeckBuilderScene extends Phaser.Scene {
     this.playerData = loadPlayerData();
     this.cardManager = new CardManager();
 
+    this.add.image(0, 0, 'deck-builder')
+      .setOrigin(0)
+      .setDisplaySize(this.scale.width, this.scale.height)
+      .setDepth(0);
+
     this.add
-      .rectangle(0, 0, this.scale.width, this.scale.height, 0x222222)
+      .rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4)
       .setOrigin(0);
 
     this.add
-      .text(this.scale.width / 2, 20, "Deck Builder", {
+      .text(this.scale.width / 2, 40, "Deck Builder", {
         fontSize: "32px",
         color: "#fff",
       })
       .setOrigin(0.5);
 
-    // Confirm button
-    this.confirmButton = this.add
-      .text(this.scale.width / 2, this.scale.height - 60, "Confirm Selection", {
-        fontSize: "24px",
-        color: "#fff",
-        backgroundColor: "#555",
-        padding: { left: 20, right: 20, top: 10, bottom: 10 },
-      })
-      .setOrigin(0.5)
-      .setInteractive();
-
-    this.confirmButton.on("pointerdown", () => {
-      if (!this.confirmButton.active) return;
-      // Confirm logic, e.g. save deck and exit
-      savePlayerData(this.playerData);
-      this.scene.start('CombatScene');
-    });
+    createFantasyButton(
+      this,
+      this.scale.width / 2,
+      this.scale.height - 60,
+      'Confirm Selection',
+      () => {
+        if (this.isValidDeck) {
+          savePlayerData(this.playerData);
+          this.closeDeckBuilderScene();
+        }
+      },
+      {
+        fontSize: '20px',
+        origin: [1, 1],
+        enabled: true
+      }
+    );  
 
     this.refreshUI();
   }
 
   private renderEquippedCards() {
-    if (this.equippedGroup) this.equippedGroup.clear(true, true);
+    if (this.equippedGroup && this.equippedGroup.children) this.equippedGroup.clear(true, true);
     this.equippedGroup = this.add.group();
 
     const startX = 20;
@@ -75,6 +83,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
             rarity: Rarity.Common,
             attack: 0,
             health: 0,
+            specialAbility: SpecialAbility.None
           };
 
       const face = cardId ? CardFace.Front : CardFace.Back;
@@ -89,9 +98,9 @@ export default class DeckBuilderScene extends Phaser.Scene {
         face,
         cardId
           ? () => {
-              this.playerData.equippedCards[i] = "";
-              this.refreshUI();
-            }
+            this.playerData.equippedCards[i] = "";
+            this.refreshUI();
+          }
           : undefined
       );
 
@@ -114,8 +123,16 @@ export default class DeckBuilderScene extends Phaser.Scene {
     maskShape.fillRect(listX, listY, listWidth, listHeight);
     const mask = maskShape.createGeometryMask();
 
+    if (!this.listBackground) {
+      this.listBackground = this.add
+        .rectangle(listX-10, listY-10, listWidth+20, listHeight+20, 0x000000, 0.7)
+        .setOrigin(0)
+        .setName("listBackground");
+    }
+
     // Scrollable container
     this.collectionContainer = this.add.container(listX, listY);
+    
     this.collectionContainer.setMask(mask);
 
     this.collectionCardsContainers = [];
@@ -163,8 +180,18 @@ export default class DeckBuilderScene extends Phaser.Scene {
     const itemPadding = 20;
     let currentY = 0;
 
-    this.playerData.collection.forEach((cardId) => {
-      const cardData = this.cardManager.getById(cardId);
+    const sortedCollection = this.playerData.collection
+      .map((cardId) => this.cardManager.getById(cardId))
+      .filter((card): card is Card => !!card)
+      .sort((a, b) => {
+        const rarityCompare = rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        if (rarityCompare !== 0) return rarityCompare;
+        return b.cost - a.cost; // Descending cost
+      });
+
+
+    sortedCollection.forEach((cardId) => {
+      const cardData = this.cardManager.getById(cardId.id);
       if (!cardData) return;
 
       // Card visual
@@ -174,7 +201,8 @@ export default class DeckBuilderScene extends Phaser.Scene {
         0,
         0,
         0.15,
-        CardFace.Front
+        CardFace.Front,
+        () => this.tryAddCard(cardId.id)
       );
 
       // Text info
@@ -215,14 +243,13 @@ export default class DeckBuilderScene extends Phaser.Scene {
       );
 
       // Dim if already selected
-      const isAlreadySelected = this.playerData.equippedCards.includes(cardId);
+      const isAlreadySelected = this.playerData.equippedCards.includes(cardId.id);
       const maxCardsReached = this.playerData.equippedCards.filter((id) => id !== "").length >= this.maxEquippedCards;
 
       if (isAlreadySelected || maxCardsReached) {
         itemContainer.setAlpha(0.4);
       } else {
-        itemContainer.on("pointerdown", () => this.tryAddCard(cardId));
-        cardContainer.on("card-clicked", () => this.tryAddCard(cardId));
+        itemContainer.on("pointerdown", () => this.tryAddCard(cardId.id));
       }
 
       this.collectionContainer.add(itemContainer);
@@ -297,6 +324,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
   private refreshUI() {
     this.renderEquippedCards();
     this.createCollectionList();
+    this.renderPlayerStats();
 
     const maxCost = getMaxCardCost(this.playerData.level);
 
@@ -306,14 +334,37 @@ export default class DeckBuilderScene extends Phaser.Scene {
       return card ? sum + card.cost : sum;
     }, 0);
 
-    const equippedCount = this.playerData.equippedCards.filter(
-      (id) => id !== ""
-    ).length;
+    const equippedCount = this.playerData.equippedCards.filter((id) => id !== "").length;
+    this.isValidDeck = equippedCount === this.maxEquippedCards && totalCost <= maxCost;
+  }
 
-    const isValid =
-      equippedCount === this.maxEquippedCards && totalCost <= maxCost;
-    this.confirmButton.setAlpha(isValid ? 1 : 0.5);
-    this.confirmButton.disableInteractive();
-    if (isValid) this.confirmButton.setInteractive({ useHandCursor: true });
+  closeDeckBuilderScene() {
+    this.scene.stop('DeckBuilderScene');
+    if (GlobalState.lastScene) {
+      this.scene.start(GlobalState.lastScene);
+    }
+  }
+
+  private renderPlayerStats(): void {
+    const points = this.playerData.equippedCards.reduce((sum, id) => {
+      if (!id) return sum;
+      const card = this.cardManager.getById(id);
+      return card ? sum + card.cost : sum;
+    }, 0);
+    const maxPoints = getMaxCardCost(this.playerData.level);
+    const expToNextLevel = this.playerData.expToNextLevel;
+
+    const style: Phaser.Types.GameObjects.Text.TextStyle = {
+      fontFamily: 'Cinzel',
+      fontSize: '18px',
+      color: '#ffd700', // gold
+      stroke: '#000',
+      strokeThickness: 2
+    };
+
+    if (!this.pointsText) {
+      this.pointsText = this.add.text(this.scale.width / 2, 270, '', style).setDepth(10).setOrigin(0.5, 0);
+    }
+    this.pointsText.setText(`Available Points: ${points} / ${maxPoints}, ${expToNextLevel} EXP to Next Level`);
   }
 }

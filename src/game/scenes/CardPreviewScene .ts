@@ -12,10 +12,10 @@ export class CardPreviewScene extends Phaser.Scene {
     this.cardData = data.data;
   }
 
-    create() {
+  create() {
     const { width: screenWidth, height: screenHeight } = this.scale;
 
-    const overlay = this.add.rectangle(0, 0, screenWidth, screenHeight, 0x000000, 0.7)
+    const overlay = this.add.rectangle(0, 0, screenWidth, screenHeight, 0x000000, 0.9)
         .setOrigin(0)
         .setInteractive();
 
@@ -41,9 +41,21 @@ export class CardPreviewScene extends Phaser.Scene {
     overlay.once('pointerdown', () => {
         this.closePreview(centeredContainer);
     });
-    }
+    
 
-    private closePreview(container: Phaser.GameObjects.Container) {
+    const style: Phaser.Types.GameObjects.Text.TextStyle = {
+      fontFamily: 'Cinzel',
+      fontSize: '22px',
+      color: '#ffd700', // gold
+      stroke: '#000',
+      strokeThickness: 2,
+      align: 'center'
+    };
+    const descriptionText = this.add.text(this.scale.width / 2, screenHeight - 200, '', style).setDepth(10).setOrigin(0.5, 0).setWordWrapWidth(600);
+    descriptionText.setText(this.cardData.description);
+  }
+
+  private closePreview(container: Phaser.GameObjects.Container) {
     this.tweens.add({
         targets: container,
         scale: 0,
@@ -53,5 +65,5 @@ export class CardPreviewScene extends Phaser.Scene {
         this.scene.stop();
         }
     });
-    }
+  }
 }

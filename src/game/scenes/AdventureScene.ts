@@ -3,6 +3,8 @@ import Phaser from 'phaser';
 import stagesData from '../data/stages.json';
 import { loadPlayerData } from '../utils/playerDataUtils';
 import { PlayerData, Stage, StepType } from '../objects/objects';
+import { createFantasyButton } from '../utils/button';
+import { GlobalState } from '../objects/globalState';
 
 export default class AdventureScene extends Phaser.Scene {
   private bg!: Phaser.GameObjects.Image;
@@ -42,7 +44,7 @@ export default class AdventureScene extends Phaser.Scene {
 
     this.setBackgroundPosition();
     this.placeStageMarkers();
-    this.addTestButton();
+    this.addDeckBuilderButton();
   }
 
   public getCurrentStage(): number {
@@ -95,21 +97,22 @@ export default class AdventureScene extends Phaser.Scene {
     }
   }
 
-  private addTestButton() {
-    const button = this.add.text(this.scale.width - 20, this.scale.height - 20, 'Next Stage', {
-      fontSize: '18px',
-      color: '#ffffff',
-      backgroundColor: '#0077ff',
-      padding: { left: 10, right: 10, top: 5, bottom: 5 }
-    })
-      .setOrigin(1, 1)
-      .setInteractive()
-      .on('pointerdown', () => {
-        if (!this.playerData.progress.completedStages.includes(this.playerData.progress.currentStage)) {
-          this.playerData.progress.completedStages.push(this.playerData.progress.currentStage);
-        }
-        this.playerData.progress.currentStage = Math.min(this.playerData.progress.currentStage + 1, this.stages.length);
-        this.scene.restart();
-      });
+  private addDeckBuilderButton() {
+    createFantasyButton(
+      this,
+      this.scale.width / 2,
+      this.scale.height - 80,
+      'Deck Builder',
+      () => {
+        this.scene.stop("AdventureScene");
+        GlobalState.lastScene = this.scene.key;
+        this.scene.start('DeckBuilderScene');
+      },
+      {
+        fontSize: '20px',
+        origin: [1, 1],
+        enabled: true
+      }
+    );    
   }
 }

@@ -100,6 +100,206 @@
     "specialAbility": "None"
   },
   {
+    "id": "card_rat_catcher",
+    "name": "Rat Catcher",
+    "description": "Armed with traps and grit, keeps villages safe from vermin and worse.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_rookie_sellsword",
+    "name": "Rookie Sellsword",
+    "description": "An eager mercenary hoping to earn fame one swing at a time.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_grave_digger",
+    "name": "Grave Digger",
+    "description": "Spends more time around the dead than the living, but no less brave.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_barn_watch",
+    "name": "Barn Watch",
+    "description": "Keeps eyes on livestock and local threats, pitchfork always nearby.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_field_surgeon",
+    "name": "Field Surgeon",
+    "description": "Treats wounds with poultices and grit amid the chaos of battle.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_river_fisher",
+    "name": "River Fisher",
+    "description": "Knows the waterways better than any map could hope to show.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_mill_guard",
+    "name": "Mill Guard",
+    "description": "Protects grain and workers from bandits and beasts alike.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_rooftop_runner",
+    "name": "Rooftop Runner",
+    "description": "Delivers messages or blades through the narrow skyline paths.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_stable_hand",
+    "name": "Stable Hand",
+    "description": "Works with beasts daily, more formidable than they look.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_gutter_scrapper",
+    "name": "Gutter Scrapper",
+    "description": "Raised in alleys, fights with anything not nailed down.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_silent_watcher",
+    "name": "Silent Watcher",
+    "description": "Keeps the night vigil without complaint or fear.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_garden_keeper",
+    "name": "Garden Keeper",
+    "description": "Tends to herbs and knows a thing or two about poisons.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_cobbler",
+    "name": "Village Cobbler",
+    "description": "Fixes boots—and occasionally bandits—with a heavy hammer.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_hill_runner",
+    "name": "Hill Runner",
+    "description": "Knows every rise and shortcut—vanishes as fast as they strike.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_bellringer",
+    "name": "Bellringer",
+    "description": "Rings alarms or skulls depending on the occasion.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_ox_driver",
+    "name": "Ox Driver",
+    "description": "Drives stubborn beasts, and sometimes bandits, with equal force.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_barrel_basher",
+    "name": "Barrel Basher",
+    "description": "Smashes casks and occasionally skulls when drunk enough.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_sling_boy",
+    "name": "Sling Boy",
+    "description": "A street kid with deadly aim and nothing to lose.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_faithful_herald",
+    "name": "Faithful Herald",
+    "description": "Delivers royal decrees under threat of steel and storm.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_quiet_herbalist",
+    "name": "Quiet Herbalist",
+    "description": "Treats wounds and raises eyebrows with mysterious teas.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
     "id": "card_duskblade_knight",
     "name": "Duskblade Knight",
     "description": "A disciplined warrior trained in both blade and shadow, guarding the kingdom's borders at twilight.",
@@ -199,6 +399,156 @@
     "health": 6,
     "specialAbility": "None"
   },
+    {
+    "id": "card_blade_acolyte",
+    "name": "Blade Acolyte",
+    "description": "Trained in temple combat forms, swift and precise.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_firewatch_guardian",
+    "name": "Firewatch Guardian",
+    "description": "Keeps the signal fires lit and enemies at bay.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_crimson_path_warrior",
+    "name": "Crimson Path Warrior",
+    "description": "Follows an ancient martial tradition honed in blood and discipline.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_moonveil_sentinel",
+    "name": "Moonveil Sentinel",
+    "description": "A guardian of lunar shrines who strikes under moonlight.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_iron_grove_hunter",
+    "name": "Iron Grove Hunter",
+    "description": "Stalks prey in the steelwood wilds with silent precision.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_rift_mage",
+    "name": "Rift Mage",
+    "description": "Manipulates unstable portals to disorient enemies.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 3,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_dune_walker",
+    "name": "Dune Walker",
+    "description": "Master of survival and surprise in desert ambushes.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_twilight_slinger",
+    "name": "Twilight Slinger",
+    "description": "Blends speed and shadow to deliver deadly bolts.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_flameforged_adept",
+    "name": "Flameforged Adept",
+    "description": "Trains near volcanic vents to temper fire magic and flesh.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_windveil_runner",
+    "name": "Windveil Runner",
+    "description": "Faster than most horses, this scout is rarely seen twice.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_emberborn_duelist",
+    "name": "Emberborn Duelist",
+    "description": "Uses burning blades in a whirling dance of death.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_veilweaver",
+    "name": "Veilweaver",
+    "description": "Bends illusion to mask movements and deceive foes.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 3,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_moss_caller",
+    "name": "Moss Caller",
+    "description": "Communes with forest spirits to entangle and heal.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 2,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_bloodrune_fighter",
+    "name": "Bloodrune Fighter",
+    "description": "Draws power from old runes carved into skin and steel.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_starborn_mystic",
+    "name": "Starborn Mystic",
+    "description": "Born under a rare omen, touched by stellar wisdom.",
+    "rarity": "Uncommon",
+    "cost": 3,
+    "attack": 2,
+    "health": 4,
+    "specialAbility": "None"
+  },
   {
     "id": "card_solar_paladin",
     "name": "Solar Paladin",
@@ -293,6 +643,106 @@
     "id": "card_gloomwarden",
     "name": "Gloomwarden",
     "description": "A shadowy sentinel who guards forgotten places, unleashing darkness to blind and weaken foes.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+    {
+    "id": "card_ashbringer_knight",
+    "name": "Ashbringer Knight",
+    "description": "Rides into battle clad in scorched steel and fury.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_crystal_fury",
+    "name": "Crystal Fury",
+    "description": "A golem powered by ancient gems, surging with volatile energy.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_soulforge_binder",
+    "name": "Soulforge Binder",
+    "description": "Binds spirits into armor and weapons to enhance their wrath.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 6,
+    "health": 12,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_voidstep_hunter",
+    "name": "Voidstep Hunter",
+    "description": "Appears from nowhere, leaves behind whispers and corpses.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_frostbite_champion",
+    "name": "Frostbite Champion",
+    "description": "A knight of the northern reaches, radiating a killing chill.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_dreamweaver",
+    "name": "Dreamweaver",
+    "description": "Warps reality and memory in ethereal patterns of combat.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_wildheart_avenger",
+    "name": "Wildheart Avenger",
+    "description": "Fights for fallen beasts and forgotten groves.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 7,
+    "health": 14,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_thunderfist_sentinel",
+    "name": "Thunderfist Sentinel",
+    "description": "Each blow shakes the battlefield with roaring force.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 8,
+    "health": 16,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_lorebound_magus",
+    "name": "Lorebound Magus",
+    "description": "Master of arcane knowledge and ancient spells.",
+    "rarity": "Rare",
+    "cost": 5,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "card_gloomfang_stalker",
+    "name": "Gloomfang Stalker",
+    "description": "Lurks in cursed woods, preying upon the unwary.",
     "rarity": "Rare",
     "cost": 5,
     "attack": 6,
