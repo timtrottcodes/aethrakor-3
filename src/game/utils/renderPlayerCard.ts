@@ -109,15 +109,17 @@ function renderLevelBadge(
   card: Card,
   scale: number
 ) {
-  const levelX = 90 * scale;
-  const levelY = 90 * scale;
+  const levelX = 80 * scale;
+  const levelY = 80 * scale;
   const levelRadius = 80 * scale;
 
+  // Draw circle background
   const levelBg = scene.add.graphics();
   levelBg.fillStyle(0x000000, 0.5);
   levelBg.fillCircle(levelX, levelY, levelRadius);
   container.add(levelBg);
 
+  // Draw cost text
   const fontSize = Math.max(80 * scale, 18);
   const levelText = scene.add
     .text(levelX, levelY, card.cost.toString(), {
@@ -125,9 +127,31 @@ function renderLevelBadge(
       fontSize: `${fontSize}px`,
       fontStyle: `bold`,
       color: "#ffffff",
+      stroke: '#000',
+      strokeThickness: 1,
     })
     .setOrigin(0.5);
   container.add(levelText);
+
+  // Add special ability icon if present
+  const abilityIcons: Record<string, string> = {
+    Taunt: '🛡',
+    Healer: '🌿',
+    DualStrike: '⚔',
+  };
+
+  const icon = abilityIcons[card.specialAbility];
+  if (icon) {
+    const iconText = scene.add.text(levelX, levelY - (levelRadius * 0.4), icon, {
+      fontFamily: "Arial",
+      fontSize: `${Math.max(50 * scale, 12)}px`,
+      color: "#000000",
+      stroke: "#FFD700",
+      strokeThickness: 2,
+      align: "center",
+    }).setOrigin(0.5);
+    container.add(iconText);
+  }
 }
 
 function renderRarityStars(
@@ -173,12 +197,12 @@ function renderNameBar(
   height: number
 ) {
   const nameBarHeightOffset = 64 * scale;
-  const nameBarHeight = Math.max(nameBarHeightOffset, 32);
+  const nameBarHeight = Math.max(nameBarHeightOffset, 36);
 
   const nameBarYOffset = height * scale - nameBarHeight;
-  const nameBarY = Math.max(nameBarYOffset, 32);
+  const nameBarY = Math.max(nameBarYOffset, 36);
 
-  const fontSize = Math.max(40 * scale, 16);
+  const fontSize = Math.max(40 * scale, 14);
 
   const nameBar = scene.add.graphics();
   nameBar.fillStyle(0x000000, 0.6);

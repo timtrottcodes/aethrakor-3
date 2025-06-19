@@ -6,7 +6,7 @@ import stagesData from '../data/stages.json';
 export default class StoryScene extends Phaser.Scene {
   private playerData: PlayerData; 
   private stages: Stage[]; 
-  private currentStage: Stage | undefined;
+  private currentStage: Stage;
   private dialogContainer: Phaser.GameObjects.Container;
   private storyIndex: number = 0;
 
@@ -23,29 +23,30 @@ export default class StoryScene extends Phaser.Scene {
         type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
       }))
     }));
-    this.currentStage = this.stages.find(s => s.stageNumber === this.playerData.progress.currentStage);
-    this.load.image(this.currentStage!.image, `assets/backgrounds/stages/${this.currentStage!.image}`);
-    this.currentStage!.story.forEach(s => {
+    this.storyIndex = 0;
+    this.currentStage = this.stages.find(s => s.stageNumber === this.playerData.progress.currentStage)!;
+    this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
+    this.currentStage.story.forEach(s => {
       if (s.image != "")
-        this.load.image(s.image, `assets/portraits/${s.image}.png`);
+        this.load.image(s.image, `assets/characters/${s.image}.png`);
     });
   }
 
   create() {
     
-    this.add.image(0, 0, this.currentStage!.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height);
+    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height);
     this.dialogContainer = this.add.container();
     this.showDialog();
 
     this.input.on('pointerdown', () => {
       this.storyIndex++;
-      if (this.storyIndex < this.currentStage!.story.length) {
+      if (this.storyIndex < this.currentStage.story.length) {
         this.showDialog();
       } else {
-        if (this.currentStage!.stageNumber == 1)
-          this.scene.start('ExplorationScene', { stageData: this.currentStage! });
-        else
-          this.scene.start('AdventureScene', { stageData: this.currentStage! });
+        //if (this.currentStage.stageNumber == 1)
+          this.scene.start('ExplorationScene', { stageData: this.currentStage });
+        //else
+        //  this.scene.start('AdventureScene', { stageData: this.currentStage });
       }
     });
   }
@@ -53,7 +54,11 @@ export default class StoryScene extends Phaser.Scene {
   showDialog() {
     this.dialogContainer.removeAll(true);
 
-    const entry = this.currentStage!.story[this.storyIndex];
+    const entry = this.currentStage.story[this.storyIndex];
+    console.log("storyIndex", this.storyIndex);
+    console.log("currentStage", this.currentStage);
+    console.log("entry", entry);
+
     const isNarrator = entry.name === 'Narrator';
     const isLeft = this.storyIndex % 2 === 0;
 

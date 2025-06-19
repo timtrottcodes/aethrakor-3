@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 import stagesData from '../data/stages.json';
 import { loadPlayerData } from '../utils/playerDataUtils';
 import { PlayerData, Stage, StepType } from '../objects/objects';
-import { createFantasyButton } from '../utils/button';
+import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from '../utils/button';
 import { GlobalState } from '../objects/globalState';
 
 export default class AdventureScene extends Phaser.Scene {
@@ -11,7 +11,7 @@ export default class AdventureScene extends Phaser.Scene {
   private stagesInChapter = 5;
   private visibleStageRange = { start: 1, end: this.stagesInChapter };
   private stages: Stage[] = [];
-  private playerData: PlayerData = loadPlayerData();
+  private playerData: PlayerData;
 
   constructor() {
     super('AdventureScene');
@@ -27,7 +27,12 @@ export default class AdventureScene extends Phaser.Scene {
       }))
     }));
 
+    this.playerData = loadPlayerData();
+
     if (this.playerData) {
+      console.log("AdventureScene")
+      console.log("currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep + "; currentStage: " + this.playerData.progress.currentStage);
+
       const currentStageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
       const stageImage = `bg_stage_${currentStageGroup}`;
       this.load.image(stageImage, `assets/backgrounds/${stageImage}.png`);
@@ -82,23 +87,21 @@ export default class AdventureScene extends Phaser.Scene {
       const y = baseY - stageIndex * spacing;
       const stage = this.stages.find(s => s.stageNumber === i);
 
-      const label = this.add.text(x, y, stage ? stage.title : `Stage ${i}`, {
-        fontSize: '24px',
-        color: '#ffffff',
-        backgroundColor: '#00000088',
-        padding: { left: 10, right: 10, top: 5, bottom: 5 }
-      }).setOrigin(0.5).setInteractive();
-
       if (i === this.playerData.progress.currentStage) {
-        label.on('pointerdown', () => this.scene.start('ExplorationScene'));
+        createSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, () => {
+          if (this.playerData.progress.currentStep == 0)
+            this.scene.start('StoryScene')
+          else
+            this.scene.start('ExplorationScene')
+        }, 18, 30);
       } else {
-        label.setAlpha(0.4);
-      }
+        createDisabledSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, 18, 30);
+      } 
     }
   }
 
   private addDeckBuilderButton() {
-    createFantasyButton(
+    createFancyButton(
       this,
       this.scale.width / 2,
       this.scale.height - 80,
@@ -107,11 +110,6 @@ export default class AdventureScene extends Phaser.Scene {
         this.scene.stop("AdventureScene");
         GlobalState.lastScene = this.scene.key;
         this.scene.start('DeckBuilderScene');
-      },
-      {
-        fontSize: '20px',
-        origin: [1, 1],
-        enabled: true
       }
     );    
   }

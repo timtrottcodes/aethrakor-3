@@ -1,6 +1,7 @@
 [
   {
     "stageNumber": 1,
+    "expGain": 10,
     "title": "Chapter 1: The Farm - Stage 1",
     "image": "farm-field.png",
     "description": "Our farmhand receives an unexpected royal summons.",
@@ -26,6 +27,16 @@
         "image": "caelan"
       },
       {
+        "name": "Stranger",
+        "lines": "I have a message for you from the King.",
+        "image": "stranger"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The royal messenger hands you a scroll sealed with wax.",
+        "image": ""
+      },
+      {
         "name": "Narrator",
         "lines": "The scroll trembles in your hands as you break the seal. “Your blood bears the mark of the gods,” it read. “Destiny calls you to rescue the Princess from the evil Lich King.”",
         "image": ""
@@ -39,1771 +50,2334 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["Goblin", "Bat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Giant Rat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Wild Boar"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Wild Boar"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["Goblin", "Wild Boar"]
+        "type": "battle",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 2,
+    "expGain": 10,
     "title": "Chapter 1: The Farm - Stage 2",
     "image": "farm-field-buildings.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "description": "Caelan and friends leave the familiar fields behind as rumors of prowling beasts spread.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "As the village winds faded behind them, Caelan glanced back one final time at the only home they had ever known. In the silence of departure, the fields seemed to whisper of a past now out of reach.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "You sure about this? Leaving everything behind for a dream in a letter?",
+        "image": "garrick"
+      },
+      {
+        "name": "Caelan",
+        "lines": "It's not just a dream. It's a call. If we don't go, who will?",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The road ahead twisted through wind-swept pastures and overgrown trails. But something was wrong. The animals were uneasy, and old farmers spoke of shadows stealing livestock under moonlight.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Bat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Bat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["Goblin", "Skeleton"]
+        "type": "battle",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 3,
+    "expGain": 10,
     "title": "Chapter 1: The Farm - Stage 3",
-    "image": "farm-buildings.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "image": "farm-road.png",
+    "description": "An ambush in the barley fields threatens to end the journey before it begins.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The group took a shortcut through a barley field, hoping to avoid the main road. The air was thick with the scent of grain and unease.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "Shh... did you hear that? Rustling to the north.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Before they could react, shadows burst from the crop. Gnolls and goblins — too many for mere coincidence.",
+        "image": ""
+      },
+      {
+        "name": "Caelan",
+        "lines": "This wasn't random. Someone sent them. Hold the line!",
+        "image": "caelan"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Giant Rat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Giant Rat", "Bat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["Goblin", "Forest Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Giant Rat", "Bat"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Giant Rat", "Forest Spider"]
+        "type": "battle",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 4,
+    "expGain": 10,
     "title": "Chapter 1: The Farm - Stage 4",
-    "image": "farm-field-forest-in-distance.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "image": "farm-woods-edge.png",
+    "description": "At the edge of the farmland, ancient stone ruins whisper secrets of Caelan's heritage.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "They reached a crumbling ruin where the farm met the wild woods. Vines choked broken stone etched with unfamiliar runes.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "These stones are... older than the Kingdom. Look—this symbol. The same as on your scroll, Caelan.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "As the sun set, a chill swept in. The ruins trembled. From the shadows came creatures twisted by old magic—guardians of something long forgotten.",
+        "image": ""
+      },
+      {
+        "name": "Caelan",
+        "lines": "They're not here by chance. The Old Gods... left warnings.",
+        "image": "caelan"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Wild Boar"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Giant Rat"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["Wild Boar", "Bat"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Bat", "Cave Spider"]
+        "type": "battle",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 5,
+    "expGain": 10,
     "title": "Chapter 1: The Farm - Stage 5",
-    "image": "farm-entrance-to-forest.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "image": "farm-forest-border.png",
+    "description": "A hobgoblin warlord blocks the final gate out of the farmland. A first true test of steel and spirit.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "At the boundary fence where the farm met the woods, a crude palisade had been raised. Smoke rose from campfires. A warband had made camp.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "We can't go around. This is their checkpoint. We go through—or turn back.",
+        "image": "caelan"
+      },
+      {
+        "name": "Warlord Brakka",
+        "lines": "No one leaves the vale without my mark. And my mark... is death.",
+        "image": "monster_hobgoblin"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The hobgoblin known as Brakka was a brute even among his kind. Flanked by goblins and gnolls, he raised a warhammer carved with bones. The first true battle had begun.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Goblin", "Wild Boar"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Goblin"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Forest Spider"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Forest Spider"]
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "boss",
+        "enemies": [
+          "monster_hobgoblin",
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_imp",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 6,
-    "title": "Chapter 1: The Farm - Stage 6",
+    "expGain": 10,
+    "title": "Chapter 2: The Woods - Stage 1",
     "image": "forest-path.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "description": "The group steps into the Witherwood, where the air is heavy with enchantment and the trees whisper ancient curses.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The moment their feet crossed the threshold into the Witherwood, the air thickened. Light seemed to dim, though the sky remained clear.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "The trees here are wrong. I can feel something watching… everywhere.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "This is where the map goes silent. We'll need to trust our instincts now.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Half-seen shadows flickered in the distance, and paths twisted when no one was looking. This was no ordinary forest.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Giant Rat", "Goblin"]
+        "enemies": ["monster_shadow_rat", "monster_forest_spider"]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Wild Boar"]
+        "enemies": ["monster_forest_wolf", "monster_ghost_apparition"]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Wild Boar"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Wild Boar", "Giant Rat"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Goblin", "Ghoul"]
+        "enemies": ["monster_goblin_scout", "monster_forest_witchling"]
       }
     ]
   },
   {
     "stageNumber": 7,
-    "title": "Chapter 1: The Farm - Stage 7",
-    "image": "forest-path-stream.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "expGain": 10,
+    "title": "Chapter 2: The Woods - Stage 2",
+    "image": "forest-clearing.png",
+    "description": "An eerie clearing reveals a forgotten shrine to a goddess of dusk. The ground is littered with bones.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "In a quiet clearing, moss-covered stones formed a crude circle. At the center: a broken statue, half-buried and weeping dark sap.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "Is this… a shrine? But to what?",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "The Lady of Dusk. My grandmother used to whisper prayers to her when lightning storms came.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Bones surrounded the altar—animal, goblin, human. Something still claimed tribute here.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Goblin", "Giant Rat"]
+        "enemies": ["monster_forest_witchling", "monster_ghost_apparition"]
       },
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Goblin"]
+        "enemies": ["monster_forest_spider", "monster_moss_golem"]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Forest Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Wild Boar", "Ghoul"]
+        "enemies": ["monster_shadow_rat", "monster_forest_wolf"]
       }
     ]
   },
   {
     "stageNumber": 8,
-    "title": "Chapter 1: The Farm - Stage 8",
-    "image": "forest-path-old-hut.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "expGain": 10,
+    "title": "Chapter 2: The Woods - Stage 3",
+    "image": "forest-marsh.png",
+    "description": "The woods turn to bog as mists rise and illusions test the group’s resolve.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The path descended into mist-covered bogland. Sounds were muffled, shapes distorted. Every step threatened to drag them under.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "Did you see that? A woman in red just beyond those trees. Then—gone.",
+        "image": "caelan"
+      },
+      {
+        "name": "Garrick",
+        "lines": "I saw my mother. She died five winters ago. That wasn’t real, was it?",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The forest here didn’t just deceive the eyes—it hunted the mind. Phantasms rose from the fog, echoing the party’s darkest memories.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Goblin"]
+        "enemies": ["monster_ghost_apparition", "monster_will_o_wisp"]
       },
       {
         "type": "random",
-        "enemies": ["Goblin", "Wild Boar"]
+        "enemies": ["monster_mire_serpent", "monster_forest_spider"]
       },
       {
         "type": "random",
-        "enemies": ["Goblin", "Bat"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Wolf", "Orc Scout"]
+        "enemies": ["monster_will_o_wisp", "monster_forest_witchling"]
       }
     ]
   },
   {
     "stageNumber": 9,
-    "title": "Chapter 1: The Farm - Stage 9",
-    "image": "forest-path-old-trees.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "expGain": 10,
+    "title": "Chapter 2: The Woods - Stage 4",
+    "image": "forest-ancient-tree.png",
+    "description": "They reach the heart of the Witherwood: a colossal tree grown around a ruin. Something stirs beneath the roots.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "A giant oak loomed, wider than a cottage and tall as a keep. Its roots had grown through broken stone steps and shattered arches.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "These ruins are elven. Old elven. Before the Sundering.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Do you feel that hum? Like… something breathing. Beneath us.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Suddenly, rot burst from the roots—animated husks of long-dead forest guardians, corrupted by centuries of decay.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Goblin", "Forest Spider"]
+        "enemies": ["monster_moss_golem", "monster_corrupted_dryad"]
       },
       {
         "type": "random",
-        "enemies": ["Bat", "Giant Rat"]
+        "enemies": ["monster_forest_witchling", "monster_ghost_apparition"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Skeleton"]
+        "enemies": ["monster_shadow_rat", "monster_mire_serpent"]
       }
     ]
   },
   {
     "stageNumber": 10,
-    "title": "Chapter 1: The Farm - Stage 10",
-    "image": "forest-path-into-ancient-forest.png",
-    "description": "Our farmhand receives an unexpected royal summons.",
+    "expGain": 10,
+    "title": "Chapter 2: The Woods - Stage 5",
+    "image": "forest-foggy-clearing.png",
+    "description": "A corrupted forest spirit reveals itself, guarding the only safe path out of the Witherwood.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "In the thickest part of the forest, the fog parted around a perfect circle of mushrooms and thorns. In the center hovered a being once divine—now decayed.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "That… was a forest guardian. But something’s poisoned it.",
+        "image": "elira"
+      },
+      {
+        "name": "Corrupted Sylvana",
+        "lines": "You do not belong here, mortals. This realm is mine again. You will not leave with your minds… or your lives.",
+        "image": "sylvana"
+      },
+      {
+        "name": "Caelan",
+        "lines": "This spirit guards the threshold. If we fall here, the forest keeps us. Stand firm!",
+        "image": "caelan"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Wild Boar", "Bat"]
+        "enemies": ["monster_forest_witchling", "monster_will_o_wisp"]
       },
       {
         "type": "random",
-        "enemies": ["Wild Boar", "Forest Spider"]
+        "enemies": ["monster_moss_golem", "monster_ghost_apparition"]
       },
       {
         "type": "random",
-        "enemies": ["Forest Spider", "Wild Boar"]
+        "enemies": ["monster_mire_serpent", "monster_corrupted_dryad"]
       },
       {
-        "type": "random",
-        "enemies": ["Goblin", "Bat"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Wild Boar"]
+        "type": "boss",
+        "enemies": [
+          "monster_corrupted_sylvana",
+          "monster_forest_spider",
+          "monster_will_o_wisp"
+        ]
       }
     ]
   },
   {
     "stageNumber": 11,
-    "title": "Chapter 2: The Forest - Stage 1",
-    "image": "ancient-forest-path.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 3: The Hills - Stage 1",
+    "image": "hills-overlook.png",
+    "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don’t belong to the living.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "With the cursed forest behind them, Caelan's party entered a land of cold stone and wide skies. The hills rolled like waves — each peak hiding secrets.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "The wind speaks in the old tongue… I don’t like it.",
+        "image": "elira"
+      },
+      {
+        "name": "Garrick",
+        "lines": "These hills were once battlefields. The dead remember.",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The path ahead forked between cairns marked by broken blades. None felt welcome.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Skeleton"]
+        "enemies": ["monster_hill_raider", "monster_bone_raven"]
       },
       {
         "type": "random",
-        "enemies": ["Skeleton", "Cave Spider"]
+        "enemies": ["monster_hill_wolf", "monster_ghost_warrior"]
       },
       {
         "type": "random",
-        "enemies": ["Skeleton", "Ghoul"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Wolf", "Orc Scout"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Wolf"]
+        "enemies": ["monster_stone_grub", "monster_spectral_archer"]
       }
     ]
   },
   {
     "stageNumber": 12,
-    "title": "Chapter 2: The Forest - Stage 2",
-    "image": "ancient-forest-mountains.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 3: The Hills - Stage 2",
+    "image": "hill-cairns.png",
+    "description": "They stumble upon a grave field where ancient warriors once clashed. The dead do not rest easily here.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "An eerie hush fell over a field of ancient burial cairns. Dozens of them, each crowned with rusted helms and blackened spears.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "These are war graves… this was a massacre site.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Then tread lightly. Disturb nothing. Take only our memories, and—",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "A spectral horn blew in the distance. The cairns began to shift.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
+        "enemies": ["monster_ghost_warrior", "monster_spectral_archer"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Skeleton"]
+        "enemies": ["monster_bone_raven", "monster_stone_grub"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Ghoul"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Wolf", "Cave Spider"]
+        "enemies": ["monster_hill_wolf", "monster_hill_raider"]
       }
     ]
   },
   {
     "stageNumber": 13,
-    "title": "Chapter 2: The Forest - Stage 3",
-    "image": "ancient-forest-path-old-hut.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 3: The Hills - Stage 3",
+    "image": "hill-canyon.png",
+    "description": "A narrow gorge offers shelter from the wind — and the perfect place for an ambush.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The wind died down as they descended into a rocky gorge. Walls rose steep on either side, and their footsteps echoed too loudly.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "I don’t like this. Nowhere to run. Nowhere to flank.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "It’s too quiet. Something’s wrong—",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Raiders burst from the shadows, painted in blood and ash, blades drawn. They didn’t want coin. They wanted a kill.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Wolf"]
+        "enemies": ["monster_hill_raider", "monster_hill_raider"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Wolf"]
+        "enemies": ["monster_hill_raider", "monster_hill_wolf"]
       },
       {
         "type": "random",
-        "enemies": ["Skeleton", "Orc Scout"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Skeleton", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Scout", "Wolf"]
+        "enemies": ["monster_spectral_archer", "monster_ghost_warrior"]
       }
     ]
   },
   {
     "stageNumber": 14,
-    "title": "Chapter 2: The Forest - Stage 4",
-    "image": "ancient-forest-mountain-path.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 3: The Hills - Stage 4",
+    "image": "hill-ancient-wall.png",
+    "description": "They find a crumbling stone wall — the remnants of a long-fallen kingdom. Something stirs behind the stones.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Massive blocks of stone jutted from the hillside — the skeletal remains of a forgotten citadel. Moss crept through runes carved in a dead language.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "These aren’t just ruins. This was a fortress… guarding something.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "The earth here is cursed. I feel pain… grief… rage trapped under the stones.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From beneath the wall, armored skeletons rose — their eyes glowing with hate centuries old.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Wolf", "Orc Scout"]
+        "enemies": ["monster_ghost_warrior", "monster_bone_raven"]
       },
       {
         "type": "random",
-        "enemies": ["Skeleton", "Cave Spider"]
+        "enemies": ["monster_stone_grub", "monster_spectral_archer"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Haunted Armor"]
+        "enemies": ["monster_hill_raider", "monster_hill_wolf"]
       }
     ]
   },
   {
     "stageNumber": 15,
-    "title": "Chapter 2: The Forest - Stage 5",
-    "image": "mountain-path-alpine.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 3: The Hills - Stage 5",
+    "image": "hill-storm.png",
+    "description": "A brutal storm crashes through the hills — and with it comes a legendary warrior long believed to be dead.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Black clouds rolled in unnaturally fast. Lightning struck the hills, and with each flash, a ghostly figure stood atop a stone mound — closer with every strike.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "That’s no living man. That’s the Stormbound General. He died a hundred years ago.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Then why is he drawing his blade now?",
+        "image": "caelan"
+      },
+      {
+        "name": "Stormbound General",
+        "lines": "I fell with honor… but no peace. You trespass upon my tomb, and now you’ll lie beside me.",
+        "image": "stormbound_general"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Skeleton"]
+        "enemies": ["monster_hill_raider", "monster_spectral_archer"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Skeleton"]
+        "enemies": ["monster_ghost_warrior", "monster_bone_raven"]
       },
       {
-        "type": "random",
-        "enemies": ["Orc Scout", "Ghoul"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Dark Acolyte"]
+        "type": "boss",
+        "enemies": [
+          "monster_stormbound_general",
+          "monster_hill_wolf",
+          "monster_spectral_archer"
+        ]
       }
     ]
   },
   {
     "stageNumber": 16,
-    "title": "Chapter 2: The Forest - Stage 6",
-    "image": "mountain-path-caves.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 4: The Forgotten Road - Stage 1",
+    "image": "cracked-road.png",
+    "description": "The remnants of an imperial road stretch before the party — shattered stone lined with dead trees and forgotten bones.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "What once was a mighty road of trade and glory now lay cracked and overgrown. Roots burst through stone like the earth reclaiming its due.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "This road led to the capital of the old empire. Nothing’s traveled it in years.",
+        "image": "caelan"
+      },
+      {
+        "name": "Garrick",
+        "lines": "Nothing living, maybe. But plenty of things still watch from the ruins.",
+        "image": "garrick"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Ghoul"]
+        "enemies": ["monster_cracked_wraith", "monster_dust_hound"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
+        "enemies": ["monster_forgotten_sentinel", "monster_cracked_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Skeleton"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Undead Knight"]
+        "enemies": ["monster_dust_hound", "monster_withered_knight"]
       }
     ]
   },
   {
     "stageNumber": 17,
-    "title": "Chapter 2: The Forest - Stage 7",
-    "image": "mountain-path-treacherous.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 4: The Forgotten Road - Stage 2",
+    "image": "collapsed-bridge.png",
+    "description": "A collapsed bridge spans a dry riverbed. Crossing it draws the attention of something that does not belong in the mortal world.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The bridge groaned under their weight, even though much of it had long since fallen. Shadows moved below… though no water flowed.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "There’s… something below us. It sees us.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "We move fast, or we fall with the stones.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The dead beneath the bridge rose to meet them — still shackled to the stone in undeath.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Wolf"]
+        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Skeleton"]
+        "enemies": ["monster_dust_hound", "monster_forgotten_sentinel"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dark Acolyte", "Dread Spider"]
+        "enemies": ["monster_cracked_wraith", "monster_forgotten_sentinel"]
       }
     ]
   },
   {
     "stageNumber": 18,
-    "title": "Chapter 2: The Forest - Stage 8",
-    "image": "mountain-path-ice-snow.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 4: The Forgotten Road - Stage 3",
+    "image": "abandoned-village.png",
+    "description": "The road passes through a dead village. Doors hang open, but nothing moves. That is, until night falls.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The village had no name, only memories. Homes stood hollowed by fire and time. Yet not a single corpse remained.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "This wasn’t abandoned. It was purged.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "There’s magic here. I feel a ritual burned into the stones.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "As night fell, glowing eyes filled the windows. The village's former residents had never left.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
+        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Orc Scout"]
+        "enemies": ["monster_dust_hound", "monster_forgotten_sentinel"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Orc Scout"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Scout", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Orc Scout"]
+        "enemies": ["monster_cracked_wraith", "monster_cracked_wraith"]
       }
     ]
   },
   {
     "stageNumber": 19,
-    "title": "Chapter 2: The Forest - Stage 9",
-    "image": "mountain-path-citidel-visible.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 4: The Forgotten Road - Stage 4",
+    "image": "broken-statue.png",
+    "description": "Statues of ancient emperors line the road — each shattered, each face defaced. One remains intact… and it breathes.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Headless statues watched from the roadside. Long ago, they glorified forgotten rulers — now they stood like silent mourners.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "These weren’t toppled by war. This was deliberate. A cleansing of history.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "One still stands… and it’s watching us.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The last statue opened its stone eyes and stepped from its pedestal, sword raised in eternal defense.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Orc Scout"]
+        "enemies": ["monster_forgotten_sentinel", "monster_withered_knight"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Wolf"]
+        "enemies": ["monster_cracked_wraith", "monster_dust_hound"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Scout", "Dark Acolyte"]
+        "enemies": ["monster_forgotten_sentinel", "monster_cracked_wraith"]
       }
     ]
   },
   {
     "stageNumber": 20,
-    "title": "Chapter 2: The Forest - Stage 10",
-    "image": "citidel-doorway-entrance.png",
-    "description": "The journey begins in the tangled woods.",
+    "expGain": 10,
+    "title": "Chapter 4: The Forgotten Road - Stage 5",
+    "image": "sunken-temple.png",
+    "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire’s final secret.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The path curved into a wide crater where a sunken temple lay beneath tangled roots and cracked stone. It whispered of betrayal.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This temple was dedicated to the sun… but something dark has claimed it now.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Someone’s inside. I feel it. He’s been waiting.",
+        "image": "caelan"
+      },
+      {
+        "name": "Heretic Prince",
+        "lines": "The empire fell, and I remain. I am its last son — its executioner. You will not pass.",
+        "image": "heretic_prince"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Wolf", "Skeleton"]
+        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Cave Spider"]
+        "enemies": ["monster_forgotten_sentinel", "monster_dust_hound"]
       },
       {
-        "type": "random",
-        "enemies": ["Orc Scout", "Skeleton"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Skeleton", "Undead Knight"]
+        "type": "boss",
+        "enemies": [
+          "monster_heretic_prince",
+          "monster_cracked_wraith",
+          "monster_forgotten_sentinel"
+        ]
       }
     ]
   },
   {
     "stageNumber": 21,
-    "title": "Chapter 3: Haunted Forest - Stage 1",
-    "image": "citidel-inner.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 5: The Wastelands - Stage 1",
+    "image": "blighted-plains.png",
+    "description": "The fertile earth gives way to blackened dust and skeletal trees. The wind tastes of ash. The Wastelands begin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The sky dimmed as if choked by unseen smoke. The Wastelands stretched before them — a dead land where nothing thrived.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "This place was razed in the First War. The ground never recovered.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "Magic clings here, but it’s wrong. Poisoned. Every step burns.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The dust stirred… and the cursed remnants of the war stirred with it.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Ghoul"]
+        "enemies": ["monster_blighted_soldier", "monster_dust_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dark Acolyte"]
+        "enemies": ["monster_bone_mage", "monster_withered_knight"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Haunted Armor", "Orc Warrior"]
+        "enemies": ["monster_bone_mage", "monster_blighted_soldier"]
       }
     ]
   },
   {
     "stageNumber": 22,
-    "title": "Chapter 3: Haunted Forest - Stage 2",
-    "image": "citidel-main-hall.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 5: The Wastelands - Stage 2",
+    "image": "ashen-fissure.png",
+    "description": "A deep fissure cuts across the land. Crossing it requires passing over a brittle, bone-laced bridge watched by unseen eyes.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The ground split like a scar across the world. A narrow bridge of bone and ash spanned the chasm, creaking with every step.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "That’s not stone holding that together. That’s skulls… and something’s watching us from below.",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From the depths of the fissure, the dead began to crawl forth, unwilling to let them pass.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Wolf"]
+        "enemies": ["monster_dust_wraith", "monster_withered_knight"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dark Acolyte"]
+        "enemies": ["monster_bone_mage", "monster_bone_mage"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Orc Scout"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Dread Spider"]
+        "enemies": ["monster_blighted_soldier", "monster_dust_wraith"]
       }
     ]
   },
   {
     "stageNumber": 23,
-    "title": "Chapter 3: Haunted Forest - Stage 3",
-    "image": "citidel-crypts.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 5: The Wastelands - Stage 3",
+    "image": "corrupted-oasis.png",
+    "description": "An oasis appears amidst the ruin, impossibly green. But the water is black and the trees whisper lies.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "In the heart of the blight, green shimmered. Trees, flowers, water — untouched. But the smell was wrong. Too sweet. Too still.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "Illusion. No… worse. It’s real, but corrupted. Something is feeding on us.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "We burn it down, or it consumes us.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The trees screamed as they burned. And from the dark water came those who had drunk the poison… and changed.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Skeleton", "Dread Spider"]
+        "enemies": ["monster_corrupted_dryad", "monster_blighted_soldier"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Dark Acolyte"]
+        "enemies": ["monster_bone_mage", "monster_corrupted_dryad"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dark Acolyte"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dread Spider", "Wolf"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Cave Spider", "Orc Scout"]
+        "enemies": ["monster_corrupted_dryad", "monster_dust_wraith"]
       }
     ]
   },
   {
     "stageNumber": 24,
-    "title": "Chapter 3: Haunted Forest - Stage 4",
-    "image": "citidel-gatehouse.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 5: The Wastelands - Stage 4",
+    "image": "ruined-outpost.png",
+    "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard — unaware they died long ago.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The tower leaned, held together by spite and memory. Banners of a fallen kingdom fluttered in the dead air.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "This was a border post. These men defended the realm once…",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The sound of armor creaked from within. Dust-covered soldiers turned hollow eyes toward the intruders — blades raised.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Wolf", "Orc Warrior"]
+        "enemies": ["monster_blighted_soldier", "monster_withered_knight"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Warrior", "Skeleton"]
+        "enemies": ["monster_dust_wraith", "monster_bone_mage"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Cave Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dark Acolyte", "Skeleton"]
+        "enemies": ["monster_withered_knight", "monster_blighted_soldier"]
       }
     ]
   },
   {
     "stageNumber": 25,
-    "title": "Chapter 3: Haunted Forest - Stage 5",
-    "image": "ashen-wastes-path.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 5: The Wastelands - Stage 5",
+    "image": "black-spire.png",
+    "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries — and never once fallen.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The Black Spire tore at the sky, made of fused bones and cursed stone. The wind carried screams that never ceased.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This is a waygate. It leads deeper. The Lich King's true domain lies beyond.",
+        "image": "elira"
+      },
+      {
+        "name": "Garrick",
+        "lines": "And something’s guarding it. I can hear its breath. Still alive after all these years?",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "A knight clad in tarnished obsidian plate emerged. His oath unbroken. His soul bound. He would not let them pass.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Orc Warrior", "Dark Acolyte"]
+        "enemies": ["monster_bone_mage", "monster_dust_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Wolf", "Skeleton"]
+        "enemies": ["monster_blighted_soldier", "monster_withered_knight"]
       },
       {
-        "type": "random",
-        "enemies": ["Skeleton", "Cave Spider"]
+        "type": "boss",
+        "enemies": [
+          "monster_black_oath_knight",
+          "monster_bone_mage",
+          "monster_dust_wraith"
+        ]
       }
     ]
   },
   {
     "stageNumber": 26,
-    "title": "Chapter 3: Haunted Forest - Stage 6",
-    "image": "ashen-wastes-volcano.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 6: The Bleeding Crags - Stage 1",
+    "image": "crimson-cliffs.png",
+    "description": "The ground turns jagged, veins of red stone pulsing like a heartbeat beneath the earth. You've entered the Bleeding Crags.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The cliffs bled. Not metaphorically — red ichor oozed from cracks in the rock. The ground pulsed like something alive… or dying.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This place was a temple once. Now it’s a wound — kept open by ritual and sacrifice.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "I don't care what gods they served. We close this wound.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The stone responded — birthing guardians made of blood and rage.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Ghoul", "Dread Spider"]
+        "enemies": ["monster_crag_bloodspawn", "monster_crimson_watcher"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Orc Scout"]
+        "enemies": ["monster_crag_bloodspawn", "monster_fleshbound_ritualist"]
       },
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Skeleton"]
+        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
       }
     ]
   },
   {
     "stageNumber": 27,
-    "title": "Chapter 3: Haunted Forest - Stage 7",
-    "image": "ashen-wastes-river-of-lava.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 6: The Bleeding Crags - Stage 2",
+    "image": "shrine-of-screams.png",
+    "description": "An ancient shrine stands defiled — once a place of healing, now echoing with the cries of blood offerings.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Cracked statues and broken altars lined the shrine, their eyes weeping rust. The air was thick with pain.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "The rocks are screaming. You hear that? They’re not just cursed — they remember.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "They made pacts here… old ones. And someone’s keeping them alive.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The blood priests emerged, masked in flesh, knives singing with hunger.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dread Spider"]
+        "enemies": ["monster_fleshbound_ritualist", "monster_crag_bloodspawn"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Scout", "Orc Warrior"]
+        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Wolf"]
+        "enemies": ["monster_fleshbound_ritualist", "monster_crag_bloodspawn"]
       }
     ]
   },
   {
     "stageNumber": 28,
-    "title": "Chapter 3: Haunted Forest - Stage 8",
-    "image": "ashen-wastes-volcano-path.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 6: The Bleeding Crags - Stage 3",
+    "image": "bone-ledges.png",
+    "description": "The path narrows to knife-edged ledges, where the wind howls with lost voices and skeletal remains stir underfoot.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Bones littered the narrow trail, pressed into the rock as though swallowed by the mountain. Something moved beneath the surface.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "These weren't warriors. They were sacrifices. Executed to feed the stone.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The mountain heaved. From cracks in the path, twisted remnants clawed their way out — failed offerings that still hungered.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Wolf"]
+        "enemies": ["monster_crag_bloodspawn", "monster_crimson_watcher"]
       },
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Wolf"]
+        "enemies": ["monster_bone_mage", "monster_crag_bloodspawn"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Skeleton"]
+        "enemies": ["monster_fleshbound_ritualist", "monster_dust_wraith"]
       }
     ]
   },
   {
     "stageNumber": 29,
-    "title": "Chapter 3: Haunted Forest - Stage 9",
-    "image": "ashen-wastes-fortress.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 6: The Bleeding Crags - Stage 4",
+    "image": "ritual-pit.png",
+    "description": "A massive pit glows with crimson runes. Echoes of chants and screams spill from below. A ritual is underway.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Deep within the Crags, the ritual pit boiled with blood and fire. Runes danced across the walls, old magic bound in pain.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "They’re calling something. If we let it finish, the Wastelands will spread.",
+        "image": "elira"
+      },
+      {
+        "name": "Garrick",
+        "lines": "Then we crash the ceremony.",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Chanting stopped. The pit hissed. And from its heart rose creatures formed from ritual sacrifice itself.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Wolf", "Skeleton"]
+        "enemies": ["monster_crag_bloodspawn", "monster_fleshbound_ritualist"]
       },
       {
         "type": "random",
-        "enemies": ["Ghoul", "Cave Spider"]
+        "enemies": ["monster_crimson_watcher", "monster_crag_bloodspawn"]
       },
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Orc Scout"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Warrior", "Ghoul"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ghoul", "Wolf"]
+        "enemies": ["monster_bone_mage", "monster_fleshbound_ritualist"]
       }
     ]
   },
   {
     "stageNumber": 30,
-    "title": "Chapter 3: Haunted Forest - Stage 10",
-    "image": "fortress-entrance-.png",
-    "description": "Darkness rises as the forest grows twisted and cursed.",
+    "expGain": 10,
+    "title": "Chapter 6: The Bleeding Crags - Stage 5",
+    "image": "throne-of-veins.png",
+    "description": "At the peak lies the Throne of Veins — a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "A monstrous throne sculpted from veins, flesh, and bone loomed before them. Upon it sat the Blood Queen — mother of rituals, priestess of decay.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "She’s not mortal. Not anymore. Her magic twists life itself.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Then we cut her from the mountain and watch it bleed out.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The Blood Queen rose, bleeding from every pore. The mountain shuddered — her children stirred — and battle was joined.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Cave Spider", "Wolf"]
+        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
       },
       {
         "type": "random",
-        "enemies": ["Skeleton", "Dark Acolyte"]
+        "enemies": ["monster_crag_bloodspawn", "monster_bone_mage"]
       },
       {
-        "type": "random",
-        "enemies": ["Cave Spider", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Scout", "Orc Warrior"]
+        "type": "boss",
+        "enemies": [
+          "monster_blood_queen",
+          "monster_crimson_watcher",
+          "monster_crag_bloodspawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 31,
-    "title": "Chapter 4: The Mountain Fortress - Stage 1",
-    "image": "fortress-courtyard.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 7: The Glass Wastes - Stage 1",
+    "image": "shattered-dunes.png",
+    "description": "Sand becomes glass underfoot. Shards of reality reflect not just light, but memory. The Glass Wastes begin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The dunes shimmered like broken mirrors. The wind didn't howl — it whispered voices from other times.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "This place was destroyed by magic. Nothing here is stable — not even time.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "I see echoes of people who never lived. They're walking… beside us.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Shards rose into shapes, mimicking warriors of the past — crystalized memories turned hostile.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Haunted Armor", "Dread Spider"]
+        "enemies": ["monster_glass_echo", "monster_time_phantom"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Orc Warrior"]
+        "enemies": ["monster_shardling", "monster_glass_echo"]
       },
       {
         "type": "random",
-        "enemies": ["Dark Acolyte", "Orc Warrior"]
+        "enemies": ["monster_mirage_knight", "monster_glass_echo"]
       }
     ]
   },
   {
     "stageNumber": 32,
-    "title": "Chapter 4: The Mountain Fortress - Stage 2",
-    "image": "fortress-inner-courtyard.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 7: The Glass Wastes - Stage 2",
+    "image": "fractured-temple.png",
+    "description": "A once-great temple lies splintered in the sands — fragments of its time scattered across reality.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The temple had no center. Its pieces floated, suspended in fractured time. Every step was a gamble against entropy.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "I just saw myself die. Three steps ahead. Don't ask.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "These distortions… they’re feeding something. A being that lives between seconds.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Mirage guardians stepped from frozen echoes — glass helms, sandsteel blades, and no shadows beneath them.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Haunted Armor", "Dark Acolyte"]
+        "enemies": ["monster_mirage_knight", "monster_shardling"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Haunted Armor"]
+        "enemies": ["monster_glass_echo", "monster_time_phantom"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dark Acolyte", "Frost Wraith"]
+        "enemies": ["monster_mirage_knight", "monster_glass_echo"]
       }
     ]
   },
   {
     "stageNumber": 33,
-    "title": "Chapter 4: The Mountain Fortress - Stage 3",
-    "image": "fortress-.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 7: The Glass Wastes - Stage 3",
+    "image": "crystal-canyon.png",
+    "description": "The canyon walls pulse with prismatic light, refracting moments you haven't lived. Something is watching through the shards.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Each canyon wall held glimpses of other paths — victories, failures, lives unlived. A thousand possibilities, none real.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "If I hesitate… I become one of them. A reflection. A ghost of a choice I didn't make.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "The echoes are sentient. Some… remember being real.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Time phantoms erupted from the canyon — each a distorted version of something you once were… or might become.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Orc Warrior", "Undead Knight"]
+        "enemies": ["monster_time_phantom", "monster_glass_echo"]
       },
       {
         "type": "random",
-        "enemies": ["Haunted Armor", "Dark Acolyte"]
+        "enemies": ["monster_mirage_knight", "monster_shardling"]
       },
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Hellhound"]
+        "enemies": ["monster_time_phantom", "monster_glass_echo"]
       }
     ]
   },
   {
     "stageNumber": 34,
-    "title": "Chapter 4: The Mountain Fortress - Stage 4",
-    "image": "fortress-gatehouse.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 7: The Glass Wastes - Stage 4",
+    "image": "sunken-refraction.png",
+    "description": "Beneath a shifting dune lies a city trapped in a time loop. It restarts every hour, unaware of its own doom.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The sunken city breathed in loops. Every hour, it collapsed — and rose again. Citizens screamed, rebuilt, forgot. Endlessly.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "They’re not alive. But they don’t know that.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "A Chronarch is buried here. Its anchor holds this nightmare together. Break it — or be caught in the loop forever.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The loop resisted — unleashing its guardians made of frozen moments and burning sand.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Dark Acolyte", "Undead Knight"]
+        "enemies": ["monster_glass_echo", "monster_time_phantom"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dark Acolyte"]
+        "enemies": ["monster_mirage_knight", "monster_shardling"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Fire Elemental"]
+        "enemies": ["monster_loop_guardian", "monster_time_phantom"]
       }
     ]
   },
   {
     "stageNumber": 35,
-    "title": "Chapter 4: The Mountain Fortress - Stage 5",
-    "image": "exploring-fortress-crypts.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 7: The Glass Wastes - Stage 5",
+    "image": "heart-of-glass.png",
+    "description": "In the heart of the Wastes rises a crystalline tower. At its peak, the Chronarch awaits — master of fractured time.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The tower shimmered out of sync with the world. Inside, each floor was a different year. Reality frayed at the edges.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "He’s not bound by time. He *is* time. Or what’s left of it.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Then we unmake the clock. Let the Wastes collapse behind us.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The Chronarch descended — a being of glass and starlight. With every blow, the world cracked a little more.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Dark Acolyte"]
+        "enemies": ["monster_time_phantom", "monster_mirage_knight"]
       },
       {
         "type": "random",
-        "enemies": ["Haunted Armor", "Undead Knight"]
+        "enemies": ["monster_glass_echo", "monster_shardling"]
       },
       {
-        "type": "random",
-        "enemies": ["Orc Warrior", "Lich Acolyte"]
+        "type": "boss",
+        "enemies": [
+          "monster_chronarch",
+          "monster_time_phantom",
+          "monster_loop_guardian"
+        ]
       }
     ]
   },
   {
     "stageNumber": 36,
-    "title": "Chapter 4: The Mountain Fortress - Stage 6",
-    "image": "exploring-fortress-main-hall.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 8: The Silent Deep - Stage 1",
+    "image": "descent-chasm.png",
+    "description": "The sky vanishes. You descend into the earth’s breathless core, past roots older than nations and echoes older than time.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The light thinned, the air thickened. What began as a cave became a wound in the world — leading only down.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "There's no wind… no life. Even magic feels muted.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "This isn't a cave. It's a grave for things too dangerous to burn or bury.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Movement. Shadows writhing on the walls — not from your torchlight. Something else moves here, unseen.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Dark Acolyte"]
+        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Undead Knight"]
+        "enemies": ["monster_fungal_host", "monster_mind_worm"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Undead Knight", "Dread Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ogre Brute", "Hellhound"]
+        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
       }
     ]
   },
   {
     "stageNumber": 37,
-    "title": "Chapter 4: The Mountain Fortress - Stage 7",
-    "image": "exploring-fortress-armory.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 8: The Silent Deep - Stage 2",
+    "image": "fungal-sanctum.png",
+    "description": "A forest of bioluminescent fungi pulses with sickly light. It breathes. And it's watching.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The chamber pulsed like a lung. Spores hung thick in the air. The ground squelched underfoot.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "These spores... they think. They remember. They're trying to *speak* to me.",
+        "image": "elira"
+      },
+      {
+        "name": "Garrick",
+        "lines": "Then stop listening. We don’t need another parasite in our heads.",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From beneath the glowing stalks, creatures rose — part man, part fungus, all wrong.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Haunted Armor"]
+        "enemies": ["monster_fungal_host", "monster_mind_worm"]
       },
       {
         "type": "random",
-        "enemies": ["Orc Warrior", "Undead Knight"]
+        "enemies": ["monster_deep_crawler", "monster_shade_stalker"]
       },
       {
         "type": "random",
-        "enemies": ["Undead Knight", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Orc Warrior", "Dread Spider"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ogre Brute", "Frost Wraith"]
+        "enemies": ["monster_fungal_host", "monster_flesh_bloom"]
       }
     ]
   },
   {
     "stageNumber": 38,
-    "title": "Chapter 4: The Mountain Fortress - Stage 8",
-    "image": "exploring-fortress-corridor.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 8: The Silent Deep - Stage 3",
+    "image": "underground-river.png",
+    "description": "A river of black water flows through a tomb of bones. The ferry waits — but the price is not coin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The river hissed, refusing to reflect anything real. The ferry awaited — its pilot eyeless, mouthless, timeless.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "He wants… memories. Yours. Mine. Whoever rides forgets who they were.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "Then we fight the river. We *become* the price.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Something old stirred beneath the water — guardians of memory, protectors of the toll.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Dark Acolyte", "Haunted Armor"]
+        "enemies": ["monster_memory_wraith", "monster_shade_stalker"]
       },
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Dark Acolyte"]
+        "enemies": ["monster_deep_crawler", "monster_mind_worm"]
       },
       {
         "type": "random",
-        "enemies": ["Ogre Brute", "Dread Spider"]
+        "enemies": ["monster_memory_wraith", "monster_fungal_host"]
       }
     ]
   },
   {
     "stageNumber": 39,
-    "title": "Chapter 4: The Mountain Fortress - Stage 9",
-    "image": "exploring-fortress-stairs.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 8: The Silent Deep - Stage 4",
+    "image": "forgotten-vaults.png",
+    "description": "Doors sealed with runes older than empires creak open. Inside — the lost knowledge of ancient gods, and the things that guard it.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The vaults hissed open like lungs exhaling dust. Each chamber held a truth too heavy for sane minds.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This is where the old gods buried their shame.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "These guards aren’t beasts. They’re ideas… made flesh.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Concepts clawed into being: guilt, hunger, silence, regret. And they *hated* the living.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Dread Spider", "Dark Acolyte"]
+        "enemies": ["monster_flesh_bloom", "monster_memory_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Dark Acolyte", "Undead Knight"]
+        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
       },
       {
         "type": "random",
-        "enemies": ["Haunted Armor", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dread Spider", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Dark Acolyte", "Hellhound"]
+        "enemies": ["monster_mind_worm", "monster_fungal_host"]
       }
     ]
   },
   {
     "stageNumber": 40,
-    "title": "Chapter 4: The Mountain Fortress - Stage 10",
-    "image": "exploring-fortress-hall.png",
-    "description": "High in the mountains, an ancient stronghold awaits.",
+    "expGain": 10,
+    "title": "Chapter 8: The Silent Deep - Stage 5",
+    "image": "abyssal-core.png",
+    "description": "At the deepest point lies a throne of black stone — and the Watcher Below, an ancient horror sealed in dreamless sleep.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "No footsteps echoed here. Sound died before it reached your ears. And in the center of nothing… it slept.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "The Watcher... it doesn't dream. It waits. And it *knows* we're here.",
+        "image": "elira"
+      },
+      {
+        "name": "Garrick",
+        "lines": "We end this now. Before it remembers how to wake up.",
+        "image": "garrick"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The Watcher rose, bones of obsidian and eyes of void. Its scream birthed silence.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Orc Warrior", "Undead Knight"]
+        "enemies": ["monster_flesh_bloom", "monster_memory_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Dark Acolyte", "Orc Warrior"]
+        "enemies": ["monster_shade_stalker", "monster_mind_worm"]
       },
       {
-        "type": "random",
-        "enemies": ["Dark Acolyte", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Undead Knight", "Orc Warrior"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Frost Wraith", "Fire Elemental"]
+        "type": "boss",
+        "enemies": [
+          "monster_watcher_below",
+          "monster_memory_wraith",
+          "monster_deep_crawler"
+        ]
       }
     ]
   },
   {
     "stageNumber": 41,
-    "title": "Chapter 5: The Lich King's Domain - Stage 1",
-    "image": "exploring-fortress-corridor.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 9: The Blighted Reach - Stage 1",
+    "image": "withered-plain.png",
+    "description": "You emerge into a broken world. The sky bleeds violet, and the ground cracks with every step. Life has fled — or become something worse.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The land here screams in silence. Trees twist into gallows. Rivers run backward. Nothing is as it should be.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This is where the Lich King's shadow first touched the world. Everything it touched died — and stayed.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "No… not died. *Changed*. This place remembers pain.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From the hollowed earth, blighted forms crawl, pulled by strings of forgotten sorrow.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Hellhound", "Fire Elemental"]
+        "enemies": ["monster_blight_zombie", "monster_crimson_maggot"]
       },
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Fire Elemental"]
+        "enemies": ["monster_shadow_walker", "monster_blight_zombie"]
       },
       {
         "type": "random",
-        "enemies": ["Lich King", "Infernal Reaper"]
+        "enemies": ["monster_crimson_maggot", "monster_deadroot_beast"]
       }
     ]
   },
   {
     "stageNumber": 42,
-    "title": "Chapter 5: The Lich King's Domain - Stage 2",
-    "image": "exploring-fortress-hall-2.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 9: The Blighted Reach - Stage 2",
+    "image": "field-of-hollows.png",
+    "description": "Once a city, now a graveyard. The spirits here wear the faces of your loved ones — and they want you to stay.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Empty houses stared back at you, windows like dead eyes. The streets whispered old names… yours among them.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "I see… my brother. But he died years ago. This is a trap.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "They’re echoes — stolen from us. The Lich King uses our grief against us.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Phantoms emerged, each one a twisted memory, fighting not to destroy you — but to make you *forget* yourself.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Frost Wraith", "Lich Acolyte"]
+        "enemies": ["monster_lost_soul", "monster_shadow_walker"]
       },
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Hellhound"]
+        "enemies": ["monster_memory_wraith", "monster_blight_zombie"]
       },
       {
         "type": "random",
-        "enemies": ["Lich King", "Hellhound"]
+        "enemies": ["monster_lost_soul", "monster_crimson_maggot"]
       }
     ]
   },
   {
     "stageNumber": 43,
-    "title": "Chapter 5: The Lich King's Domain - Stage 3",
-    "image": "exploring-fortress-corridor-2.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 9: The Blighted Reach - Stage 3",
+    "image": "twisted-forest.png",
+    "description": "A forest petrified mid-scream. Branches like claws. Roots like veins. And things that hunt without eyes.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The trees grew in unnatural shapes, each one grasping at the sky that had long since turned away.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "This place doesn't want us dead. It wants us *twisted*. Like them.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "The forest watches. Every step we take becomes harder. The roots… they feed on our doubt.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "With a sound like tearing skin, the forest let loose its guardians — beasts carved from rot and sorrow.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Hellhound", "Ogre Brute"]
+        "enemies": ["monster_deadroot_beast", "monster_blight_zombie"]
       },
       {
         "type": "random",
-        "enemies": ["Fire Elemental", "Frost Wraith"]
+        "enemies": ["monster_shadow_walker", "monster_crimson_maggot"]
       },
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Ogre Brute"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ogre Brute", "Hellhound"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Infernal Reaper", "Lich King"]
+        "enemies": ["monster_deadroot_beast", "monster_lost_soul"]
       }
     ]
   },
   {
     "stageNumber": 44,
-    "title": "Chapter 5: The Lich King's Domain - Stage 4",
-    "image": "exploring-fortress-stairs-2.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 9: The Blighted Reach - Stage 4",
+    "image": "corrupted-shrine.png",
+    "description": "A holy site, long defiled. Black flames flicker where once stood candles of prayer. Something still lingers within the sanctum.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The shrine stank of old blood and rotting faith. Its idols wept tar. The stones themselves recoiled from your presence.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "This was sacred once. The corruption runs deepest where the light once burned brightest.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "A guardian remains… not loyal, not alive — but bound.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "A corrupted seraph stepped forward — wings burned away, voice broken by countless betrayals. It would not let you pass.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Fire Elemental", "Ogre Brute"]
+        "enemies": ["monster_shadow_walker", "monster_blight_zombie"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Lich Acolyte"]
+        "enemies": ["monster_lost_soul", "monster_crimson_maggot"]
       },
       {
         "type": "random",
-        "enemies": ["Infernal Reaper", "Demon Lord Xarn"]
+        "enemies": ["monster_deadroot_beast", "monster_corrupted_seraph"]
       }
     ]
   },
   {
     "stageNumber": 45,
-    "title": "Chapter 5: The Lich King's Domain - Stage 5",
-    "image": "throneroom-advance-1.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 9: The Blighted Reach - Stage 5",
+    "image": "throne-of-roots.png",
+    "description": "At the center of the Blight lies the Heartroot, pulsing with stolen souls. Its guardian: a creature birthed of the Lich King’s first sin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "You came upon a vast open pit — at its center, the Heartroot pulsed, each throb leaking black mist into the skies.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "That’s no natural heart… it’s a prison for thousands of souls. And it's *awake*.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "The Guardian knows we're here. It was made to stop us — and it won’t stop bleeding until we do.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From within the roots, something massive stirred — not beast, not god, but something far worse: a mistake made manifest.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Fire Elemental"]
+        "enemies": ["monster_blight_zombie", "monster_deadroot_beast"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Fire Elemental"]
+        "enemies": ["monster_shadow_walker", "monster_corrupted_seraph"]
       },
       {
-        "type": "random",
-        "enemies": ["Infernal Reaper", "Hellhound"]
+        "type": "boss",
+        "enemies": [
+          "monster_heartroot_guardian",
+          "monster_lost_soul",
+          "monster_crimson_maggot"
+        ]
       }
     ]
   },
   {
     "stageNumber": 46,
-    "title": "Chapter 5: The Lich King's Domain - Stage 6",
-    "image": "throneroom-advance-2.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 10: The Throne of Ash - Stage 1",
+    "image": "ashen-gate.png",
+    "description": "At the edge of the broken world stands a gate forged from bone and sorrow. It only opens for those who carry both.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The Ashen Gate loomed like a wound torn in the sky. Glyphs bled fire. Screams echoed from within.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "Once we cross, there’s no turning back. This gate opens *into* death, not out of it.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "Then we bring life into it. Or we leave nothing behind.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "From the gate’s shadows, twisted sentinels rose — former heroes, now enslaved to undeath.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Frost Wraith", "Fire Elemental"]
+        "enemies": ["monster_blight_zombie", "monster_lost_soul"]
       },
       {
         "type": "random",
-        "enemies": ["Frost Wraith", "Hellhound"]
+        "enemies": ["monster_corrupted_guardian", "monster_shadow_walker"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Frost Wraith"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Ogre Brute", "Lich King"]
+        "enemies": ["monster_deadroot_beast", "monster_crimson_maggot"]
       }
     ]
   },
   {
     "stageNumber": 47,
-    "title": "Chapter 5: The Lich King's Domain - Stage 7",
-    "image": "throneroom-advance-3.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 10: The Throne of Ash - Stage 2",
+    "image": "hall-of-echoes.png",
+    "description": "An endless hall of obsidian mirrors reflects not your form — but your failures. Here, the mind breaks before the body.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Each step echoed a thousand regrets. The mirrors whispered your worst fears back at you… in your own voice.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Caelan",
+        "lines": "They show me when I fled… when I failed. They want me to kneel before I ever see him.",
+        "image": "caelan"
+      },
+      {
+        "name": "Elira",
+        "lines": "We all carry shadows. But they do not own us.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "Illusions coalesced into deadly forms — figments given hunger by the Lich King's will.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Hellhound", "Fire Elemental"]
+        "enemies": ["monster_mirror_doppelganger", "monster_lost_soul"]
       },
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Ogre Brute"]
+        "enemies": ["monster_shadow_walker", "monster_crimson_maggot"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Frost Wraith"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Demon Lord Xarn", "Elite Orc Commander"]
+        "enemies": ["monster_corrupted_guardian", "monster_memory_wraith"]
       }
     ]
   },
   {
     "stageNumber": 48,
-    "title": "Chapter 5: The Lich King's Domain - Stage 8",
-    "image": "throneroom-advance-4.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 10: The Throne of Ash - Stage 3",
+    "image": "vault-of-bones.png",
+    "description": "Pyramids of skulls, rivers of marrow. The Vault of Bones stores the essence of every soul the Lich King has devoured.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "You passed through corridors built from the dead. Faces frozen in agony stared from the walls.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Elira",
+        "lines": "He feeds on them… even now. The princess is among them — I can feel her cry out.",
+        "image": "elira"
+      },
+      {
+        "name": "Caelan",
+        "lines": "Then we carve our way through. For her. For all of them.",
+        "image": "caelan"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The dead stirred — not mindless, but *bound*. They begged for release with every strike.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Ogre Brute", "Lich Acolyte"]
+        "enemies": ["monster_blight_zombie", "monster_memory_wraith"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Ogre Brute"]
+        "enemies": ["monster_shadow_walker", "monster_lost_soul"]
       },
       {
         "type": "random",
-        "enemies": ["Lich King", "Lich Acolyte"]
+        "enemies": ["monster_bone_colossus", "monster_crimson_maggot"]
       }
     ]
   },
   {
     "stageNumber": 49,
-    "title": "Chapter 5: The Lich King's Domain - Stage 9",
-    "image": "throneroom-advance-5.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 10: The Throne of Ash - Stage 4",
+    "image": "crown-of-black-flame.png",
+    "description": "Before the throne lies the Crown of Black Flame — a sentient inferno, loyal only to its master.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "Black fire rose in a dome before the final ascent. It laughed without sound, hungry for defiance.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Garrick",
+        "lines": "That… thing. It’s not just fire. It’s hatred. A crown forged from his first war.",
+        "image": "garrick"
+      },
+      {
+        "name": "Elira",
+        "lines": "We snuff it out — or it becomes *our* crown.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The flames formed into knights of ash and shadow. The Crown would not surrender its place without a final inferno.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Lich Acolyte", "Fire Elemental"]
+        "enemies": ["monster_flame_knight", "monster_shadow_walker"]
       },
       {
         "type": "random",
-        "enemies": ["Frost Wraith", "Hellhound"]
+        "enemies": ["monster_ash_behemoth", "monster_crimson_maggot"]
       },
       {
-        "type": "random",
-        "enemies": ["Fire Elemental", "Ogre Brute"]
-      },
-      {
-        "type": "random",
-        "enemies": ["Hellhound", "Named Warrior Thrag"]
+        "type": "boss",
+        "enemies": [
+          "monster_black_flame_crown",
+          "monster_bone_colossus",
+          "monster_lost_soul"
+        ]
       }
     ]
   },
   {
     "stageNumber": 50,
-    "title": "Chapter 5: The Lich King's Domain - Stage 10",
-    "image": "final-battle-with-lich-king.png",
-    "description": "The final confrontation looms in a land scorched by death and fire.",
+    "expGain": 10,
+    "title": "Chapter 10: The Throne of Ash - Final Battle",
+    "image": "lich-king-throne.png",
+    "description": "At last, the Throne. The princess is bound in chains of grief. The Lich King rises, eyes burning with the end of all things.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The journey continues...",
-        "image": "narrator"
+        "lines": "The throne was carved from the corpses of kings. Upon it sat the Lich King, cloaked in despair, crowned by eternity.",
+        "image": ""
       },
       {
-        "name": "Hero",
-        "lines": "I must see this through, no matter the cost.",
-        "image": "hero"
+        "name": "Lich King",
+        "lines": "You have come far, little lights. But light cannot survive where time has died.",
+        "image": "lich_king"
+      },
+      {
+        "name": "Elira",
+        "lines": "You fear the light because it remembers who you once were. We will *remind* you.",
+        "image": "elira"
+      },
+      {
+        "name": "Narrator",
+        "lines": "The final battle began — soul against shadow, memory against oblivion. The fate of the world burned between them.",
+        "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["Ogre Brute", "Lich Acolyte"]
+        "enemies": ["monster_shadow_walker", "monster_lost_soul"]
       },
       {
         "type": "random",
-        "enemies": ["Hellhound", "Lich Acolyte"]
+        "enemies": ["monster_black_flame_crown", "monster_corrupted_guardian"]
       },
       {
-        "type": "random",
-        "enemies": ["Lich King", "Hellhound"]
+        "type": "boss",
+        "enemies": [
+          "monster_lich_king_final",
+          "monster_ash_behemoth",
+          "monster_memory_wraith"
+        ]
       }
     ]
   }

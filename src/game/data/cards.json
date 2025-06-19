@@ -57,7 +57,7 @@
     "cost": 1,
     "attack": 1,
     "health": 8,
-    "specialAbility": "None"
+    "specialAbility": "Healer"
   },
   {
     "id": "card_farm_guard",
@@ -204,9 +204,9 @@
     "name": "Silent Watcher",
     "description": "Keeps the night vigil without complaint or fear.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 6,
+    "cost": 2,
+    "attack": 3,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -214,9 +214,9 @@
     "name": "Garden Keeper",
     "description": "Tends to herbs and knows a thing or two about poisons.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 8,
+    "cost": 2,
+    "attack": 3,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -224,8 +224,8 @@
     "name": "Village Cobbler",
     "description": "Fixes boots—and occasionally bandits—with a heavy hammer.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
+    "cost": 2,
+    "attack": 4,
     "health": 7,
     "specialAbility": "None"
   },
@@ -234,7 +234,7 @@
     "name": "Hill Runner",
     "description": "Knows every rise and shortcut—vanishes as fast as they strike.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -244,7 +244,7 @@
     "name": "Bellringer",
     "description": "Rings alarms or skulls depending on the occasion.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 3,
     "health": 5,
     "specialAbility": "None"
@@ -254,7 +254,7 @@
     "name": "Ox Driver",
     "description": "Drives stubborn beasts, and sometimes bandits, with equal force.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -264,7 +264,7 @@
     "name": "Barrel Basher",
     "description": "Smashes casks and occasionally skulls when drunk enough.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 2,
     "health": 7,
     "specialAbility": "None"
@@ -274,7 +274,7 @@
     "name": "Sling Boy",
     "description": "A street kid with deadly aim and nothing to lose.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -284,7 +284,7 @@
     "name": "Faithful Herald",
     "description": "Delivers royal decrees under threat of steel and storm.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -294,7 +294,7 @@
     "name": "Quiet Herbalist",
     "description": "Treats wounds and raises eyebrows with mysterious teas.",
     "rarity": "Common",
-    "cost": 1,
+    "cost": 2,
     "attack": 1,
     "health": 8,
     "specialAbility": "None"
@@ -316,7 +316,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -326,7 +326,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 3,
-    "health": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -345,8 +345,8 @@
     "description": "A quiet priest of the lunar veil, adept in warding magics and subtle healing rituals.",
     "rarity": "Uncommon",
     "cost": 3,
-    "attack": 2,
-    "health": 4,
+    "attack": 3,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -356,7 +356,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -376,7 +376,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -385,8 +385,8 @@
     "description": "A disciplined martial artist whose sweeping glaive forms keep foes at bay with deadly precision.",
     "rarity": "Uncommon",
     "cost": 3,
-    "attack": 6,
-    "health": 12,
+    "attack": 7,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -399,14 +399,14 @@
     "health": 6,
     "specialAbility": "None"
   },
-    {
+  {
     "id": "card_blade_acolyte",
     "name": "Blade Acolyte",
     "description": "Trained in temple combat forms, swift and precise.",
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -426,7 +426,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 6,
-    "health": 12,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -446,7 +446,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -486,7 +486,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -506,7 +506,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 6,
-    "health": 12,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -525,7 +525,7 @@
     "description": "Communes with forest spirits to entangle and heal.",
     "rarity": "Uncommon",
     "cost": 3,
-    "attack": 2,
+    "attack": 4,
     "health": 4,
     "specialAbility": "None"
   },
@@ -536,7 +536,7 @@
     "rarity": "Uncommon",
     "cost": 3,
     "attack": 5,
-    "health": 10,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -649,7 +649,7 @@
     "health": 12,
     "specialAbility": "None"
   },
-    {
+  {
     "id": "card_ashbringer_knight",
     "name": "Ashbringer Knight",
     "description": "Rides into battle clad in scorched steel and fury.",
@@ -816,7 +816,7 @@
     "rarity": "Epic",
     "cost": 8,
     "attack": 9,
-    "health": 18,
+    "health": 25,
     "specialAbility": "None"
   },
   {
@@ -835,7 +835,7 @@
     "description": "Fleet-footed and sharp-eyed, strikes first and vanishes before enemies can retaliate.",
     "rarity": "Epic",
     "cost": 8,
-    "attack": 9,
+    "attack": 11,
     "health": 18,
     "specialAbility": "None"
   },
@@ -925,8 +925,8 @@
     "description": "Guardian of the sacred realm, wielding holy power to heal and protect.",
     "rarity": "Legendary",
     "cost": 12,
-    "attack": 14,
-    "health": 28,
+    "attack": 16,
+    "health": 38,
     "specialAbility": "None"
   },
   {
@@ -945,8 +945,8 @@
     "description": "A beacon of hope and justice, whose presence inspires allies to victory.",
     "rarity": "Legendary",
     "cost": 12,
-    "attack": 15,
-    "health": 30,
+    "attack": 18,
+    "health": 32,
     "specialAbility": "None"
   }
 ]

@@ -13,10 +13,11 @@ export default class ExplorationScene extends Phaser.Scene {
   private cards: Phaser.GameObjects.Image[] = [];
   private progressText!: Phaser.GameObjects.Text;
   private expText!: Phaser.GameObjects.Text;
-  private playerData: PlayerData = loadPlayerData();
+  private playerData: PlayerData;
   private cardManager: CardManager;
   private stages: Stage[];
   private currentStage: Stage;
+  private isFlippingCard: boolean = false;
 
   constructor() {
     super('ExplorationScene');
@@ -24,11 +25,10 @@ export default class ExplorationScene extends Phaser.Scene {
   }
 
   init() {
+    this.playerData = loadPlayerData();
     this.stageId = this.playerData.progress.currentStage;
     this.stepIndex = this.playerData.progress.currentStep;
-  }
-
-  preload() {
+    this.isFlippingCard = false;
     this.stages = stagesData.map(stage => ({
       ...stage,
       steps: stage.steps.map(step => ({
@@ -37,6 +37,22 @@ export default class ExplorationScene extends Phaser.Scene {
       }))
     }));
     this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+
+    console.log("ExplorationScene")
+    console.log("currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep + "; currentStage: " + this.playerData.progress.currentStage);
+
+
+    if (this.playerData.progress.currentStep >= this.currentStage.steps.length) {
+      console.log("moving to next stage because",this.playerData.progress.currentStep,this.currentStage.steps.length);
+      this.playerData.progress.currentStage += 1;
+      this.playerData.progress.currentStep = 0;
+      savePlayerData(this.playerData);
+      GlobalState.lastScene = 'AdventureScene';
+      this.scene.start('CardDropScene');
+    }
+  }
+
+  preload() {
     if (this.currentStage) {
       this.load.image('stage-bg', `assets/backgrounds/stages/${this.currentStage.image}`);
     }
@@ -60,7 +76,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     // Display progress bar
     const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
-    this.progressText = this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}%`, {
+    this.progressText = this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}% (step ${this.stepIndex+1} of ${this.currentStage.steps.length})`, {
       fontSize: '16px',
       color: '#ffffff'
     }).setDepth(2);
@@ -75,15 +91,15 @@ export default class ExplorationScene extends Phaser.Scene {
   }
 
   private showCardChoices() {
-    const spacing = 200;
+    const spacing = 220;
     const startX = this.scale.width / 2 - spacing;
 
     for (let i = 0; i < 3; i++) {
       const x = startX + i * spacing;
-      const card = this.add.image(x, this.scale.height - 500, 'card-back-adventure')
-      .setInteractive()
+      const card = this.add.image(x, this.scale.height - 600, 'card-back-adventure')
+      .setInteractive({ useHandCursor: true })
       .setOrigin(0.5)
-      .setScale(0.2)
+      .setScale(0.25)
       .setDepth(2);
 
       card.on('pointerdown', () => this.handleCardChoice(card));
@@ -103,7 +119,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
           this.tweens.add({
               targets: card,
-              scaleX: 0.2,
+              scaleX: 0.25,
               duration: 150,
               ease: 'Linear',
               onComplete: () => { 
@@ -115,16 +131,22 @@ export default class ExplorationScene extends Phaser.Scene {
   }
 
   private handleCardChoice(card: Phaser.GameObjects.Image) {
+    if (this.isFlippingCard) return;
+    this.isFlippingCard = true;
+    
     const rand = Math.random();
 
-    let outcome = 'rareDrop';
-    /*if (rand < 0.1) 
+    let outcome = 'continue';
+    if (rand < 0.1) 
       outcome = 'rareDrop';
-    else  if (rand < 0.5) 
+    else  if (rand < 0.6) 
       outcome = 'battle';
 
     if (this.stepIndex == this.currentStage.steps.length - 1)
-       outcome = 'battle'; */
+       outcome = 'battle';
+
+    if (this.currentStage.steps[this.stepIndex].type == StepType.Boss)
+       outcome = 'battle';
 
     let textureKey = '';
 
@@ -138,12 +160,18 @@ export default class ExplorationScene extends Phaser.Scene {
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
       this.stepIndex++;
+      this.playerData.currentExp += this.currentStage.expGain;
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
       this.playForwardMotionEffect();
     } else if (outcome === 'battle') {
       this.triggerAlarmEffect();
     } else {
+      this.stepIndex++;
+      this.playerData.currentExp += this.currentStage.expGain;
+      this.playerData.progress.currentStep = this.stepIndex;
+      savePlayerData(this.playerData);
+
       GlobalState.lastScene = this.scene.key;
       this.scene.start('CardDropScene');
     }
@@ -169,7 +197,10 @@ export default class ExplorationScene extends Phaser.Scene {
       alpha: 0,                 // Fade out
       duration: 1000,           // 1 second
       ease: 'Cubic.easeOut',
-      onComplete: () => bgZoom.destroy()
+      onComplete: () => {
+        bgZoom.destroy();
+        this.scene.restart();
+      }
     });
   }
 

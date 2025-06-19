@@ -1,9 +1,11 @@
 import Phaser from 'phaser';
-import { Card, CardFace, PlayerData, Rarity, SpecialAbility } from '../objects/objects';
-import { loadPlayerData } from '../utils/playerDataUtils';
+import stagesData from '../data/stages.json';
+import { Card, CardFace, PlayerData, Rarity, SpecialAbility, Stage, StepType } from '../objects/objects';
+import { loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
 import { renderPlayerCard, updateHealthOverlay } from '../utils/renderPlayerCard';
 import { MonsterManager } from '../objects/MonsterManager';
 import { CardManager } from '../objects/CardManager';
+import { GlobalState } from '../objects/globalState';
 
 type CombatCard = {
   id: string;
@@ -19,12 +21,15 @@ type CombatCard = {
 
 
 export default class CombatScene extends Phaser.Scene {
-  private playerData!: PlayerData;
+  private playerData: PlayerData;
   private cardManager!: CardManager;
   private monsterManager!: MonsterManager;
   private playerCards: CombatCard[] = [];
   private monsterCards: CombatCard[] = [];
   private cardScale = 0.17;
+  private currentStage: Stage;
+  private stageId!: number;
+  private stages: Stage[];
 
   constructor() {
     super("CombatScene");
@@ -34,7 +39,18 @@ export default class CombatScene extends Phaser.Scene {
     this.playerData = loadPlayerData();
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
+    this.stageId = this.playerData.progress.currentStage;
+    this.stages = stagesData.map(stage => ({
+      ...stage,
+      steps: stage.steps.map(step => ({
+        ...step,
+        type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
+      }))
+    }));
+    this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
 
+    this.load.image('stage-bg', `assets/backgrounds/stages/${this.currentStage.image}`);
+    this.add.image(0, 0, 'stage-bg').setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
     this.add.text(20, 20, 'Combat Phase', { fontSize: '32px', color: '#ffffff' });
 
     const centerX = this.scale.width / 2;
@@ -100,9 +116,9 @@ export default class CombatScene extends Phaser.Scene {
     }
 
     if (this.playerCards.every(c => !c || c.currentHealth <= 0)) {
-      console.log("Monsters win!");
+      this.showEndOverlay('defeat');
     } else if (this.monsterCards.every(c => !c || c.currentHealth <= 0)) {
-      console.log("Players win!");
+      this.showEndOverlay('victory');
     }
   }
 
@@ -279,4 +295,78 @@ export default class CombatScene extends Phaser.Scene {
       }
     });
   }
+
+  private showEndOverlay(result: 'victory' | 'defeat') {
+    const { width, height } = this.scale;
+
+    // Semi-transparent black background
+    const overlay = this.add.rectangle(0, 0, width, height, 0x000000, 0.8)
+      .setOrigin(0);
+
+    const title = this.add.text(width / 2, height / 2 - 100, result === 'victory' ? 'Victory!' : 'Defeat', {
+      fontSize: '48px',
+      color: '#ffffff',
+      fontStyle: 'bold'
+    }).setOrigin(0.5);
+
+    const messageText = result === 'victory'
+      ? "You’ve triumphed! Your tactics are improving. Press on to your next challenge!"
+      : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder.";
+
+    const message = this.add.text(width / 2, height / 2 - 40, messageText, {
+      fontSize: '20px',
+      color: '#dddddd',
+      wordWrap: { width: width * 0.8 }
+    }).setOrigin(0.5);
+
+    if (result === 'victory') {
+      // 2% card drop chance
+      if (Phaser.Math.Between(1, 100) <= 2) {
+        GlobalState.lastScene = this.scene.key;
+        this.scene.start('CardDropScene');
+        return;
+      }
+
+      const continueButton = this.add.text(width / 2, height / 2 + 60, 'Continue Adventure', {
+        fontSize: '24px',
+        color: '#00ffcc',
+        backgroundColor: '#222',
+        padding: { x: 20, y: 10 }
+      }).setOrigin(0.5).setInteractive();
+
+      continueButton.on('pointerdown', () => {
+        console.log("end combat, currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep);
+        this.playerData.currentExp += this.currentStage.expGain;
+        this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
+        savePlayerData(this.playerData);
+        console.log("end combat, new exp: " + this.playerData.currentExp + "; new step: " + this.playerData.progress.currentStep);
+        console.log("moving to ExplorationScene");
+        this.scene.start('ExplorationScene'); // Replace with your next scene
+      });
+
+    } else {
+      const retryButton = this.add.text(width / 2, height / 2 + 60, 'Fight Again', {
+        fontSize: '24px',
+        color: '#ff6666',
+        backgroundColor: '#222',
+        padding: { x: 20, y: 10 }
+      }).setOrigin(0.5).setInteractive();
+
+      retryButton.on('pointerdown', () => {
+        this.scene.restart();
+      });
+
+      const deckBuilderButton = this.add.text(width / 2, height / 2 + 120, 'Go to Deck Builder', {
+        fontSize: '20px',
+        color: '#66ccff',
+        backgroundColor: '#222',
+        padding: { x: 20, y: 10 }
+      }).setOrigin(0.5).setInteractive();
+
+      deckBuilderButton.on('pointerdown', () => {
+        this.scene.start('DeckBuilderScene');
+      });
+    }
+  }
+
 } 

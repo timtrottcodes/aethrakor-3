@@ -4,7 +4,7 @@ import { renderPlayerCard } from "../utils/renderPlayerCard";
 import { getMaxCardCost, loadPlayerData, savePlayerData } from "../utils/playerDataUtils";
 import { CardManager } from "../objects/CardManager";
 import { GlobalState } from '../objects/globalState';
-import { createFantasyButton } from "../utils/button";
+import { createFancyButton } from "../utils/button";
 
 export default class DeckBuilderScene extends Phaser.Scene {
   private playerData!: PlayerData;
@@ -41,7 +41,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    createFantasyButton(
+    createFancyButton(
       this,
       this.scale.width / 2,
       this.scale.height - 60,
@@ -51,11 +51,6 @@ export default class DeckBuilderScene extends Phaser.Scene {
           savePlayerData(this.playerData);
           this.closeDeckBuilderScene();
         }
-      },
-      {
-        fontSize: '20px',
-        origin: [1, 1],
-        enabled: true
       }
     );  
 

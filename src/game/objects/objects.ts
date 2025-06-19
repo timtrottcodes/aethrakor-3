@@ -49,6 +49,7 @@ export interface PlayerData {
 
 export interface Stage {
   stageNumber: number;
+  expGain: number;
   title: string;
   image: string;
   description: string;
