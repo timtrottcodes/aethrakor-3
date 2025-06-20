@@ -1,7 +1,7 @@
 import { Card, CardFace, Rarity } from "../objects/objects";
 
 const rarityColors: Record<Rarity, string> = {
-  [Rarity.Common]: "#ffffff",
+  [Rarity.Common]: "#cccccc",
   [Rarity.Uncommon]: "#00ff00",
   [Rarity.Rare]: "#3399ff",
   [Rarity.Epic]: "#aa00ff",
@@ -73,8 +73,6 @@ export function updateHealthOverlay(container: Phaser.GameObjects.Container, hea
   const overlay = container.getByName('healthOverlay') as Phaser.GameObjects.Rectangle;
   if (!overlay) return;
 
-  console.log(container);
-
   const healthOverlayHeight = container.height - (container.height * (healthPercent/100)); 
   const healthOverlayColor = 0x333333;
   overlay.height = healthOverlayHeight;
@@ -100,6 +98,8 @@ function renderCardFront(
   renderLevelBadge(scene, container, card, scale);
   renderRarityStars(scene, container, card, scale, width);
   renderNameBar(scene, container, card, scale, width, height);
+  renderAttackBadge(scene, container, card, scale, width, height);
+  renderHealthBadge(scene, container, card, scale, height);
   renderCardBorder(scene, container, scale, width, height, cornerRadius, card.rarity);
 }
 
@@ -111,47 +111,113 @@ function renderLevelBadge(
 ) {
   const levelX = 80 * scale;
   const levelY = 80 * scale;
-  const levelRadius = 80 * scale;
 
-  // Draw circle background
-  const levelBg = scene.add.graphics();
-  levelBg.fillStyle(0x000000, 0.5);
-  levelBg.fillCircle(levelX, levelY, levelRadius);
-  container.add(levelBg);
+  const backgroundfontSize = Math.max(120 * scale, 30);
+
+  // Create the text object
+  const levelBackground = scene.add
+    .text(levelX, levelY, '⬟', {
+      fontFamily: "Arial",
+      fontSize: `${backgroundfontSize}px`,
+      fontStyle: "bold"
+    })
+    .setOrigin(0.5);
+
+  scene.time.delayedCall(0, () => {
+    applyStyledGradient(levelBackground, rarityColors[card.rarity]);
+  });
+
+  container.add(levelBackground);
 
   // Draw cost text
-  const fontSize = Math.max(80 * scale, 18);
+  const levelfontSize = Math.max(70 * scale, 14);
   const levelText = scene.add
     .text(levelX, levelY, card.cost.toString(), {
       fontFamily: "Cinzel",
-      fontSize: `${fontSize}px`,
+      fontSize: `${levelfontSize}px`,
       fontStyle: `bold`,
-      color: "#ffffff",
-      stroke: '#000',
-      strokeThickness: 1,
+      color: "#111",
     })
     .setOrigin(0.5);
   container.add(levelText);
+}
 
-  // Add special ability icon if present
-  const abilityIcons: Record<string, string> = {
-    Taunt: '🛡',
-    Healer: '🌿',
-    DualStrike: '⚔',
-  };
+function renderHealthBadge(
+  scene: Phaser.Scene,
+  container: Phaser.GameObjects.Container,
+  card: Card,
+  scale: number,
+  height: number
+) {
+  const levelX = 80 * scale;
+  const levelY = (height * scale) - Math.max(80 * scale, 12);
 
-  const icon = abilityIcons[card.specialAbility];
-  if (icon) {
-    const iconText = scene.add.text(levelX, levelY - (levelRadius * 0.4), icon, {
+  const backgroundfontSize = Math.max(120 * scale, 21);
+  const levelBackground = scene.add
+    .text(levelX, levelY, '❤', {
       fontFamily: "Arial",
-      fontSize: `${Math.max(50 * scale, 12)}px`,
-      color: "#000000",
-      stroke: "#FFD700",
-      strokeThickness: 2,
-      align: "center",
-    }).setOrigin(0.5);
-    container.add(iconText);
-  }
+      fontSize: `${backgroundfontSize}px`,
+      fontStyle: `bold`,
+      color: '#000000'
+    })
+    .setOrigin(0.5);
+
+  scene.time.delayedCall(0, () => {
+    applyStyledGradient(levelBackground, '#ea2803');
+  });
+  container.add(levelBackground);
+
+  // Draw cost text
+  const levelfontSize = Math.max(70 * scale, 14);
+  const levelText = scene.add
+    .text(levelX, levelY, card.health.toString(), {
+      fontFamily: "Cinzel",
+      fontSize: `${levelfontSize}px`,
+      fontStyle: `bold`,
+      color: "#fff",
+    })
+    .setOrigin(0.5);
+  container.add(levelText);
+}
+
+function renderAttackBadge(
+  scene: Phaser.Scene,
+  container: Phaser.GameObjects.Container,
+  card: Card,
+  scale: number,
+  width: number,
+  height: number
+) {
+  const backgroundfontSize = Math.max(120 * scale, 21);
+
+  const levelX = (width * scale) - Math.max(80 * scale, 12);
+  const levelY = (height * scale) - Math.max(80 * scale, 12);
+
+  const levelBackground = scene.add
+    .text(levelX, levelY, '⛊', {
+      fontFamily: "Arial",
+      fontSize: `${backgroundfontSize}px`,
+      fontStyle: `bold`,
+      color: '#000'
+    })
+    .setOrigin(0.5);
+
+  scene.time.delayedCall(0, () => {
+    applyStyledGradient(levelBackground, '#627d4d');
+  });
+  container.add(levelBackground);
+
+  // Draw cost text
+  const levelfontSize = Math.max(70 * scale, 15);
+  const levelText = scene.add
+    .text(levelX, levelY, card.attack.toString(), {
+      fontFamily: "Cinzel",
+      fontSize: `${levelfontSize}px`,
+      fontStyle: `bold`,
+      color: "#fff"
+    })
+    .setOrigin(0.5);
+  container.add(levelText);
 }
 
 function renderRarityStars(
@@ -202,7 +268,7 @@ function renderNameBar(
   const nameBarYOffset = height * scale - nameBarHeight;
   const nameBarY = Math.max(nameBarYOffset, 36);
 
-  const fontSize = Math.max(40 * scale, 14);
+  const fontSize = Math.max(40 * scale, 12);
 
   const nameBar = scene.add.graphics();
   nameBar.fillStyle(0x000000, 0.6);
@@ -215,7 +281,7 @@ function renderNameBar(
       fontSize: `${fontSize}px`,
       color: "#ffffff",
       align: "center",
-      wordWrap: { width: width * scale - 20 },
+      wordWrap: { width: width * scale - 40 },
     })
     .setOrigin(0.5);
   container.add(nameText);
@@ -252,3 +318,56 @@ function getRarityStarCount(rarity: Rarity): number {
       return 1;
   }
 }
+
+function hexToRgb(hex: string): { r: number, g: number, b: number } {
+  hex = hex.replace('#', '');
+  const bigint = parseInt(hex, 16);
+  return {
+    r: (bigint >> 16) & 255,
+    g: (bigint >> 8) & 255,
+    b: bigint & 255
+  };
+}
+
+function rgbToRgbaString(r: number, g: number, b: number, a = 1): string {
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+function lighten(rgb: { r: number, g: number, b: number }, percent: number): string {
+  return rgbToRgbaString(
+    Math.min(255, rgb.r + 255 * percent),
+    Math.min(255, rgb.g + 255 * percent),
+    Math.min(255, rgb.b + 255 * percent)
+  );
+}
+
+function darken(rgb: { r: number, g: number, b: number }, percent: number): string {
+  return rgbToRgbaString(
+    Math.max(0, rgb.r - 255 * percent),
+    Math.max(0, rgb.g - 255 * percent),
+    Math.max(0, rgb.b - 255 * percent)
+  );
+}
+
+function applyStyledGradient(
+  textObj: Phaser.GameObjects.Text,
+  baseColor: string // hex like "#d8e1e7"
+) {
+  const ctx = textObj.canvas.getContext('2d')!;
+  const width = textObj.width;
+
+  const base = hexToRgb(baseColor);
+  const colorStart = lighten(base, 0.4);    // lightest
+  const colorMid1 = rgbToRgbaString(base.r, base.g, base.b); // base
+  const colorMid2 = darken(base, 0.2);    // subtle highlight
+  const colorEnd = darken(base, 0.05);      // darkest
+
+  const gradient = ctx.createLinearGradient(0, 0, width, 0);
+  gradient.addColorStop(0.0, colorStart);
+  gradient.addColorStop(0.5, colorMid1);
+  gradient.addColorStop(0.51, colorMid2);
+  gradient.addColorStop(1.0, colorEnd);
+
+  textObj.setFill(gradient);
+}
+
