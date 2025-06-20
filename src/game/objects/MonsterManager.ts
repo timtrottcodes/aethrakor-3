@@ -36,4 +36,20 @@ export class MonsterManager {
     return eligibleCards.slice(0, count);
   }
 
+  getRandomMonstersFromList(monsterIds: string[], count: number = 5): Card[] {
+    const selected: Card[] = [];
+    const available = [...monsterIds]; // clone to avoid mutating original array
+
+    for (let i = 0; i < count && available.length > 0; i++) {
+      const index = Phaser.Math.Between(0, available.length - 1);
+      const id = available.splice(index, 1)[0]; // remove selected ID
+      const card = this.cards.find(card => card.id === id);
+      if (card) {
+        selected.push({ ...card }); // return a shallow clone to avoid mutation
+      }
+    }
+
+    return selected;
+  }
+
 }

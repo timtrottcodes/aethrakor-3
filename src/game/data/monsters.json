@@ -5,48 +5,8 @@
     "description": "A sneaky goblin with sharp eyes and sharper teeth.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_skeleton",
-    "name": "Skeleton",
-    "description": "A rattling pile of bones with a rusty sword.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
+    "attack": 1,
     "health": 4,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_cave_bat",
-    "name": "Cave Bat",
-    "description": "Small and fast, with a high-pitched screech.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 2,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_swamp_rat",
-    "name": "Swamp Rat",
-    "description": "Carries more disease than danger.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_zombie",
-    "name": "Zombie",
-    "description": "Slow, dumb, but hard to put down.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -55,38 +15,8 @@
     "description": "A savage hyena-like warrior.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 3,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_forest_spider",
-    "name": "Forest Spider",
-    "description": "Camouflaged in the trees, waiting to pounce.",
-    "rarity": "Common",
-    "cost": 1,
     "attack": 2,
     "health": 4,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_imp",
-    "name": "Imp",
-    "description": "A mischievous firestarter from the underworld.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_grave_robber",
-    "name": "Grave Robber",
-    "description": "Uses trickery and speed to survive.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 3,
-    "health": 2,
     "specialAbility": "None"
   },
   {
@@ -95,18 +25,8 @@
     "description": "A hungry pack that strikes together.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_slime",
-    "name": "Slime",
-    "description": "Sticky and acidic, but mostly annoying.",
-    "rarity": "Common",
-    "cost": 1,
     "attack": 1,
-    "health": 6,
+    "health": 3,
     "specialAbility": "None"
   },
   {
@@ -115,18 +35,8 @@
     "description": "Snarling, fast, and vicious.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 2,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_dust_wraith",
-    "name": "Dust Wraith",
-    "description": "Barely corporeal, but still deadly.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 3,
-    "health": 2,
+    "attack": 1,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -135,7 +45,7 @@
     "description": "Steals more than your gold.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 3,
+    "attack": 2,
     "health": 3,
     "specialAbility": "None"
   },
@@ -156,17 +66,7 @@
     "rarity": "Common",
     "cost": 1,
     "attack": 1,
-    "health": 6,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_bone_crawler",
-    "name": "Bone Crawler",
-    "description": "Creeps across walls and ceilings.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 3,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -176,16 +76,6 @@
     "rarity": "Common",
     "cost": 1,
     "attack": 3,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_torch_bug",
-    "name": "Torch Bug",
-    "description": "Explodes in a flash when cornered.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
     "health": 2,
     "specialAbility": "None"
   },
@@ -209,6 +99,88 @@
     "health": 5,
     "specialAbility": "None"
   },
+
+  {
+    "id": "monster_cave_bat",
+    "name": "Cave Bat",
+    "description": "Small and fast, with a high-pitched screech.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 2,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_forest_spider",
+    "name": "Forest Spider",
+    "description": "Camouflaged in the trees, waiting to pounce.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_torch_bug",
+    "name": "Torch Bug",
+    "description": "Explodes in a flash when cornered.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 2,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_venom_spider",
+    "name": "Venom Spider",
+    "description": "Its bite weakens even the strongest.",
+    "rarity": "Uncommon",
+    "cost": 2,
+    "attack": 3,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_corrupted_sylvana",
+    "name": "Corrupted Sylvana",
+    "description": "Once a guardian spirit of the forest, now a vengeful wraith of thorns and decay.",
+    "rarity": "Uncommon",
+    "cost": 2,
+    "attack": 4,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_slime",
+    "name": "Slime",
+    "description": "Sticky and acidic, but mostly annoying.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_swamp_rat",
+    "name": "Swamp Rat",
+    "description": "Carries more disease than danger.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 1,
+    "health": 3,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_bone_crawler",
+    "name": "Bone Crawler",
+    "description": "Creeps across walls and ceilings.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 3,
+    "specialAbility": "None"
+  },
   {
     "id": "monster_dire_wolf",
     "name": "Dire Wolf",
@@ -220,9 +192,29 @@
     "specialAbility": "None"
   },
   {
+    "id": "monster_skeleton",
+    "name": "Skeleton",
+    "description": "A rattling pile of bones with a rusty sword.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
     "id": "monster_ghoul",
     "name": "Ghoul",
     "description": "Feasts on the flesh of the dead\u2014and the living.",
+    "rarity": "Uncommon",
+    "cost": 2,
+    "attack": 4,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_wight",
+    "name": "Wight",
+    "description": "Unliving and full of hatred.",
     "rarity": "Uncommon",
     "cost": 2,
     "attack": 4,
@@ -240,13 +232,44 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_carrion_drake",
-    "name": "Carrion Drake",
-    "description": "A scavenger dragon with acidic spit.",
-    "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 5,
-    "health": 3,
+    "id": "monster_bog_hag",
+    "name": "Bog Hag",
+    "description": "Casts curses and summons swamp beasts.",
+    "rarity": "Rare",
+    "cost": 3,
+    "attack": 4,
+    "health": 7,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_stormbound_general",
+    "name": "Stormbound General",
+    "description": "A ghostly warrior with a blade of frost.",
+    "rarity": "Rare",
+    "cost": 3,
+    "attack": 4,
+    "health": 8,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_zombie",
+    "name": "Zombie",
+    "description": "Slow, dumb, but hard to put down.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 5,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_grave_robber",
+    "name": "Grave Robber",
+    "description": "Uses trickery and speed to survive.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 2,
     "specialAbility": "None"
   },
   {
@@ -256,26 +279,6 @@
     "rarity": "Uncommon",
     "cost": 2,
     "attack": 4,
-    "health": 5,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_flame_wisp",
-    "name": "Flame Wisp",
-    "description": "A sentient ball of fire and fury.",
-    "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 5,
-    "health": 3,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_venom_spider",
-    "name": "Venom Spider",
-    "description": "Its bite weakens even the strongest.",
-    "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 3,
     "health": 5,
     "specialAbility": "None"
   },
@@ -290,23 +293,64 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_wight",
-    "name": "Wight",
-    "description": "Unliving and full of hatred.",
-    "rarity": "Uncommon",
-    "cost": 2,
+    "id": "monster_stone_golem",
+    "name": "Stone Golem",
+    "description": "Nearly immovable and incredibly strong.",
+    "rarity": "Rare",
+    "cost": 3,
     "attack": 4,
-    "health": 4,
+    "health": 8,
     "specialAbility": "None"
   },
   {
-    "id": "monster_minotaur",
-    "name": "Minotaur",
-    "description": "A brutal beast with a charging attack.",
+    "id": "monster_heretic_prince",
+    "name": "Heretic Prince",
+    "description": "Channels forbidden magics to drain life.",
     "rarity": "Rare",
     "cost": 3,
-    "attack": 6,
-    "health": 6,
+    "attack": 5,
+    "health": 5,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_imp",
+    "name": "Imp",
+    "description": "A mischievous firestarter from the underworld.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 2,
+    "health": 3,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_dust_wraith",
+    "name": "Dust Wraith",
+    "description": "Barely corporeal, but still deadly.",
+    "rarity": "Common",
+    "cost": 1,
+    "attack": 3,
+    "health": 2,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_carrion_drake",
+    "name": "Carrion Drake",
+    "description": "A scavenger dragon with acidic spit.",
+    "rarity": "Uncommon",
+    "cost": 2,
+    "attack": 5,
+    "health": 3,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_flame_wisp",
+    "name": "Flame Wisp",
+    "description": "A sentient ball of fire and fury.",
+    "rarity": "Uncommon",
+    "cost": 2,
+    "attack": 5,
+    "health": 3,
     "specialAbility": "None"
   },
   {
@@ -320,33 +364,13 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_spectral_knight",
-    "name": "Spectral Knight",
-    "description": "A ghostly warrior with a blade of frost.",
+    "id": "monster_minotaur",
+    "name": "Minotaur",
+    "description": "A brutal beast with a charging attack.",
     "rarity": "Rare",
     "cost": 3,
-    "attack": 5,
+    "attack": 6,
     "health": 6,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_bog_hag",
-    "name": "Bog Hag",
-    "description": "Casts curses and summons swamp beasts.",
-    "rarity": "Rare",
-    "cost": 3,
-    "attack": 4,
-    "health": 7,
-    "specialAbility": "None"
-  },
-  {
-    "id": "monster_stone_golem",
-    "name": "Stone Golem",
-    "description": "Nearly immovable and incredibly strong.",
-    "rarity": "Rare",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -360,16 +384,6 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_necromancer",
-    "name": "Necromancer",
-    "description": "Raises allies from fallen enemies.",
-    "rarity": "Rare",
-    "cost": 3,
-    "attack": 5,
-    "health": 4,
-    "specialAbility": "None"
-  },
-  {
     "id": "monster_blade_dancer",
     "name": "Blade Dancer",
     "description": "Fast, precise, and deadly in duels.",
@@ -380,13 +394,13 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_flame_elemental",
-    "name": "Flame Elemental",
-    "description": "Its touch ignites all it strikes.",
-    "rarity": "Rare",
-    "cost": 3,
+    "id": "monster_voidcaller",
+    "name": "Voidcaller",
+    "description": "Summons horrors from beyond the veil.",
+    "rarity": "Epic",
+    "cost": 4,
     "attack": 6,
-    "health": 4,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -400,6 +414,39 @@
     "specialAbility": "None"
   },
   {
+    "id": "monster_obsidian_knight",
+    "name": "Obsidian Knight",
+    "description": "His oath unbroken. His soul bound. He will not let anyone past.",
+    "rarity": "Epic",
+    "cost": 5,
+    "attack": 5,
+    "health": 5,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_necromancer",
+    "name": "Necromancer",
+    "description": "Raises allies from fallen enemies.",
+    "rarity": "Rare",
+    "cost": 3,
+    "attack": 5,
+    "health": 4,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_flame_elemental",
+    "name": "Flame Elemental",
+    "description": "Its touch ignites all it strikes.",
+    "rarity": "Rare",
+    "cost": 3,
+    "attack": 6,
+    "health": 4,
+    "specialAbility": "None"
+  },
+
+  {
     "id": "monster_dracolich",
     "name": "Dracolich",
     "description": "An undead dragon with arcane powers.",
@@ -409,16 +456,7 @@
     "health": 9,
     "specialAbility": "None"
   },
-  {
-    "id": "monster_voidcaller",
-    "name": "Voidcaller",
-    "description": "Summons horrors from beyond the veil.",
-    "rarity": "Epic",
-    "cost": 4,
-    "attack": 6,
-    "health": 8,
-    "specialAbility": "None"
-  },
+
   {
     "id": "monster_lich",
     "name": "Lich",
@@ -440,9 +478,9 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_frost_troll",
-    "name": "Frost Troll",
-    "description": "Immune to pain, and stronger in cold.",
+    "id": "monster_fire_troll",
+    "name": "Fire Troll",
+    "description": "Immune to pain, and stronger in fire.",
     "rarity": "Epic",
     "cost": 4,
     "attack": 6,
@@ -470,21 +508,73 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_hellhound_alpha",
-    "name": "Hellhound Alpha",
-    "description": "Leads its infernal kin into battle.",
+    "id": "monster_blood_queen",
+    "name": "Blood Queen",
+    "description": "Strikes from the shadows with deadly precision.",
+    "rarity": "Epic",
+    "cost": 4,
+    "attack": 5,
+    "health": 10,
+    "specialAbility": "None"
+  },
+
+  {
+    "id": "monster_chronarch",
+    "name": "Chronarch",
+    "description": "A being of glass and starlight.",
     "rarity": "Epic",
     "cost": 4,
     "attack": 8,
     "health": 5,
     "specialAbility": "None"
   },
+
   {
-    "id": "monster_shade_king",
-    "name": "Shade King",
-    "description": "Strikes from the shadows with deadly precision.",
+    "id": "monster_abyssal_crawler",
+    "name": "Abyssal Crawler",
+    "description": "A nightmarish creature with glistening limbs and a hunger for warm blood.",
+    "rarity": "Epic",
+    "cost": 5,
+    "attack": 7,
+    "health": 6,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_onyx_gargantuan",
+    "name": "Onyx Gargantuan",
+    "description": "A towering golem formed from compressed stone and fossilized remains.",
+    "rarity": "Epic",
+    "cost": 6,
+    "attack": 6,
+    "health": 10,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_void_tunneler",
+    "name": "Void Tunneler",
+    "description": "Burrows through rock and reality alike.",
     "rarity": "Epic",
     "cost": 4,
+    "attack": 9,
+    "health": 4,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_fungal_colossus",
+    "name": "Fungal Colossus",
+    "description": "A living cave of spores and decay.",
+    "rarity": "Epic",
+    "cost": 5,
+    "attack": 5,
+    "health": 9,
+    "specialAbility": "None"
+  },
+  {
+    "id": "monster_stone_maw_basilisk",
+    "name": "Stone Maw Basilisk",
+    "description": "With eyes that turn flesh to stone.",
+    "rarity": "Epic",
+    "cost": 6,
     "attack": 7,
     "health": 7,
     "specialAbility": "None"
@@ -499,6 +589,7 @@
     "health": 8,
     "specialAbility": "None"
   },
+
   {
     "id": "monster_balgrim_the_vile",
     "name": "Balgrim the Vile",
@@ -540,7 +631,7 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_xal\u2019zaroth",
+    "id": "monster_xalzaroth",
     "name": "Xal\u2019Zaroth",
     "description": "A shadow demon who devours hope and light.",
     "rarity": "Legendary",
@@ -549,6 +640,7 @@
     "health": 9,
     "specialAbility": "None"
   },
+
   {
     "id": "monster_ironfang_the_betrayer",
     "name": "Ironfang the Betrayer",
@@ -590,8 +682,8 @@
     "specialAbility": "None"
   },
   {
-    "id": "monster_the_nameless_king",
-    "name": "The Nameless King",
+    "id": "monster_lich_king_final",
+    "name": "The Lich King",
     "description": "His legend silences even the bravest.",
     "rarity": "Legendary",
     "cost": 5,

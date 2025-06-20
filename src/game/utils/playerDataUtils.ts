@@ -44,11 +44,20 @@ export function isValidCardSelection(level: number, selectedCards: Card[]): bool
   return totalCost <= maxCost;
 }
 
+export function grantPlayerExp(playerData: PlayerData, expGain: number) {
+  playerData.currentExp += expGain;
+  playerData.expToNextLevel -= expGain;
+  if (playerData.expToNextLevel <= 0) {
+    playerData.level++;
+    playerData.expToNextLevel = Math.floor((Math.pow(1.135, playerData.level + 1) - 1) * 1000);
+  }
+}
+
 function newPlayer() {
   const defaultPlayerData: PlayerData = {
     level: 1,
     currentExp: 0,
-    expToNextLevel: 100,
+    expToNextLevel: 175,
     collection: [],
     equippedCards: [],
     progress: {
@@ -59,7 +68,7 @@ function newPlayer() {
   };
 
   const cardManager = new CardManager();
-  const randomCards = cardManager.getRandomCardsByRarity(Rarity.Common, 8);
+  const randomCards = cardManager.getRandomCardsByRarity(Rarity.Common, 1, 8);
   defaultPlayerData.collection =  randomCards.map(card => card.id);
   const shuffled = Phaser.Utils.Array.Shuffle([...defaultPlayerData.collection]);
   defaultPlayerData.equippedCards = shuffled.slice(0, 5);

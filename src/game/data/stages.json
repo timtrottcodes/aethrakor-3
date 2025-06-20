@@ -1,7 +1,7 @@
 [
   {
     "stageNumber": 1,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 1: The Farm - Stage 1",
     "image": "farm-field.png",
     "description": "Our farmhand receives an unexpected royal summons.",
@@ -43,7 +43,7 @@
       },
       {
         "name": "Narrator",
-        "lines": "The next morning, Caelan gathered together a group of friends and headed out from the farm. The journey would span forests thick with wolves, mountains haunted by spirits, and deserts scorched by fire. But the message was clear—they were the last descendant of the Old Gods, and the world once again needed their power.",
+        "lines": "The next morning, Caelan gathered together a group of friends and headed out from the farm. The journey would span forests thick with wolves, mountains haunted by spirits, and deserts scorched by fire. But the message was clear-they were the last descendant of the Old Gods, and the world once again needed their power.",
         "image": ""
       }
     ],
@@ -53,12 +53,12 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
-          "monster_moss_golem"
+          "monster_moss_golem",
+          "monster_bandit_thug"
         ]
       },
       {
@@ -66,12 +66,12 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
-          "monster_moss_golem"
+          "monster_moss_golem",
+          "monster_bandit_thug"
         ]
       },
       {
@@ -79,12 +79,12 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
-          "monster_moss_golem"
+          "monster_moss_golem",
+          "monster_bandit_thug"
         ]
       },
       {
@@ -92,32 +92,33 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
-          "monster_moss_golem"
+          "monster_lizardkin_scout",
+          "monster_moss_golem",
+          "monster_bandit_thug"
         ]
       },
       {
-        "type": "battle",
+        "type": "boss",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
-          "monster_moss_golem"
+          "monster_moss_golem",
+          "monster_bandit_thug"
         ]
       }
     ]
   },
   {
     "stageNumber": 2,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 1: The Farm - Stage 2",
     "image": "farm-field-buildings.png",
     "description": "Caelan and friends leave the familiar fields behind as rumors of prowling beasts spread.",
@@ -149,7 +150,22 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_lizardkin_scout",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_lizardkin_scout",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -162,8 +178,9 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
+          "monster_lizardkin_scout",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
@@ -171,14 +188,29 @@
         ]
       },
       {
-        "type": "battle",
+        "type": "random",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_lizardkin_scout",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "boss",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
+          "monster_lizardkin_scout",
           "monster_shadow_rat",
           "monster_moss_golem"
         ]
@@ -187,7 +219,7 @@
   },
   {
     "stageNumber": 3,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 1: The Farm - Stage 3",
     "image": "farm-road.png",
     "description": "An ambush in the barley fields threatens to end the journey before it begins.",
@@ -204,7 +236,7 @@
       },
       {
         "name": "Narrator",
-        "lines": "Before they could react, shadows burst from the crop. Gnolls and goblins — too many for mere coincidence.",
+        "lines": "Before they could react, shadows burst from the crop. Gnolls and goblins - too many for mere coincidence.",
         "image": ""
       },
       {
@@ -219,7 +251,8 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_lizardkin_scout",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -232,24 +265,40 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
+          "monster_lizardkin_scout",
           "monster_lurking_thief",
           "monster_shadow_rat",
           "monster_moss_golem"
         ]
       },
       {
-        "type": "battle",
+        "type": "random",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lizardkin_scout",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "boss",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
+          "monster_lizardkin_scout",
           "monster_moss_golem"
         ]
       }
@@ -257,7 +306,7 @@
   },
   {
     "stageNumber": 4,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 1: The Farm - Stage 4",
     "image": "farm-woods-edge.png",
     "description": "At the edge of the farmland, ancient stone ruins whisper secrets of Caelan's heritage.",
@@ -269,12 +318,12 @@
       },
       {
         "name": "Elira",
-        "lines": "These stones are... older than the Kingdom. Look—this symbol. The same as on your scroll, Caelan.",
+        "lines": "These stones are... older than the Kingdom. Look-this symbol. The same as on your scroll, Caelan.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "As the sun set, a chill swept in. The ruins trembled. From the shadows came creatures twisted by old magic—guardians of something long forgotten.",
+        "lines": "As the sun set, a chill swept in. The ruins trembled. From the shadows came creatures twisted by old magic-guardians of something long forgotten.",
         "image": ""
       },
       {
@@ -288,8 +337,9 @@
         "type": "random",
         "enemies": [
           "monster_goblin_scout",
+          "monster_lizardkin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -302,7 +352,22 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lizardkin_scout",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_bandit_thug",
+          "monster_lizardkin_scout",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -311,15 +376,30 @@
         ]
       },
       {
-        "type": "battle",
+        "type": "random",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_lizardkin_scout",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "boss",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
           "monster_shadow_rat",
+          "monster_lizardkin_scout",
           "monster_moss_golem"
         ]
       }
@@ -327,7 +407,7 @@
   },
   {
     "stageNumber": 5,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 1: The Farm - Stage 5",
     "image": "farm-forest-border.png",
     "description": "A hobgoblin warlord blocks the final gate out of the farmland. A first true test of steel and spirit.",
@@ -339,7 +419,7 @@
       },
       {
         "name": "Caelan",
-        "lines": "We can't go around. This is their checkpoint. We go through—or turn back.",
+        "lines": "We can't go around. This is their checkpoint. We go through-or turn back.",
         "image": "caelan"
       },
       {
@@ -359,7 +439,8 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
+          "monster_lizardkin_scout",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -372,7 +453,7 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -385,7 +466,7 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -398,7 +479,7 @@
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -412,7 +493,7 @@
           "monster_hobgoblin",
           "monster_goblin_scout",
           "monster_gnoll_grunt",
-          "monster_imp",
+          "monster_bandit_thug",
           "monster_wolves",
           "monster_feral_dog",
           "monster_lurking_thief",
@@ -424,7 +505,7 @@
   },
   {
     "stageNumber": 6,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 2: The Woods - Stage 1",
     "image": "forest-path.png",
     "description": "The group steps into the Witherwood, where the air is heavy with enchantment and the trees whisper ancient curses.",
@@ -436,7 +517,7 @@
       },
       {
         "name": "Elira",
-        "lines": "The trees here are wrong. I can feel something watching… everywhere.",
+        "lines": "The trees here are wrong. I can feel something watching... everywhere.",
         "image": "elira"
       },
       {
@@ -453,21 +534,61 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_shadow_rat", "monster_forest_spider"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forest_wolf", "monster_ghost_apparition"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_goblin_scout", "monster_forest_witchling"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 7,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 2: The Woods - Stage 2",
     "image": "forest-clearing.png",
     "description": "An eerie clearing reveals a forgotten shrine to a goddess of dusk. The ground is littered with bones.",
@@ -479,7 +600,7 @@
       },
       {
         "name": "Caelan",
-        "lines": "Is this… a shrine? But to what?",
+        "lines": "Is this... a shrine? But to what?",
         "image": "caelan"
       },
       {
@@ -489,31 +610,80 @@
       },
       {
         "name": "Narrator",
-        "lines": "Bones surrounded the altar—animal, goblin, human. Something still claimed tribute here.",
+        "lines": "Bones surrounded the altar-animal, goblin, human. Something still claimed tribute here.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_forest_witchling", "monster_ghost_apparition"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_swamp_rat",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forest_spider", "monster_moss_golem"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_swamp_rat",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_rat", "monster_forest_wolf"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_slime",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_swamp_rat",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_swamp_rat",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 8,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 2: The Woods - Stage 3",
     "image": "forest-marsh.png",
-    "description": "The woods turn to bog as mists rise and illusions test the group’s resolve.",
+    "description": "The woods turn to bog as mists rise and illusions test the group's resolve.",
     "story": [
       {
         "name": "Narrator",
@@ -522,38 +692,87 @@
       },
       {
         "name": "Caelan",
-        "lines": "Did you see that? A woman in red just beyond those trees. Then—gone.",
+        "lines": "Did you see that? A woman in red just beyond those trees. Then-gone.",
         "image": "caelan"
       },
       {
         "name": "Garrick",
-        "lines": "I saw my mother. She died five winters ago. That wasn’t real, was it?",
+        "lines": "I saw my mother. She died five winters ago. That wasn't real, was it?",
         "image": "garrick"
       },
       {
         "name": "Narrator",
-        "lines": "The forest here didn’t just deceive the eyes—it hunted the mind. Phantasms rose from the fog, echoing the party’s darkest memories.",
+        "lines": "The forest here didn't just deceive the eyes-it hunted the mind. Phantasms rose from the fog, echoing the party's darkest memories.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_ghost_apparition", "monster_will_o_wisp"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_swamp_rat",
+          "monster_shadow_rat",
+          "monster_slime",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mire_serpent", "monster_forest_spider"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_swamp_rat",
+          "monster_slime",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_will_o_wisp", "monster_forest_witchling"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_slime",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_swamp_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider",
+          "monster_swamp_rat"
+        ]
       }
     ]
   },
   {
     "stageNumber": 9,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 2: The Woods - Stage 4",
     "image": "forest-ancient-tree.png",
     "description": "They reach the heart of the Witherwood: a colossal tree grown around a ruin. Something stirs beneath the roots.",
@@ -570,50 +789,101 @@
       },
       {
         "name": "Caelan",
-        "lines": "Do you feel that hum? Like… something breathing. Beneath us.",
+        "lines": "Do you feel that hum? Like... something breathing. Beneath us.",
         "image": "caelan"
       },
       {
         "name": "Narrator",
-        "lines": "Suddenly, rot burst from the roots—animated husks of long-dead forest guardians, corrupted by centuries of decay.",
+        "lines": "Suddenly, rot burst from the roots-animated husks of long-dead forest guardians, corrupted by centuries of decay.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_moss_golem", "monster_corrupted_dryad"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_slime",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_swamp_rat",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forest_witchling", "monster_ghost_apparition"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_slime",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_swamp_rat",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_rat", "monster_mire_serpent"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_slime",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_swamp_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_swamp_rat",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 10,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 2: The Woods - Stage 5",
     "image": "forest-foggy-clearing.png",
     "description": "A corrupted forest spirit reveals itself, guarding the only safe path out of the Witherwood.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "In the thickest part of the forest, the fog parted around a perfect circle of mushrooms and thorns. In the center hovered a being once divine—now decayed.",
+        "lines": "In the thickest part of the forest, the fog parted around a perfect circle of mushrooms and thorns. In the center hovered a being once divine-now decayed.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "That… was a forest guardian. But something’s poisoned it.",
+        "lines": "That... was a forest guardian. But something's poisoned it.",
         "image": "elira"
       },
       {
         "name": "Corrupted Sylvana",
-        "lines": "You do not belong here, mortals. This realm is mine again. You will not leave with your minds… or your lives.",
+        "lines": "You do not belong here, mortals. This realm is mine again. You will not leave with your minds... or your lives.",
         "image": "sylvana"
       },
       {
@@ -625,41 +895,101 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_forest_witchling", "monster_will_o_wisp"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_slime",
+          "monster_swamp_rat",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_moss_golem", "monster_ghost_apparition"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_slime",
+          "monster_swamp_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mire_serpent", "monster_corrupted_dryad"]
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_slime",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_swamp_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_slime",
+          "monster_feral_dog",
+          "monster_swamp_rat",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_corrupted_sylvana",
+          "monster_cave_bat",
           "monster_forest_spider",
-          "monster_will_o_wisp"
+          "monster_torch_bug",
+          "monster_swamp_rat",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
         ]
       }
     ]
   },
   {
     "stageNumber": 11,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 3: The Hills - Stage 1",
     "image": "hills-overlook.png",
-    "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don’t belong to the living.",
+    "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don't belong to the living.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "With the cursed forest behind them, Caelan's party entered a land of cold stone and wide skies. The hills rolled like waves — each peak hiding secrets.",
+        "lines": "With the cursed forest behind them, Caelan's party entered a land of cold stone and wide skies. The hills rolled like waves - each peak hiding secrets.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "The wind speaks in the old tongue… I don’t like it.",
+        "lines": "The wind speaks in the old tongue... I don't like it.",
         "image": "elira"
       },
       {
@@ -676,21 +1006,84 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_hill_raider", "monster_bone_raven"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_hill_wolf", "monster_ghost_warrior"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_stone_grub", "monster_spectral_archer"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 12,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 3: The Hills - Stage 2",
     "image": "hill-cairns.png",
     "description": "They stumble upon a grave field where ancient warriors once clashed. The dead do not rest easily here.",
@@ -702,12 +1095,12 @@
       },
       {
         "name": "Elira",
-        "lines": "These are war graves… this was a massacre site.",
+        "lines": "These are war graves... this was a massacre site.",
         "image": "elira"
       },
       {
         "name": "Caelan",
-        "lines": "Then tread lightly. Disturb nothing. Take only our memories, and—",
+        "lines": "Then tread lightly. Disturb nothing. Take only our memories, and-",
         "image": "caelan"
       },
       {
@@ -719,24 +1112,91 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_ghost_warrior", "monster_spectral_archer"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_bog_hag",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_raven", "monster_stone_grub"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_bog_hag",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_hill_wolf", "monster_hill_raider"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_bog_hag",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_bog_hag",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 13,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 3: The Hills - Stage 3",
     "image": "hill-canyon.png",
-    "description": "A narrow gorge offers shelter from the wind — and the perfect place for an ambush.",
+    "description": "A narrow gorge offers shelter from the wind - and the perfect place for an ambush.",
     "story": [
       {
         "name": "Narrator",
@@ -745,93 +1205,229 @@
       },
       {
         "name": "Garrick",
-        "lines": "I don’t like this. Nowhere to run. Nowhere to flank.",
+        "lines": "I don't like this. Nowhere to run. Nowhere to flank.",
         "image": "garrick"
       },
       {
         "name": "Elira",
-        "lines": "It’s too quiet. Something’s wrong—",
+        "lines": "It's too quiet. Something's wrong-",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "Raiders burst from the shadows, painted in blood and ash, blades drawn. They didn’t want coin. They wanted a kill.",
+        "lines": "Raiders burst from the shadows, painted in blood and ash, blades drawn. They didn't want coin. They wanted a kill.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_hill_raider", "monster_hill_raider"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_bog_hag",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_hill_raider", "monster_hill_wolf"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_bog_hag",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_spectral_archer", "monster_ghost_warrior"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_bog_hag",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_bog_hag",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_bog_hag",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 14,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 3: The Hills - Stage 4",
     "image": "hill-ancient-wall.png",
-    "description": "They find a crumbling stone wall — the remnants of a long-fallen kingdom. Something stirs behind the stones.",
+    "description": "They find a crumbling stone wall - the remnants of a long-fallen kingdom. Something stirs behind the stones.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Massive blocks of stone jutted from the hillside — the skeletal remains of a forgotten citadel. Moss crept through runes carved in a dead language.",
+        "lines": "Massive blocks of stone jutted from the hillside - the skeletal remains of a forgotten citadel. Moss crept through runes carved in a dead language.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "These aren’t just ruins. This was a fortress… guarding something.",
+        "lines": "These aren't just ruins. This was a fortress... guarding something.",
         "image": "caelan"
       },
       {
         "name": "Elira",
-        "lines": "The earth here is cursed. I feel pain… grief… rage trapped under the stones.",
+        "lines": "The earth here is cursed. I feel pain... grief... rage trapped under the stones.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "From beneath the wall, armored skeletons rose — their eyes glowing with hate centuries old.",
+        "lines": "From beneath the wall, armored skeletons rose - their eyes glowing with hate centuries old.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_ghost_warrior", "monster_bone_raven"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_bog_hag",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_stone_grub", "monster_spectral_archer"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_bog_hag",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_hill_raider", "monster_hill_wolf"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_bog_hag",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_bog_hag",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_bog_hag",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 15,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 3: The Hills - Stage 5",
     "image": "hill-storm.png",
-    "description": "A brutal storm crashes through the hills — and with it comes a legendary warrior long believed to be dead.",
+    "description": "A brutal storm crashes through the hills - and with it comes a legendary warrior long believed to be dead.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Black clouds rolled in unnaturally fast. Lightning struck the hills, and with each flash, a ghostly figure stood atop a stone mound — closer with every strike.",
+        "lines": "Black clouds rolled in unnaturally fast. Lightning struck the hills, and with each flash, a ghostly figure stood atop a stone mound - closer with every strike.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "That’s no living man. That’s the Stormbound General. He died a hundred years ago.",
+        "lines": "That's no living man. That's the Stormbound General. He died a hundred years ago.",
         "image": "elira"
       },
       {
@@ -841,35 +1437,100 @@
       },
       {
         "name": "Stormbound General",
-        "lines": "I fell with honor… but no peace. You trespass upon my tomb, and now you’ll lie beside me.",
+        "lines": "I fell with honor... but no peace. You trespass upon my tomb, and now you'll lie beside me.",
         "image": "stormbound_general"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_hill_raider", "monster_spectral_archer"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_bog_hag",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_ghost_warrior", "monster_bone_raven"]
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_bog_hag",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_bog_hag",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_bog_hag",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_stormbound_general",
-          "monster_hill_wolf",
-          "monster_spectral_archer"
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_feral_dog",
+          "monster_bog_hag",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_venom_spider"
         ]
       }
     ]
   },
   {
     "stageNumber": 16,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 1",
     "image": "cracked-road.png",
-    "description": "The remnants of an imperial road stretch before the party — shattered stone lined with dead trees and forgotten bones.",
+    "description": "The remnants of an imperial road stretch before the party - shattered stone lined with dead trees and forgotten bones.",
     "story": [
       {
         "name": "Narrator",
@@ -878,7 +1539,7 @@
       },
       {
         "name": "Caelan",
-        "lines": "This road led to the capital of the old empire. Nothing’s traveled it in years.",
+        "lines": "This road led to the capital of the old empire. Nothing's traveled it in years.",
         "image": "caelan"
       },
       {
@@ -890,33 +1551,101 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_cracked_wraith", "monster_dust_hound"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forgotten_sentinel", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_dust_hound", "monster_withered_knight"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 17,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 2",
     "image": "collapsed-bridge.png",
     "description": "A collapsed bridge spans a dry riverbed. Crossing it draws the attention of something that does not belong in the mortal world.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The bridge groaned under their weight, even though much of it had long since fallen. Shadows moved below… though no water flowed.",
+        "lines": "The bridge groaned under their weight, even though much of it had long since fallen. Shadows moved below... though no water flowed.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "There’s… something below us. It sees us.",
+        "lines": "There's... something below us. It sees us.",
         "image": "elira"
       },
       {
@@ -926,28 +1655,96 @@
       },
       {
         "name": "Narrator",
-        "lines": "The dead beneath the bridge rose to meet them — still shackled to the stone in undeath.",
+        "lines": "The dead beneath the bridge rose to meet them - still shackled to the stone in undeath.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_dust_hound", "monster_forgotten_sentinel"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_cracked_wraith", "monster_forgotten_sentinel"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 18,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 3",
     "image": "abandoned-village.png",
     "description": "The road passes through a dead village. Doors hang open, but nothing moves. That is, until night falls.",
@@ -959,12 +1756,12 @@
       },
       {
         "name": "Garrick",
-        "lines": "This wasn’t abandoned. It was purged.",
+        "lines": "This wasn't abandoned. It was purged.",
         "image": "garrick"
       },
       {
         "name": "Elira",
-        "lines": "There’s magic here. I feel a ritual burned into the stones.",
+        "lines": "There's magic here. I feel a ritual burned into the stones.",
         "image": "elira"
       },
       {
@@ -976,38 +1773,106 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_dust_hound", "monster_forgotten_sentinel"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_cracked_wraith", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 19,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 4",
     "image": "broken-statue.png",
-    "description": "Statues of ancient emperors line the road — each shattered, each face defaced. One remains intact… and it breathes.",
+    "description": "Statues of ancient emperors line the road - each shattered, each face defaced. One remains intact... and it breathes.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Headless statues watched from the roadside. Long ago, they glorified forgotten rulers — now they stood like silent mourners.",
+        "lines": "Headless statues watched from the roadside. Long ago, they glorified forgotten rulers - now they stood like silent mourners.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "These weren’t toppled by war. This was deliberate. A cleansing of history.",
+        "lines": "These weren't toppled by war. This was deliberate. A cleansing of history.",
         "image": "caelan"
       },
       {
         "name": "Elira",
-        "lines": "One still stands… and it’s watching us.",
+        "lines": "One still stands... and it's watching us.",
         "image": "elira"
       },
       {
@@ -1019,24 +1884,92 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_forgotten_sentinel", "monster_withered_knight"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_cracked_wraith", "monster_dust_hound"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forgotten_sentinel", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 20,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 5",
     "image": "sunken-temple.png",
-    "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire’s final secret.",
+    "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire's final secret.",
     "story": [
       {
         "name": "Narrator",
@@ -1045,49 +1978,114 @@
       },
       {
         "name": "Elira",
-        "lines": "This temple was dedicated to the sun… but something dark has claimed it now.",
+        "lines": "This temple was dedicated to the sun... but something dark has claimed it now.",
         "image": "elira"
       },
       {
         "name": "Caelan",
-        "lines": "Someone’s inside. I feel it. He’s been waiting.",
+        "lines": "Someone's inside. I feel it. He's been waiting.",
         "image": "caelan"
       },
       {
         "name": "Heretic Prince",
-        "lines": "The empire fell, and I remain. I am its last son — its executioner. You will not pass.",
+        "lines": "The empire fell, and I remain. I am its last son - its executioner. You will not pass.",
         "image": "heretic_prince"
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_withered_knight", "monster_cracked_wraith"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_forgotten_sentinel", "monster_dust_hound"]
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_heretic_prince",
-          "monster_cracked_wraith",
-          "monster_forgotten_sentinel"
+          "monster_zombie",
+          "monster_bone_crawler",
+          "monster_dire_wolf",
+          "monster_skeleton",
+          "monster_ghoul",
+          "monster_wight",
+          "monster_tomb_guardian",
+          "monster_grave_robber",
+          "monster_bandit_leader",
+          "monster_troll_spawn",
+          "monster_stone_golem"
         ]
       }
     ]
   },
   {
     "stageNumber": 21,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 5: The Wastelands - Stage 1",
     "image": "blighted-plains.png",
     "description": "The fertile earth gives way to blackened dust and skeletal trees. The wind tastes of ash. The Wastelands begin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The sky dimmed as if choked by unseen smoke. The Wastelands stretched before them — a dead land where nothing thrived.",
+        "lines": "The sky dimmed as if choked by unseen smoke. The Wastelands stretched before them - a dead land where nothing thrived.",
         "image": ""
       },
       {
@@ -1097,33 +2095,81 @@
       },
       {
         "name": "Elira",
-        "lines": "Magic clings here, but it’s wrong. Poisoned. Every step burns.",
+        "lines": "Magic clings here, but it's wrong. Poisoned. Every step burns.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "The dust stirred… and the cursed remnants of the war stirred with it.",
+        "lines": "The dust stirred... and the cursed remnants of the war stirred with it.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blighted_soldier", "monster_dust_wraith"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_withered_knight"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_blighted_soldier"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 22,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 5: The Wastelands - Stage 2",
     "image": "ashen-fissure.png",
     "description": "A deep fissure cuts across the land. Crossing it requires passing over a brittle, bone-laced bridge watched by unseen eyes.",
@@ -1135,7 +2181,7 @@
       },
       {
         "name": "Garrick",
-        "lines": "That’s not stone holding that together. That’s skulls… and something’s watching us from below.",
+        "lines": "That's not stone holding that together. That's skulls... and something's watching us from below.",
         "image": "garrick"
       },
       {
@@ -1147,33 +2193,81 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_dust_wraith", "monster_withered_knight"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_bone_mage"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_blighted_soldier", "monster_dust_wraith"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 23,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 5: The Wastelands - Stage 3",
     "image": "corrupted-oasis.png",
     "description": "An oasis appears amidst the ruin, impossibly green. But the water is black and the trees whisper lies.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "In the heart of the blight, green shimmered. Trees, flowers, water — untouched. But the smell was wrong. Too sweet. Too still.",
+        "lines": "In the heart of the blight, green shimmered. Trees, flowers, water - untouched. But the smell was wrong. Too sweet. Too still.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "Illusion. No… worse. It’s real, but corrupted. Something is feeding on us.",
+        "lines": "Illusion. No... worse. It's real, but corrupted. Something is feeding on us.",
         "image": "elira"
       },
       {
@@ -1183,31 +2277,79 @@
       },
       {
         "name": "Narrator",
-        "lines": "The trees screamed as they burned. And from the dark water came those who had drunk the poison… and changed.",
+        "lines": "The trees screamed as they burned. And from the dark water came those who had drunk the poison... and changed.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_corrupted_dryad", "monster_blighted_soldier"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_corrupted_dryad"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_corrupted_dryad", "monster_dust_wraith"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 24,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 5: The Wastelands - Stage 4",
     "image": "ruined-outpost.png",
-    "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard — unaware they died long ago.",
+    "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard - unaware they died long ago.",
     "story": [
       {
         "name": "Narrator",
@@ -1216,36 +2358,84 @@
       },
       {
         "name": "Caelan",
-        "lines": "This was a border post. These men defended the realm once…",
+        "lines": "This was a border post. These men defended the realm once...",
         "image": "caelan"
       },
       {
         "name": "Narrator",
-        "lines": "The sound of armor creaked from within. Dust-covered soldiers turned hollow eyes toward the intruders — blades raised.",
+        "lines": "The sound of armor creaked from within. Dust-covered soldiers turned hollow eyes toward the intruders - blades raised.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blighted_soldier", "monster_withered_knight"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_dust_wraith", "monster_bone_mage"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_withered_knight", "monster_blighted_soldier"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 25,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 5: The Wastelands - Stage 5",
     "image": "black-spire.png",
-    "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries — and never once fallen.",
+    "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries - and never once fallen.",
     "story": [
       {
         "name": "Narrator",
@@ -1259,7 +2449,7 @@
       },
       {
         "name": "Garrick",
-        "lines": "And something’s guarding it. I can hear its breath. Still alive after all these years?",
+        "lines": "And something's guarding it. I can hear its breath. Still alive after all these years?",
         "image": "garrick"
       },
       {
@@ -1271,37 +2461,82 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_dust_wraith"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_blighted_soldier", "monster_withered_knight"]
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
-          "monster_black_oath_knight",
-          "monster_bone_mage",
-          "monster_dust_wraith"
+          "monster_obsidian_knight",
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
         ]
       }
     ]
   },
   {
     "stageNumber": 26,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 6: The Bleeding Crags - Stage 1",
     "image": "crimson-cliffs.png",
     "description": "The ground turns jagged, veins of red stone pulsing like a heartbeat beneath the earth. You've entered the Bleeding Crags.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The cliffs bled. Not metaphorically — red ichor oozed from cracks in the rock. The ground pulsed like something alive… or dying.",
+        "lines": "The cliffs bled. Not metaphorically - red ichor oozed from cracks in the rock. The ground pulsed like something alive... or dying.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "This place was a temple once. Now it’s a wound — kept open by ritual and sacrifice.",
+        "lines": "This place was a temple once. Now it's a wound - kept open by ritual and sacrifice.",
         "image": "elira"
       },
       {
@@ -1311,31 +2546,84 @@
       },
       {
         "name": "Narrator",
-        "lines": "The stone responded — birthing guardians made of blood and rage.",
+        "lines": "The stone responded - birthing guardians made of blood and rage.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_crag_bloodspawn", "monster_crimson_watcher"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_crag_bloodspawn", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 27,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 6: The Bleeding Crags - Stage 2",
     "image": "shrine-of-screams.png",
-    "description": "An ancient shrine stands defiled — once a place of healing, now echoing with the cries of blood offerings.",
+    "description": "An ancient shrine stands defiled - once a place of healing, now echoing with the cries of blood offerings.",
     "story": [
       {
         "name": "Narrator",
@@ -1344,12 +2632,12 @@
       },
       {
         "name": "Garrick",
-        "lines": "The rocks are screaming. You hear that? They’re not just cursed — they remember.",
+        "lines": "The rocks are screaming. You hear that? They're not just cursed - they remember.",
         "image": "garrick"
       },
       {
         "name": "Elira",
-        "lines": "They made pacts here… old ones. And someone’s keeping them alive.",
+        "lines": "They made pacts here... old ones. And someone's keeping them alive.",
         "image": "elira"
       },
       {
@@ -1361,21 +2649,74 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_fleshbound_ritualist", "monster_crag_bloodspawn"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_fleshbound_ritualist", "monster_crag_bloodspawn"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 28,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 6: The Bleeding Crags - Stage 3",
     "image": "bone-ledges.png",
     "description": "The path narrows to knife-edged ledges, where the wind howls with lost voices and skeletal remains stir underfoot.",
@@ -1392,28 +2733,81 @@
       },
       {
         "name": "Narrator",
-        "lines": "The mountain heaved. From cracks in the path, twisted remnants clawed their way out — failed offerings that still hungered.",
+        "lines": "The mountain heaved. From cracks in the path, twisted remnants clawed their way out - failed offerings that still hungered.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_crag_bloodspawn", "monster_crimson_watcher"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_crag_bloodspawn"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_fleshbound_ritualist", "monster_dust_wraith"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 29,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 6: The Bleeding Crags - Stage 4",
     "image": "ritual-pit.png",
     "description": "A massive pit glows with crimson runes. Echoes of chants and screams spill from below. A ritual is underway.",
@@ -1425,7 +2819,7 @@
       },
       {
         "name": "Elira",
-        "lines": "They’re calling something. If we let it finish, the Wastelands will spread.",
+        "lines": "They're calling something. If we let it finish, the Wastelands will spread.",
         "image": "elira"
       },
       {
@@ -1442,33 +2836,86 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_crag_bloodspawn", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_crimson_watcher", "monster_crag_bloodspawn"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_bone_mage", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 30,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 6: The Bleeding Crags - Stage 5",
     "image": "throne-of-veins.png",
-    "description": "At the peak lies the Throne of Veins — a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",
+    "description": "At the peak lies the Throne of Veins - a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "A monstrous throne sculpted from veins, flesh, and bone loomed before them. Upon it sat the Blood Queen — mother of rituals, priestess of decay.",
+        "lines": "A monstrous throne sculpted from veins, flesh, and bone loomed before them. Upon it sat the Blood Queen - mother of rituals, priestess of decay.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "She’s not mortal. Not anymore. Her magic twists life itself.",
+        "lines": "She's not mortal. Not anymore. Her magic twists life itself.",
         "image": "elira"
       },
       {
@@ -1478,78 +2925,181 @@
       },
       {
         "name": "Narrator",
-        "lines": "The Blood Queen rose, bleeding from every pore. The mountain shuddered — her children stirred — and battle was joined.",
+        "lines": "The Blood Queen rose, bleeding from every pore. The mountain shuddered - her children stirred - and battle was joined.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_crimson_watcher", "monster_fleshbound_ritualist"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_crag_bloodspawn", "monster_bone_mage"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_blood_queen",
-          "monster_crimson_watcher",
-          "monster_crag_bloodspawn"
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
         ]
       }
     ]
   },
   {
     "stageNumber": 31,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 1",
     "image": "shattered-dunes.png",
     "description": "Sand becomes glass underfoot. Shards of reality reflect not just light, but memory. The Glass Wastes begin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The dunes shimmered like broken mirrors. The wind didn't howl — it whispered voices from other times.",
+        "lines": "The dunes shimmered like broken mirrors. The wind didn't howl - it whispered voices from other times.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "This place was destroyed by magic. Nothing here is stable — not even time.",
+        "lines": "This place was destroyed by magic. Nothing here is stable - not even time.",
         "image": "caelan"
       },
       {
         "name": "Elira",
-        "lines": "I see echoes of people who never lived. They're walking… beside us.",
+        "lines": "I see echoes of people who never lived. They're walking... beside us.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "Shards rose into shapes, mimicking warriors of the past — crystalized memories turned hostile.",
+        "lines": "Shards rose into shapes, mimicking warriors of the past - crystalized memories turned hostile.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_glass_echo", "monster_time_phantom"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shardling", "monster_glass_echo"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mirage_knight", "monster_glass_echo"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 32,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 2",
     "image": "fractured-temple.png",
-    "description": "A once-great temple lies splintered in the sands — fragments of its time scattered across reality.",
+    "description": "A once-great temple lies splintered in the sands - fragments of its time scattered across reality.",
     "story": [
       {
         "name": "Narrator",
@@ -1563,122 +3113,281 @@
       },
       {
         "name": "Elira",
-        "lines": "These distortions… they’re feeding something. A being that lives between seconds.",
+        "lines": "These distortions... they're feeding something. A being that lives between seconds.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "Mirage guardians stepped from frozen echoes — glass helms, sandsteel blades, and no shadows beneath them.",
+        "lines": "Mirage guardians stepped from frozen echoes - glass helms, sandsteel blades, and no shadows beneath them.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_mirage_knight", "monster_shardling"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_glass_echo", "monster_time_phantom"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mirage_knight", "monster_glass_echo"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 33,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 3",
     "image": "crystal-canyon.png",
     "description": "The canyon walls pulse with prismatic light, refracting moments you haven't lived. Something is watching through the shards.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Each canyon wall held glimpses of other paths — victories, failures, lives unlived. A thousand possibilities, none real.",
+        "lines": "Each canyon wall held glimpses of other paths - victories, failures, lives unlived. A thousand possibilities, none real.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "If I hesitate… I become one of them. A reflection. A ghost of a choice I didn't make.",
+        "lines": "If I hesitate... I become one of them. A reflection. A ghost of a choice I didn't make.",
         "image": "caelan"
       },
       {
         "name": "Elira",
-        "lines": "The echoes are sentient. Some… remember being real.",
+        "lines": "The echoes are sentient. Some... remember being real.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "Time phantoms erupted from the canyon — each a distorted version of something you once were… or might become.",
+        "lines": "Time phantoms erupted from the canyon - each a distorted version of something you once were... or might become.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_time_phantom", "monster_glass_echo"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mirage_knight", "monster_shardling"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_time_phantom", "monster_glass_echo"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 34,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 4",
     "image": "sunken-refraction.png",
     "description": "Beneath a shifting dune lies a city trapped in a time loop. It restarts every hour, unaware of its own doom.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The sunken city breathed in loops. Every hour, it collapsed — and rose again. Citizens screamed, rebuilt, forgot. Endlessly.",
+        "lines": "The sunken city breathed in loops. Every hour, it collapsed - and rose again. Citizens screamed, rebuilt, forgot. Endlessly.",
         "image": ""
       },
       {
         "name": "Garrick",
-        "lines": "They’re not alive. But they don’t know that.",
+        "lines": "They're not alive. But they don't know that.",
         "image": "garrick"
       },
       {
         "name": "Elira",
-        "lines": "A Chronarch is buried here. Its anchor holds this nightmare together. Break it — or be caught in the loop forever.",
+        "lines": "A Chronarch is buried here. Its anchor holds this nightmare together. Break it - or be caught in the loop forever.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "The loop resisted — unleashing its guardians made of frozen moments and burning sand.",
+        "lines": "The loop resisted - unleashing its guardians made of frozen moments and burning sand.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_glass_echo", "monster_time_phantom"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mirage_knight", "monster_shardling"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_loop_guardian", "monster_time_phantom"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 35,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 5",
     "image": "heart-of-glass.png",
-    "description": "In the heart of the Wastes rises a crystalline tower. At its peak, the Chronarch awaits — master of fractured time.",
+    "description": "In the heart of the Wastes rises a crystalline tower. At its peak, the Chronarch awaits - master of fractured time.",
     "story": [
       {
         "name": "Narrator",
@@ -1687,7 +3396,7 @@
       },
       {
         "name": "Elira",
-        "lines": "He’s not bound by time. He *is* time. Or what’s left of it.",
+        "lines": "He's not bound by time. He *is* time. Or what's left of it.",
         "image": "elira"
       },
       {
@@ -1697,44 +3406,94 @@
       },
       {
         "name": "Narrator",
-        "lines": "The Chronarch descended — a being of glass and starlight. With every blow, the world cracked a little more.",
+        "lines": "The Chronarch descended - a being of glass and starlight. With every blow, the world cracked a little more.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_time_phantom", "monster_mirage_knight"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_glass_echo", "monster_shardling"]
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_chronarch",
-          "monster_time_phantom",
-          "monster_loop_guardian"
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
         ]
       }
     ]
   },
   {
     "stageNumber": 36,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 1",
     "image": "descent-chasm.png",
-    "description": "The sky vanishes. You descend into the earth’s breathless core, past roots older than nations and echoes older than time.",
+    "description": "The sky vanishes. You descend into the earth's breathless core, past roots older than nations and echoes older than time.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The light thinned, the air thickened. What began as a cave became a wound in the world — leading only down.",
+        "lines": "The light thinned, the air thickened. What began as a cave became a wound in the world - leading only down.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "There's no wind… no life. Even magic feels muted.",
+        "lines": "There's no wind... no life. Even magic feels muted.",
         "image": "caelan"
       },
       {
@@ -1744,28 +3503,81 @@
       },
       {
         "name": "Narrator",
-        "lines": "Movement. Shadows writhing on the walls — not from your torchlight. Something else moves here, unseen.",
+        "lines": "Movement. Shadows writhing on the walls - not from your torchlight. Something else moves here, unseen.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_fungal_host", "monster_mind_worm"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       }
     ]
   },
   {
     "stageNumber": 37,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 2",
     "image": "fungal-sanctum.png",
     "description": "A forest of bioluminescent fungi pulses with sickly light. It breathes. And it's watching.",
@@ -1782,45 +3594,98 @@
       },
       {
         "name": "Garrick",
-        "lines": "Then stop listening. We don’t need another parasite in our heads.",
+        "lines": "Then stop listening. We don't need another parasite in our heads.",
         "image": "garrick"
       },
       {
         "name": "Narrator",
-        "lines": "From beneath the glowing stalks, creatures rose — part man, part fungus, all wrong.",
+        "lines": "From beneath the glowing stalks, creatures rose - part man, part fungus, all wrong.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_fungal_host", "monster_mind_worm"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_deep_crawler", "monster_shade_stalker"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_fungal_host", "monster_flesh_bloom"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       }
     ]
   },
   {
     "stageNumber": 38,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 3",
     "image": "underground-river.png",
-    "description": "A river of black water flows through a tomb of bones. The ferry waits — but the price is not coin.",
+    "description": "A river of black water flows through a tomb of bones. The ferry waits - but the price is not coin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "The river hissed, refusing to reflect anything real. The ferry awaited — its pilot eyeless, mouthless, timeless.",
+        "lines": "The river hissed, refusing to reflect anything real. The ferry awaited - its pilot eyeless, mouthless, timeless.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "He wants… memories. Yours. Mine. Whoever rides forgets who they were.",
+        "lines": "He wants... memories. Yours. Mine. Whoever rides forgets who they were.",
         "image": "caelan"
       },
       {
@@ -1830,31 +3695,84 @@
       },
       {
         "name": "Narrator",
-        "lines": "Something old stirred beneath the water — guardians of memory, protectors of the toll.",
+        "lines": "Something old stirred beneath the water - guardians of memory, protectors of the toll.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_memory_wraith", "monster_shade_stalker"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_deep_crawler", "monster_mind_worm"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_memory_wraith", "monster_fungal_host"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       }
     ]
   },
   {
     "stageNumber": 39,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 4",
     "image": "forgotten-vaults.png",
-    "description": "Doors sealed with runes older than empires creak open. Inside — the lost knowledge of ancient gods, and the things that guard it.",
+    "description": "Doors sealed with runes older than empires creak open. Inside - the lost knowledge of ancient gods, and the things that guard it.",
     "story": [
       {
         "name": "Narrator",
@@ -1868,7 +3786,7 @@
       },
       {
         "name": "Caelan",
-        "lines": "These guards aren’t beasts. They’re ideas… made flesh.",
+        "lines": "These guards aren't beasts. They're ideas... made flesh.",
         "image": "caelan"
       },
       {
@@ -1880,28 +3798,81 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_flesh_bloom", "monster_memory_wraith"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shade_stalker", "monster_deep_crawler"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_mind_worm", "monster_fungal_host"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       }
     ]
   },
   {
     "stageNumber": 40,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 5",
     "image": "abyssal-core.png",
-    "description": "At the deepest point lies a throne of black stone — and the Watcher Below, an ancient horror sealed in dreamless sleep.",
+    "description": "At the deepest point lies a throne of black stone - and the Watcher Below, an ancient horror sealed in dreamless sleep.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "No footsteps echoed here. Sound died before it reached your ears. And in the center of nothing… it slept.",
+        "lines": "No footsteps echoed here. Sound died before it reached your ears. And in the center of nothing... it slept.",
         "image": ""
       },
       {
@@ -1923,28 +3894,78 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_flesh_bloom", "monster_memory_wraith"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shade_stalker", "monster_mind_worm"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
-          "monster_watcher_below",
-          "monster_memory_wraith",
-          "monster_deep_crawler"
+          "monster_onyx_gargantuan",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct"
         ]
       }
     ]
   },
   {
     "stageNumber": 41,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 1",
     "image": "withered-plain.png",
-    "description": "You emerge into a broken world. The sky bleeds violet, and the ground cracks with every step. Life has fled — or become something worse.",
+    "description": "You emerge into a broken world. The sky bleeds violet, and the ground cracks with every step. Life has fled - or become something worse.",
     "story": [
       {
         "name": "Narrator",
@@ -1953,12 +3974,12 @@
       },
       {
         "name": "Elira",
-        "lines": "This is where the Lich King's shadow first touched the world. Everything it touched died — and stayed.",
+        "lines": "This is where the Lich King's shadow first touched the world. Everything it touched died - and stayed.",
         "image": "elira"
       },
       {
         "name": "Caelan",
-        "lines": "No… not died. *Changed*. This place remembers pain.",
+        "lines": "No... not died. *Changed*. This place remembers pain.",
         "image": "caelan"
       },
       {
@@ -1970,64 +3991,168 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blight_zombie", "monster_crimson_maggot"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_blight_zombie"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_crimson_maggot", "monster_deadroot_beast"]
+        "type": "boss",
+        "enemies": [
+          "monster_balgrim_the_vile",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 42,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 2",
     "image": "field-of-hollows.png",
-    "description": "Once a city, now a graveyard. The spirits here wear the faces of your loved ones — and they want you to stay.",
+    "description": "Once a city, now a graveyard. The spirits here wear the faces of your loved ones - and they want you to stay.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Empty houses stared back at you, windows like dead eyes. The streets whispered old names… yours among them.",
+        "lines": "Empty houses stared back at you, windows like dead eyes. The streets whispered old names... yours among them.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "I see… my brother. But he died years ago. This is a trap.",
+        "lines": "I see... my brother. But he died years ago. This is a trap.",
         "image": "caelan"
       },
       {
         "name": "Elira",
-        "lines": "They’re echoes — stolen from us. The Lich King uses our grief against us.",
+        "lines": "They're echoes - stolen from us. The Lich King uses our grief against us.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "Phantoms emerged, each one a twisted memory, fighting not to destroy you — but to make you *forget* yourself.",
+        "lines": "Phantoms emerged, each one a twisted memory, fighting not to destroy you - but to make you *forget* yourself.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_lost_soul", "monster_shadow_walker"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_memory_wraith", "monster_blight_zombie"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_lost_soul", "monster_crimson_maggot"]
+        "type": "boss",
+        "enemies": [
+          "monster_zarael_the_flameborn",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 43,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 3",
     "image": "twisted-forest.png",
     "description": "A forest petrified mid-scream. Branches like claws. Roots like veins. And things that hunt without eyes.",
@@ -2044,33 +4169,85 @@
       },
       {
         "name": "Elira",
-        "lines": "The forest watches. Every step we take becomes harder. The roots… they feed on our doubt.",
+        "lines": "The forest watches. Every step we take becomes harder. The roots... they feed on our doubt.",
         "image": "elira"
       },
       {
         "name": "Narrator",
-        "lines": "With a sound like tearing skin, the forest let loose its guardians — beasts carved from rot and sorrow.",
+        "lines": "With a sound like tearing skin, the forest let loose its guardians - beasts carved from rot and sorrow.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_deadroot_beast", "monster_blight_zombie"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_crimson_maggot"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_deadroot_beast", "monster_lost_soul"]
+        "type": "boss",
+        "enemies": [
+          "monster_thornshade_the_eternal",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 44,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 4",
     "image": "corrupted-shrine.png",
     "description": "A holy site, long defiled. Black flames flicker where once stood candles of prayer. Something still lingers within the sanctum.",
@@ -2087,80 +4264,180 @@
       },
       {
         "name": "Caelan",
-        "lines": "A guardian remains… not loyal, not alive — but bound.",
+        "lines": "A guardian remains... not loyal, not alive - but bound.",
         "image": "caelan"
       },
       {
         "name": "Narrator",
-        "lines": "A corrupted seraph stepped forward — wings burned away, voice broken by countless betrayals. It would not let you pass.",
+        "lines": "A corrupted seraph stepped forward - wings burned away, voice broken by countless betrayals. It would not let you pass.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_blight_zombie"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_lost_soul", "monster_crimson_maggot"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_deadroot_beast", "monster_corrupted_seraph"]
+        "type": "boss",
+        "enemies": [
+          "monster_korthax_the_unchained",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 45,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 5",
     "image": "throne-of-roots.png",
-    "description": "At the center of the Blight lies the Heartroot, pulsing with stolen souls. Its guardian: a creature birthed of the Lich King’s first sin.",
+    "description": "At the center of the Blight lies the Heartroot, pulsing with stolen souls. Its guardian: a creature birthed of the Lich King's first sin.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "You came upon a vast open pit — at its center, the Heartroot pulsed, each throb leaking black mist into the skies.",
+        "lines": "You came upon a vast open pit - at its center, the Heartroot pulsed, each throb leaking black mist into the skies.",
         "image": ""
       },
       {
         "name": "Elira",
-        "lines": "That’s no natural heart… it’s a prison for thousands of souls. And it's *awake*.",
+        "lines": "That's no natural heart... it's a prison for thousands of souls. And it's *awake*.",
         "image": "elira"
       },
       {
         "name": "Caelan",
-        "lines": "The Guardian knows we're here. It was made to stop us — and it won’t stop bleeding until we do.",
+        "lines": "The Guardian knows we're here. It was made to stop us - and it won't stop bleeding until we do.",
         "image": "caelan"
       },
       {
         "name": "Narrator",
-        "lines": "From within the roots, something massive stirred — not beast, not god, but something far worse: a mistake made manifest.",
+        "lines": "From within the roots, something massive stirred - not beast, not god, but something far worse: a mistake made manifest.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blight_zombie", "monster_deadroot_beast"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_corrupted_seraph"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
-          "monster_heartroot_guardian",
-          "monster_lost_soul",
-          "monster_crimson_maggot"
+          "monster_xalzaroth",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
         ]
       }
     ]
   },
   {
     "stageNumber": 46,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 1",
     "image": "ashen-gate.png",
     "description": "At the edge of the broken world stands a gate forged from bone and sorrow. It only opens for those who carry both.",
@@ -2172,7 +4449,7 @@
       },
       {
         "name": "Garrick",
-        "lines": "Once we cross, there’s no turning back. This gate opens *into* death, not out of it.",
+        "lines": "Once we cross, there's no turning back. This gate opens *into* death, not out of it.",
         "image": "garrick"
       },
       {
@@ -2182,40 +4459,92 @@
       },
       {
         "name": "Narrator",
-        "lines": "From the gate’s shadows, twisted sentinels rose — former heroes, now enslaved to undeath.",
+        "lines": "From the gate's shadows, twisted sentinels rose - former heroes, now enslaved to undeath.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blight_zombie", "monster_lost_soul"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_corrupted_guardian", "monster_shadow_walker"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_deadroot_beast", "monster_crimson_maggot"]
+        "type": "boss",
+        "enemies": [
+          "monster_ironfang_the_betrayer",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 47,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 2",
     "image": "hall-of-echoes.png",
-    "description": "An endless hall of obsidian mirrors reflects not your form — but your failures. Here, the mind breaks before the body.",
+    "description": "An endless hall of obsidian mirrors reflects not your form - but your failures. Here, the mind breaks before the body.",
     "story": [
       {
         "name": "Narrator",
-        "lines": "Each step echoed a thousand regrets. The mirrors whispered your worst fears back at you… in your own voice.",
+        "lines": "Each step echoed a thousand regrets. The mirrors whispered your worst fears back at you... in your own voice.",
         "image": ""
       },
       {
         "name": "Caelan",
-        "lines": "They show me when I fled… when I failed. They want me to kneel before I ever see him.",
+        "lines": "They show me when I fled... when I failed. They want me to kneel before I ever see him.",
         "image": "caelan"
       },
       {
@@ -2225,28 +4554,80 @@
       },
       {
         "name": "Narrator",
-        "lines": "Illusions coalesced into deadly forms — figments given hunger by the Lich King's will.",
+        "lines": "Illusions coalesced into deadly forms - figments given hunger by the Lich King's will.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_mirror_doppelganger", "monster_lost_soul"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_crimson_maggot"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_corrupted_guardian", "monster_memory_wraith"]
+        "type": "boss",
+        "enemies": [
+          "monster_maelgrin_doomcaller",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 48,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 3",
     "image": "vault-of-bones.png",
     "description": "Pyramids of skulls, rivers of marrow. The Vault of Bones stores the essence of every soul the Lich King has devoured.",
@@ -2258,7 +4639,7 @@
       },
       {
         "name": "Elira",
-        "lines": "He feeds on them… even now. The princess is among them — I can feel her cry out.",
+        "lines": "He feeds on them... even now. The princess is among them - I can feel her cry out.",
         "image": "elira"
       },
       {
@@ -2268,31 +4649,83 @@
       },
       {
         "name": "Narrator",
-        "lines": "The dead stirred — not mindless, but *bound*. They begged for release with every strike.",
+        "lines": "The dead stirred - not mindless, but *bound*. They begged for release with every strike.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_blight_zombie", "monster_memory_wraith"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_lost_soul"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
-        "type": "random",
-        "enemies": ["monster_bone_colossus", "monster_crimson_maggot"]
+        "type": "boss",
+        "enemies": [
+          "monster_ashurak_the_wrathful",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       }
     ]
   },
   {
     "stageNumber": 49,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 4",
     "image": "crown-of-black-flame.png",
-    "description": "Before the throne lies the Crown of Black Flame — a sentient inferno, loyal only to its master.",
+    "description": "Before the throne lies the Crown of Black Flame - a sentient inferno, loyal only to its master.",
     "story": [
       {
         "name": "Narrator",
@@ -2301,12 +4734,12 @@
       },
       {
         "name": "Garrick",
-        "lines": "That… thing. It’s not just fire. It’s hatred. A crown forged from his first war.",
+        "lines": "That... thing. It's not just fire. It's hatred. A crown forged from his first war.",
         "image": "garrick"
       },
       {
         "name": "Elira",
-        "lines": "We snuff it out — or it becomes *our* crown.",
+        "lines": "We snuff it out - or it becomes *our* crown.",
         "image": "elira"
       },
       {
@@ -2318,25 +4751,73 @@
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_flame_knight", "monster_shadow_walker"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_ash_behemoth", "monster_crimson_maggot"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
-          "monster_black_flame_crown",
+          "monster_velmora_the_cruel",
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
           "monster_bone_colossus",
-          "monster_lost_soul"
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
         ]
       }
     ]
   },
   {
     "stageNumber": 50,
-    "expGain": 10,
+    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Final Battle",
     "image": "lich-king-throne.png",
     "description": "At last, the Throne. The princess is bound in chains of grief. The Lich King rises, eyes burning with the end of all things.",
@@ -2358,25 +4839,73 @@
       },
       {
         "name": "Narrator",
-        "lines": "The final battle began — soul against shadow, memory against oblivion. The fate of the world burned between them.",
+        "lines": "The final battle began - soul against shadow, memory against oblivion. The fate of the world burned between them.",
         "image": ""
       }
     ],
     "steps": [
       {
         "type": "random",
-        "enemies": ["monster_shadow_walker", "monster_lost_soul"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "random",
-        "enemies": ["monster_black_flame_crown", "monster_corrupted_guardian"]
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
       },
       {
         "type": "boss",
         "enemies": [
           "monster_lich_king_final",
-          "monster_ash_behemoth",
-          "monster_memory_wraith"
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
         ]
       }
     ]

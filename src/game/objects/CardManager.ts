@@ -22,12 +22,13 @@ export class CardManager {
 
   getRandomCardsByRarity(
     rarity: Rarity,
+    cost: number,
     count: number,
     excludeIds: string[] = []
   ): Card[] {
     // Filter cards by rarity and excludeIds
     const eligibleCards = this.cards.filter(
-      (card) => card.rarity === rarity && !excludeIds.includes(card.id)
+      (card) => card.rarity === rarity && card.cost === cost && !excludeIds.includes(card.id)
     );
 
     // Shuffle the eligible cards

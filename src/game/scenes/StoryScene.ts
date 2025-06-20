@@ -18,10 +18,13 @@ export default class StoryScene extends Phaser.Scene {
     this.playerData = loadPlayerData();
     this.stages = stagesData.map(stage => ({
       ...stage,
-      steps: stage.steps.map(step => ({
-        ...step,
-        type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
-      }))
+      steps: stage.steps.map(step => {
+        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
+        return {
+          ...step,
+          type: StepType[formattedType as keyof typeof StepType]
+        };
+      })
     }));
     this.storyIndex = 0;
     this.currentStage = this.stages.find(s => s.stageNumber === this.playerData.progress.currentStage)!;
@@ -71,7 +74,7 @@ export default class StoryScene extends Phaser.Scene {
       fontFamily: "Cinzel, serif",
       fontSize: '22px',
       color: '#ffffff',
-      wordWrap: { width: 600 },
+      wordWrap: { width: 500 },
       padding: { x: 20, y: 20 },
     });
 

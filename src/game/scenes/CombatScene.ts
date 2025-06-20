@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import stagesData from '../data/stages.json';
-import { Card, CardFace, PlayerData, Rarity, SpecialAbility, Stage, StepType } from '../objects/objects';
-import { loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
+import { Card, CardFace, PlayerData, Rarity, SpecialAbility, Stage, StepItem, StepType } from '../objects/objects';
+import { grantPlayerExp, loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
 import { renderPlayerCard, updateHealthOverlay } from '../utils/renderPlayerCard';
 import { MonsterManager } from '../objects/MonsterManager';
 import { CardManager } from '../objects/CardManager';
@@ -42,10 +42,13 @@ export default class CombatScene extends Phaser.Scene {
     this.stageId = this.playerData.progress.currentStage;
     this.stages = stagesData.map(stage => ({
       ...stage,
-      steps: stage.steps.map(step => ({
-        ...step,
-        type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
-      }))
+      steps: stage.steps.map(step => {
+        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
+        return {
+          ...step,
+          type: StepType[formattedType as keyof typeof StepType]
+        };
+      })
     }));
     this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
 
@@ -54,25 +57,69 @@ export default class CombatScene extends Phaser.Scene {
     this.add.text(20, 20, 'Combat Phase', { fontSize: '32px', color: '#ffffff' });
 
     const centerX = this.scale.width / 2;
-    const spacing = 140;
+    let spacing = 140;
 
     // Generate monsters
-    const monsterData = this.monsterManager.getRandomCardsByRarity(Rarity.Common, 5);
-    this.monsterCards = monsterData.map((card, i) => {
-      const x = centerX - (2 * spacing) + (i * spacing) - 65;
-      const y = 120;
-      const sprite = renderPlayerCard(this, card, x, y, this.cardScale, CardFace.Front);
-      return {
-        id: card.id,
-        name: card.name,
-        sprite,
-        baseAttack: card.attack,
-        maxHealth: card.health,
-        currentHealth: card.health,
-        isPlayer: false,
-        specialAbility: SpecialAbility[card.specialAbility]
-      };
-    });
+    let monsterData: Card[] = [];
+    const currentStep = this.currentStage.steps[this.playerData.progress.currentStep];
+    
+    console.log(currentStep);
+
+    if (currentStep.type == StepType.Boss) {
+      const bossId = currentStep.enemies.shift();
+      const bossCard = this.monsterManager.getById(bossId!);
+      monsterData = this.monsterManager.getRandomMonstersFromList(currentStep.enemies, 4);
+      monsterData.splice(2, 0, bossCard!);
+    } else {
+      monsterData = this.monsterManager.getRandomMonstersFromList(currentStep.enemies);
+    }
+
+    if (currentStep.type == StepType.Boss) {
+      spacing = 130; 
+      this.monsterCards = monsterData.map((card, i) => {
+        // Base position calculation
+        let x = centerX - (2 * spacing) + (i * spacing) - 65;
+        const y = 120;
+
+        // Determine scale
+        const isBoss = i === 2;
+        const scale = isBoss ? this.cardScale + 0.01 : this.cardScale - 0.01;
+
+        // Optional: Offset boss card slightly to keep spacing consistent
+        if (isBoss) {
+          x += 30; // Shift boss card slightly right to compensate
+        }
+
+        const sprite = renderPlayerCard(this, card, x, y, scale, CardFace.Front);
+
+        return {
+          id: card.id,
+          name: card.name,
+          sprite,
+          baseAttack: card.attack,
+          maxHealth: card.health,
+          currentHealth: card.health,
+          isPlayer: false,
+          specialAbility: SpecialAbility[card.specialAbility]
+        };
+      });
+    } else {
+      this.monsterCards = monsterData.map((card, i) => {
+        const x = centerX - (2 * spacing) + (i * spacing) - 65;
+        const y = 120;
+        const sprite = renderPlayerCard(this, card, x, y, this.cardScale, CardFace.Front);
+        return {
+          id: card.id,
+          name: card.name,
+          sprite,
+          baseAttack: card.attack,
+          maxHealth: card.health,
+          currentHealth: card.health,
+          isPlayer: false,
+          specialAbility: SpecialAbility[card.specialAbility]
+        };
+      });
+    }
 
     // Player cards
     this.playerCards = this.playerData.equippedCards.map((cardId, i) => {
@@ -335,12 +382,9 @@ export default class CombatScene extends Phaser.Scene {
       }).setOrigin(0.5).setInteractive();
 
       continueButton.on('pointerdown', () => {
-        console.log("end combat, currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep);
-        this.playerData.currentExp += this.currentStage.expGain;
+        grantPlayerExp(this.playerData, this.currentStage.expGain * 1.5)
         this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
         savePlayerData(this.playerData);
-        console.log("end combat, new exp: " + this.playerData.currentExp + "; new step: " + this.playerData.progress.currentStep);
-        console.log("moving to ExplorationScene");
         this.scene.start('ExplorationScene'); // Replace with your next scene
       });
 

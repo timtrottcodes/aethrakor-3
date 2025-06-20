@@ -2,7 +2,7 @@
 import Phaser from 'phaser';
 import stagesData from '../data/stages.json';
 import { CardFace, PlayerData, Stage, StepType } from '../objects/objects';
-import { loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
+import { grantPlayerExp, loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
 import { CardManager } from '../objects/CardManager';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { GlobalState } from '../objects/globalState';
@@ -31,19 +31,17 @@ export default class ExplorationScene extends Phaser.Scene {
     this.isFlippingCard = false;
     this.stages = stagesData.map(stage => ({
       ...stage,
-      steps: stage.steps.map(step => ({
-        ...step,
-        type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
-      }))
+      steps: stage.steps.map(step => {
+        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
+        return {
+          ...step,
+          type: StepType[formattedType as keyof typeof StepType]
+        };
+      })
     }));
     this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
 
-    console.log("ExplorationScene")
-    console.log("currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep + "; currentStage: " + this.playerData.progress.currentStage);
-
-
     if (this.playerData.progress.currentStep >= this.currentStage.steps.length) {
-      console.log("moving to next stage because",this.playerData.progress.currentStep,this.currentStage.steps.length);
       this.playerData.progress.currentStage += 1;
       this.playerData.progress.currentStep = 0;
       savePlayerData(this.playerData);
@@ -76,12 +74,14 @@ export default class ExplorationScene extends Phaser.Scene {
 
     // Display progress bar
     const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
-    this.progressText = this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}% (step ${this.stepIndex+1} of ${this.currentStage.steps.length})`, {
+    this.progressText = this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}%`, {
+      fontFamily: "Cinzel, serif",
       fontSize: '16px',
       color: '#ffffff'
     }).setDepth(2);
 
     this.expText = this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
+      fontFamily: "Cinzel, serif",
       fontSize: '16px',
       color: '#ffffff'
     }).setDepth(2);
@@ -160,7 +160,7 @@ export default class ExplorationScene extends Phaser.Scene {
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
       this.stepIndex++;
-      this.playerData.currentExp += this.currentStage.expGain;
+      grantPlayerExp(this.playerData, this.currentStage.expGain);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
       this.playForwardMotionEffect();
@@ -168,7 +168,7 @@ export default class ExplorationScene extends Phaser.Scene {
       this.triggerAlarmEffect();
     } else {
       this.stepIndex++;
-      this.playerData.currentExp += this.currentStage.expGain;
+      grantPlayerExp(this.playerData, this.currentStage.expGain);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
 

@@ -21,18 +21,18 @@ export default class AdventureScene extends Phaser.Scene {
   async preload() {
     this.stages = stagesData.map(stage => ({
       ...stage,
-      steps: stage.steps.map(step => ({
-        ...step,
-        type: StepType[step.type as keyof typeof StepType]  // Convert string to enum
-      }))
+      steps: stage.steps.map(step => {
+        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
+        return {
+          ...step,
+          type: StepType[formattedType as keyof typeof StepType]
+        };
+      })
     }));
 
     this.playerData = loadPlayerData();
 
     if (this.playerData) {
-      console.log("AdventureScene")
-      console.log("currentExp: " + this.playerData.currentExp + "; current step: " + this.playerData.progress.currentStep + "; currentStage: " + this.playerData.progress.currentStage);
-
       const currentStageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
       const stageImage = `bg_stage_${currentStageGroup}`;
       this.load.image(stageImage, `assets/backgrounds/${stageImage}.png`);
