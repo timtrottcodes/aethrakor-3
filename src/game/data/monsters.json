@@ -5,7 +5,7 @@
     "description": "A sneaky goblin with sharp eyes and sharper teeth.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 1,
+    "attack": 2,
     "health": 4,
     "specialAbility": "None"
   },
@@ -15,7 +15,7 @@
     "description": "A savage hyena-like warrior.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
+    "attack": 3,
     "health": 4,
     "specialAbility": "None"
   },
@@ -25,7 +25,7 @@
     "description": "A hungry pack that strikes together.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 1,
+    "attack": 2,
     "health": 3,
     "specialAbility": "None"
   },
@@ -35,8 +35,8 @@
     "description": "Snarling, fast, and vicious.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 1,
-    "health": 4,
+    "attack": 2,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -45,7 +45,7 @@
     "description": "Steals more than your gold.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
+    "attack": 3,
     "health": 3,
     "specialAbility": "None"
   },
@@ -55,8 +55,8 @@
     "description": "Moves quickly through the darkness.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 2,
+    "attack": 3,
+    "health": 3,
     "specialAbility": "None"
   },
   {
@@ -65,7 +65,7 @@
     "description": "Slow, moss-covered, and stubborn.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 1,
+    "attack": 2,
     "health": 5,
     "specialAbility": "None"
   },
@@ -76,7 +76,7 @@
     "rarity": "Common",
     "cost": 1,
     "attack": 3,
-    "health": 2,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -86,7 +86,7 @@
     "rarity": "Common",
     "cost": 1,
     "attack": 3,
-    "health": 2,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -96,7 +96,7 @@
     "rarity": "Uncommon",
     "cost": 2,
     "attack": 4,
-    "health": 5,
+    "health": 9,
     "specialAbility": "None"
   },
 
@@ -106,8 +106,8 @@
     "description": "Small and fast, with a high-pitched screech.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 1,
-    "health": 2,
+    "attack": 4,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -116,8 +116,8 @@
     "description": "Camouflaged in the trees, waiting to pounce.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 4,
+    "attack": 5,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -126,8 +126,8 @@
     "description": "Explodes in a flash when cornered.",
     "rarity": "Common",
     "cost": 1,
-    "attack": 2,
-    "health": 2,
+    "attack": 4,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -136,7 +136,7 @@
     "description": "Its bite weakens even the strongest.",
     "rarity": "Uncommon",
     "cost": 2,
-    "attack": 3,
+    "attack": 6,
     "health": 5,
     "specialAbility": "None"
   },
@@ -146,7 +146,7 @@
     "description": "Once a guardian spirit of the forest, now a vengeful wraith of thorns and decay.",
     "rarity": "Uncommon",
     "cost": 2,
-    "attack": 4,
+    "attack": 7,
     "health": 7,
     "specialAbility": "None"
   },

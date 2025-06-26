@@ -46,10 +46,7 @@ export default class StoryScene extends Phaser.Scene {
       if (this.storyIndex < this.currentStage.story.length) {
         this.showDialog();
       } else {
-        //if (this.currentStage.stageNumber == 1)
           this.scene.start('ExplorationScene', { stageData: this.currentStage });
-        //else
-        //  this.scene.start('AdventureScene', { stageData: this.currentStage });
       }
     });
   }
@@ -58,10 +55,6 @@ export default class StoryScene extends Phaser.Scene {
     this.dialogContainer.removeAll(true);
 
     const entry = this.currentStage.story[this.storyIndex];
-    console.log("storyIndex", this.storyIndex);
-    console.log("currentStage", this.currentStage);
-    console.log("entry", entry);
-
     const isNarrator = entry.name === 'Narrator';
     const isLeft = this.storyIndex % 2 === 0;
 
@@ -74,7 +67,7 @@ export default class StoryScene extends Phaser.Scene {
       fontFamily: "Cinzel, serif",
       fontSize: '22px',
       color: '#ffffff',
-      wordWrap: { width: 500 },
+      wordWrap: { width: 450 },
       padding: { x: 20, y: 20 },
     });
 

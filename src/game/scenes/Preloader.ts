@@ -81,6 +81,8 @@ export class Preloader extends Scene {
     this.load.image("card_battle", "ui/card_battle.png");
     this.load.image("card_drop", "ui/card_drop.png");
     this.load.image("deck-builder", "backgrounds/deck-builder.png");
+    this.load.image("scratch", "ui/scratch.png");
+    this.load.image("star", "ui/11571051.png");
   }
 
   create() {

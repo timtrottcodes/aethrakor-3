@@ -6,6 +6,7 @@ import { renderPlayerCard, updateHealthOverlay } from '../utils/renderPlayerCard
 import { MonsterManager } from '../objects/MonsterManager';
 import { CardManager } from '../objects/CardManager';
 import { GlobalState } from '../objects/globalState';
+import { createSlantedFancyButton } from '../utils/button';
 
 type CombatCard = {
   id: string;
@@ -52,8 +53,8 @@ export default class CombatScene extends Phaser.Scene {
     }));
     this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
 
-    this.load.image('stage-bg', `assets/backgrounds/stages/${this.currentStage.image}`);
-    this.add.image(0, 0, 'stage-bg').setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    //this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
+    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
     this.add.text(20, 20, 'Combat Phase', { fontSize: '32px', color: '#ffffff' });
 
     const centerX = this.scale.width / 2;
@@ -62,8 +63,6 @@ export default class CombatScene extends Phaser.Scene {
     // Generate monsters
     let monsterData: Card[] = [];
     const currentStep = this.currentStage.steps[this.playerData.progress.currentStep];
-    
-    console.log(currentStep);
 
     if (currentStep.type == StepType.Boss) {
       const bossId = currentStep.enemies.shift();
@@ -74,23 +73,21 @@ export default class CombatScene extends Phaser.Scene {
       monsterData = this.monsterManager.getRandomMonstersFromList(currentStep.enemies);
     }
 
+    let bossOffset = 0;
     if (currentStep.type == StepType.Boss) {
       spacing = 130; 
       this.monsterCards = monsterData.map((card, i) => {
-        // Base position calculation
-        let x = centerX - (2 * spacing) + (i * spacing) - 65;
+        let x = centerX - (2 * spacing) + (i * spacing) - 65 + bossOffset;
         const y = 120;
 
-        // Determine scale
         const isBoss = i === 2;
         const scale = isBoss ? this.cardScale + 0.01 : this.cardScale - 0.01;
 
-        // Optional: Offset boss card slightly to keep spacing consistent
-        if (isBoss) {
-          x += 30; // Shift boss card slightly right to compensate
-        }
-
         const sprite = renderPlayerCard(this, card, x, y, scale, CardFace.Front);
+
+        if (isBoss) {
+          bossOffset = 15; // increase spacing to counter boss card size
+        }
 
         return {
           id: card.id,
@@ -351,6 +348,7 @@ export default class CombatScene extends Phaser.Scene {
       .setOrigin(0);
 
     const title = this.add.text(width / 2, height / 2 - 100, result === 'victory' ? 'Victory!' : 'Defeat', {
+      fontFamily: "Cinzel, serif",
       fontSize: '48px',
       color: '#ffffff',
       fontStyle: 'bold'
@@ -361,6 +359,7 @@ export default class CombatScene extends Phaser.Scene {
       : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder.";
 
     const message = this.add.text(width / 2, height / 2 - 40, messageText, {
+      fontFamily: "Cinzel, serif",
       fontSize: '20px',
       color: '#dddddd',
       wordWrap: { width: width * 0.8 }
@@ -374,40 +373,18 @@ export default class CombatScene extends Phaser.Scene {
         return;
       }
 
-      const continueButton = this.add.text(width / 2, height / 2 + 60, 'Continue Adventure', {
-        fontSize: '24px',
-        color: '#00ffcc',
-        backgroundColor: '#222',
-        padding: { x: 20, y: 10 }
-      }).setOrigin(0.5).setInteractive();
-
-      continueButton.on('pointerdown', () => {
-        grantPlayerExp(this.playerData, this.currentStage.expGain * 1.5)
+      createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Continue Adventure', () => {
+        grantPlayerExp(this.playerData)
         this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
         savePlayerData(this.playerData);
-        this.scene.start('ExplorationScene'); // Replace with your next scene
+        this.scene.start('ExplorationScene');
       });
-
     } else {
-      const retryButton = this.add.text(width / 2, height / 2 + 60, 'Fight Again', {
-        fontSize: '24px',
-        color: '#ff6666',
-        backgroundColor: '#222',
-        padding: { x: 20, y: 10 }
-      }).setOrigin(0.5).setInteractive();
-
-      retryButton.on('pointerdown', () => {
+      createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Fight Again', () => {
         this.scene.restart();
       });
 
-      const deckBuilderButton = this.add.text(width / 2, height / 2 + 120, 'Go to Deck Builder', {
-        fontSize: '20px',
-        color: '#66ccff',
-        backgroundColor: '#222',
-        padding: { x: 20, y: 10 }
-      }).setOrigin(0.5).setInteractive();
-
-      deckBuilderButton.on('pointerdown', () => {
+      createSlantedFancyButton(this, width / 2, height / 2 + 120, 'Deck Builder', () => {
         this.scene.start('DeckBuilderScene');
       });
     }

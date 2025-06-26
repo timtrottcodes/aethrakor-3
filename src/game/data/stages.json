@@ -1,7 +1,7 @@
 [
   {
     "stageNumber": 1,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 1",
     "image": "farm-field.png",
     "description": "Our farmhand receives an unexpected royal summons.",
@@ -118,7 +118,7 @@
   },
   {
     "stageNumber": 2,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 2",
     "image": "farm-field-buildings.png",
     "description": "Caelan and friends leave the familiar fields behind as rumors of prowling beasts spread.",
@@ -219,7 +219,7 @@
   },
   {
     "stageNumber": 3,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 3",
     "image": "farm-road.png",
     "description": "An ambush in the barley fields threatens to end the journey before it begins.",
@@ -306,7 +306,7 @@
   },
   {
     "stageNumber": 4,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 4",
     "image": "farm-woods-edge.png",
     "description": "At the edge of the farmland, ancient stone ruins whisper secrets of Caelan's heritage.",
@@ -407,7 +407,7 @@
   },
   {
     "stageNumber": 5,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 1: The Farm - Stage 5",
     "image": "farm-forest-border.png",
     "description": "A hobgoblin warlord blocks the final gate out of the farmland. A first true test of steel and spirit.",
@@ -505,7 +505,7 @@
   },
   {
     "stageNumber": 6,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 1",
     "image": "forest-path.png",
     "description": "The group steps into the Witherwood, where the air is heavy with enchantment and the trees whisper ancient curses.",
@@ -588,7 +588,7 @@
   },
   {
     "stageNumber": 7,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 2",
     "image": "forest-clearing.png",
     "description": "An eerie clearing reveals a forgotten shrine to a goddess of dusk. The ground is littered with bones.",
@@ -680,7 +680,7 @@
   },
   {
     "stageNumber": 8,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 3",
     "image": "forest-marsh.png",
     "description": "The woods turn to bog as mists rise and illusions test the group's resolve.",
@@ -772,7 +772,7 @@
   },
   {
     "stageNumber": 9,
-    "expGain": 20,
+    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 4",
     "image": "forest-ancient-tree.png",
     "description": "They reach the heart of the Witherwood: a colossal tree grown around a ruin. Something stirs beneath the roots.",
@@ -866,7 +866,7 @@
   },
   {
     "stageNumber": 10,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 2: The Woods - Stage 5",
     "image": "forest-foggy-clearing.png",
     "description": "A corrupted forest spirit reveals itself, guarding the only safe path out of the Witherwood.",
@@ -977,7 +977,7 @@
   },
   {
     "stageNumber": 11,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 1",
     "image": "hills-overlook.png",
     "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don't belong to the living.",
@@ -1083,7 +1083,7 @@
   },
   {
     "stageNumber": 12,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 2",
     "image": "hill-cairns.png",
     "description": "They stumble upon a grave field where ancient warriors once clashed. The dead do not rest easily here.",
@@ -1193,7 +1193,7 @@
   },
   {
     "stageNumber": 13,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 3",
     "image": "hill-canyon.png",
     "description": "A narrow gorge offers shelter from the wind - and the perfect place for an ambush.",
@@ -1304,7 +1304,7 @@
   },
   {
     "stageNumber": 14,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 4",
     "image": "hill-ancient-wall.png",
     "description": "They find a crumbling stone wall - the remnants of a long-fallen kingdom. Something stirs behind the stones.",
@@ -1415,7 +1415,7 @@
   },
   {
     "stageNumber": 15,
-    "expGain": 20,
+    "expGain": 45,
     "title": "Chapter 3: The Hills - Stage 5",
     "image": "hill-storm.png",
     "description": "A brutal storm crashes through the hills - and with it comes a legendary warrior long believed to be dead.",
@@ -1527,7 +1527,7 @@
   },
   {
     "stageNumber": 16,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 1",
     "image": "cracked-road.png",
     "description": "The remnants of an imperial road stretch before the party - shattered stone lined with dead trees and forgotten bones.",
@@ -1633,7 +1633,7 @@
   },
   {
     "stageNumber": 17,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 2",
     "image": "collapsed-bridge.png",
     "description": "A collapsed bridge spans a dry riverbed. Crossing it draws the attention of something that does not belong in the mortal world.",
@@ -1744,7 +1744,7 @@
   },
   {
     "stageNumber": 18,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 3",
     "image": "abandoned-village.png",
     "description": "The road passes through a dead village. Doors hang open, but nothing moves. That is, until night falls.",
@@ -1855,7 +1855,7 @@
   },
   {
     "stageNumber": 19,
-    "expGain": 20,
+    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 4",
     "image": "broken-statue.png",
     "description": "Statues of ancient emperors line the road - each shattered, each face defaced. One remains intact... and it breathes.",
@@ -1966,7 +1966,7 @@
   },
   {
     "stageNumber": 20,
-    "expGain": 20,
+    "expGain": 45,
     "title": "Chapter 4: The Forgotten Road - Stage 5",
     "image": "sunken-temple.png",
     "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire's final secret.",
@@ -2078,7 +2078,7 @@
   },
   {
     "stageNumber": 21,
-    "expGain": 20,
+    "expGain": 40,
     "title": "Chapter 5: The Wastelands - Stage 1",
     "image": "blighted-plains.png",
     "description": "The fertile earth gives way to blackened dust and skeletal trees. The wind tastes of ash. The Wastelands begin.",
@@ -2169,7 +2169,7 @@
   },
   {
     "stageNumber": 22,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 2",
     "image": "ashen-fissure.png",
     "description": "A deep fissure cuts across the land. Crossing it requires passing over a brittle, bone-laced bridge watched by unseen eyes.",
@@ -2255,7 +2255,7 @@
   },
   {
     "stageNumber": 23,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 3",
     "image": "corrupted-oasis.png",
     "description": "An oasis appears amidst the ruin, impossibly green. But the water is black and the trees whisper lies.",
@@ -2346,7 +2346,7 @@
   },
   {
     "stageNumber": 24,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 4",
     "image": "ruined-outpost.png",
     "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard - unaware they died long ago.",
@@ -2432,7 +2432,7 @@
   },
   {
     "stageNumber": 25,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 5",
     "image": "black-spire.png",
     "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries - and never once fallen.",
@@ -2524,7 +2524,7 @@
   },
   {
     "stageNumber": 26,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 1",
     "image": "crimson-cliffs.png",
     "description": "The ground turns jagged, veins of red stone pulsing like a heartbeat beneath the earth. You've entered the Bleeding Crags.",
@@ -2620,7 +2620,7 @@
   },
   {
     "stageNumber": 27,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 2",
     "image": "shrine-of-screams.png",
     "description": "An ancient shrine stands defiled - once a place of healing, now echoing with the cries of blood offerings.",
@@ -2716,7 +2716,7 @@
   },
   {
     "stageNumber": 28,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 3",
     "image": "bone-ledges.png",
     "description": "The path narrows to knife-edged ledges, where the wind howls with lost voices and skeletal remains stir underfoot.",
@@ -2807,7 +2807,7 @@
   },
   {
     "stageNumber": 29,
-    "expGain": 20,
+    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 4",
     "image": "ritual-pit.png",
     "description": "A massive pit glows with crimson runes. Echoes of chants and screams spill from below. A ritual is underway.",
@@ -2903,7 +2903,7 @@
   },
   {
     "stageNumber": 30,
-    "expGain": 20,
+    "expGain": 40,
     "title": "Chapter 6: The Bleeding Crags - Stage 5",
     "image": "throne-of-veins.png",
     "description": "At the peak lies the Throne of Veins - a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",

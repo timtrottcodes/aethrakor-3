@@ -11,8 +11,6 @@ export default class ExplorationScene extends Phaser.Scene {
   private stageId!: number;
   private stepIndex: number = 0;
   private cards: Phaser.GameObjects.Image[] = [];
-  private progressText!: Phaser.GameObjects.Text;
-  private expText!: Phaser.GameObjects.Text;
   private playerData: PlayerData;
   private cardManager: CardManager;
   private stages: Stage[];
@@ -52,13 +50,12 @@ export default class ExplorationScene extends Phaser.Scene {
 
   preload() {
     if (this.currentStage) {
-      this.load.image('stage-bg', `assets/backgrounds/stages/${this.currentStage.image}`);
+      this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
     }
-    this.load.image('star', 'assets/ui/star.png');
   }
 
   create() {
-    this.add.image(0, 0, 'stage-bg').setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
     // Display player cards
     const spacing = 140;
@@ -72,15 +69,21 @@ export default class ExplorationScene extends Phaser.Scene {
       }
     }
 
-    // Display progress bar
-    const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
-    this.progressText = this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}%`, {
+    this.add.text(20, this.scale.height - 90, `Level: ${this.playerData.level}`, {
       fontFamily: "Cinzel, serif",
       fontSize: '16px',
       color: '#ffffff'
     }).setDepth(2);
 
-    this.expText = this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
+    // Display progress bar
+    const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
+    this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}%`, {
+      fontFamily: "Cinzel, serif",
+      fontSize: '16px',
+      color: '#ffffff'
+    }).setDepth(2);
+
+    this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
       fontFamily: "Cinzel, serif",
       fontSize: '16px',
       color: '#ffffff'
@@ -160,7 +163,7 @@ export default class ExplorationScene extends Phaser.Scene {
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
       this.stepIndex++;
-      grantPlayerExp(this.playerData, this.currentStage.expGain);
+      grantPlayerExp(this.playerData);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
       this.playForwardMotionEffect();
@@ -168,7 +171,7 @@ export default class ExplorationScene extends Phaser.Scene {
       this.triggerAlarmEffect();
     } else {
       this.stepIndex++;
-      grantPlayerExp(this.playerData, this.currentStage.expGain);
+      grantPlayerExp(this.playerData);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
 
@@ -179,7 +182,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
   private playForwardMotionEffect() {
     // Create a duplicate of the background
-    const bgZoom = this.add.image(this.scale.width / 2, this.scale.height / 2, 'stage-bg')
+    const bgZoom = this.add.image(this.scale.width / 2, this.scale.height / 2, this.currentStage.image)
       .setOrigin(0.5, 0.5)
       .setScale(1)
       .setAlpha(1)

@@ -1,6 +1,7 @@
 // scenes/MainMenuScene.ts
 import Phaser from 'phaser';
 import { createFancyButton } from '../utils/button';
+import { getMaxCardCost } from '../utils/playerDataUtils';
 
 export default class MainMenuScene extends Phaser.Scene {
   private background!: Phaser.GameObjects.Image;
