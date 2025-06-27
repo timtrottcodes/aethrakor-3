@@ -1,7 +1,7 @@
-import Phaser from 'phaser';
+import Phaser, { Scene } from 'phaser';
 import stagesData from '../data/stages.json';
-import { Card, CardFace, PlayerData, Rarity, SpecialAbility, Stage, StepItem, StepType } from '../objects/objects';
-import { grantPlayerExp, loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
+import { Card, CardFace, PlayerData, SpecialAbility, Stage, StepItem, StepType } from '../objects/objects';
+import { grantPlayerExp, loadPlayerData, loadStageData, savePlayerData } from '../utils/playerDataUtils';
 import { renderPlayerCard, updateHealthOverlay } from '../utils/renderPlayerCard';
 import { MonsterManager } from '../objects/MonsterManager';
 import { CardManager } from '../objects/CardManager';
@@ -20,6 +20,10 @@ type CombatCard = {
   specialAbility: SpecialAbility;
 };
 
+interface CombatSceneData {
+  stageId?: number;
+  stepId?: number;
+}
 
 export default class CombatScene extends Phaser.Scene {
   private playerData: PlayerData;
@@ -29,31 +33,45 @@ export default class CombatScene extends Phaser.Scene {
   private monsterCards: CombatCard[] = [];
   private cardScale = 0.17;
   private currentStage: Stage;
-  private stageId!: number;
+  private currentStep: StepItem;
+  private stageId: number | undefined = undefined;
+  private stepId: number | undefined = undefined;
   private stages: Stage[];
+  private nextScene: string = "";
 
   constructor() {
     super("CombatScene");
   }
 
-  create() {
+  init(data: CombatSceneData): void {
+    this.stages = loadStageData();
     this.playerData = loadPlayerData();
+
+    if (data.stageId) {
+      this.stageId = data.stageId;
+      this.stepId = data.stepId;
+      this.nextScene = 'MainMenuScene';
+    }
+  }
+
+  preload() {
+    if (!this.stageId){
+      this.stageId = this.playerData.progress.currentStage;
+      this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+      this.currentStep = this.currentStage.steps[this.playerData.progress.currentStep];
+    } else {
+      this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+      this.currentStep = this.currentStage.steps[this.stepId!];
+    }
+
+    this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
+  }
+
+  create() {
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
-    this.stageId = this.playerData.progress.currentStage;
-    this.stages = stagesData.map(stage => ({
-      ...stage,
-      steps: stage.steps.map(step => {
-        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
-        return {
-          ...step,
-          type: StepType[formattedType as keyof typeof StepType]
-        };
-      })
-    }));
-    this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+    this.playerData = loadPlayerData();
 
-    //this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
     this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
     this.add.text(20, 20, 'Combat Phase', { fontSize: '32px', color: '#ffffff' });
 
@@ -62,19 +80,24 @@ export default class CombatScene extends Phaser.Scene {
 
     // Generate monsters
     let monsterData: Card[] = [];
-    const currentStep = this.currentStage.steps[this.playerData.progress.currentStep];
 
-    if (currentStep.type == StepType.Boss) {
-      const bossId = currentStep.enemies.shift();
+    if (!this.currentStep) {
+      this.stageId = this.playerData.progress.currentStage;
+      this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+      this.currentStep = this.currentStage.steps[this.playerData.progress.currentStep];
+    }
+
+    if (this.currentStep.type == StepType.Boss) {
+      const bossId = this.currentStep.enemies.shift();
       const bossCard = this.monsterManager.getById(bossId!);
-      monsterData = this.monsterManager.getRandomMonstersFromList(currentStep.enemies, 4);
+      monsterData = this.monsterManager.getRandomMonstersFromList(this.currentStep.enemies, 4);
       monsterData.splice(2, 0, bossCard!);
     } else {
-      monsterData = this.monsterManager.getRandomMonstersFromList(currentStep.enemies);
+      monsterData = this.monsterManager.getRandomMonstersFromList(this.currentStep.enemies);
     }
 
     let bossOffset = 0;
-    if (currentStep.type == StepType.Boss) {
+    if (this.currentStep.type == StepType.Boss || this.currentStep.type == StepType.Miniboss) {
       spacing = 130; 
       this.monsterCards = monsterData.map((card, i) => {
         let x = centerX - (2 * spacing) + (i * spacing) - 65 + bossOffset;
@@ -118,12 +141,33 @@ export default class CombatScene extends Phaser.Scene {
       });
     }
 
+    this.add.text(20, this.scale.height - 90, `Level: ${this.playerData.level}`, {
+      fontFamily: "Cinzel, serif",
+      fontSize: '16px',
+      color: '#ffffff'
+    }).setDepth(2);
+
+    // Display progress bar
+    const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
+    this.add.text(20, this.scale.height - 70, `${this.currentStage.title}`, {
+      fontFamily: "Cinzel, serif",
+      fontSize: '16px',
+      color: '#ffffff'
+    }).setDepth(2);
+
+    this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
+      fontFamily: "Cinzel, serif",
+      fontSize: '16px',
+      color: '#ffffff'
+    }).setDepth(2);
+
+
     // Player cards
     this.playerCards = this.playerData.equippedCards.map((cardId, i) => {
       const card = this.cardManager.getById(cardId);
       if (card) {
         const x = centerX - (2 * spacing) + (i * spacing) - 65;
-        const y = this.scale.height - 200;
+        const y = this.scale.height - 300;
         const sprite = renderPlayerCard(this, card, x, y, this.cardScale, CardFace.Front);
         return {
           id: card.id,
@@ -182,10 +226,10 @@ export default class CombatScene extends Phaser.Scene {
         for (let a = 0; a < attackCount; a++) {
           const target = this.findNextAlive(i, this.monsterCards);
           if (target) {
-            const damageToMonster = this.calculateDamage(player.baseAttack);
-            target.currentHealth = Math.max(target.currentHealth - damageToMonster, 0);
+            const { damage, isCritical } = this.calculateDamage(player.baseAttack);
+            target.currentHealth = Math.max(target.currentHealth - damage, 0);
             const hpPercent = (target.currentHealth / target.maxHealth) * 100;
-            await this.animateAttack(player, target, damageToMonster, false, hpPercent);
+            await this.animateAttack(player, target, damage, isCritical, hpPercent);
           }
         }
       }
@@ -194,10 +238,10 @@ export default class CombatScene extends Phaser.Scene {
       if (monster && monster.currentHealth > 0) {
         const target = this.findNextAlive(i, this.playerCards);
         if (target) {
-          const damageToPlayer = this.calculateDamage(monster.baseAttack);
-          target.currentHealth = Math.max(target.currentHealth - damageToPlayer, 0);
+          const { damage, isCritical } = this.calculateDamage(monster.baseAttack);
+          target.currentHealth = Math.max(target.currentHealth - damage, 0);
           const hpPercent = (target.currentHealth / target.maxHealth) * 100;
-          await this.animateAttack(monster, target, damageToPlayer, false, hpPercent);
+          await this.animateAttack(monster, target, damage, isCritical, hpPercent);
         }
       }
     }
@@ -217,19 +261,21 @@ export default class CombatScene extends Phaser.Scene {
     return null;
   }
 
-  private calculateDamage(baseAttack: number): number {
+  private calculateDamage(baseAttack: number): { damage: number; isCritical: boolean } {
     const variance = Phaser.Math.FloatBetween(0.9, 1.1);
     const isCritical = Phaser.Math.Between(1, 20) === 1;
     const critMultiplier = isCritical ? 1.15 : 1;
-    return Math.round(baseAttack * variance * critMultiplier);
+    const damage = Math.round(baseAttack * variance * critMultiplier);
+
+    return { damage, isCritical };
   }
 
   private applyHealing(allies: CombatCard[], healer: CombatCard) {
     const damagedAllies = allies.filter(c => c && c.currentHealth > 0 && c.currentHealth < c.maxHealth);
     if (damagedAllies.length === 0) return;
 
-    const totalHeal = this.calculateDamage(healer.baseAttack);
-    const healPerCard = Math.floor(totalHeal / damagedAllies.length);
+    const { damage } = this.calculateDamage(healer.baseAttack);
+    const healPerCard = Math.floor(damage / damagedAllies.length);
 
     for (const card of damagedAllies) {
       card.currentHealth = Math.min(card.currentHealth + healPerCard, card.maxHealth);
@@ -292,6 +338,48 @@ export default class CombatScene extends Phaser.Scene {
       ease: 'Power2'
     });
 
+    // Floating damage text animation
+    const damageText = scene.add.text(defenderSprite.x + defenderSprite.displayWidth / 2, defenderSprite.y + defenderSprite.displayHeight / 2, `-${damage}`, {
+      fontFamily: 'Trade Winds',
+      fontSize: '42px',
+      color: isCritical ? '#ff4444' : '#ffff00',
+      fontStyle: isCritical ? 'bold' : 'normal',
+      stroke: '#000000',
+      strokeThickness: 3,
+    }).setOrigin(0.5).setAlpha(0).setScale(0.75).setDepth(101);
+
+    scene.tweens.add({
+      targets: damageText,
+      alpha: { from: 0, to: 1 },
+      y: damageText.y - 20,
+      scale: { from: 0.75, to: 1 },
+      duration: 200,
+      ease: 'Cubic.easeOut',
+      onComplete: () => {
+        scene.tweens.add({
+          targets: damageText,
+          alpha: 0,
+          duration: 300,
+          delay: 300,
+          onComplete: () => damageText.destroy(),
+        });
+      }
+    });
+
+    // Red screen pulse on critical hit to player
+    if (isCritical && !this.playerCards.includes(attacker)) {
+      const flash = scene.add.rectangle(0, 0, scene.scale.width, scene.scale.height, 0xff0000, 0.25)
+        .setOrigin(0)
+        .setDepth(200);
+
+      scene.tweens.add({
+        targets: flash,
+        alpha: { from: 0.25, to: 0 },
+        duration: 200,
+        onComplete: () => flash.destroy(),
+      });
+    }
+
     updateHealthOverlay(defender.sprite, hpPercent);
 
     // === Defender shakes side to side ===
@@ -331,23 +419,14 @@ export default class CombatScene extends Phaser.Scene {
     // Optional: you can add tint flash or sound effects here as well
   }
 
-
-  private tintContainer(container: Phaser.GameObjects.Container, color: number) {
-    container.iterate((child: Phaser.GameObjects.Container) => {
-      if ('setTint' in child && typeof child.setTint === 'function') {
-        (child as Phaser.GameObjects.GameObject & { setTint: (color: number) => void }).setTint(color);
-      }
-    });
-  }
-
   private showEndOverlay(result: 'victory' | 'defeat') {
     const { width, height } = this.scale;
 
     // Semi-transparent black background
-    const overlay = this.add.rectangle(0, 0, width, height, 0x000000, 0.8)
+    this.add.rectangle(0, 0, width, height, 0x000000, 0.8)
       .setOrigin(0);
 
-    const title = this.add.text(width / 2, height / 2 - 100, result === 'victory' ? 'Victory!' : 'Defeat', {
+    this.add.text(width / 2, height / 2 - 120, result === 'victory' ? 'Victory!' : 'Defeat', {
       fontFamily: "Cinzel, serif",
       fontSize: '48px',
       color: '#ffffff',
@@ -356,9 +435,9 @@ export default class CombatScene extends Phaser.Scene {
 
     const messageText = result === 'victory'
       ? "You’ve triumphed! Your tactics are improving. Press on to your next challenge!"
-      : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder.";
+      : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder. Use the random battle feature to build your deck.";
 
-    const message = this.add.text(width / 2, height / 2 - 40, messageText, {
+    this.add.text(width / 2, height / 2 - 40, messageText, {
       fontFamily: "Cinzel, serif",
       fontSize: '20px',
       color: '#dddddd',
@@ -368,25 +447,38 @@ export default class CombatScene extends Phaser.Scene {
     if (result === 'victory') {
       // 2% card drop chance
       if (Phaser.Math.Between(1, 100) <= 2) {
-        GlobalState.lastScene = this.scene.key;
+        GlobalState.lastScene = 'ExplorationScene';
         this.scene.start('CardDropScene');
         return;
       }
 
-      createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Continue Adventure', () => {
-        grantPlayerExp(this.playerData)
-        this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
-        savePlayerData(this.playerData);
-        this.scene.start('ExplorationScene');
-      });
+      if (this.nextScene == '') {
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Continue Adventure', () => {
+          grantPlayerExp(this.playerData, true)
+          this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
+          savePlayerData(this.playerData);
+          this.scene.start('ExplorationScene');
+        });
+      } else {
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Continue', () => {
+          this.scene.start(this.nextScene);
+        });
+      }
     } else {
       createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Fight Again', () => {
         this.scene.restart();
       });
 
-      createSlantedFancyButton(this, width / 2, height / 2 + 120, 'Deck Builder', () => {
-        this.scene.start('DeckBuilderScene');
-      });
+      if (this.nextScene == '') {
+        createSlantedFancyButton(this, width / 2, height / 2 + 120, 'Deck Builder', () => {
+          GlobalState.lastScene = this.scene.key;
+          this.scene.start('DeckBuilderScene');
+        });
+      } else {
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, 'Continue', () => {
+          this.scene.start(this.nextScene);
+        });
+      }
     }
   }
 

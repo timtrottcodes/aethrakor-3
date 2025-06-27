@@ -50,6 +50,7 @@ export default class AdventureScene extends Phaser.Scene {
     this.setBackgroundPosition();
     this.placeStageMarkers();
     this.addDeckBuilderButton();
+    this.addMainMenuButton();
   }
 
   public getCurrentStage(): number {
@@ -79,7 +80,7 @@ export default class AdventureScene extends Phaser.Scene {
   private placeStageMarkers() {
     const markerCount = this.visibleStageRange.end - this.visibleStageRange.start + 1;
     const spacing = this.scale.height / (markerCount + 1);
-    const baseY = this.scale.height - spacing;
+    const baseY = this.scale.height - spacing - 100;
 
     for (let i = this.visibleStageRange.start; i <= this.visibleStageRange.end; i++) {
       const stageIndex = i - this.visibleStageRange.start;
@@ -104,12 +105,24 @@ export default class AdventureScene extends Phaser.Scene {
     createFancyButton(
       this,
       this.scale.width / 2,
-      this.scale.height - 80,
+      this.scale.height - 150,
       'Deck Builder',
       () => {
         this.scene.stop("AdventureScene");
         GlobalState.lastScene = this.scene.key;
         this.scene.start('DeckBuilderScene');
+      }
+    );    
+  }
+
+  private addMainMenuButton() {
+    createFancyButton(
+      this,
+      this.scale.width / 2,
+      this.scale.height - 80,
+      'Main Menu',
+      () => {
+        this.scene.start('MainMenuScene');
       }
     );    
   }

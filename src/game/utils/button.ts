@@ -5,7 +5,7 @@ export function createFancyButton(
   label: string,
   onClick: () => void,
   fontSize = 20,
-  padding: number = 20
+  padding: number = 30
 ): Phaser.GameObjects.Container {
   const backgroundColor = 0x2a2a2a;
   const borderColor = 0xffd700;

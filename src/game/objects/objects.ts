@@ -49,7 +49,6 @@ export interface PlayerData {
 
 export interface Stage {
   stageNumber: number;
-  expGain: number;
   title: string;
   image: string;
   description: string;
@@ -71,6 +70,7 @@ export interface StepItem {
 export enum StepType {
   Random = "Random",
   Boss = "Boss",
+  Miniboss = "Miniboss",
   FixedMob = "FixedMob"
 }
 

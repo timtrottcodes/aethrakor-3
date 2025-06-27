@@ -1,8 +1,7 @@
 // scenes/ExplorationScene.ts
 import Phaser from 'phaser';
-import stagesData from '../data/stages.json';
 import { CardFace, PlayerData, Stage, StepType } from '../objects/objects';
-import { grantPlayerExp, loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
+import { grantPlayerExp, loadPlayerData, loadStageData, savePlayerData } from '../utils/playerDataUtils';
 import { CardManager } from '../objects/CardManager';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { GlobalState } from '../objects/globalState';
@@ -27,16 +26,7 @@ export default class ExplorationScene extends Phaser.Scene {
     this.stageId = this.playerData.progress.currentStage;
     this.stepIndex = this.playerData.progress.currentStep;
     this.isFlippingCard = false;
-    this.stages = stagesData.map(stage => ({
-      ...stage,
-      steps: stage.steps.map(step => {
-        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
-        return {
-          ...step,
-          type: StepType[formattedType as keyof typeof StepType]
-        };
-      })
-    }));
+    this.stages = loadStageData();
     this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
 
     if (this.playerData.progress.currentStep >= this.currentStage.steps.length) {
@@ -77,7 +67,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     // Display progress bar
     const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
-    this.add.text(20, this.scale.height - 70, `Progress: ${progressPercent}%`, {
+    this.add.text(20, this.scale.height - 70, `${this.currentStage.title} - Progress: ${progressPercent}%`, {
       fontFamily: "Cinzel, serif",
       fontSize: '16px',
       color: '#ffffff'
@@ -163,7 +153,7 @@ export default class ExplorationScene extends Phaser.Scene {
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
       this.stepIndex++;
-      grantPlayerExp(this.playerData);
+      grantPlayerExp(this.playerData, false);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
       this.playForwardMotionEffect();
@@ -171,7 +161,7 @@ export default class ExplorationScene extends Phaser.Scene {
       this.triggerAlarmEffect();
     } else {
       this.stepIndex++;
-      grantPlayerExp(this.playerData);
+      grantPlayerExp(this.playerData, false);
       this.playerData.progress.currentStep = this.stepIndex;
       savePlayerData(this.playerData);
 
@@ -219,7 +209,7 @@ export default class ExplorationScene extends Phaser.Scene {
     // Create "BATTLE!" text
     this.add.text(this.scale.width / 2, this.scale.height / 2, 'BATTLE!', {
       fontSize: '64px',
-      color: '#ff0000',
+      color: '#ffff00',
       fontStyle: 'bold',
       stroke: '#000',
       strokeThickness: 6
@@ -235,7 +225,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     const pulse = () => {
       if (pulseIndex >= repeatCount) {
-        this.scene.start('CombatScene', { boss: false });
+        this.scene.start('CombatScene');
       }
 
       this.tweens.add({

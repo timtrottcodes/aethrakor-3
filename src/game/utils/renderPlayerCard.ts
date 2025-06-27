@@ -2,7 +2,7 @@ import { Card, CardFace, Rarity } from "../objects/objects";
 
 const rarityColors: Record<Rarity, string> = {
   [Rarity.Common]: "#cccccc",
-  [Rarity.Uncommon]: "#00ff00",
+  [Rarity.Uncommon]: "#2DC50E",
   [Rarity.Rare]: "#3399ff",
   [Rarity.Epic]: "#aa00ff",
   [Rarity.Legendary]: "#ffaa00",

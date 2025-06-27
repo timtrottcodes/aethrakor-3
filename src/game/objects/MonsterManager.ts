@@ -1,5 +1,5 @@
 import cardData from '../data/monsters.json';
-import { Card, Rarity } from './objects';
+import { Card, Rarity, SpecialAbility } from './objects';
 
 export class MonsterManager {
   private cards: Card[];
@@ -7,7 +7,8 @@ export class MonsterManager {
   constructor() {
     this.cards = cardData.map(c => ({
       ...c,
-      rarity: Rarity[c.rarity as keyof typeof Rarity]
+      rarity: Rarity[c.rarity as keyof typeof Rarity],
+      specialAbility: SpecialAbility[c.specialAbility as keyof typeof SpecialAbility]
     }));
   }
 
@@ -38,7 +39,7 @@ export class MonsterManager {
 
   getRandomMonstersFromList(monsterIds: string[], count: number = 5): Card[] {
     const selected: Card[] = [];
-    const available = [...monsterIds]; // clone to avoid mutating original array
+    const available = this.shuffleArray([...monsterIds]);
 
     for (let i = 0; i < count && available.length > 0; i++) {
       const index = Phaser.Math.Between(0, available.length - 1);
@@ -50,6 +51,14 @@ export class MonsterManager {
     }
 
     return selected;
+  }
+
+  shuffleArray<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
 }

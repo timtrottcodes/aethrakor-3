@@ -1,7 +1,6 @@
 [
   {
     "stageNumber": 1,
-    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 1",
     "image": "farm-field.png",
     "description": "Our farmhand receives an unexpected royal summons.",
@@ -102,7 +101,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
@@ -118,7 +117,6 @@
   },
   {
     "stageNumber": 2,
-    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 2",
     "image": "farm-field-buildings.png",
     "description": "Caelan and friends leave the familiar fields behind as rumors of prowling beasts spread.",
@@ -202,7 +200,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
@@ -219,7 +217,6 @@
   },
   {
     "stageNumber": 3,
-    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 3",
     "image": "farm-road.png",
     "description": "An ambush in the barley fields threatens to end the journey before it begins.",
@@ -289,7 +286,21 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_goblin_scout",
+          "monster_gnoll_grunt",
+          "monster_bandit_thug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lizardkin_scout",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
@@ -306,7 +317,6 @@
   },
   {
     "stageNumber": 4,
-    "expGain": 25,
     "title": "Chapter 1: The Farm - Stage 4",
     "image": "farm-woods-edge.png",
     "description": "At the edge of the farmland, ancient stone ruins whisper secrets of Caelan's heritage.",
@@ -390,7 +400,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_goblin_scout",
           "monster_gnoll_grunt",
@@ -407,7 +417,6 @@
   },
   {
     "stageNumber": 5,
-    "expGain": 35,
     "title": "Chapter 1: The Farm - Stage 5",
     "image": "farm-forest-border.png",
     "description": "A hobgoblin warlord blocks the final gate out of the farmland. A first true test of steel and spirit.",
@@ -505,7 +514,6 @@
   },
   {
     "stageNumber": 6,
-    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 1",
     "image": "forest-path.png",
     "description": "The group steps into the Witherwood, where the air is heavy with enchantment and the trees whisper ancient curses.",
@@ -583,12 +591,24 @@
           "monster_shadow_rat",
           "monster_moss_golem"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem"
+        ]
       }
     ]
   },
   {
     "stageNumber": 7,
-    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 2",
     "image": "forest-clearing.png",
     "description": "An eerie clearing reveals a forgotten shrine to a goddess of dusk. The ground is littered with bones.",
@@ -675,12 +695,27 @@
           "monster_moss_golem",
           "monster_venom_spider"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_swamp_rat",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 8,
-    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 3",
     "image": "forest-marsh.png",
     "description": "The woods turn to bog as mists rise and illusions test the group's resolve.",
@@ -767,12 +802,27 @@
           "monster_venom_spider",
           "monster_swamp_rat"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider",
+          "monster_swamp_rat"
+        ]
       }
     ]
   },
   {
     "stageNumber": 9,
-    "expGain": 25,
     "title": "Chapter 2: The Woods - Stage 4",
     "image": "forest-ancient-tree.png",
     "description": "They reach the heart of the Witherwood: a colossal tree grown around a ruin. Something stirs beneath the roots.",
@@ -861,12 +911,27 @@
           "monster_moss_golem",
           "monster_venom_spider"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_cave_bat",
+          "monster_forest_spider",
+          "monster_torch_bug",
+          "monster_wolves",
+          "monster_feral_dog",
+          "monster_slime",
+          "monster_swamp_rat",
+          "monster_lurking_thief",
+          "monster_shadow_rat",
+          "monster_moss_golem",
+          "monster_venom_spider"
+        ]
       }
     ]
   },
   {
     "stageNumber": 10,
-    "expGain": 35,
     "title": "Chapter 2: The Woods - Stage 5",
     "image": "forest-foggy-clearing.png",
     "description": "A corrupted forest spirit reveals itself, guarding the only safe path out of the Witherwood.",
@@ -977,7 +1042,6 @@
   },
   {
     "stageNumber": 11,
-    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 1",
     "image": "hills-overlook.png",
     "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don't belong to the living.",
@@ -1065,7 +1129,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_bone_crawler",
           "monster_dire_wolf",
@@ -1083,7 +1147,6 @@
   },
   {
     "stageNumber": 12,
-    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 2",
     "image": "hill-cairns.png",
     "description": "They stumble upon a grave field where ancient warriors once clashed. The dead do not rest easily here.",
@@ -1174,7 +1237,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_bone_crawler",
           "monster_dire_wolf",
@@ -1193,7 +1256,6 @@
   },
   {
     "stageNumber": 13,
-    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 3",
     "image": "hill-canyon.png",
     "description": "A narrow gorge offers shelter from the wind - and the perfect place for an ambush.",
@@ -1285,7 +1347,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_bone_crawler",
           "monster_dire_wolf",
@@ -1304,7 +1366,6 @@
   },
   {
     "stageNumber": 14,
-    "expGain": 30,
     "title": "Chapter 3: The Hills - Stage 4",
     "image": "hill-ancient-wall.png",
     "description": "They find a crumbling stone wall - the remnants of a long-fallen kingdom. Something stirs behind the stones.",
@@ -1396,7 +1457,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_bone_crawler",
           "monster_dire_wolf",
@@ -1415,7 +1476,6 @@
   },
   {
     "stageNumber": 15,
-    "expGain": 45,
     "title": "Chapter 3: The Hills - Stage 5",
     "image": "hill-storm.png",
     "description": "A brutal storm crashes through the hills - and with it comes a legendary warrior long believed to be dead.",
@@ -1527,7 +1587,6 @@
   },
   {
     "stageNumber": 16,
-    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 1",
     "image": "cracked-road.png",
     "description": "The remnants of an imperial road stretch before the party - shattered stone lined with dead trees and forgotten bones.",
@@ -1614,7 +1673,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_zombie",
           "monster_bone_crawler",
@@ -1633,7 +1692,6 @@
   },
   {
     "stageNumber": 17,
-    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 2",
     "image": "collapsed-bridge.png",
     "description": "A collapsed bridge spans a dry riverbed. Crossing it draws the attention of something that does not belong in the mortal world.",
@@ -1725,7 +1783,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_zombie",
           "monster_bone_crawler",
@@ -1744,7 +1802,6 @@
   },
   {
     "stageNumber": 18,
-    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 3",
     "image": "abandoned-village.png",
     "description": "The road passes through a dead village. Doors hang open, but nothing moves. That is, until night falls.",
@@ -1836,7 +1893,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_zombie",
           "monster_bone_crawler",
@@ -1855,7 +1912,6 @@
   },
   {
     "stageNumber": 19,
-    "expGain": 30,
     "title": "Chapter 4: The Forgotten Road - Stage 4",
     "image": "broken-statue.png",
     "description": "Statues of ancient emperors line the road - each shattered, each face defaced. One remains intact... and it breathes.",
@@ -1947,7 +2003,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_zombie",
           "monster_bone_crawler",
@@ -1966,7 +2022,6 @@
   },
   {
     "stageNumber": 20,
-    "expGain": 45,
     "title": "Chapter 4: The Forgotten Road - Stage 5",
     "image": "sunken-temple.png",
     "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire's final secret.",
@@ -2078,7 +2133,6 @@
   },
   {
     "stageNumber": 21,
-    "expGain": 40,
     "title": "Chapter 5: The Wastelands - Stage 1",
     "image": "blighted-plains.png",
     "description": "The fertile earth gives way to blackened dust and skeletal trees. The wind tastes of ash. The Wastelands begin.",
@@ -2164,12 +2218,26 @@
           "monster_voidcaller",
           "monster_abyssal_spawn"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 22,
-    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 2",
     "image": "ashen-fissure.png",
     "description": "A deep fissure cuts across the land. Crossing it requires passing over a brittle, bone-laced bridge watched by unseen eyes.",
@@ -2250,12 +2318,26 @@
           "monster_voidcaller",
           "monster_abyssal_spawn"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 23,
-    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 3",
     "image": "corrupted-oasis.png",
     "description": "An oasis appears amidst the ruin, impossibly green. But the water is black and the trees whisper lies.",
@@ -2341,12 +2423,26 @@
           "monster_voidcaller",
           "monster_abyssal_spawn"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 24,
-    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 4",
     "image": "ruined-outpost.png",
     "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard - unaware they died long ago.",
@@ -2427,12 +2523,26 @@
           "monster_voidcaller",
           "monster_abyssal_spawn"
         ]
+      },
+      {
+        "type": "miniboss",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
       }
     ]
   },
   {
     "stageNumber": 25,
-    "expGain": 35,
     "title": "Chapter 5: The Wastelands - Stage 5",
     "image": "black-spire.png",
     "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries - and never once fallen.",
@@ -2505,6 +2615,21 @@
         ]
       },
       {
+        "type": "random",
+        "enemies": [
+          "monster_imp",
+          "monster_dust_wraith",
+          "monster_carrion_drake",
+          "monster_flame_wisp",
+          "monster_dark_acolyte",
+          "monster_minotaur",
+          "monster_nightmare_steed",
+          "monster_blade_dancer",
+          "monster_voidcaller",
+          "monster_abyssal_spawn"
+        ]
+      },
+      {
         "type": "boss",
         "enemies": [
           "monster_obsidian_knight",
@@ -2524,7 +2649,6 @@
   },
   {
     "stageNumber": 26,
-    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 1",
     "image": "crimson-cliffs.png",
     "description": "The ground turns jagged, veins of red stone pulsing like a heartbeat beneath the earth. You've entered the Bleeding Crags.",
@@ -2604,7 +2728,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -2620,7 +2744,6 @@
   },
   {
     "stageNumber": 27,
-    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 2",
     "image": "shrine-of-screams.png",
     "description": "An ancient shrine stands defiled - once a place of healing, now echoing with the cries of blood offerings.",
@@ -2700,7 +2823,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -2716,7 +2839,6 @@
   },
   {
     "stageNumber": 28,
-    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 3",
     "image": "bone-ledges.png",
     "description": "The path narrows to knife-edged ledges, where the wind howls with lost voices and skeletal remains stir underfoot.",
@@ -2791,7 +2913,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -2807,7 +2929,6 @@
   },
   {
     "stageNumber": 29,
-    "expGain": 35,
     "title": "Chapter 6: The Bleeding Crags - Stage 4",
     "image": "ritual-pit.png",
     "description": "A massive pit glows with crimson runes. Echoes of chants and screams spill from below. A ritual is underway.",
@@ -2887,7 +3008,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -2903,7 +3024,6 @@
   },
   {
     "stageNumber": 30,
-    "expGain": 40,
     "title": "Chapter 6: The Bleeding Crags - Stage 5",
     "image": "throne-of-veins.png",
     "description": "At the peak lies the Throne of Veins - a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",
@@ -3000,7 +3120,6 @@
   },
   {
     "stageNumber": 31,
-    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 1",
     "image": "shattered-dunes.png",
     "description": "Sand becomes glass underfoot. Shards of reality reflect not just light, but memory. The Glass Wastes begin.",
@@ -3080,7 +3199,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -3096,7 +3215,6 @@
   },
   {
     "stageNumber": 32,
-    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 2",
     "image": "fractured-temple.png",
     "description": "A once-great temple lies splintered in the sands - fragments of its time scattered across reality.",
@@ -3176,7 +3294,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -3192,7 +3310,6 @@
   },
   {
     "stageNumber": 33,
-    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 3",
     "image": "crystal-canyon.png",
     "description": "The canyon walls pulse with prismatic light, refracting moments you haven't lived. Something is watching through the shards.",
@@ -3272,7 +3389,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -3288,7 +3405,6 @@
   },
   {
     "stageNumber": 34,
-    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 4",
     "image": "sunken-refraction.png",
     "description": "Beneath a shifting dune lies a city trapped in a time loop. It restarts every hour, unaware of its own doom.",
@@ -3368,7 +3484,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_necromancer",
           "monster_flame_elemental",
@@ -3384,7 +3500,6 @@
   },
   {
     "stageNumber": 35,
-    "expGain": 20,
     "title": "Chapter 7: The Glass Wastes - Stage 5",
     "image": "heart-of-glass.png",
     "description": "In the heart of the Wastes rises a crystalline tower. At its peak, the Chronarch awaits - master of fractured time.",
@@ -3481,7 +3596,6 @@
   },
   {
     "stageNumber": 36,
-    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 1",
     "image": "descent-chasm.png",
     "description": "The sky vanishes. You descend into the earth's breathless core, past roots older than nations and echoes older than time.",
@@ -3561,7 +3675,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_abyssal_crawler",
           "monster_void_tunneler",
@@ -3577,7 +3691,6 @@
   },
   {
     "stageNumber": 37,
-    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 2",
     "image": "fungal-sanctum.png",
     "description": "A forest of bioluminescent fungi pulses with sickly light. It breathes. And it's watching.",
@@ -3657,7 +3770,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_abyssal_crawler",
           "monster_void_tunneler",
@@ -3673,7 +3786,6 @@
   },
   {
     "stageNumber": 38,
-    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 3",
     "image": "underground-river.png",
     "description": "A river of black water flows through a tomb of bones. The ferry waits - but the price is not coin.",
@@ -3753,7 +3865,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_abyssal_crawler",
           "monster_void_tunneler",
@@ -3769,7 +3881,6 @@
   },
   {
     "stageNumber": 39,
-    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 4",
     "image": "forgotten-vaults.png",
     "description": "Doors sealed with runes older than empires creak open. Inside - the lost knowledge of ancient gods, and the things that guard it.",
@@ -3849,7 +3960,7 @@
         ]
       },
       {
-        "type": "random",
+        "type": "miniboss",
         "enemies": [
           "monster_abyssal_crawler",
           "monster_void_tunneler",
@@ -3865,7 +3976,6 @@
   },
   {
     "stageNumber": 40,
-    "expGain": 20,
     "title": "Chapter 8: The Silent Deep - Stage 5",
     "image": "abyssal-core.png",
     "description": "At the deepest point lies a throne of black stone - and the Watcher Below, an ancient horror sealed in dreamless sleep.",
@@ -3962,7 +4072,6 @@
   },
   {
     "stageNumber": 41,
-    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 1",
     "image": "withered-plain.png",
     "description": "You emerge into a broken world. The sky bleeds violet, and the ground cracks with every step. Life has fled - or become something worse.",
@@ -4032,7 +4141,49 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_balgrim_the_vile",
           "monster_abyssal_crawler",
@@ -4057,7 +4208,6 @@
   },
   {
     "stageNumber": 42,
-    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 2",
     "image": "field-of-hollows.png",
     "description": "Once a city, now a graveyard. The spirits here wear the faces of your loved ones - and they want you to stay.",
@@ -4127,7 +4277,49 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_zarael_the_flameborn",
           "monster_abyssal_crawler",
@@ -4152,7 +4344,6 @@
   },
   {
     "stageNumber": 43,
-    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 3",
     "image": "twisted-forest.png",
     "description": "A forest petrified mid-scream. Branches like claws. Roots like veins. And things that hunt without eyes.",
@@ -4222,7 +4413,49 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_thornshade_the_eternal",
           "monster_abyssal_crawler",
@@ -4247,7 +4480,6 @@
   },
   {
     "stageNumber": 44,
-    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 4",
     "image": "corrupted-shrine.png",
     "description": "A holy site, long defiled. Black flames flicker where once stood candles of prayer. Something still lingers within the sanctum.",
@@ -4317,7 +4549,49 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_korthax_the_unchained",
           "monster_abyssal_crawler",
@@ -4342,7 +4616,6 @@
   },
   {
     "stageNumber": 45,
-    "expGain": 20,
     "title": "Chapter 9: The Blighted Reach - Stage 5",
     "image": "throne-of-roots.png",
     "description": "At the center of the Blight lies the Heartroot, pulsing with stolen souls. Its guardian: a creature birthed of the Lich King's first sin.",
@@ -4412,7 +4685,49 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "random",
+        "enemies": [
+          "monster_abyssal_crawler",
+          "monster_void_tunneler",
+          "monster_fungal_colossus",
+          "monster_stone_maw_basilisk",
+          "monster_voidcaller",
+          "monster_abyssal_spawn",
+          "monster_bone_colossus",
+          "monster_runebound_construct",
+          "monster_necromancer",
+          "monster_flame_elemental",
+          "monster_dracolich",
+          "monster_lich",
+          "monster_storm_revenant",
+          "monster_fire_troll",
+          "monster_phoenix_warden",
+          "monster_bone_colossus"
+        ]
+      },
+      {
+        "type": "miniboss",
         "enemies": [
           "monster_xalzaroth",
           "monster_abyssal_crawler",
@@ -4437,7 +4752,6 @@
   },
   {
     "stageNumber": 46,
-    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 1",
     "image": "ashen-gate.png",
     "description": "At the edge of the broken world stands a gate forged from bone and sorrow. It only opens for those who carry both.",
@@ -4507,7 +4821,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_ironfang_the_betrayer",
           "monster_abyssal_crawler",
@@ -4532,7 +4846,6 @@
   },
   {
     "stageNumber": 47,
-    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 2",
     "image": "hall-of-echoes.png",
     "description": "An endless hall of obsidian mirrors reflects not your form - but your failures. Here, the mind breaks before the body.",
@@ -4602,7 +4915,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_maelgrin_doomcaller",
           "monster_abyssal_crawler",
@@ -4627,7 +4940,6 @@
   },
   {
     "stageNumber": 48,
-    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 3",
     "image": "vault-of-bones.png",
     "description": "Pyramids of skulls, rivers of marrow. The Vault of Bones stores the essence of every soul the Lich King has devoured.",
@@ -4697,7 +5009,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_ashurak_the_wrathful",
           "monster_abyssal_crawler",
@@ -4722,7 +5034,6 @@
   },
   {
     "stageNumber": 49,
-    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Stage 4",
     "image": "crown-of-black-flame.png",
     "description": "Before the throne lies the Crown of Black Flame - a sentient inferno, loyal only to its master.",
@@ -4792,7 +5103,7 @@
         ]
       },
       {
-        "type": "boss",
+        "type": "miniboss",
         "enemies": [
           "monster_velmora_the_cruel",
           "monster_abyssal_crawler",
@@ -4817,7 +5128,6 @@
   },
   {
     "stageNumber": 50,
-    "expGain": 20,
     "title": "Chapter 10: The Throne of Ash - Final Battle",
     "image": "lich-king-throne.png",
     "description": "At last, the Throne. The princess is bound in chains of grief. The Lich King rises, eyes burning with the end of all things.",

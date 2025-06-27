@@ -36,6 +36,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
 
     this.add
       .text(this.scale.width / 2, 40, "Deck Builder", {
+        fontFamily: "Cinzel",
         fontSize: "32px",
         color: "#fff",
       })
@@ -360,6 +361,6 @@ export default class DeckBuilderScene extends Phaser.Scene {
     if (!this.pointsText) {
       this.pointsText = this.add.text(this.scale.width / 2, 270, '', style).setDepth(10).setOrigin(0.5, 0);
     }
-    this.pointsText.setText(`Available Points: ${points} / ${maxPoints}, ${expToNextLevel} EXP to Next Level`);
+    this.pointsText.setText(`Available Points: ${points} / ${maxPoints}`);
   }
 }

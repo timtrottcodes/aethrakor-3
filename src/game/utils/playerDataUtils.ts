@@ -53,16 +53,7 @@ export function isValidCardSelection(
 /* exp calc */
 
 function getTotalStepCount(): number {
-  const stages = stagesData.map(stage => ({
-      ...stage,
-      steps: stage.steps.map(step => {
-        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
-        return {
-          ...step,
-          type: StepType[formattedType as keyof typeof StepType]
-        };
-      })
-    }));
+  const stages = loadStageData();
   return stages.reduce((total, stage) => total + stage.steps.length, 0);
 }
 
@@ -71,7 +62,7 @@ function getExpToNextLevel(level: number): number {
   return 100 + Math.round(Math.pow(level, 1.5) * 5);
 }
 
-export function grantPlayerExp(playerData: PlayerData): void {
+export function grantPlayerExp(playerData: PlayerData, combatBonus: boolean): void {
   const { currentStage, currentStep } = playerData.progress;
   const stepIndex = (currentStage - 1) * 5 + (currentStep); // 0-based
   const totalSteps = getTotalStepCount(); // e.g. 245
@@ -79,7 +70,11 @@ export function grantPlayerExp(playerData: PlayerData): void {
   const progress = stepIndex / totalSteps;
 
   // Ease-in curve (starts fast, slows down)
-  const expGain = Math.round(10 + 40 * Math.pow(progress, 1.5)); // gain 10–50 per step
+  let expGain = Math.round(10 + 40 * Math.pow(progress, 1.5)); // gain 10–50 per step
+
+  if (combatBonus) {
+    expGain = expGain * 1.5;
+  }
 
   playerData.currentExp += expGain;
   playerData.expToNextLevel -= expGain;
@@ -88,6 +83,19 @@ export function grantPlayerExp(playerData: PlayerData): void {
     playerData.level++;
     playerData.expToNextLevel = getExpToNextLevel(playerData.level);
   }
+}
+
+export function loadStageData() {
+  return stagesData.map(stage => ({
+    ...stage,
+    steps: stage.steps.map(step => {
+      const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
+      return {
+        ...step,
+        type: StepType[formattedType as keyof typeof StepType]
+      };
+    })
+  }));
 }
 
 /* end exp calc */
