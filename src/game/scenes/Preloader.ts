@@ -73,7 +73,6 @@ export class Preloader extends Scene {
       this.load.image(`${monster.id}`, `monsters/${monster.id}.png`);
     });
 
-    this.load.image("card_frame", "ui/card_frame.png");
     this.load.image("card_back", "ui/card-back.png");
     this.load.image("card-back-adventure", "ui/card-back-adventure.png");
     this.load.image("card_selection", "ui/card-back-selection.png");

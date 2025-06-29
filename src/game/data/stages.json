@@ -1918,7 +1918,7 @@
     "story": [
       {
         "name": "Narrator",
-        "lines": "Headless statues watched from the roadside. Long ago, they glorified forgotten rulers - now they stood like silent mourners.",
+        "lines": "The statue watched from the roadside. Long ago, they glorified forgotten rulers - now they stood like silent mourners.",
         "image": ""
       },
       {
@@ -2024,7 +2024,7 @@
     "stageNumber": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 5",
     "image": "sunken-temple.png",
-    "description": "The road ends at a broken temple, half-swallowed by the earth. Inside, a heretic prince still guards the old empire's final secret.",
+    "description": "The road ends at a broken temple, clinging to the mountainside. Inside, a heretic prince still guards the old empire's final secret.",
     "story": [
       {
         "name": "Narrator",

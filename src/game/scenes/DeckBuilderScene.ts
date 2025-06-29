@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { Card, CardFace, PlayerData, Rarity, rarityOrder, SpecialAbility } from "../objects/objects";
+import { Card, CardFace, PlayerData, Rarity, rarityCost, rarityOrder, SpecialAbility } from "../objects/objects";
 import { renderPlayerCard } from "../utils/renderPlayerCard";
 import { getMaxCardCost, loadPlayerData, savePlayerData } from "../utils/playerDataUtils";
 import { CardManager } from "../objects/CardManager";
@@ -16,6 +16,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
   private maxEquippedCards = 5;
   private isValidDeck: boolean = false;
   private pointsText?: Phaser.GameObjects.Text;
+  private scrollbar?: Phaser.GameObjects.Rectangle;
 
   constructor() {
     super("DeckBuilderScene");
@@ -110,8 +111,16 @@ export default class DeckBuilderScene extends Phaser.Scene {
     const listWidth = this.scale.width - 100;
     const listHeight = 800; // more height for better scrolling
 
+    let previousScrollY = this.collectionContainer
+      ? listY - this.collectionContainer.y
+      : 0;
+
     if (this.collectionContainer) {
       this.collectionContainer.destroy(true); // true = also destroy all children recursively
+    }
+
+    if (this.scrollbar) {
+      this.scrollbar.destroy();
     }
 
     // Create mask
@@ -145,7 +154,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
 
       // Update scrollbar position
       const percent = scrollY / (this.collectionContainer.height - listHeight);
-      scrollbar.y = listY + percent * (listHeight - scrollbar.displayHeight);
+      this.scrollbar!.y = listY + percent * (listHeight - this.scrollbar!.displayHeight);
     };
 
     // Scroll by reversed mouse wheel
@@ -182,7 +191,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
       .sort((a, b) => {
         const rarityCompare = rarityOrder[a.rarity] - rarityOrder[b.rarity];
         if (rarityCompare !== 0) return rarityCompare;
-        return b.cost - a.cost; // Descending cost
+        return rarityCost[b.rarity]  - rarityCost[a.rarity]; // Descending cost
       });
 
 
@@ -263,16 +272,23 @@ export default class DeckBuilderScene extends Phaser.Scene {
       (listHeight / this.collectionContainer.height) * listHeight,
       20
     );
-    const scrollbar = this.add
-      .rectangle(
-        listX + listWidth - scrollbarWidth,
-        listY,
-        scrollbarWidth,
-        scrollbarHeight,
-        0xffffff,
-        0.4
-      )
-      .setOrigin(0, 0);
+    this.scrollbar = this.add.rectangle(
+      listX + listWidth - scrollbarWidth,
+      listY,
+      scrollbarWidth,
+      scrollbarHeight,
+      0xffffff,
+      0.4
+    )
+    .setOrigin(0, 0);
+
+    scrollY = Phaser.Math.Clamp(
+      previousScrollY,
+      0,
+      Math.max(0, this.collectionContainer.height - listHeight)
+    );
+    this.collectionContainer.y = listY - scrollY;
+    updateScroll(); // also updates scrollbar position
   }
 
   private tryAddCard(cardId: string) {
@@ -298,10 +314,10 @@ export default class DeckBuilderScene extends Phaser.Scene {
     const totalCost = this.playerData.equippedCards.reduce((sum, id) => {
       if (!id) return sum;
       const card = this.cardManager.getById(id);
-      return card ? sum + card.cost : sum;
+      return card ? sum + rarityCost[card.rarity] : sum;
     }, 0);
 
-    if (totalCost + cardData.cost > maxCost) {
+    if (totalCost + rarityCost[cardData.rarity] > maxCost) {
       // Exceeds cost limit
       return;
     }
@@ -327,7 +343,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
     const totalCost = this.playerData.equippedCards.reduce((sum, id) => {
       if (!id) return sum;
       const card = this.cardManager.getById(id);
-      return card ? sum + card.cost : sum;
+      return card ? sum + rarityCost[card.rarity] : sum;
     }, 0);
 
     const equippedCount = this.playerData.equippedCards.filter((id) => id !== "").length;
@@ -341,26 +357,30 @@ export default class DeckBuilderScene extends Phaser.Scene {
     }
   }
 
-  private renderPlayerStats(): void {
-    const points = this.playerData.equippedCards.reduce((sum, id) => {
+  private renderPlayerStats() {
+    const maxCost = getMaxCardCost(this.playerData.level);
+
+    const totalCost = this.playerData.equippedCards.reduce((sum, id) => {
       if (!id) return sum;
       const card = this.cardManager.getById(id);
-      return card ? sum + card.cost : sum;
+      return card ? sum + rarityCost[card.rarity] : sum;
     }, 0);
-    const maxPoints = getMaxCardCost(this.playerData.level);
-    const expToNextLevel = this.playerData.expToNextLevel;
 
-    const style: Phaser.Types.GameObjects.Text.TextStyle = {
-      fontFamily: 'Cinzel',
-      fontSize: '18px',
-      color: '#ffd700', // gold
-      stroke: '#000',
-      strokeThickness: 2
-    };
+    const available = maxCost - totalCost;
 
     if (!this.pointsText) {
-      this.pointsText = this.add.text(this.scale.width / 2, 270, '', style).setDepth(10).setOrigin(0.5, 0);
+      this.pointsText = this.add.text(
+        this.scale.width / 2,
+        280,
+        `Available Points: ${available}/${maxCost}`,
+        {
+          fontSize: "20px",
+          fontFamily: "Cinzel",
+          color: "#ffffff",
+        }
+      ).setOrigin(0.5);
+    } else {
+      this.pointsText.setText(`Available Points: ${available}/${maxCost}`);
     }
-    this.pointsText.setText(`Available Points: ${points} / ${maxPoints}`);
   }
 }

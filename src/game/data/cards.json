@@ -3,18 +3,16 @@
     "id": "card_foot_soldier",
     "name": "Town Foot Soldier",
     "description": "A dependable militia fighter trained to hold the line in village skirmishes.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 2,
-    "health": 6,
+    "health": 5,
     "specialAbility": "None"
   },
   {
     "id": "card_archer",
     "name": "Village Archer",
     "description": "A hunter turned archer, skilled at striking from the treeline.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -23,8 +21,7 @@
     "id": "card_apprentice_mage",
     "name": "Apprentice Mage",
     "description": "A novice in the arcane arts, eager to prove their worth with basic spells.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -33,18 +30,16 @@
     "id": "card_squire",
     "name": "Loyal Squire",
     "description": "A young hopeful clad in hand-me-down armor, ready to serve and learn.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
-    "health": 7,
+    "health": 5,
     "specialAbility": "None"
   },
   {
     "id": "card_wild_scout",
     "name": "Wildlands Scout",
     "description": "A nimble traveler of the forest paths, skilled in tracking and survival.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 6,
     "specialAbility": "None"
@@ -53,18 +48,16 @@
     "id": "card_healer_initiate",
     "name": "Healer Initiate",
     "description": "A temple trainee with minor restorative magic and herbal knowledge.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 8,
+    "rarity": "Ordinary",
+    "attack": 3,
+    "health": 5,
     "specialAbility": "Healer"
   },
   {
     "id": "card_farm_guard",
     "name": "Farmstead Guard",
     "description": "A pitchfork-wielding defender of fields and family.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -73,19 +66,17 @@
     "id": "card_brawler",
     "name": "Tavern Brawler",
     "description": "Tough as nails and fueled by ale, this brawler handles trouble with fists.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 2,
-    "health": 7,
+    "health": 6,
     "specialAbility": "None"
   },
   {
     "id": "card_woodland_hermit",
     "name": "Woodland Hermit",
     "description": "An odd recluse with strange charms and a squirrel companion.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 3,
+    "rarity": "Ordinary",
+    "attack": 2,
     "health": 5,
     "specialAbility": "None"
   },
@@ -93,8 +84,7 @@
     "id": "card_messenger",
     "name": "Swift Messenger",
     "description": "A runner who knows the roads and relays messages under any threat.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 2,
     "health": 7,
     "specialAbility": "None"
@@ -104,7 +94,6 @@
     "name": "Rat Catcher",
     "description": "Armed with traps and grit, keeps villages safe from vermin and worse.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -114,7 +103,6 @@
     "name": "Rookie Sellsword",
     "description": "An eager mercenary hoping to earn fame one swing at a time.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -124,7 +112,6 @@
     "name": "Grave Digger",
     "description": "Spends more time around the dead than the living, but no less brave.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -134,9 +121,8 @@
     "name": "Barn Watch",
     "description": "Keeps eyes on livestock and local threats, pitchfork always nearby.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 2,
-    "health": 7,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -144,9 +130,8 @@
     "name": "Field Surgeon",
     "description": "Treats wounds with poultices and grit amid the chaos of battle.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 8,
+    "attack": 3,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -154,7 +139,6 @@
     "name": "River Fisher",
     "description": "Knows the waterways better than any map could hope to show.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 5,
     "specialAbility": "None"
@@ -164,7 +148,6 @@
     "name": "Mill Guard",
     "description": "Protects grain and workers from bandits and beasts alike.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 2,
     "health": 6,
     "specialAbility": "None"
@@ -174,7 +157,6 @@
     "name": "Rooftop Runner",
     "description": "Delivers messages or blades through the narrow skyline paths.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -184,7 +166,6 @@
     "name": "Stable Hand",
     "description": "Works with beasts daily, more formidable than they look.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 2,
     "health": 7,
     "specialAbility": "None"
@@ -194,7 +175,6 @@
     "name": "Gutter Scrapper",
     "description": "Raised in alleys, fights with anything not nailed down.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 5,
     "specialAbility": "None"
@@ -204,8 +184,7 @@
     "name": "Silent Watcher",
     "description": "Keeps the night vigil without complaint or fear.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 3,
+    "attack": 4,
     "health": 8,
     "specialAbility": "None"
   },
@@ -214,9 +193,8 @@
     "name": "Garden Keeper",
     "description": "Tends to herbs and knows a thing or two about poisons.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 3,
-    "health": 6,
+    "attack": 4,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -224,7 +202,6 @@
     "name": "Village Cobbler",
     "description": "Fixes boots—and occasionally bandits—with a heavy hammer.",
     "rarity": "Common",
-    "cost": 2,
     "attack": 4,
     "health": 7,
     "specialAbility": "None"
@@ -234,9 +211,8 @@
     "name": "Hill Runner",
     "description": "Knows every rise and shortcut—vanishes as fast as they strike.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 3,
-    "health": 4,
+    "attack": 4,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -244,7 +220,6 @@
     "name": "Bellringer",
     "description": "Rings alarms or skulls depending on the occasion.",
     "rarity": "Common",
-    "cost": 2,
     "attack": 3,
     "health": 5,
     "specialAbility": "None"
@@ -254,9 +229,8 @@
     "name": "Ox Driver",
     "description": "Drives stubborn beasts, and sometimes bandits, with equal force.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 2,
-    "health": 6,
+    "attack": 4,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -264,8 +238,7 @@
     "name": "Barrel Basher",
     "description": "Smashes casks and occasionally skulls when drunk enough.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 2,
+    "attack": 5,
     "health": 7,
     "specialAbility": "None"
   },
@@ -274,8 +247,7 @@
     "name": "Sling Boy",
     "description": "A street kid with deadly aim and nothing to lose.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 3,
+    "attack": 5,
     "health": 4,
     "specialAbility": "None"
   },
@@ -284,9 +256,8 @@
     "name": "Faithful Herald",
     "description": "Delivers royal decrees under threat of steel and storm.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 2,
-    "health": 6,
+    "attack": 4,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -294,8 +265,7 @@
     "name": "Quiet Herbalist",
     "description": "Treats wounds and raises eyebrows with mysterious teas.",
     "rarity": "Common",
-    "cost": 2,
-    "attack": 1,
+    "attack": 4,
     "health": 8,
     "specialAbility": "None"
   },
@@ -304,9 +274,8 @@
     "name": "Duskblade Knight",
     "description": "A disciplined warrior trained in both blade and shadow, guarding the kingdom's borders at twilight.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 5,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -314,9 +283,8 @@
     "name": "Ember Seer",
     "description": "A fire-touched mage who sees fate in the flames and scorches foes with ember curses.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 5,
-    "health": 7,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -324,8 +292,7 @@
     "name": "Stonewarden",
     "description": "Clad in rune-inscribed stoneplate, this guardian channels ancient power to shield allies.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 3,
+    "attack": 6,
     "health": 8,
     "specialAbility": "None"
   },
@@ -334,8 +301,7 @@
     "name": "Windrider Scout",
     "description": "An elite outrider who can traverse the wilds at remarkable speed, warning of danger before it arrives.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
+    "attack": 5,
     "health": 8,
     "specialAbility": "None"
   },
@@ -344,9 +310,8 @@
     "name": "Veil Cleric",
     "description": "A quiet priest of the lunar veil, adept in warding magics and subtle healing rituals.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 3,
-    "health": 6,
+    "attack": 5,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -354,9 +319,8 @@
     "name": "Runeblade Apprentice",
     "description": "A student of ancient sword-magic, capable of infusing strikes with unstable arcane energy.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 5,
-    "health": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -364,8 +328,7 @@
     "name": "Battle Ranger",
     "description": "Equally skilled with bow and blade, this seasoned woodsman strikes swiftly from cover.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
+    "attack": 6,
     "health": 8,
     "specialAbility": "None"
   },
@@ -374,7 +337,6 @@
     "name": "Ashen Warlock",
     "description": "Draped in cinders and whispered pacts, the warlock summons minor spirits to do their bidding.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 5,
     "health": 9,
     "specialAbility": "None"
@@ -384,8 +346,7 @@
     "name": "Glaivemaster",
     "description": "A disciplined martial artist whose sweeping glaive forms keep foes at bay with deadly precision.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 7,
+    "attack": 8,
     "health": 8,
     "specialAbility": "None"
   },
@@ -394,9 +355,8 @@
     "name": "Gravetender",
     "description": "A somber caretaker who communes with the dead and commands protective bone wards.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 3,
-    "health": 6,
+    "attack": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -404,9 +364,8 @@
     "name": "Blade Acolyte",
     "description": "Trained in temple combat forms, swift and precise.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 5,
-    "health": 9,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -414,8 +373,7 @@
     "name": "Firewatch Guardian",
     "description": "Keeps the signal fires lit and enemies at bay.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
+    "attack": 5,
     "health": 8,
     "specialAbility": "None"
   },
@@ -424,7 +382,6 @@
     "name": "Crimson Path Warrior",
     "description": "Follows an ancient martial tradition honed in blood and discipline.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 6,
     "health": 9,
     "specialAbility": "None"
@@ -434,9 +391,8 @@
     "name": "Moonveil Sentinel",
     "description": "A guardian of lunar shrines who strikes under moonlight.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 5,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -444,7 +400,6 @@
     "name": "Iron Grove Hunter",
     "description": "Stalks prey in the steelwood wilds with silent precision.",
     "rarity": "Uncommon",
-    "cost": 3,
     "attack": 5,
     "health": 8,
     "specialAbility": "None"
@@ -454,9 +409,8 @@
     "name": "Rift Mage",
     "description": "Manipulates unstable portals to disorient enemies.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 3,
-    "health": 6,
+    "attack": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -464,9 +418,8 @@
     "name": "Dune Walker",
     "description": "Master of survival and surprise in desert ambushes.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 7,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -474,9 +427,8 @@
     "name": "Twilight Slinger",
     "description": "Blends speed and shadow to deliver deadly bolts.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 6,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -484,8 +436,7 @@
     "name": "Flameforged Adept",
     "description": "Trains near volcanic vents to temper fire magic and flesh.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 5,
+    "attack": 8,
     "health": 7,
     "specialAbility": "None"
   },
@@ -494,9 +445,8 @@
     "name": "Windveil Runner",
     "description": "Faster than most horses, this scout is rarely seen twice.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 5,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -504,9 +454,8 @@
     "name": "Emberborn Duelist",
     "description": "Uses burning blades in a whirling dance of death.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 6,
-    "health": 8,
+    "attack": 8,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -514,9 +463,8 @@
     "name": "Veilweaver",
     "description": "Bends illusion to mask movements and deceive foes.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 3,
-    "health": 6,
+    "attack": 6,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -524,9 +472,8 @@
     "name": "Moss Caller",
     "description": "Communes with forest spirits to entangle and heal.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 4,
-    "health": 4,
+    "attack": 8,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -534,9 +481,8 @@
     "name": "Bloodrune Fighter",
     "description": "Draws power from old runes carved into skin and steel.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 5,
-    "health": 8,
+    "attack": 7,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -544,9 +490,8 @@
     "name": "Starborn Mystic",
     "description": "Born under a rare omen, touched by stellar wisdom.",
     "rarity": "Uncommon",
-    "cost": 3,
-    "attack": 2,
-    "health": 4,
+    "attack": 8,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -554,8 +499,7 @@
     "name": "Solar Paladin",
     "description": "A radiant champion of the sun, wielding divine light to smite darkness and protect allies.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 7,
+    "attack": 9,
     "health": 14,
     "specialAbility": "None"
   },
@@ -564,7 +508,6 @@
     "name": "Shadowblade Assassin",
     "description": "A master of stealth and lethal precision, striking swiftly from the shadows with deadly grace.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 8,
     "health": 16,
     "specialAbility": "None"
@@ -574,7 +517,6 @@
     "name": "Emberstorm Sorcerer",
     "description": "Harnesses the fury of blazing storms, unleashing fiery chaos upon enemies in a torrent of destruction.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 7,
     "health": 14,
     "specialAbility": "None"
@@ -584,8 +526,7 @@
     "name": "Frostguard Warden",
     "description": "A stalwart defender forged in icy realms, freezing foes in place and shielding comrades from harm.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 6,
+    "attack": 7,
     "health": 12,
     "specialAbility": "None"
   },
@@ -594,7 +535,6 @@
     "name": "Dawnseeker Ranger",
     "description": "An elite tracker who blends with the morning light, delivering precise strikes before foes can react.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 7,
     "health": 14,
     "specialAbility": "None"
@@ -604,7 +544,6 @@
     "name": "Ironfist Berserker",
     "description": "A fearsome warrior who channels raw fury into devastating blows that crush all in their path.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 8,
     "health": 16,
     "specialAbility": "None"
@@ -614,9 +553,8 @@
     "name": "Mystic Seer",
     "description": "A sage with deep foresight, weaving arcane knowledge to manipulate the battlefield's flow.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 5,
-    "health": 10,
+    "attack": 7,
+    "health": 13,
     "specialAbility": "None"
   },
   {
@@ -624,7 +562,6 @@
     "name": "Voidblade Duelist",
     "description": "Wields a blade forged from the void itself, striking with supernatural speed and precision.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 7,
     "health": 14,
     "specialAbility": "None"
@@ -634,8 +571,7 @@
     "name": "Stormbreaker Champion",
     "description": "Calls down lightning to empower their strikes, breaking enemy ranks with electrifying force.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 8,
+    "attack": 9,
     "health": 16,
     "specialAbility": "None"
   },
@@ -644,9 +580,8 @@
     "name": "Gloomwarden",
     "description": "A shadowy sentinel who guards forgotten places, unleashing darkness to blind and weaken foes.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 6,
-    "health": 12,
+    "attack": 8,
+    "health": 13,
     "specialAbility": "None"
   },
   {
@@ -654,7 +589,6 @@
     "name": "Ashbringer Knight",
     "description": "Rides into battle clad in scorched steel and fury.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 8,
     "health": 16,
     "specialAbility": "None"
@@ -664,9 +598,8 @@
     "name": "Crystal Fury",
     "description": "A golem powered by ancient gems, surging with volatile energy.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 7,
-    "health": 14,
+    "attack": 6,
+    "health": 16,
     "specialAbility": "None"
   },
   {
@@ -674,9 +607,8 @@
     "name": "Soulforge Binder",
     "description": "Binds spirits into armor and weapons to enhance their wrath.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 6,
-    "health": 12,
+    "attack": 7,
+    "health": 14,
     "specialAbility": "None"
   },
   {
@@ -684,7 +616,6 @@
     "name": "Voidstep Hunter",
     "description": "Appears from nowhere, leaves behind whispers and corpses.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 8,
     "health": 16,
     "specialAbility": "None"
@@ -694,7 +625,6 @@
     "name": "Frostbite Champion",
     "description": "A knight of the northern reaches, radiating a killing chill.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 7,
     "health": 14,
     "specialAbility": "None"
@@ -704,9 +634,8 @@
     "name": "Dreamweaver",
     "description": "Warps reality and memory in ethereal patterns of combat.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 5,
-    "health": 10,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -714,7 +643,6 @@
     "name": "Wildheart Avenger",
     "description": "Fights for fallen beasts and forgotten groves.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 7,
     "health": 14,
     "specialAbility": "None"
@@ -724,7 +652,6 @@
     "name": "Thunderfist Sentinel",
     "description": "Each blow shakes the battlefield with roaring force.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 8,
     "health": 16,
     "specialAbility": "None"
@@ -734,9 +661,8 @@
     "name": "Lorebound Magus",
     "description": "Master of arcane knowledge and ancient spells.",
     "rarity": "Rare",
-    "cost": 5,
-    "attack": 5,
-    "health": 10,
+    "attack": 6,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -744,7 +670,6 @@
     "name": "Gloomfang Stalker",
     "description": "Lurks in cursed woods, preying upon the unwary.",
     "rarity": "Rare",
-    "cost": 5,
     "attack": 6,
     "health": 12,
     "specialAbility": "None"
@@ -754,7 +679,6 @@
     "name": "Stormlord Valerian",
     "description": "A legendary commander who commands thunder and lightning, devastating enemies with storm fury.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 12,
     "health": 24,
     "specialAbility": "None"
@@ -764,7 +688,6 @@
     "name": "Blade Dancer Elyra",
     "description": "A graceful warrior whose deadly swordplay weaves through enemies with unmatched speed and precision.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 11,
     "health": 22,
     "specialAbility": "None"
@@ -774,8 +697,7 @@
     "name": "Arcane Sentinel",
     "description": "A towering guardian infused with arcane energy, shielding allies and unleashing magical blasts.",
     "rarity": "Epic",
-    "cost": 8,
-    "attack": 10,
+    "attack": 11,
     "health": 20,
     "specialAbility": "None"
   },
@@ -784,7 +706,6 @@
     "name": "Ember Revenant",
     "description": "A fiery spirit risen from ashes, burning enemies with relentless fury and unyielding resolve.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 13,
     "health": 26,
     "specialAbility": "None"
@@ -794,7 +715,6 @@
     "name": "Frostborn Warlord",
     "description": "An ice-clad conqueror who freezes the battlefield, shattering foes with brutal strikes.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 12,
     "health": 24,
     "specialAbility": "None"
@@ -804,7 +724,6 @@
     "name": "Shadowbane Inquisitor",
     "description": "Hunter of darkness who purges evil with holy wrath and unbreakable conviction.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 11,
     "health": 22,
     "specialAbility": "None"
@@ -814,7 +733,6 @@
     "name": "Soulforge Blacksmith",
     "description": "Master craftsman whose enchanted weapons bring death and despair to enemies.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 9,
     "health": 25,
     "specialAbility": "None"
@@ -824,7 +742,6 @@
     "name": "Ironclad Paladin",
     "description": "A bastion of defense clad in impenetrable armor, standing firm against overwhelming odds.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 10,
     "health": 20,
     "specialAbility": "None"
@@ -834,7 +751,6 @@
     "name": "Windrunner Scout",
     "description": "Fleet-footed and sharp-eyed, strikes first and vanishes before enemies can retaliate.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 11,
     "health": 18,
     "specialAbility": "None"
@@ -844,7 +760,6 @@
     "name": "Thunderstrike Champion",
     "description": "Calls the fury of storms down upon foes, crushing them with electrifying might.",
     "rarity": "Epic",
-    "cost": 8,
     "attack": 12,
     "health": 24,
     "specialAbility": "None"
@@ -854,7 +769,6 @@
     "name": "Aurion Stormbreaker",
     "description": "The fabled hero who shattered the sky's wrath, wielding thunder to protect the realms.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 18,
     "health": 36,
     "specialAbility": "None"
@@ -864,7 +778,6 @@
     "name": "Seraphina Dawnblade",
     "description": "A radiant warrior whose sword shines with the light of dawn, banishing darkness.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 17,
     "health": 34,
     "specialAbility": "None"
@@ -874,7 +787,6 @@
     "name": "Valdris Shadowbane",
     "description": "The relentless hunter of shadows, feared by evil and revered by allies.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 16,
     "health": 32,
     "specialAbility": "None"
@@ -884,7 +796,6 @@
     "name": "Lyra Windwhisper",
     "description": "A mystic archer who commands the winds, striking silently and vanishing like the breeze.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 15,
     "health": 30,
     "specialAbility": "None"
@@ -894,7 +805,6 @@
     "name": "Drakor Ironfist",
     "description": "A titan of strength whose fists crush mountains and enemies alike.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 19,
     "health": 38,
     "specialAbility": "None"
@@ -904,7 +814,6 @@
     "name": "Elowen Moonshadow",
     "description": "An elusive assassin who blends with the night, striking with deadly precision.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 16,
     "health": 32,
     "specialAbility": "None"
@@ -914,7 +823,6 @@
     "name": "Thalor Fireheart",
     "description": "A fierce pyromancer whose burning passion ignites the battlefield.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 18,
     "health": 36,
     "specialAbility": "None"
@@ -924,7 +832,6 @@
     "name": "Isolde Soulwarden",
     "description": "Guardian of the sacred realm, wielding holy power to heal and protect.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 16,
     "health": 38,
     "specialAbility": "None"
@@ -934,7 +841,6 @@
     "name": "Ragnar Thundermaul",
     "description": "Warlord of the storm clans, smashing foes with the might of the tempest.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 19,
     "health": 38,
     "specialAbility": "None"
@@ -944,7 +850,6 @@
     "name": "Lyssara Everlight",
     "description": "A beacon of hope and justice, whose presence inspires allies to victory.",
     "rarity": "Legendary",
-    "cost": 12,
     "attack": 18,
     "health": 32,
     "specialAbility": "None"

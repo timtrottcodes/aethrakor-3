@@ -1,12 +1,4 @@
-import { Card, CardFace, Rarity } from "../objects/objects";
-
-const rarityColors: Record<Rarity, string> = {
-  [Rarity.Common]: "#cccccc",
-  [Rarity.Uncommon]: "#2DC50E",
-  [Rarity.Rare]: "#3399ff",
-  [Rarity.Epic]: "#aa00ff",
-  [Rarity.Legendary]: "#ffaa00",
-};
+import { Card, CardFace, Rarity, rarityColors, rarityCost } from "../objects/objects";
 
 export function renderPlayerCard(
   scene: Phaser.Scene,
@@ -132,7 +124,7 @@ function renderLevelBadge(
   // Draw cost text
   const levelfontSize = Math.max(70 * scale, 14);
   const levelText = scene.add
-    .text(levelX, levelY, card.cost.toString(), {
+    .text(levelX, levelY, rarityCost[card.rarity].toString(), {
       fontFamily: "Cinzel",
       fontSize: `${levelfontSize}px`,
       fontStyle: `bold`,

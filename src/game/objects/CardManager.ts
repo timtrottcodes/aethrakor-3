@@ -21,14 +21,14 @@ export class CardManager {
   }
 
   getRandomCardsByRarity(
-    rarity: Rarity,
-    cost: number,
+    rarities: Rarity[],
     count: number,
     excludeIds: string[] = []
   ): Card[] {
     // Filter cards by rarity and excludeIds
     const eligibleCards = this.cards.filter(
-      (card) => card.rarity === rarity && card.cost === cost && !excludeIds.includes(card.id)
+      (card) =>
+        rarities.includes(card.rarity) && !excludeIds.includes(card.id)
     );
 
     // Shuffle the eligible cards
@@ -40,7 +40,8 @@ export class CardManager {
 
   getWeightedRandomCardDrop(playerCollection: string[], playerLevel: number): Card | null {
     const rarityWeights: Record<Rarity, number> = {
-      [Rarity.Common]: 600,
+      [Rarity.Ordinary]: 300,
+      [Rarity.Common]: 300,
       [Rarity.Uncommon]: 200,
       [Rarity.Rare]: 150,
       [Rarity.Epic]: 45,
@@ -48,14 +49,16 @@ export class CardManager {
     };
 
     const levelThresholds: Record<Rarity, number> = {
+      [Rarity.Ordinary]: 0,
       [Rarity.Common]: 0,
       [Rarity.Uncommon]: 3,
-      [Rarity.Rare]: 15,
+      [Rarity.Rare]: 7,
       [Rarity.Epic]: 28,
       [Rarity.Legendary]: 40
     };
 
     const eligibleCardsByRarity: Record<Rarity, Card[]> = {
+      [Rarity.Ordinary]: [],
       [Rarity.Common]: [],
       [Rarity.Uncommon]: [],
       [Rarity.Rare]: [],

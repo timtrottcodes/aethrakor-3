@@ -1,4 +1,5 @@
 export enum Rarity {
+  Ordinary = "Ordinary",
   Common = 'Common',
   Uncommon = 'Uncommon',
   Rare = 'Rare',
@@ -19,6 +20,25 @@ export const rarityOrder: Record<Rarity, number> = {
   [Rarity.Rare]: 2,
   [Rarity.Uncommon]: 3,
   [Rarity.Common]: 4,
+  [Rarity.Ordinary]: 5
+};
+
+export const rarityCost: Record<Rarity, number> = {
+  [Rarity.Legendary]: 12,
+  [Rarity.Epic]: 8,
+  [Rarity.Rare]: 5,
+  [Rarity.Uncommon]: 3,
+  [Rarity.Common]: 2,
+  [Rarity.Ordinary]: 1
+};
+
+export const rarityColors: Record<Rarity, string> = {
+  [Rarity.Ordinary]: "#bbbbbb",
+  [Rarity.Common]: "#cccccc",
+  [Rarity.Uncommon]: "#2DC50E",
+  [Rarity.Rare]: "#3399ff",
+  [Rarity.Epic]: "#aa00ff",
+  [Rarity.Legendary]: "#ffaa00",
 };
 
 export interface Card {
@@ -26,7 +46,6 @@ export interface Card {
   name: string;
   description: string;
   rarity: Rarity;
-  cost: number;
   attack: number;
   health: number;
   specialAbility: SpecialAbility;

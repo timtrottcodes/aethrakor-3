@@ -1,8 +1,7 @@
 // scenes/AdventureScene.ts
 import Phaser from 'phaser';
-import stagesData from '../data/stages.json';
-import { loadPlayerData } from '../utils/playerDataUtils';
-import { PlayerData, Stage, StepType } from '../objects/objects';
+import { loadPlayerData, loadStageData } from '../utils/playerDataUtils';
+import { PlayerData, Stage } from '../objects/objects';
 import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from '../utils/button';
 import { GlobalState } from '../objects/globalState';
 
@@ -15,27 +14,16 @@ export default class AdventureScene extends Phaser.Scene {
 
   constructor() {
     super('AdventureScene');
-    
   }
 
   async preload() {
-    this.stages = stagesData.map(stage => ({
-      ...stage,
-      steps: stage.steps.map(step => {
-        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
-        return {
-          ...step,
-          type: StepType[formattedType as keyof typeof StepType]
-        };
-      })
-    }));
-
+    this.stages = loadStageData();
     this.playerData = loadPlayerData();
 
     if (this.playerData) {
       const currentStageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
       const stageImage = `bg_stage_${currentStageGroup}`;
-      this.load.image(stageImage, `assets/backgrounds/${stageImage}.png`);
+      this.load.image(stageImage, `assets/backgrounds/chapters/${stageImage}.png`);
     }
   }
 

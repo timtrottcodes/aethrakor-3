@@ -78,7 +78,7 @@ export default class StoryScene extends Phaser.Scene {
 
     // Create a rounded rectangle background
     const bg = this.add.graphics();
-    bg.fillStyle(0x000000, 0.4); // 40% transparent black
+    bg.fillStyle(0x000000, 0.6); // 60% transparent black
     bg.fillRoundedRect(0, 0, bgWidth, bgHeight, 16); // 16px radius
 
     // Group them in a container so they stay together

@@ -3,9 +3,8 @@
     "id": "monster_goblin_scout",
     "name": "Goblin Scout",
     "description": "A sneaky goblin with sharp eyes and sharper teeth.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
+    "rarity": "Ordinary",
+    "attack": 3,
     "health": 4,
     "specialAbility": "None"
   },
@@ -13,8 +12,7 @@
     "id": "monster_gnoll_grunt",
     "name": "Gnoll Grunt",
     "description": "A savage hyena-like warrior.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -23,8 +21,7 @@
     "id": "monster_wolves",
     "name": "Wolves",
     "description": "A hungry pack that strikes together.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 2,
     "health": 3,
     "specialAbility": "None"
@@ -33,9 +30,8 @@
     "id": "monster_feral_dog",
     "name": "Feral Dog",
     "description": "Snarling, fast, and vicious.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
+    "rarity": "Ordinary",
+    "attack": 3,
     "health": 5,
     "specialAbility": "None"
   },
@@ -43,8 +39,7 @@
     "id": "monster_lurking_thief",
     "name": "Lurking Thief",
     "description": "Steals more than your gold.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 3,
     "specialAbility": "None"
@@ -53,8 +48,7 @@
     "id": "monster_shadow_rat",
     "name": "Shadow Rat",
     "description": "Moves quickly through the darkness.",
-    "rarity": "Common",
-    "cost": 1,
+    "rarity": "Ordinary",
     "attack": 3,
     "health": 3,
     "specialAbility": "None"
@@ -64,9 +58,8 @@
     "name": "Moss Golem",
     "description": "Slow, moss-covered, and stubborn.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 5,
+    "attack": 3,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -74,7 +67,6 @@
     "name": "Bandit Thug",
     "description": "Common road scum with a blade.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -84,7 +76,6 @@
     "name": "Lizardkin Scout",
     "description": "A nimble fighter from the marshlands.",
     "rarity": "Common",
-    "cost": 1,
     "attack": 3,
     "health": 4,
     "specialAbility": "None"
@@ -94,9 +85,8 @@
     "name": "Hobgoblin",
     "description": "Larger and more organized than goblins.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 4,
-    "health": 9,
+    "attack": 5,
+    "health": 10,
     "specialAbility": "None"
   },
 
@@ -104,10 +94,9 @@
     "id": "monster_cave_bat",
     "name": "Cave Bat",
     "description": "Small and fast, with a high-pitched screech.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 4,
-    "health": 6,
+    "rarity": "Uncommon",
+    "attack": 5,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -115,9 +104,8 @@
     "name": "Forest Spider",
     "description": "Camouflaged in the trees, waiting to pounce.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 5,
-    "health": 5,
+    "attack": 6,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -125,8 +113,7 @@
     "name": "Torch Bug",
     "description": "Explodes in a flash when cornered.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 4,
+    "attack": 5,
     "health": 8,
     "specialAbility": "None"
   },
@@ -135,9 +122,8 @@
     "name": "Venom Spider",
     "description": "Its bite weakens even the strongest.",
     "rarity": "Uncommon",
-    "cost": 2,
     "attack": 6,
-    "health": 5,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -145,9 +131,8 @@
     "name": "Corrupted Sylvana",
     "description": "Once a guardian spirit of the forest, now a vengeful wraith of thorns and decay.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 7,
-    "health": 7,
+    "attack": 6,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -155,9 +140,8 @@
     "name": "Slime",
     "description": "Sticky and acidic, but mostly annoying.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 6,
+    "attack": 4,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -165,9 +149,8 @@
     "name": "Swamp Rat",
     "description": "Carries more disease than danger.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 1,
-    "health": 3,
+    "attack": 4,
+    "health": 6,
     "specialAbility": "None"
   },
 
@@ -176,9 +159,8 @@
     "name": "Bone Crawler",
     "description": "Creeps across walls and ceilings.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 3,
+    "attack": 5,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -186,9 +168,8 @@
     "name": "Dire Wolf",
     "description": "Twice the size of a normal wolf.",
     "rarity": "Uncommon",
-    "cost": 2,
     "attack": 5,
-    "health": 4,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -196,9 +177,8 @@
     "name": "Skeleton",
     "description": "A rattling pile of bones with a rusty sword.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 4,
+    "attack": 3,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -206,9 +186,8 @@
     "name": "Ghoul",
     "description": "Feasts on the flesh of the dead\u2014and the living.",
     "rarity": "Uncommon",
-    "cost": 2,
     "attack": 4,
-    "health": 4,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -216,9 +195,8 @@
     "name": "Wight",
     "description": "Unliving and full of hatred.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 4,
-    "health": 4,
+    "attack": 6,
+    "health": 6,
     "specialAbility": "None"
   },
   {
@@ -226,8 +204,7 @@
     "name": "Tomb Guardian",
     "description": "Bound to protect ancient treasures.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 3,
+    "attack": 5,
     "health": 6,
     "specialAbility": "None"
   },
@@ -236,9 +213,8 @@
     "name": "Bog Hag",
     "description": "Casts curses and summons swamp beasts.",
     "rarity": "Rare",
-    "cost": 3,
     "attack": 4,
-    "health": 7,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -246,9 +222,8 @@
     "name": "Stormbound General",
     "description": "A ghostly warrior with a blade of frost.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 6,
+    "health": 12,
     "specialAbility": "None"
   },
 
@@ -256,20 +231,18 @@
     "id": "monster_zombie",
     "name": "Zombie",
     "description": "Slow, dumb, but hard to put down.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 5,
+    "rarity": "Uncommon",
+    "attack": 7,
+    "health": 9,
     "specialAbility": "None"
   },
   {
     "id": "monster_grave_robber",
     "name": "Grave Robber",
     "description": "Uses trickery and speed to survive.",
-    "rarity": "Common",
-    "cost": 1,
-    "attack": 3,
-    "health": 2,
+    "rarity": "Uncommon",
+    "attack": 5,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -277,9 +250,8 @@
     "name": "Bandit Leader",
     "description": "Leads with brutality and greed.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 4,
-    "health": 5,
+    "attack": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -287,9 +259,8 @@
     "name": "Troll Spawn",
     "description": "Tough-skinned and regenerating slowly.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 3,
-    "health": 6,
+    "attack": 5,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -297,9 +268,8 @@
     "name": "Stone Golem",
     "description": "Nearly immovable and incredibly strong.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 4,
-    "health": 8,
+    "attack": 5,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -307,9 +277,8 @@
     "name": "Heretic Prince",
     "description": "Channels forbidden magics to drain life.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 5,
-    "health": 5,
+    "attack": 7,
+    "health": 12,
     "specialAbility": "None"
   },
 
@@ -318,9 +287,8 @@
     "name": "Imp",
     "description": "A mischievous firestarter from the underworld.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 2,
-    "health": 3,
+    "attack": 6,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -328,9 +296,8 @@
     "name": "Dust Wraith",
     "description": "Barely corporeal, but still deadly.",
     "rarity": "Common",
-    "cost": 1,
-    "attack": 3,
-    "health": 2,
+    "attack": 9,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -338,9 +305,8 @@
     "name": "Carrion Drake",
     "description": "A scavenger dragon with acidic spit.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 5,
-    "health": 3,
+    "attack": 9,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -348,9 +314,8 @@
     "name": "Flame Wisp",
     "description": "A sentient ball of fire and fury.",
     "rarity": "Uncommon",
-    "cost": 2,
-    "attack": 5,
-    "health": 3,
+    "attack": 12,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -358,9 +323,8 @@
     "name": "Dark Acolyte",
     "description": "Channels forbidden magics to drain life.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 5,
-    "health": 5,
+    "attack": 8,
+    "health": 11,
     "specialAbility": "None"
   },
   {
@@ -368,9 +332,8 @@
     "name": "Minotaur",
     "description": "A brutal beast with a charging attack.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 6,
-    "health": 6,
+    "attack": 9,
+    "health": 14,
     "specialAbility": "None"
   },
   {
@@ -378,9 +341,8 @@
     "name": "Nightmare Steed",
     "description": "Tramples foes under a burning mane.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 6,
-    "health": 5,
+    "attack": 9,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -388,9 +350,8 @@
     "name": "Blade Dancer",
     "description": "Fast, precise, and deadly in duels.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 6,
-    "health": 4,
+    "attack": 11,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -398,9 +359,8 @@
     "name": "Voidcaller",
     "description": "Summons horrors from beyond the veil.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 6,
-    "health": 8,
+    "attack": 12,
+    "health": 16,
     "specialAbility": "None"
   },
   {
@@ -408,9 +368,8 @@
     "name": "Abyssal Spawn",
     "description": "Born of the void, and hungers for life.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 5,
-    "health": 5,
+    "attack": 13,
+    "health": 11,
     "specialAbility": "None"
   },
   {
@@ -418,31 +377,26 @@
     "name": "Obsidian Knight",
     "description": "His oath unbroken. His soul bound. He will not let anyone past.",
     "rarity": "Epic",
-    "cost": 5,
-    "attack": 5,
-    "health": 5,
+    "attack": 14,
+    "health": 18,
     "specialAbility": "None"
   },
-
   {
     "id": "monster_necromancer",
     "name": "Necromancer",
     "description": "Raises allies from fallen enemies.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 5,
-    "health": 4,
+    "attack": 11,
+    "health": 13,
     "specialAbility": "None"
   },
-
   {
     "id": "monster_flame_elemental",
     "name": "Flame Elemental",
     "description": "Its touch ignites all it strikes.",
     "rarity": "Rare",
-    "cost": 3,
-    "attack": 6,
-    "health": 4,
+    "attack": 12,
+    "health": 14,
     "specialAbility": "None"
   },
 
@@ -451,9 +405,8 @@
     "name": "Dracolich",
     "description": "An undead dragon with arcane powers.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 7,
-    "health": 9,
+    "attack": 14,
+    "health": 11,
     "specialAbility": "None"
   },
 
@@ -462,9 +415,8 @@
     "name": "Lich",
     "description": "A master of death magic, nearly immortal.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 6,
-    "health": 7,
+    "attack": 13,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -472,9 +424,8 @@
     "name": "Storm Revenant",
     "description": "Commands the skies with thunder.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 7,
-    "health": 6,
+    "attack": 15,
+    "health": 11,
     "specialAbility": "None"
   },
   {
@@ -482,9 +433,8 @@
     "name": "Fire Troll",
     "description": "Immune to pain, and stronger in fire.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 6,
-    "health": 8,
+    "attack": 16,
+    "health": 12,
     "specialAbility": "None"
   },
   {
@@ -492,9 +442,8 @@
     "name": "Phoenix Warden",
     "description": "Revives once per battle in a blaze.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 6,
-    "health": 6,
+    "attack": 12,
+    "health": 14,
     "specialAbility": "None"
   },
   {
@@ -502,9 +451,8 @@
     "name": "Bone Colossus",
     "description": "A giant made of hundreds of corpses.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 5,
-    "health": 10,
+    "attack": 13,
+    "health": 17,
     "specialAbility": "None"
   },
   {
@@ -512,9 +460,8 @@
     "name": "Blood Queen",
     "description": "Strikes from the shadows with deadly precision.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 5,
-    "health": 10,
+    "attack": 14,
+    "health": 22,
     "specialAbility": "None"
   },
 
@@ -523,9 +470,8 @@
     "name": "Chronarch",
     "description": "A being of glass and starlight.",
     "rarity": "Epic",
-    "cost": 4,
-    "attack": 8,
-    "health": 5,
+    "attack": 16,
+    "health": 26,
     "specialAbility": "None"
   },
 
@@ -534,7 +480,6 @@
     "name": "Abyssal Crawler",
     "description": "A nightmarish creature with glistening limbs and a hunger for warm blood.",
     "rarity": "Epic",
-    "cost": 5,
     "attack": 7,
     "health": 6,
     "specialAbility": "None"
@@ -544,7 +489,6 @@
     "name": "Onyx Gargantuan",
     "description": "A towering golem formed from compressed stone and fossilized remains.",
     "rarity": "Epic",
-    "cost": 6,
     "attack": 6,
     "health": 10,
     "specialAbility": "None"
@@ -554,7 +498,6 @@
     "name": "Void Tunneler",
     "description": "Burrows through rock and reality alike.",
     "rarity": "Epic",
-    "cost": 4,
     "attack": 9,
     "health": 4,
     "specialAbility": "None"
@@ -564,7 +507,6 @@
     "name": "Fungal Colossus",
     "description": "A living cave of spores and decay.",
     "rarity": "Epic",
-    "cost": 5,
     "attack": 5,
     "health": 9,
     "specialAbility": "None"
@@ -574,7 +516,6 @@
     "name": "Stone Maw Basilisk",
     "description": "With eyes that turn flesh to stone.",
     "rarity": "Epic",
-    "cost": 6,
     "attack": 7,
     "health": 7,
     "specialAbility": "None"
@@ -584,7 +525,6 @@
     "name": "Runebound Construct",
     "description": "Powered by lost magical inscriptions.",
     "rarity": "Epic",
-    "cost": 4,
     "attack": 6,
     "health": 8,
     "specialAbility": "None"
@@ -595,7 +535,6 @@
     "name": "Balgrim the Vile",
     "description": "A demon warlord with an endless thirst for blood.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 9,
     "health": 9,
     "specialAbility": "None"
@@ -605,7 +544,6 @@
     "name": "Zarael the Flameborn",
     "description": "A legendary phoenix demon, reborn from ash.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 8,
     "health": 10,
     "specialAbility": "None"
@@ -615,7 +553,6 @@
     "name": "Thornshade the Eternal",
     "description": "A druidic horror who commands the forest itself.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 9,
     "health": 8,
     "specialAbility": "None"
@@ -625,7 +562,6 @@
     "name": "Korthax the Unchained",
     "description": "A titan once sealed in ancient times.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 10,
     "health": 10,
     "specialAbility": "None"
@@ -635,7 +571,6 @@
     "name": "Xal\u2019Zaroth",
     "description": "A shadow demon who devours hope and light.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 9,
     "health": 9,
     "specialAbility": "None"
@@ -646,7 +581,6 @@
     "name": "Ironfang the Betrayer",
     "description": "Once a noble knight, now a cursed blade wielder.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 10,
     "health": 8,
     "specialAbility": "None"
@@ -656,7 +590,6 @@
     "name": "Maelgrin Doomcaller",
     "description": "A warlock who ended kingdoms.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 9,
     "health": 9,
     "specialAbility": "None"
@@ -666,7 +599,6 @@
     "name": "Ashurak the Wrathful",
     "description": "His roar levels cities.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 10,
     "health": 7,
     "specialAbility": "None"
@@ -676,7 +608,6 @@
     "name": "Velmora the Cruel",
     "description": "Queen of blades and blood.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 8,
     "health": 10,
     "specialAbility": "None"
@@ -686,7 +617,6 @@
     "name": "The Lich King",
     "description": "His legend silences even the bravest.",
     "rarity": "Legendary",
-    "cost": 5,
     "attack": 10,
     "health": 10,
     "specialAbility": "None"

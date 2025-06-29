@@ -1,7 +1,7 @@
 // utils/playerDataUtils.ts
 
 import { CardManager } from "../objects/CardManager";
-import { Card, PlayerData, Rarity, StepType } from "../objects/objects";
+import { Card, PlayerData, Rarity, rarityCost, StepType } from "../objects/objects";
 import stagesData from '../data/stages.json';
 const STORAGE_KEY = "ccgPlayerData";
 
@@ -46,7 +46,7 @@ export function isValidCardSelection(
   selectedCards: Card[]
 ): boolean {
   const maxCost = getMaxCardCost(level);
-  const totalCost = selectedCards.reduce((sum, card) => sum + card.cost, 0);
+  const totalCost = selectedCards.reduce((sum, card) => sum + rarityCost[card.rarity], 0);
   return totalCost <= maxCost;
 }
 
@@ -70,7 +70,7 @@ export function grantPlayerExp(playerData: PlayerData, combatBonus: boolean): vo
   const progress = stepIndex / totalSteps;
 
   // Ease-in curve (starts fast, slows down)
-  let expGain = Math.round(10 + 40 * Math.pow(progress, 1.5)); // gain 10–50 per step
+  let expGain = Math.round(10 + 40 * Math.pow(progress, 1.75)); // gain 10–50 per step
 
   if (combatBonus) {
     expGain = expGain * 1.5;
@@ -115,7 +115,7 @@ function newPlayer() {
   };
 
   const cardManager = new CardManager();
-  const randomCards = cardManager.getRandomCardsByRarity(Rarity.Common, 1, 8);
+  const randomCards = cardManager.getRandomCardsByRarity([Rarity.Ordinary], 8);
   defaultPlayerData.collection = randomCards.map((card) => card.id);
   const shuffled = Phaser.Utils.Array.Shuffle([
     ...defaultPlayerData.collection,
