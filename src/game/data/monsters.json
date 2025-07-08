@@ -22,8 +22,8 @@
     "name": "Wolves",
     "description": "A hungry pack that strikes together.",
     "rarity": "Ordinary",
-    "attack": 2,
-    "health": 3,
+    "attack": 4,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -40,8 +40,8 @@
     "name": "Lurking Thief",
     "description": "Steals more than your gold.",
     "rarity": "Ordinary",
-    "attack": 3,
-    "health": 3,
+    "attack": 4,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -159,8 +159,8 @@
     "name": "Bone Crawler",
     "description": "Creeps across walls and ceilings.",
     "rarity": "Common",
-    "attack": 5,
-    "health": 5,
+    "attack": 6,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -168,8 +168,8 @@
     "name": "Dire Wolf",
     "description": "Twice the size of a normal wolf.",
     "rarity": "Uncommon",
-    "attack": 5,
-    "health": 6,
+    "attack": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -177,8 +177,8 @@
     "name": "Skeleton",
     "description": "A rattling pile of bones with a rusty sword.",
     "rarity": "Common",
-    "attack": 3,
-    "health": 5,
+    "attack": 6,
+    "health": 8,
     "specialAbility": "None"
   },
   {
@@ -186,8 +186,8 @@
     "name": "Ghoul",
     "description": "Feasts on the flesh of the dead\u2014and the living.",
     "rarity": "Uncommon",
-    "attack": 4,
-    "health": 5,
+    "attack": 6,
+    "health": 9,
     "specialAbility": "None"
   },
   {
@@ -195,8 +195,8 @@
     "name": "Wight",
     "description": "Unliving and full of hatred.",
     "rarity": "Uncommon",
-    "attack": 6,
-    "health": 6,
+    "attack": 8,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -204,8 +204,8 @@
     "name": "Tomb Guardian",
     "description": "Bound to protect ancient treasures.",
     "rarity": "Uncommon",
-    "attack": 5,
-    "health": 6,
+    "attack": 6,
+    "health": 7,
     "specialAbility": "None"
   },
   {
@@ -213,8 +213,8 @@
     "name": "Bog Hag",
     "description": "Casts curses and summons swamp beasts.",
     "rarity": "Rare",
-    "attack": 4,
-    "health": 8,
+    "attack": 7,
+    "health": 10,
     "specialAbility": "None"
   },
   {
@@ -222,8 +222,8 @@
     "name": "Stormbound General",
     "description": "A ghostly warrior with a blade of frost.",
     "rarity": "Rare",
-    "attack": 6,
-    "health": 12,
+    "attack": 8,
+    "health": 14,
     "specialAbility": "None"
   },
 
@@ -241,7 +241,7 @@
     "name": "Grave Robber",
     "description": "Uses trickery and speed to survive.",
     "rarity": "Uncommon",
-    "attack": 5,
+    "attack": 6,
     "health": 8,
     "specialAbility": "None"
   },
@@ -250,7 +250,7 @@
     "name": "Bandit Leader",
     "description": "Leads with brutality and greed.",
     "rarity": "Uncommon",
-    "attack": 6,
+    "attack": 7,
     "health": 8,
     "specialAbility": "None"
   },
@@ -259,7 +259,7 @@
     "name": "Troll Spawn",
     "description": "Tough-skinned and regenerating slowly.",
     "rarity": "Uncommon",
-    "attack": 5,
+    "attack": 6,
     "health": 9,
     "specialAbility": "None"
   },
@@ -268,7 +268,7 @@
     "name": "Stone Golem",
     "description": "Nearly immovable and incredibly strong.",
     "rarity": "Rare",
-    "attack": 5,
+    "attack": 7,
     "health": 10,
     "specialAbility": "None"
   },
@@ -277,8 +277,8 @@
     "name": "Heretic Prince",
     "description": "Channels forbidden magics to drain life.",
     "rarity": "Rare",
-    "attack": 7,
-    "health": 12,
+    "attack": 8,
+    "health": 15,
     "specialAbility": "None"
   },
 
@@ -286,7 +286,7 @@
     "id": "monster_imp",
     "name": "Imp",
     "description": "A mischievous firestarter from the underworld.",
-    "rarity": "Common",
+    "rarity": "Rare",
     "attack": 6,
     "health": 9,
     "specialAbility": "None"
@@ -295,7 +295,7 @@
     "id": "monster_dust_wraith",
     "name": "Dust Wraith",
     "description": "Barely corporeal, but still deadly.",
-    "rarity": "Common",
+    "rarity": "Rare",
     "attack": 9,
     "health": 10,
     "specialAbility": "None"

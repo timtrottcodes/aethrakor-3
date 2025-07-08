@@ -11,6 +11,7 @@ import VictoryScene from './scenes/VictoryScene';
 import ExplorationScene from './scenes/ExplorationScene';
 import { CardPreviewScene } from './scenes/CardPreviewScene ';
 import StoryScene from './scenes/StoryScene';
+import CollectionScene from './scenes/CollectionScene';
 
 const config: Phaser.Types.Core.GameConfig = {
      type: Phaser.AUTO,
@@ -33,7 +34,8 @@ const config: Phaser.Types.Core.GameConfig = {
         VictoryScene,
         ExplorationScene,
         CardPreviewScene,
-        StoryScene
+        StoryScene,
+        CollectionScene
     ]
 };
 

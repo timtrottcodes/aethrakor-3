@@ -57,7 +57,7 @@ export function createFancyButton(
   });
 
   buttonZone.on('pointerdown', () => {
-    //scene.sound.play?.('click', { volume: 0.5 }); // optional sound
+    scene.sound.play?.('click');
     onClick();
   });
 
@@ -119,7 +119,10 @@ export function createSlantedFancyButton(
 
   buttonZone.on('pointerover', () => glow.setVisible(true));
   buttonZone.on('pointerout', () => glow.setVisible(false));
-  buttonZone.on('pointerup', () => onClick());
+  buttonZone.on('pointerdown', () => {
+    scene.sound.play?.('click');
+    onClick();
+  });
 
   const container = scene.add.container(x, y, [
     background, inner, glow, text, buttonZone

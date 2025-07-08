@@ -24,6 +24,8 @@ export default class CardDropScene extends Phaser.Scene {
       playerData.collection.push(randomCard.id);
       savePlayerData(playerData);
 
+      this.sound.play?.('fanfare');
+
       // Add overlay
       this.add.image(this.scale.width / 2, this.scale.height / 2, 'bg_drop').setDisplaySize(this.scale.width, this.scale.height);
       const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6)

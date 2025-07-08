@@ -35,7 +35,7 @@ export const rarityCost: Record<Rarity, number> = {
 export const rarityColors: Record<Rarity, string> = {
   [Rarity.Ordinary]: "#bbbbbb",
   [Rarity.Common]: "#cccccc",
-  [Rarity.Uncommon]: "#2DC50E",
+  [Rarity.Uncommon]: "#279f27",
   [Rarity.Rare]: "#3399ff",
   [Rarity.Epic]: "#aa00ff",
   [Rarity.Legendary]: "#ffaa00",

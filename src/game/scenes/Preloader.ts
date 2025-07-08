@@ -1,6 +1,7 @@
 import { Scene } from "phaser";
 import cardData from "../data/cards.json";
 import monsterData from "../data/monsters.json";
+import { getExpToNextLevel, getTotalStepCount } from "../utils/playerDataUtils";
 
 export class Preloader extends Scene {
   constructor() {
@@ -82,6 +83,17 @@ export class Preloader extends Scene {
     this.load.image("deck-builder", "backgrounds/deck-builder.png");
     this.load.image("scratch", "ui/scratch.png");
     this.load.image("star", "ui/11571051.png");
+
+    this.load.audio('click', 'sfx/button-click-289742.mp3');
+    this.load.audio('foot', 'sfx/st2-footstep-sfx-323055.mp3');
+    this.load.audio('horn', 'sfx/relaxing-music-original-viking-attacking-battle-horn-116623.mp3');
+    this.load.audio('fanfare', 'sfx/success-fanfare-trumpets-6185.mp3');
+    this.load.audio('punch', 'sfx/punch-140236.mp3');
+    this.load.audio('swordhit', 'sfx/hit-swing-sword-small-2-95566.mp3');
+    this.load.audio('scratch', 'sfx/paper-rip-fast-252617.mp3');
+
+    this.load.audio('victory', 'sfx/success-fanfare-trumpets-6185.mp3');
+    this.load.audio('defeat', 'sfx/one-last-defeat-303896.mp3');
   }
 
   create() {
@@ -92,3 +104,4 @@ export class Preloader extends Scene {
     this.scene.start("MainMenuScene");
   }
 }
+

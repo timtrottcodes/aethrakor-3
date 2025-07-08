@@ -14,7 +14,7 @@
     "description": "A hunter turned archer, skilled at striking from the treeline.",
     "rarity": "Ordinary",
     "attack": 3,
-    "health": 4,
+    "health": 3,
     "specialAbility": "None"
   },
   {
@@ -31,8 +31,8 @@
     "name": "Loyal Squire",
     "description": "A young hopeful clad in hand-me-down armor, ready to serve and learn.",
     "rarity": "Ordinary",
-    "attack": 3,
-    "health": 5,
+    "attack": 2,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -41,7 +41,7 @@
     "description": "A nimble traveler of the forest paths, skilled in tracking and survival.",
     "rarity": "Ordinary",
     "attack": 3,
-    "health": 6,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -49,7 +49,7 @@
     "name": "Healer Initiate",
     "description": "A temple trainee with minor restorative magic and herbal knowledge.",
     "rarity": "Ordinary",
-    "attack": 3,
+    "attack": 2,
     "health": 5,
     "specialAbility": "Healer"
   },
@@ -59,7 +59,7 @@
     "description": "A pitchfork-wielding defender of fields and family.",
     "rarity": "Ordinary",
     "attack": 2,
-    "health": 6,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -68,7 +68,7 @@
     "description": "Tough as nails and fueled by ale, this brawler handles trouble with fists.",
     "rarity": "Ordinary",
     "attack": 2,
-    "health": 6,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -85,8 +85,8 @@
     "name": "Swift Messenger",
     "description": "A runner who knows the roads and relays messages under any threat.",
     "rarity": "Ordinary",
-    "attack": 2,
-    "health": 7,
+    "attack": 3,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -95,7 +95,7 @@
     "description": "Armed with traps and grit, keeps villages safe from vermin and worse.",
     "rarity": "Common",
     "attack": 2,
-    "health": 6,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -166,7 +166,7 @@
     "name": "Stable Hand",
     "description": "Works with beasts daily, more formidable than they look.",
     "rarity": "Common",
-    "attack": 2,
+    "attack": 3,
     "health": 7,
     "specialAbility": "None"
   },

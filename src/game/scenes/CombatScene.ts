@@ -52,6 +52,7 @@ export default class CombatScene extends Phaser.Scene {
   private stepId: number | undefined = undefined;
   private stages: Stage[];
   private nextScene: string = "";
+  private soundKeys: string[] = ['punch', 'swordhit', 'scratch'];
 
   constructor() {
     super("CombatScene");
@@ -59,50 +60,36 @@ export default class CombatScene extends Phaser.Scene {
 
   init(data: CombatSceneData): void {
     this.stages = loadStageData();
-    this.playerData = loadPlayerData();
+    this.playerData = loadPlayerData(); 
 
     if (data.stageId) {
       this.stageId = data.stageId;
       this.stepId = data.stepId;
       this.nextScene = "MainMenuScene";
+    } else {
+      this.stageId = this.playerData.progress.currentStage;
+      this.stepId = this.playerData.progress.currentStep;
     }
+
+    this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
+    this.currentStep = this.currentStage.steps[this.stepId!];
   }
 
   preload() {
-    if (!this.stageId) {
-      this.stageId = this.playerData.progress.currentStage;
-      this.currentStage = this.stages.find(
-        (s) => s.stageNumber === this.stageId
-      )!;
-      this.currentStep =
-        this.currentStage.steps[this.playerData.progress.currentStep];
-    } else {
-      this.currentStage = this.stages.find(
-        (s) => s.stageNumber === this.stageId
-      )!;
-      this.currentStep = this.currentStage.steps[this.stepId!];
+    if (this.currentStage) {
+      this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
     }
-
-    this.load.image(
-      this.currentStage.image,
-      `assets/backgrounds/stages/${this.currentStage.image}`
-    );
   }
 
   create() {
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
-    this.playerData = loadPlayerData();
 
     this.add
       .image(0, 0, this.currentStage.image)
       .setOrigin(0)
       .setDisplaySize(this.scale.width, this.scale.height)
       .setDepth(0);
-    this.add.text(20, 20, "Combat Phase", {
-      fontSize: "32px",
-      color: "#ffffff",
-    });
 
     const centerX = this.scale.width / 2;
     let spacing = 140;
@@ -224,7 +211,8 @@ export default class CombatScene extends Phaser.Scene {
         }
       )
       .setDepth(2);
-
+    
+    spacing = 140;
     // Player cards
     this.playerCards = this.playerData.equippedCards
       .map((cardId, i) => {
@@ -254,19 +242,6 @@ export default class CombatScene extends Phaser.Scene {
       })
       .filter((c): c is CombatCard => c !== undefined);
 
-    // Buttons
-    /*const startButton = this.add.text(centerX, 550, 'Start Fight', {
-      fontSize: '24px', color: '#ffffff', backgroundColor: '#333333', padding: { x: 10, y: 5 }
-    }).setOrigin(0.5).setInteractive();
-
-    startButton.on('pointerdown', );
-
-    const changeDeckButton = this.add.text(centerX, 600, 'Change Deck', {
-      fontSize: '20px', color: '#cccccc', backgroundColor: '#222222', padding: { x: 8, y: 4 }
-    }).setOrigin(0.5).setInteractive();
-
-    changeDeckButton.on('pointerdown', () => this.scene.start('DeckBuilderScene'));*/
-
     this.showBattleIntroAnimation(() => this.runCombatLoop());
   }
 
@@ -279,82 +254,71 @@ export default class CombatScene extends Phaser.Scene {
     }
 
     if (this.playerCards.every((c) => !c || c.currentHealth <= 0)) {
+      this.sound.play('defeat');
       this.showEndOverlay("defeat");
     } else if (this.monsterCards.every((c) => !c || c.currentHealth <= 0)) {
+      this.sound.play('victory');
       this.showEndOverlay("victory");
     }
   }
 
   private async runCombatRound() {
     for (let i = 0; i < 5; i++) {
-      const player = this.playerCards[i];
-      const monster = this.monsterCards[i];
-
-      // Player attacks first if alive
-      if (player && player.currentHealth > 0) {
-        if (player.specialAbility == SpecialAbility.Healer) {
+      // Find the next alive player at or after index i
+      const player = this.findNextAlive(i, this.playerCards);
+      if (player) {
+        if (player.specialAbility === SpecialAbility.Healer) {
           this.applyHealing(this.playerCards, player);
         }
 
-        const attackCount =
-          player.specialAbility == SpecialAbility.DualStrike ? 2 : 1;
+        const attackCount = player.specialAbility === SpecialAbility.DualStrike ? 2 : 1;
 
         for (let a = 0; a < attackCount; a++) {
-          const target = this.findNextAlive(i, this.monsterCards);
-          if (target) {
-            const { damage, isCritical } = this.calculateDamage(
-              player.baseAttack
-            );
-            target.currentHealth = Math.max(target.currentHealth - damage, 0);
-            const hpPercent = (target.currentHealth / target.maxHealth) * 100;
-            await this.animateAttack(
-              player,
-              target,
-              damage,
-              isCritical,
-              hpPercent
-            );
+          const monsterTarget = this.findNextAlive(i, this.monsterCards);
+          if (monsterTarget) {
+            const { damage, isCritical } = this.calculateDamage(player.baseAttack);
+            monsterTarget.currentHealth = Math.max(monsterTarget.currentHealth - damage, 0);
+            const hpPercent = (monsterTarget.currentHealth / monsterTarget.maxHealth) * 100;
+            await this.animateAttack(player, monsterTarget, damage, isCritical, hpPercent);
           }
         }
       }
 
-      // Monster counter-attacks if still alive
-      if (monster && monster.currentHealth > 0) {
-        const target = this.findNextAlive(i, this.playerCards);
-        if (target) {
-          const { damage, isCritical } = this.calculateDamage(
-            monster.baseAttack
-          );
-          target.currentHealth = Math.max(target.currentHealth - damage, 0);
-          const hpPercent = (target.currentHealth / target.maxHealth) * 100;
-          await this.animateAttack(
-            monster,
-            target,
-            damage,
-            isCritical,
-            hpPercent
-          );
+      // Find the next alive monster at or after index i (again, in case they were killed)
+      const monster = this.findNextAlive(i, this.monsterCards);
+      if (monster) {
+        const playerTarget = this.findNextAlive(i, this.playerCards);
+        if (playerTarget) {
+          const { damage, isCritical } = this.calculateDamage(monster.baseAttack);
+          playerTarget.currentHealth = Math.max(playerTarget.currentHealth - damage, 0);
+          const hpPercent = (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
+          await this.animateAttack(monster, playerTarget, damage, isCritical, hpPercent);
         }
       }
     }
   }
 
-  private findNextAlive(
-    initialTarget: number,
-    cards: CombatCard[]
-  ): CombatCard | null {
+  private findNextAlive(initialTarget: number, cards: CombatCard[]): CombatCard | null {
+    // First, check for Taunt abilitys
     const tauntTarget = cards.find(
-      (c) =>
-        c && c.currentHealth > 0 && c.specialAbility == SpecialAbility.Taunt
+      (c) => c && c.currentHealth > 0 && c.specialAbility === SpecialAbility.Taunt
     );
     if (tauntTarget) return tauntTarget;
-    else if (cards[initialTarget].currentHealth > 0)
-      return cards[initialTarget];
-    else {
-      for (let c of cards) {
-        if (c && c.currentHealth > 0) return c;
-      }
+
+    const total = cards.length;
+
+    // Check from initialTarget to end
+    for (let i = initialTarget; i < total; i++) {
+      const card = cards[i];
+      if (card && card.currentHealth > 0) return card;
     }
+
+    // Wrap around: Check from 0 to initialTarget - 1
+    for (let i = 0; i < initialTarget; i++) {
+      const card = cards[i];
+      if (card && card.currentHealth > 0) return card;
+    }
+
     return null;
   }
 
@@ -449,6 +413,9 @@ export default class CombatScene extends Phaser.Scene {
       duration: moveDuration,
       ease: "Power2",
     });
+    
+
+    this.playRandomSound();
 
     // Floating damage text animation
     const damageText = scene.add
@@ -564,7 +531,7 @@ export default class CombatScene extends Phaser.Scene {
 
     const messageText =
       result === "victory"
-        ? "You’ve triumphed! Your tactics are improving. Press on to your next challenge!"
+        ? "You've triumphed! Your tactics are improving. Press on to your next challenge!"
         : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder. Use the random battle feature to build your deck.";
 
     this.add
@@ -579,9 +546,17 @@ export default class CombatScene extends Phaser.Scene {
     if (result === "victory") {
       // 5% card drop chance
       if (Phaser.Math.Between(1, 100) <= 5) {
-        GlobalState.lastScene = "ExplorationScene";
-        this.scene.start("CardDropScene");
-        return;
+        if (this.nextScene == "") {
+          GlobalState.lastScene = "ExplorationScene";
+          grantPlayerExp(this.playerData, true);
+          this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
+          savePlayerData(this.playerData);        
+          this.scene.start("CardDropScene");
+          return;
+        } else {
+          this.scene.start(this.nextScene);
+          return;
+        }
       }
 
       if (this.nextScene == "") {
@@ -707,5 +682,12 @@ export default class CombatScene extends Phaser.Scene {
         });
       },
     });
+  }
+
+  playRandomSound(): void {
+    if (!this.soundKeys.length) return;
+    const randomIndex = Phaser.Math.Between(0, this.soundKeys.length - 1);
+    const key = this.soundKeys[randomIndex];
+    this.sound.play(key);
   }
 }

@@ -189,9 +189,18 @@ export default class DeckBuilderScene extends Phaser.Scene {
       .map((cardId) => this.cardManager.getById(cardId))
       .filter((card): card is Card => !!card)
       .sort((a, b) => {
+        // Sort by rarity descending
         const rarityCompare = rarityOrder[a.rarity] - rarityOrder[b.rarity];
         if (rarityCompare !== 0) return rarityCompare;
-        return rarityCost[b.rarity]  - rarityCost[a.rarity]; // Descending cost
+
+        // Sort by cost descending
+        const costCompare = rarityCost[b.rarity]  - rarityCost[a.rarity];
+        if (costCompare !== 0) return costCompare;
+
+        // Sort by (attack + health) descending
+        const powerA = a.attack + a.health;
+        const powerB = b.attack + b.health;
+        return powerB - powerA;
       });
 
 

@@ -152,12 +152,14 @@ export default class ExplorationScene extends Phaser.Scene {
 
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
+      this.sound.play?.('foot');
       this.stepIndex++;
-      grantPlayerExp(this.playerData, false);
       this.playerData.progress.currentStep = this.stepIndex;
+      grantPlayerExp(this.playerData, false);
       savePlayerData(this.playerData);
       this.playForwardMotionEffect();
     } else if (outcome === 'battle') {
+      savePlayerData(this.playerData);
       this.triggerAlarmEffect();
     } else {
       this.stepIndex++;
@@ -199,7 +201,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
   private triggerAlarmEffect() {
     // Play klaxon sound
-    //this.sound.play('klaxon');
+    this.sound.play?.('horn');
 
     // Create red overlay
     const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0xff0000, 0.5)
@@ -208,6 +210,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     // Create "BATTLE!" text
     this.add.text(this.scale.width / 2, this.scale.height / 2, 'BATTLE!', {
+      fontFamily: "Cinzel, serif",
       fontSize: '64px',
       color: '#ffff00',
       fontStyle: 'bold',
@@ -215,7 +218,7 @@ export default class ExplorationScene extends Phaser.Scene {
       strokeThickness: 6
     })
       .setOrigin(0.5)
-      .setAlpha(0.5)
+      .setAlpha(0.75)
       .setDepth(101);
 
       // Define the pulse sequence (fade in/out) manually

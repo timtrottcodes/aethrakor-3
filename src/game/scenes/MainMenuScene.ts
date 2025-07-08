@@ -51,7 +51,7 @@ export default class MainMenuScene extends Phaser.Scene {
     
   private showButton() {
     const x = this.scale.width / 2;
-    const y = this.scale.height * 0.6;
+    const y = this.scale.height * 0.5;
 
     if (this.playerData.progress.currentStage == 1 && this.playerData.progress.currentStep == 0) {
       createFancyButton(this, x, y, "Start Adventure", () => { this.scene.start('AdventureScene')}, 30);
@@ -61,6 +61,8 @@ export default class MainMenuScene extends Phaser.Scene {
       const { stage, stepIndex } = this.getRandomPastStep();
       
       createFancyButton(this, x, y + 80, "Random Battle", () => { this.scene.start('CombatScene', { stageId: stage.stageNumber, stepId: stepIndex })}, 30);
+
+      createFancyButton(this, x, y + 160, "Collection", () => { this.scene.start('CollectionScene')}, 30);
     }
   }
 

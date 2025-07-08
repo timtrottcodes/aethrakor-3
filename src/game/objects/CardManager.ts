@@ -51,9 +51,9 @@ export class CardManager {
     const levelThresholds: Record<Rarity, number> = {
       [Rarity.Ordinary]: 0,
       [Rarity.Common]: 0,
-      [Rarity.Uncommon]: 3,
-      [Rarity.Rare]: 7,
-      [Rarity.Epic]: 28,
+      [Rarity.Uncommon]: 4,
+      [Rarity.Rare]: 8,
+      [Rarity.Epic]: 20,
       [Rarity.Legendary]: 40
     };
 

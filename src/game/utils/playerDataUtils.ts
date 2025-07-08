@@ -52,14 +52,14 @@ export function isValidCardSelection(
 
 /* exp calc */
 
-function getTotalStepCount(): number {
+export function getTotalStepCount(): number {
   const stages = loadStageData();
   return stages.reduce((total, stage) => total + stage.steps.length, 0);
 }
 
-function getExpToNextLevel(level: number): number {
+export function getExpToNextLevel(level: number): number {
   // Linear growth + a small curve
-  return 100 + Math.round(Math.pow(level, 1.5) * 5);
+  return 100 + Math.round(Math.pow(level, 0.80) * 5);
 }
 
 export function grantPlayerExp(playerData: PlayerData, combatBonus: boolean): void {
@@ -70,7 +70,7 @@ export function grantPlayerExp(playerData: PlayerData, combatBonus: boolean): vo
   const progress = stepIndex / totalSteps;
 
   // Ease-in curve (starts fast, slows down)
-  let expGain = Math.round(10 + 40 * Math.pow(progress, 1.75)); // gain 10–50 per step
+  let expGain = Math.round(10 + 50 * Math.pow(progress, 0.85)); // gain 10–50 per step
 
   if (combatBonus) {
     expGain = expGain * 1.5;
