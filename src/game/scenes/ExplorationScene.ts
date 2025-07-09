@@ -73,11 +73,12 @@ export default class ExplorationScene extends Phaser.Scene {
       color: '#ffffff'
     }).setDepth(2);
 
-    this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
-      fontFamily: "Cinzel, serif",
-      fontSize: '16px',
-      color: '#ffffff'
-    }).setDepth(2);
+    if (this.playerData.level < 50)
+      this.add.text(20, this.scale.height - 50, `EXP to next level: ${this.playerData.expToNextLevel}`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: '16px',
+        color: '#ffffff'
+      }).setDepth(2);
 
     // Draw card choices
     this.showCardChoices();
@@ -130,7 +131,7 @@ export default class ExplorationScene extends Phaser.Scene {
     const rand = Math.random();
 
     let outcome = 'continue';
-    if (rand < 0.1) 
+    if (rand < 0.2) 
       outcome = 'rareDrop';
     else  if (rand < 0.6) 
       outcome = 'battle';
@@ -228,7 +229,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     const pulse = () => {
       if (pulseIndex >= repeatCount) {
-        this.scene.start('CombatScene');
+        this.scene.start('CombatScene', { stageId: this.stageId, stepId: this.stepIndex });
       }
 
       this.tweens.add({

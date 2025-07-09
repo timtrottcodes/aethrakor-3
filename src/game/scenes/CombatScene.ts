@@ -2,6 +2,8 @@ import {
   Card,
   CardFace,
   PlayerData,
+  Rarity,
+  rarityOrder,
   SpecialAbility,
   Stage,
   StepItem,
@@ -32,9 +34,11 @@ type CombatCard = {
   isPlayer: boolean;
   healthText?: Phaser.GameObjects.Text;
   specialAbility: SpecialAbility;
+  rarity: Rarity;
 };
 
 interface CombatSceneData {
+  random?: boolean;
   stageId?: number;
   stepId?: number;
 }
@@ -52,7 +56,7 @@ export default class CombatScene extends Phaser.Scene {
   private stepId: number | undefined = undefined;
   private stages: Stage[];
   private nextScene: string = "";
-  private soundKeys: string[] = ['punch', 'swordhit', 'scratch'];
+  private soundKeys: string[] = ["punch", "swordhit", "scratch"];
 
   constructor() {
     super("CombatScene");
@@ -60,24 +64,32 @@ export default class CombatScene extends Phaser.Scene {
 
   init(data: CombatSceneData): void {
     this.stages = loadStageData();
-    this.playerData = loadPlayerData(); 
+    this.playerData = loadPlayerData();
 
-    if (data.stageId) {
+    if (data.random === true && (data.stageId && data.stageId != this.playerData.progress.currentStage) && (data.stepId && data.stepId != this.playerData.progress.currentStep)) {
       this.stageId = data.stageId;
       this.stepId = data.stepId;
       this.nextScene = "MainMenuScene";
     } else {
       this.stageId = this.playerData.progress.currentStage;
       this.stepId = this.playerData.progress.currentStep;
+      this.nextScene = "";
     }
 
-    this.currentStage = this.stages.find(s => s.stageNumber === this.stageId)!;
-    this.currentStep = this.currentStage.steps[this.stepId!];
+    this.currentStage = this.stages.find(
+      (s) => s.stageNumber === this.stageId
+    )!;
+    this.currentStep = JSON.parse(
+      JSON.stringify(this.currentStage.steps[this.stepId!])
+    );
   }
 
   preload() {
     if (this.currentStage) {
-      this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
+      this.load.image(
+        this.currentStage.image,
+        `assets/backgrounds/stages/${this.currentStage.image}`
+      );
     }
   }
 
@@ -97,15 +109,6 @@ export default class CombatScene extends Phaser.Scene {
     // Generate monsters
     let monsterData: Card[] = [];
 
-    if (!this.currentStep) {
-      this.stageId = this.playerData.progress.currentStage;
-      this.currentStage = this.stages.find(
-        (s) => s.stageNumber === this.stageId
-      )!;
-      this.currentStep =
-        this.currentStage.steps[this.playerData.progress.currentStep];
-    }
-
     if (this.currentStep.type == StepType.Boss) {
       const bossId = this.currentStep.enemies.shift();
       const bossCard = this.monsterManager.getById(bossId!);
@@ -118,69 +121,63 @@ export default class CombatScene extends Phaser.Scene {
       monsterData = this.monsterManager.getRandomMonstersFromList(
         this.currentStep.enemies
       );
+      monsterData.sort((a, b) => {
+        if (b.rarity !== a.rarity) {
+          return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        }
+        const aPower = a.health + a.health;
+        const bPower = b.attack + b.attack;
+        return bPower - aPower;
+      });
+      const bossCard = monsterData.shift();
+      monsterData = this.monsterManager.shuffleArray(monsterData);
+      monsterData.splice(2, 0, bossCard!);
     }
 
     let bossOffset = 0;
-    if (
-      this.currentStep.type == StepType.Boss ||
-      this.currentStep.type == StepType.Miniboss
-    ) {
-      spacing = 130;
-      this.monsterCards = monsterData.map((card, i) => {
-        let x = centerX - 2 * spacing + i * spacing - 65 + bossOffset;
-        const y = 120;
+    const isBossStep =
+      this.currentStep.type === StepType.Boss ||
+      this.currentStep.type === StepType.Miniboss;
 
-        const isBoss = i === 2;
-        const scale = isBoss ? this.cardScale + 0.01 : this.cardScale - 0.01;
+    let difficultyMultiplier = 1;
 
-        const sprite = renderPlayerCard(
-          this,
-          card,
-          x,
-          y,
-          scale,
-          CardFace.Front
-        );
+    if (this.currentStage.stageNumber >= 46)
+      difficultyMultiplier = 1.25
+    else if (this.currentStage.stageNumber > 20 && isBossStep)
+      difficultyMultiplier = 1.15
 
-        if (isBoss) {
-          bossOffset = 15; // increase spacing to counter boss card size
-        }
+    this.monsterCards = monsterData.map((card, i) => {
+      const isBossCard = isBossStep && i === 2;
+      const scale = isBossCard
+        ? this.cardScale + 0.01
+        : isBossStep
+        ? this.cardScale - 0.01
+        : this.cardScale;
 
-        return {
-          id: card.id,
-          name: card.name,
-          sprite,
-          baseAttack: card.attack,
-          maxHealth: card.health,
-          currentHealth: card.health,
-          isPlayer: false,
-          specialAbility: SpecialAbility[card.specialAbility],
-        };
-      });
-    } else {
-      this.monsterCards = monsterData.map((card, i) => {
-        const x = centerX - 2 * spacing + i * spacing - 65;
-        const y = 120;
-        const sprite = renderPlayerCard(
-          this,
-          card,
-          x,
-          y,
-          this.cardScale,
-          CardFace.Front
-        );
-        return {
-          id: card.id,
-          name: card.name,
-          sprite,
-          baseAttack: card.attack,
-          maxHealth: card.health,
-          currentHealth: card.health,
-          isPlayer: false,
-          specialAbility: SpecialAbility[card.specialAbility],
-        };
-      });
-    }
+      const x = centerX - 2 * spacing + i * spacing - 65 + bossOffset;
+      const y = 120;
+
+      card.health = Math.ceil(card.health * difficultyMultiplier);
+      card.attack = Math.ceil(card.attack * difficultyMultiplier);
+
+      const sprite = renderPlayerCard(this, card, x, y, scale, CardFace.Front);
+
+      if (isBossCard) {
+        bossOffset = 15; // offset to compensate for boss card size
+      }
+
+      return {
+        id: card.id,
+        name: card.name,
+        sprite,
+        baseAttack: card.attack,
+        maxHealth: card.health,
+        currentHealth: card.health,
+        isPlayer: false,
+        specialAbility: SpecialAbility[card.specialAbility],
+        rarity: Rarity[card.rarity],
+      };
+    });
 
     this.add
       .text(20, this.scale.height - 90, `Level: ${this.playerData.level}`, {
@@ -199,19 +196,20 @@ export default class CombatScene extends Phaser.Scene {
       })
       .setDepth(2);
 
-    this.add
-      .text(
-        20,
-        this.scale.height - 50,
-        `EXP to next level: ${this.playerData.expToNextLevel}`,
-        {
-          fontFamily: "Cinzel, serif",
-          fontSize: "16px",
-          color: "#ffffff",
-        }
-      )
-      .setDepth(2);
-    
+    if (this.playerData.level < 50)
+      this.add
+        .text(
+          20,
+          this.scale.height - 50,
+          `EXP to next level: ${this.playerData.expToNextLevel}`,
+          {
+            fontFamily: "Cinzel, serif",
+            fontSize: "16px",
+            color: "#ffffff",
+          }
+        )
+        .setDepth(2);
+
     spacing = 140;
     // Player cards
     this.playerCards = this.playerData.equippedCards
@@ -254,10 +252,10 @@ export default class CombatScene extends Phaser.Scene {
     }
 
     if (this.playerCards.every((c) => !c || c.currentHealth <= 0)) {
-      this.sound.play('defeat');
+      this.sound.play("defeat");
       this.showEndOverlay("defeat");
     } else if (this.monsterCards.every((c) => !c || c.currentHealth <= 0)) {
-      this.sound.play('victory');
+      this.sound.play("victory");
       this.showEndOverlay("victory");
     }
   }
@@ -271,15 +269,28 @@ export default class CombatScene extends Phaser.Scene {
           this.applyHealing(this.playerCards, player);
         }
 
-        const attackCount = player.specialAbility === SpecialAbility.DualStrike ? 2 : 1;
+        const attackCount =
+          player.specialAbility === SpecialAbility.DualStrike ? 2 : 1;
 
         for (let a = 0; a < attackCount; a++) {
           const monsterTarget = this.findNextAlive(i, this.monsterCards);
           if (monsterTarget) {
-            const { damage, isCritical } = this.calculateDamage(player.baseAttack);
-            monsterTarget.currentHealth = Math.max(monsterTarget.currentHealth - damage, 0);
-            const hpPercent = (monsterTarget.currentHealth / monsterTarget.maxHealth) * 100;
-            await this.animateAttack(player, monsterTarget, damage, isCritical, hpPercent);
+            const { damage, isCritical } = this.calculateDamage(
+              player.baseAttack
+            );
+            monsterTarget.currentHealth = Math.max(
+              monsterTarget.currentHealth - damage,
+              0
+            );
+            const hpPercent =
+              (monsterTarget.currentHealth / monsterTarget.maxHealth) * 100;
+            await this.animateAttack(
+              player,
+              monsterTarget,
+              damage,
+              isCritical,
+              hpPercent
+            );
           }
         }
       }
@@ -289,19 +300,36 @@ export default class CombatScene extends Phaser.Scene {
       if (monster) {
         const playerTarget = this.findNextAlive(i, this.playerCards);
         if (playerTarget) {
-          const { damage, isCritical } = this.calculateDamage(monster.baseAttack);
-          playerTarget.currentHealth = Math.max(playerTarget.currentHealth - damage, 0);
-          const hpPercent = (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
-          await this.animateAttack(monster, playerTarget, damage, isCritical, hpPercent);
+          const { damage, isCritical } = this.calculateDamage(
+            monster.baseAttack,
+            monster.rarity
+          );
+          playerTarget.currentHealth = Math.max(
+            playerTarget.currentHealth - damage,
+            0
+          );
+          const hpPercent =
+            (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
+          await this.animateAttack(
+            monster,
+            playerTarget,
+            damage,
+            isCritical,
+            hpPercent
+          );
         }
       }
     }
   }
 
-  private findNextAlive(initialTarget: number, cards: CombatCard[]): CombatCard | null {
+  private findNextAlive(
+    initialTarget: number,
+    cards: CombatCard[]
+  ): CombatCard | null {
     // First, check for Taunt abilitys
     const tauntTarget = cards.find(
-      (c) => c && c.currentHealth > 0 && c.specialAbility === SpecialAbility.Taunt
+      (c) =>
+        c && c.currentHealth > 0 && c.specialAbility === SpecialAbility.Taunt
     );
     if (tauntTarget) return tauntTarget;
 
@@ -322,13 +350,20 @@ export default class CombatScene extends Phaser.Scene {
     return null;
   }
 
-  private calculateDamage(baseAttack: number): {
+  private calculateDamage(
+    baseAttack: number,
+    rarity?: Rarity
+  ): {
     damage: number;
     isCritical: boolean;
   } {
     const variance = Phaser.Math.FloatBetween(0.9, 1.1);
-    const isCritical = Phaser.Math.Between(1, 20) === 1;
-    const critMultiplier = isCritical ? 1.15 : 1;
+    let isCritical = Phaser.Math.Between(1, 20) <= 2;
+
+    if ((rarity && rarity === Rarity.Epic) || rarity === Rarity.Legendary)
+      isCritical = Phaser.Math.Between(1, 20) <= 4;
+
+    const critMultiplier = isCritical ? 1.25 : 1;
     const damage = Math.round(baseAttack * variance * critMultiplier);
 
     return { damage, isCritical };
@@ -413,7 +448,6 @@ export default class CombatScene extends Phaser.Scene {
       duration: moveDuration,
       ease: "Power2",
     });
-    
 
     this.playRandomSound();
 
@@ -458,14 +492,14 @@ export default class CombatScene extends Phaser.Scene {
     // Red screen pulse on critical hit to player
     if (isCritical && !this.playerCards.includes(attacker)) {
       const flash = scene.add
-        .rectangle(0, 0, scene.scale.width, scene.scale.height, 0xff0000, 0.25)
+        .rectangle(0, 0, scene.scale.width, scene.scale.height, 0xff0000, 0.65)
         .setOrigin(0)
         .setDepth(200);
 
       scene.tweens.add({
         targets: flash,
-        alpha: { from: 0.25, to: 0 },
-        duration: 200,
+        alpha: { from: 0.65, to: 0 },
+        duration: 250,
         onComplete: () => flash.destroy(),
       });
     }
@@ -544,22 +578,31 @@ export default class CombatScene extends Phaser.Scene {
       .setOrigin(0.5);
 
     if (result === "victory") {
-      // 5% card drop chance
-      if (Phaser.Math.Between(1, 100) <= 5) {
+      // 10% card drop chance for normal gameplay
+      let dropChancePercent = 10;
+      
+      if (this.nextScene !== "") {
+        // 25% card drop chance for random battle
+        dropChancePercent = 25
+      }
+
+      if (Phaser.Math.Between(1, 100) <= dropChancePercent) {
         if (this.nextScene == "") {
           GlobalState.lastScene = "ExplorationScene";
           grantPlayerExp(this.playerData, true);
-          this.playerData.progress.currentStep = this.playerData.progress.currentStep + 1;
-          savePlayerData(this.playerData);        
+          this.playerData.progress.currentStep =
+            this.playerData.progress.currentStep + 1;
+          savePlayerData(this.playerData);
           this.scene.start("CardDropScene");
           return;
         } else {
-          this.scene.start(this.nextScene);
+          GlobalState.lastScene = this.nextScene;
+          this.scene.start("CardDropScene");
           return;
         }
       }
 
-      if (this.nextScene == "") {
+      if (this.nextScene === "") {
         createSlantedFancyButton(
           this,
           width / 2,
@@ -585,25 +628,36 @@ export default class CombatScene extends Phaser.Scene {
         );
       }
     } else {
-      createSlantedFancyButton(
-        this,
-        width / 2,
-        height / 2 + 60,
-        "Fight Again",
-        () => {
-          this.scene.restart();
-        }
-      );
-
-      if (this.nextScene == "") {
+      if (this.nextScene === "") {
         createSlantedFancyButton(
           this,
           width / 2,
-          height / 2 + 120,
+          height / 2 + 60,
+          "Fight Again",
+          () => {
+            this.scene.start("CombatScene");
+          }
+        );
+
+        createSlantedFancyButton(
+          this,
+          width / 2,
+          height / 2 + 140,
           "Deck Builder",
           () => {
             GlobalState.lastScene = this.scene.key;
             this.scene.start("DeckBuilderScene");
+          }
+        );
+
+        createSlantedFancyButton(
+          this,
+          width / 2,
+          height / 2 + 220,
+          "Main Menu",
+          () => {
+            GlobalState.lastScene = this.scene.key;
+            this.scene.start("MainMenuScene");
           }
         );
       } else {

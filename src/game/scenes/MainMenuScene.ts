@@ -60,7 +60,7 @@ export default class MainMenuScene extends Phaser.Scene {
       
       const { stage, stepIndex } = this.getRandomPastStep();
       
-      createFancyButton(this, x, y + 80, "Random Battle", () => { this.scene.start('CombatScene', { stageId: stage.stageNumber, stepId: stepIndex })}, 30);
+      createFancyButton(this, x, y + 80, "Random Battle", () => { this.scene.start('CombatScene', { random: true, stageId: stage.stageNumber, stepId: stepIndex })}, 30);
 
       createFancyButton(this, x, y + 160, "Collection", () => { this.scene.start('CollectionScene')}, 30);
     }

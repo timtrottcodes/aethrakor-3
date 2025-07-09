@@ -25,20 +25,28 @@ export function loadPlayerData(): PlayerData {
 
 export function getMaxCardCost(level: number): number {
   const minCost = 5;
-  const midCost = 10;
-  const maxCost = 50;
+  const maxCost = 60;
   const maxLevel = 50;
-  const rampEndLevel = 6;
 
-  if (level <= 1) return minCost;
-  if (level <= rampEndLevel) {
-    const t = (level - 1) / (rampEndLevel - 1);
-    return Math.round(minCost + t * (midCost - minCost));
-  }
-  if (level >= maxLevel) return maxCost;
-  const t = (level - rampEndLevel) / (maxLevel - rampEndLevel);
-  const eased = Math.sqrt(t);
-  return Math.round(midCost + eased * (maxCost - midCost));
+  // Shape parameters
+  const midpoint = 22; // Center of the curve
+  const steepness = 0.17; // Lower = smoother S-curve
+
+  // Clamp level to range
+  const clampedLevel = Math.max(1, Math.min(level, maxLevel));
+
+  // Sigmoid S-curve scaled to [0, 1]
+  const sigmoid = 1 / (1 + Math.exp(-steepness * (clampedLevel - midpoint)));
+
+  // Normalize sigmoid to start at 0 and end at 1
+  const minSigmoid = 1 / (1 + Math.exp(-steepness * (1 - midpoint)));
+  const maxSigmoid = 1 / (1 + Math.exp(-steepness * (maxLevel - midpoint)));
+  const normalized = (sigmoid - minSigmoid) / (maxSigmoid - minSigmoid);
+
+  // Scale to cost range
+  const cost = minCost + normalized * (maxCost - minCost);
+
+  return Math.round(cost);
 }
 
 export function isValidCardSelection(

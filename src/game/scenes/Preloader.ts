@@ -1,7 +1,6 @@
 import { Scene } from "phaser";
 import cardData from "../data/cards.json";
 import monsterData from "../data/monsters.json";
-import { getExpToNextLevel, getTotalStepCount } from "../utils/playerDataUtils";
 
 export class Preloader extends Scene {
   constructor() {
@@ -96,12 +95,32 @@ export class Preloader extends Scene {
     this.load.audio('defeat', 'sfx/one-last-defeat-303896.mp3');
   }
 
-  create() {
-    //  When all the assets have loaded, it's often worth creating global objects here that the rest of the game can use.
-    //  For example, you can define global animations here, so we can use them in other scenes.
+  async create() {
+    await this.loadWebFont("Cinzel", "https://fonts.gstatic.com/s/cinzel/v25/8vIJ7ww63mVu7gt79mT7.woff2");
+    await this.loadWebFont("Trade Winds", "https://fonts.gstatic.com/s/tradewinds/v17/AYCPpXPpYNIIT7h8-QenM0Jt5vM.woff2");
 
     //  Move to the MainMenu. You could also swap this for a Scene Transition, such as a camera fade.
     this.scene.start("MainMenuScene");
   }
+
+  async loadWebFont(fontName: string, url: string): Promise<void> {
+    // Build a FontFace instance with Google Fonts URL
+    const font = new FontFace(
+      fontName,
+      'url('+url+')'
+    );
+
+    try {
+      const loadedFont = await font.load();
+      (document as any).fonts.add(loadedFont);
+
+      await (document as any).fonts.ready;
+    } catch (err) {
+      console.warn(`Failed to load font ${fontName}`, err);
+    }
+  }
+
+
+
 }
 

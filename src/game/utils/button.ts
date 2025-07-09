@@ -72,7 +72,7 @@ export function createSlantedFancyButton(
   label: string,
   onClick: () => void,
   fontSize = 32,
-  padding: number = 20
+  padding: number = 30
 ): Phaser.GameObjects.Container {
   const slant = 20; // how much the sides slant in pixels
   const inset = 5;

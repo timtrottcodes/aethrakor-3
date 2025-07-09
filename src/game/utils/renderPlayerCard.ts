@@ -228,13 +228,13 @@ function renderRarityStars(
     starCount > 0 ? starSize * starCount + spacing * (starCount - 1) : 0;
   let startX = (width * scale - totalWidth) / 2 + starSize / 2;
 
-  if (card.rarity === Rarity.Legendary) {
+  if (card.rarity === Rarity.Epic || card.rarity === Rarity.Legendary) {
     startX += 10;
   }
 
   for (let i = 0; i < starCount; i++) {
     const starText = scene.add
-      .text(startX + i * (starSize + spacing), 2, starSymbol, {
+      .text(startX + i * (starSize + spacing), 0, starSymbol, {
         fontSize: `${starSize}px`,
         color: rarityColors[card.rarity],
         fontFamily: "Arial",

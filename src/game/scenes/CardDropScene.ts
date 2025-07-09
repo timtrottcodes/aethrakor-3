@@ -66,7 +66,7 @@ export default class CardDropScene extends Phaser.Scene {
       const descriptionText = this.add.text(this.scale.width / 2, screenHeight - 200, '', style).setDepth(10).setOrigin(0.5, 0).setWordWrapWidth(600);
       descriptionText.setText(randomCard.description);
 
-      this.add.text(this.scale.width / 2, 80, 'New Card Found!', { fontFamily: 'Cinzel', fontSize: '32px', color: '#ffffff' }).setOrigin(0.5);
+      this.add.text(this.scale.width / 2, 80, 'New Companion Found!', { fontFamily: 'Cinzel', fontSize: '32px', color: '#ffffff' }).setOrigin(0.5);
       this.add.text(this.scale.width / 2, 125, 'Visit the Deck Builder to add review and add to your champions.', { fontFamily: 'Cinzel', fontSize: '18px', color: '#ffffff' }).setOrigin(0.5);
 
       // Animate

@@ -4,7 +4,7 @@
     "name": "Goblin Scout",
     "description": "A sneaky goblin with sharp eyes and sharper teeth.",
     "rarity": "Ordinary",
-    "attack": 3,
+    "attack": 2,
     "health": 4,
     "specialAbility": "None"
   },
@@ -13,8 +13,8 @@
     "name": "Gnoll Grunt",
     "description": "A savage hyena-like warrior.",
     "rarity": "Ordinary",
-    "attack": 3,
-    "health": 4,
+    "attack": 2,
+    "health": 3,
     "specialAbility": "None"
   },
   {
@@ -22,8 +22,8 @@
     "name": "Wolves",
     "description": "A hungry pack that strikes together.",
     "rarity": "Ordinary",
-    "attack": 4,
-    "health": 5,
+    "attack": 3,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -31,8 +31,8 @@
     "name": "Feral Dog",
     "description": "Snarling, fast, and vicious.",
     "rarity": "Ordinary",
-    "attack": 3,
-    "health": 5,
+    "attack": 2,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -40,8 +40,8 @@
     "name": "Lurking Thief",
     "description": "Steals more than your gold.",
     "rarity": "Ordinary",
-    "attack": 4,
-    "health": 5,
+    "attack": 3,
+    "health": 4,
     "specialAbility": "None"
   },
   {
@@ -49,8 +49,8 @@
     "name": "Shadow Rat",
     "description": "Moves quickly through the darkness.",
     "rarity": "Ordinary",
-    "attack": 3,
-    "health": 3,
+    "attack": 2,
+    "health": 2,
     "specialAbility": "None"
   },
   {
@@ -58,8 +58,8 @@
     "name": "Moss Golem",
     "description": "Slow, moss-covered, and stubborn.",
     "rarity": "Common",
-    "attack": 3,
-    "health": 6,
+    "attack": 2,
+    "health": 5,
     "specialAbility": "None"
   },
   {
@@ -67,7 +67,7 @@
     "name": "Bandit Thug",
     "description": "Common road scum with a blade.",
     "rarity": "Common",
-    "attack": 3,
+    "attack": 2,
     "health": 4,
     "specialAbility": "None"
   },
@@ -76,7 +76,7 @@
     "name": "Lizardkin Scout",
     "description": "A nimble fighter from the marshlands.",
     "rarity": "Common",
-    "attack": 3,
+    "attack": 2,
     "health": 4,
     "specialAbility": "None"
   },
@@ -85,8 +85,8 @@
     "name": "Hobgoblin",
     "description": "Larger and more organized than goblins.",
     "rarity": "Uncommon",
-    "attack": 5,
-    "health": 10,
+    "attack": 4,
+    "health": 9,
     "specialAbility": "None"
   },
 
@@ -314,7 +314,7 @@
     "name": "Flame Wisp",
     "description": "A sentient ball of fire and fury.",
     "rarity": "Uncommon",
-    "attack": 12,
+    "attack": 8,
     "health": 9,
     "specialAbility": "None"
   },
@@ -369,7 +369,7 @@
     "description": "Born of the void, and hungers for life.",
     "rarity": "Rare",
     "attack": 13,
-    "health": 11,
+    "health": 15,
     "specialAbility": "None"
   },
   {
@@ -459,9 +459,9 @@
     "id": "monster_blood_queen",
     "name": "Blood Queen",
     "description": "Strikes from the shadows with deadly precision.",
-    "rarity": "Epic",
-    "attack": 14,
-    "health": 22,
+    "rarity": "Legendary",
+    "attack": 15,
+    "health": 27,
     "specialAbility": "None"
   },
 
@@ -480,8 +480,8 @@
     "name": "Abyssal Crawler",
     "description": "A nightmarish creature with glistening limbs and a hunger for warm blood.",
     "rarity": "Epic",
-    "attack": 14,
-    "health": 21,
+    "attack": 18,
+    "health": 24,
     "specialAbility": "None"
   },
   {
@@ -489,7 +489,7 @@
     "name": "Onyx Gargantuan",
     "description": "A towering golem formed from compressed stone and fossilized remains.",
     "rarity": "Epic",
-    "attack": 12,
+    "attack": 17,
     "health": 22,
     "specialAbility": "None"
   },
@@ -498,8 +498,8 @@
     "name": "Void Tunneler",
     "description": "Burrows through rock and reality alike.",
     "rarity": "Epic",
-    "attack": 12,
-    "health": 15,
+    "attack": 16,
+    "health": 18,
     "specialAbility": "None"
   },
   {
@@ -507,8 +507,8 @@
     "name": "Fungal Colossus",
     "description": "A living cave of spores and decay.",
     "rarity": "Epic",
-    "attack": 12,
-    "health": 14,
+    "attack": 17,
+    "health": 18,
     "specialAbility": "None"
   },
   {
@@ -516,8 +516,8 @@
     "name": "Stone Maw Basilisk",
     "description": "With eyes that turn flesh to stone.",
     "rarity": "Epic",
-    "attack": 12,
-    "health": 16,
+    "attack": 20,
+    "health": 18,
     "specialAbility": "None"
   },
   {
@@ -525,8 +525,8 @@
     "name": "Runebound Construct",
     "description": "Powered by lost magical inscriptions.",
     "rarity": "Epic",
-    "attack": 13,
-    "health": 16,
+    "attack": 19,
+    "health": 22,
     "specialAbility": "None"
   },
 
@@ -535,8 +535,8 @@
     "name": "Balgrim the Vile",
     "description": "A demon warlord with an endless thirst for blood.",
     "rarity": "Legendary",
-    "attack": 18,
-    "health": 22,
+    "attack": 24,
+    "health": 27,
     "specialAbility": "None"
   },
   {
@@ -544,8 +544,8 @@
     "name": "Zarael the Flameborn",
     "description": "A legendary phoenix demon, reborn from ash.",
     "rarity": "Legendary",
-    "attack": 17,
-    "health": 24,
+    "attack": 22,
+    "health": 28,
     "specialAbility": "None"
   },
   {
@@ -553,8 +553,8 @@
     "name": "Thornshade the Eternal",
     "description": "A druidic horror who commands the forest itself.",
     "rarity": "Legendary",
-    "attack": 18,
-    "health": 20,
+    "attack": 26,
+    "health": 22,
     "specialAbility": "None"
   },
   {
@@ -562,8 +562,8 @@
     "name": "Korthax the Unchained",
     "description": "A titan once sealed in ancient times.",
     "rarity": "Legendary",
-    "attack": 19,
-    "health": 21,
+    "attack": 22,
+    "health": 29,
     "specialAbility": "None"
   },
   {
@@ -571,8 +571,8 @@
     "name": "Xal\u2019Zaroth",
     "description": "A shadow demon who devours hope and light.",
     "rarity": "Legendary",
-    "attack": 20,
-    "health": 22,
+    "attack": 23,
+    "health": 29,
     "specialAbility": "None"
   },
 
@@ -581,8 +581,8 @@
     "name": "Ironfang the Betrayer",
     "description": "Once a noble knight, now a cursed blade wielder.",
     "rarity": "Legendary",
-    "attack": 19,
-    "health": 28,
+    "attack": 25,
+    "health": 26,
     "specialAbility": "None"
   },
   {
@@ -591,7 +591,7 @@
     "description": "A warlock who ended kingdoms.",
     "rarity": "Legendary",
     "attack": 23,
-    "health": 26,
+    "health": 29,
     "specialAbility": "None"
   },
   {
@@ -600,7 +600,7 @@
     "description": "His roar levels cities.",
     "rarity": "Legendary",
     "attack": 22,
-    "health": 19,
+    "health": 29,
     "specialAbility": "None"
   },
   {
@@ -608,8 +608,8 @@
     "name": "Velmora the Cruel",
     "description": "Queen of blades and blood.",
     "rarity": "Legendary",
-    "attack": 20,
-    "health": 20,
+    "attack": 28,
+    "health": 28,
     "specialAbility": "None"
   },
   {
@@ -617,8 +617,8 @@
     "name": "The Lich King",
     "description": "His legend silences even the bravest.",
     "rarity": "Legendary",
-    "attack": 28,
-    "health": 32,
+    "attack": 26,
+    "health": 39,
     "specialAbility": "None"
   }
 ]
