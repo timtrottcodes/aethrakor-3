@@ -1,3 +1,5 @@
+import { playSound } from "./audio";
+
 export function createFancyButton(
   scene: Phaser.Scene,
   x: number,
@@ -57,7 +59,7 @@ export function createFancyButton(
   });
 
   buttonZone.on('pointerdown', () => {
-    scene.sound.play?.('click');
+    playSound(scene, 'click');
     onClick();
   });
 
@@ -120,7 +122,7 @@ export function createSlantedFancyButton(
   buttonZone.on('pointerover', () => glow.setVisible(true));
   buttonZone.on('pointerout', () => glow.setVisible(false));
   buttonZone.on('pointerdown', () => {
-    scene.sound.play?.('click');
+    playSound(scene, 'click');
     onClick();
   });
 

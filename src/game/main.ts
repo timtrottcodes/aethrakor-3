@@ -15,12 +15,15 @@ import CollectionScene from './scenes/CollectionScene';
 import HowToPlayScene from './scenes/HowToPlayScene';
 
 const config: Phaser.Types.Core.GameConfig = {
-     type: Phaser.AUTO,
+    type: Phaser.AUTO,
     width: 720,
     height: 1280,
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+    audio: {
+        disableWebAudio: true
     },
     parent: 'game-container',
     backgroundColor: '#028af8',
