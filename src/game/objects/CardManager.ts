@@ -1,5 +1,5 @@
 import cardData from '../data/cards.json';
-import { Card, Rarity, SpecialAbility } from './objects';
+import { Card, Rarity, rarityCost, SpecialAbility } from './objects';
 
 export class CardManager {
   private cards: Card[];
@@ -18,6 +18,18 @@ export class CardManager {
 
   public getAll(): Card[] {
     return [...this.cards]; // return a copy
+  }
+
+  public getUsedCardCost(selectedCards: string[]) {
+    let totalCost = 0;
+  
+    for (const id of selectedCards) {
+      const card = this.getById(id);
+      if (card)
+        totalCost += rarityCost[card.rarity];
+    }
+  
+    return totalCost;
   }
 
   getRandomCardsByRarity(

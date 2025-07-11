@@ -63,23 +63,23 @@ export class Preloader extends Scene {
     this.load.setPath("assets");
     this.load.image("logo", "logo.png");
     this.load.image("sublogo", "sublogo.png");
-    this.load.image("bg_main", "backgrounds/menu.png");
+    this.load.image("bg_main", "backgrounds/menu.jpg");
 
     cardData.forEach((card) => {
-      this.load.image(`${card.id}`, `cards/${card.id}.png`);
+      this.load.image(`${card.id}`, `cards/${card.id}.jpg`);
     });
 
     monsterData.forEach((monster) => {
-      this.load.image(`${monster.id}`, `monsters/${monster.id}.png`);
+      this.load.image(`${monster.id}`, `monsters/${monster.id}.jpg`);
     });
 
-    this.load.image("card_back", "ui/card-back.png");
-    this.load.image("card-back-adventure", "ui/card-back-adventure.png");
-    this.load.image("card_selection", "ui/card-back-selection.png");
-    this.load.image("card_continue", "ui/card_continue.png");
-    this.load.image("card_battle", "ui/card_battle.png");
-    this.load.image("card_drop", "ui/card_drop.png");
-    this.load.image("deck-builder", "backgrounds/deck-builder.png");
+    this.load.image("card_back", "ui/card-back.jpg");
+    this.load.image("card-back-adventure", "ui/card-back-adventure.jpg");
+    this.load.image("card_selection", "ui/card-back-selection.jpg");
+    this.load.image("card_continue", "ui/card_continue.jpg");
+    this.load.image("card_battle", "ui/card_battle.jpg");
+    this.load.image("card_drop", "ui/card_drop.jpg");
+    this.load.image("deck-builder", "backgrounds/deck-builder.jpg");
     this.load.image("scratch", "ui/scratch.png");
     this.load.image("star", "ui/11571051.png");
 
@@ -91,8 +91,22 @@ export class Preloader extends Scene {
     this.load.audio('swordhit', 'sfx/hit-swing-sword-small-2-95566.mp3');
     this.load.audio('scratch', 'sfx/paper-rip-fast-252617.mp3');
 
-    this.load.audio('victory', 'sfx/success-fanfare-trumpets-6185.mp3');
-    this.load.audio('defeat', 'sfx/one-last-defeat-303896.mp3');
+    this.load.audio('title', 'sfx/music-intro.mp3');
+    this.load.audio('battle', 'sfx/music-battle.mp3');
+    this.load.audio('bossbattle', 'sfx/music-boss-battle.mp3');
+    this.load.audio('defeat', 'sfx/music-defeat.mp3');
+    this.load.audio('victory', 'sfx/music-victory.mp3');
+
+    this.load.audio('music_stage_1', 'sfx/music_stage_1.mp3');
+    this.load.audio('music_stage_2', 'sfx/music_stage_2.mp3');
+    this.load.audio('music_stage_3', 'sfx/music_stage_3.mp3');
+    this.load.audio('music_stage_4', 'sfx/music_stage_4.mp3');
+    this.load.audio('music_stage_5', 'sfx/music_stage_5.mp3');
+    this.load.audio('music_stage_6', 'sfx/music_stage_6.mp3');
+    this.load.audio('music_stage_7', 'sfx/music_stage_7.mp3');
+    this.load.audio('music_stage_8', 'sfx/music_stage_8.mp3');
+    this.load.audio('music_stage_9', 'sfx/music_stage_9.mp3');
+    this.load.audio('music_stage_10', 'sfx/music_stage_10.mp3');
   }
 
   async create() {
@@ -119,8 +133,4 @@ export class Preloader extends Scene {
       console.warn(`Failed to load font ${fontName}`, err);
     }
   }
-
-
-
 }
-

@@ -31,7 +31,7 @@ export default class StoryScene extends Phaser.Scene {
     this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
     this.currentStage.story.forEach(s => {
       if (s.image != "")
-        this.load.image(s.image, `assets/characters/${s.image}.png`);
+        this.load.image(s.image, `assets/characters/${s.image}.jpg`);
     });
   }
 
@@ -46,7 +46,7 @@ export default class StoryScene extends Phaser.Scene {
       if (this.storyIndex < this.currentStage.story.length) {
         this.showDialog();
       } else {
-          this.scene.start('ExplorationScene', { stageData: this.currentStage });
+          this.scene.start('ExplorationScene');
       }
     });
   }

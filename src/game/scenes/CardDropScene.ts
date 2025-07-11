@@ -5,6 +5,7 @@ import { CardManager } from '../objects/CardManager';
 import { loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { CardFace } from '../objects/objects';
+import { playSound } from '../utils/audio';
 
 export default class CardDropScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +13,7 @@ export default class CardDropScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('bg_drop', 'assets/backgrounds/drop.png');
+    this.load.image('bg_drop', 'assets/backgrounds/drop.jpg');
   }
 
   create() {
@@ -24,7 +25,7 @@ export default class CardDropScene extends Phaser.Scene {
       playerData.collection.push(randomCard.id);
       savePlayerData(playerData);
 
-      this.sound.play?.('fanfare');
+      playSound(this, 'fanfare');
 
       // Add overlay
       this.add.image(this.scale.width / 2, this.scale.height / 2, 'bg_drop').setDisplaySize(this.scale.width, this.scale.height);

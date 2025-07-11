@@ -23,6 +23,7 @@ import { MonsterManager } from "../objects/MonsterManager";
 import { CardManager } from "../objects/CardManager";
 import { GlobalState } from "../objects/globalState";
 import { createSlantedFancyButton } from "../utils/button";
+import { playMusic, playSound } from "../utils/audio";
 
 type CombatCard = {
   id: string;
@@ -66,7 +67,7 @@ export default class CombatScene extends Phaser.Scene {
     this.stages = loadStageData();
     this.playerData = loadPlayerData();
 
-    if (data.random === true && (data.stageId && data.stageId != this.playerData.progress.currentStage) && (data.stepId && data.stepId != this.playerData.progress.currentStep)) {
+    if (data.random === true) {
       this.stageId = data.stageId;
       this.stepId = data.stepId;
       this.nextScene = "MainMenuScene";
@@ -96,6 +97,11 @@ export default class CombatScene extends Phaser.Scene {
   create() {
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
+
+    if (this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss)
+      playMusic(this, 'bossbattle');
+    else
+      playMusic(this, 'battle');
 
     this.add
       .image(0, 0, this.currentStage.image)
@@ -143,8 +149,10 @@ export default class CombatScene extends Phaser.Scene {
 
     if (this.currentStage.stageNumber >= 46)
       difficultyMultiplier = 1.25
-    else if (this.currentStage.stageNumber > 20 && isBossStep)
-      difficultyMultiplier = 1.15
+    else if (this.currentStage.stageNumber > 20)
+      difficultyMultiplier = 1.12
+    else if (this.currentStage.stageNumber <= 10)
+      difficultyMultiplier = 0.8
 
     this.monsterCards = monsterData.map((card, i) => {
       const isBossCard = isBossStep && i === 2;
@@ -252,10 +260,10 @@ export default class CombatScene extends Phaser.Scene {
     }
 
     if (this.playerCards.every((c) => !c || c.currentHealth <= 0)) {
-      this.sound.play("defeat");
+      playMusic(this, "defeat");
       this.showEndOverlay("defeat");
     } else if (this.monsterCards.every((c) => !c || c.currentHealth <= 0)) {
-      this.sound.play("victory");
+      playMusic(this, "victory");
       this.showEndOverlay("victory");
     }
   }
@@ -579,11 +587,11 @@ export default class CombatScene extends Phaser.Scene {
 
     if (result === "victory") {
       // 10% card drop chance for normal gameplay
-      let dropChancePercent = 10;
+      let dropChancePercent = 8;
       
       if (this.nextScene !== "") {
-        // 25% card drop chance for random battle
-        dropChancePercent = 25
+        // 75% card drop chance for random battles
+        dropChancePercent = 75
       }
 
       if (Phaser.Math.Between(1, 100) <= dropChancePercent) {
@@ -593,11 +601,11 @@ export default class CombatScene extends Phaser.Scene {
           this.playerData.progress.currentStep =
             this.playerData.progress.currentStep + 1;
           savePlayerData(this.playerData);
-          this.scene.start("CardDropScene");
+          this.navigate("CardDropScene");
           return;
         } else {
           GlobalState.lastScene = this.nextScene;
-          this.scene.start("CardDropScene");
+          this.navigate("CardDropScene");
           return;
         }
       }
@@ -613,7 +621,7 @@ export default class CombatScene extends Phaser.Scene {
             this.playerData.progress.currentStep =
               this.playerData.progress.currentStep + 1;
             savePlayerData(this.playerData);
-            this.scene.start("ExplorationScene");
+            this.navigate("ExplorationScene");
           }
         );
       } else {
@@ -623,7 +631,7 @@ export default class CombatScene extends Phaser.Scene {
           height / 2 + 60,
           "Continue",
           () => {
-            this.scene.start(this.nextScene);
+            this.navigate(this.nextScene);
           }
         );
       }
@@ -635,7 +643,7 @@ export default class CombatScene extends Phaser.Scene {
           height / 2 + 60,
           "Fight Again",
           () => {
-            this.scene.start("CombatScene");
+            this.navigate("CombatScene");
           }
         );
 
@@ -646,7 +654,7 @@ export default class CombatScene extends Phaser.Scene {
           "Deck Builder",
           () => {
             GlobalState.lastScene = this.scene.key;
-            this.scene.start("DeckBuilderScene");
+            this.navigate("DeckBuilderScene");
           }
         );
 
@@ -657,7 +665,7 @@ export default class CombatScene extends Phaser.Scene {
           "Main Menu",
           () => {
             GlobalState.lastScene = this.scene.key;
-            this.scene.start("MainMenuScene");
+            this.navigate("MainMenuScene");
           }
         );
       } else {
@@ -667,7 +675,7 @@ export default class CombatScene extends Phaser.Scene {
           height / 2 + 60,
           "Continue",
           () => {
-            this.scene.start(this.nextScene);
+            this.navigate(this.nextScene, { random: true });
           }
         );
       }
@@ -742,6 +750,10 @@ export default class CombatScene extends Phaser.Scene {
     if (!this.soundKeys.length) return;
     const randomIndex = Phaser.Math.Between(0, this.soundKeys.length - 1);
     const key = this.soundKeys[randomIndex];
-    this.sound.play(key);
+    playSound(this, key);
+  }
+
+  private navigate(scene: string, data?: any) {
+    this.scene.start(scene, data);
   }
 }

@@ -598,7 +598,7 @@
     "name": "Crystal Fury",
     "description": "A golem powered by ancient gems, surging with volatile energy.",
     "rarity": "Rare",
-    "attack": 6,
+    "attack": 8,
     "health": 16,
     "specialAbility": "None"
   },
@@ -634,7 +634,7 @@
     "name": "Dreamweaver",
     "description": "Warps reality and memory in ethereal patterns of combat.",
     "rarity": "Rare",
-    "attack": 5,
+    "attack": 7,
     "health": 12,
     "specialAbility": "None"
   },

@@ -1,10 +1,12 @@
 // scenes/ExplorationScene.ts
 import Phaser from 'phaser';
 import { CardFace, PlayerData, Stage, StepType } from '../objects/objects';
-import { grantPlayerExp, loadPlayerData, loadStageData, savePlayerData } from '../utils/playerDataUtils';
+import { getMaxCardCost, grantPlayerExp, loadPlayerData, loadStageData, savePlayerData } from '../utils/playerDataUtils';
 import { CardManager } from '../objects/CardManager';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { GlobalState } from '../objects/globalState';
+import { createFancyButton } from '../utils/button';
+import { playMusic, playSound } from '../utils/audio';
 
 export default class ExplorationScene extends Phaser.Scene {
   private stageId!: number;
@@ -33,8 +35,16 @@ export default class ExplorationScene extends Phaser.Scene {
       this.playerData.progress.currentStage += 1;
       this.playerData.progress.currentStep = 0;
       savePlayerData(this.playerData);
-      GlobalState.lastScene = 'AdventureScene';
-      this.scene.start('CardDropScene');
+
+      //const isChapterEnd = this.playerData.progress.currentStage % 5 === 1; // we just entered stage 6, 11, etc.
+
+      if (this.playerData.progress.currentStage > 50) {
+        this.scene.start('VictoryScene');
+      } else {
+        // Guarentee card drop after each stage
+        GlobalState.lastScene = 'StoryScene'; //isChapterEnd ? 'StoryScene' : 'AdventureScene';
+        this.scene.start('CardDropScene');
+      }
     }
   }
 
@@ -46,6 +56,10 @@ export default class ExplorationScene extends Phaser.Scene {
 
   create() {
     this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    
+    const stageGroup = Math.floor((this.playerData.progress.currentStage - 1) / 5) + 1;
+    const stageMusic =  `music_stage_${stageGroup}`;
+    playMusic(this, stageMusic);
 
     // Display player cards
     const spacing = 140;
@@ -79,6 +93,31 @@ export default class ExplorationScene extends Phaser.Scene {
         fontSize: '16px',
         color: '#ffffff'
       }).setDepth(2);
+
+
+    const maxPoints = getMaxCardCost(this.playerData.level);
+    const usedPoints = this.cardManager.getUsedCardCost(this.playerData.equippedCards);
+    const availablePoints = maxPoints - usedPoints;
+    if (availablePoints > 0) {
+      this.add.text(20, this.scale.height - 30, `Available points: ${availablePoints}`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: '16px',
+        color: '#ffffff'
+      }).setDepth(2);
+      
+      createFancyButton(
+            this,
+            this.scale.width - 100,
+            this.scale.height - 30,
+            'Deck Builder',
+            () => {
+              this.scene.stop("ExplorationScene");
+              GlobalState.lastScene = this.scene.key;
+              this.scene.start('DeckBuilderScene');
+            },
+            16
+          );   
+    }
 
     // Draw card choices
     this.showCardChoices();
@@ -131,7 +170,7 @@ export default class ExplorationScene extends Phaser.Scene {
     const rand = Math.random();
 
     let outcome = 'continue';
-    if (rand < 0.2) 
+    if (rand < 0.16) 
       outcome = 'rareDrop';
     else  if (rand < 0.6) 
       outcome = 'battle';
@@ -153,7 +192,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
   private processCardChoice(outcome: string) {
     if (outcome === 'continue') {
-      this.sound.play?.('foot');
+      playSound(this, 'foot');
       this.stepIndex++;
       this.playerData.progress.currentStep = this.stepIndex;
       grantPlayerExp(this.playerData, false);
@@ -202,7 +241,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
   private triggerAlarmEffect() {
     // Play klaxon sound
-    this.sound.play?.('horn');
+    playSound(this, 'horn');
 
     // Create red overlay
     const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0xff0000, 0.5)

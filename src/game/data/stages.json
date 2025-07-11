@@ -2,7 +2,7 @@
   {
     "stageNumber": 1,
     "title": "Chapter 1: The Farm - Stage 1",
-    "image": "farm-field.png",
+    "image": "farm-field.jpg",
     "description": "Our farmhand receives an unexpected royal summons.",
     "story": [
       {
@@ -118,7 +118,7 @@
   {
     "stageNumber": 2,
     "title": "Chapter 1: The Farm - Stage 2",
-    "image": "farm-field-buildings.png",
+    "image": "farm-field-buildings.jpg",
     "description": "Caelan and friends leave the familiar fields behind as rumors of prowling beasts spread.",
     "story": [
       {
@@ -218,7 +218,7 @@
   {
     "stageNumber": 3,
     "title": "Chapter 1: The Farm - Stage 3",
-    "image": "farm-road.png",
+    "image": "farm-road.jpg",
     "description": "An ambush in the barley fields threatens to end the journey before it begins.",
     "story": [
       {
@@ -318,7 +318,7 @@
   {
     "stageNumber": 4,
     "title": "Chapter 1: The Farm - Stage 4",
-    "image": "farm-woods-edge.png",
+    "image": "farm-woods-edge.jpg",
     "description": "At the edge of the farmland, ancient stone ruins whisper secrets of Caelan's heritage.",
     "story": [
       {
@@ -418,7 +418,7 @@
   {
     "stageNumber": 5,
     "title": "Chapter 1: The Farm - Stage 5",
-    "image": "farm-forest-border.png",
+    "image": "farm-forest-border.jpg",
     "description": "A hobgoblin warlord blocks the final gate out of the farmland. A first true test of steel and spirit.",
     "story": [
       {
@@ -515,7 +515,7 @@
   {
     "stageNumber": 6,
     "title": "Chapter 2: The Woods - Stage 1",
-    "image": "forest-path.png",
+    "image": "forest-path.jpg",
     "description": "The group steps into the Witherwood, where the air is heavy with enchantment and the trees whisper ancient curses.",
     "story": [
       {
@@ -610,7 +610,7 @@
   {
     "stageNumber": 7,
     "title": "Chapter 2: The Woods - Stage 2",
-    "image": "forest-clearing.png",
+    "image": "forest-clearing.jpg",
     "description": "An eerie clearing reveals a forgotten shrine to a goddess of dusk. The ground is littered with bones.",
     "story": [
       {
@@ -717,7 +717,7 @@
   {
     "stageNumber": 8,
     "title": "Chapter 2: The Woods - Stage 3",
-    "image": "forest-marsh.png",
+    "image": "forest-marsh.jpg",
     "description": "The woods turn to bog as mists rise and illusions test the group's resolve.",
     "story": [
       {
@@ -824,7 +824,7 @@
   {
     "stageNumber": 9,
     "title": "Chapter 2: The Woods - Stage 4",
-    "image": "forest-ancient-tree.png",
+    "image": "forest-ancient-tree.jpg",
     "description": "They reach the heart of the Witherwood: a colossal tree grown around a ruin. Something stirs beneath the roots.",
     "story": [
       {
@@ -933,7 +933,7 @@
   {
     "stageNumber": 10,
     "title": "Chapter 2: The Woods - Stage 5",
-    "image": "forest-foggy-clearing.png",
+    "image": "forest-foggy-clearing.jpg",
     "description": "A corrupted forest spirit reveals itself, guarding the only safe path out of the Witherwood.",
     "story": [
       {
@@ -1043,7 +1043,7 @@
   {
     "stageNumber": 11,
     "title": "Chapter 3: The Hills - Stage 1",
-    "image": "hills-overlook.png",
+    "image": "hills-overlook.jpg",
     "description": "Leaving the forest behind, the party climbs into the rugged highlands. The wind howls with voices that don't belong to the living.",
     "story": [
       {
@@ -1148,7 +1148,7 @@
   {
     "stageNumber": 12,
     "title": "Chapter 3: The Hills - Stage 2",
-    "image": "hill-cairns.png",
+    "image": "hill-cairns.jpg",
     "description": "They stumble upon a grave field where ancient warriors once clashed. The dead do not rest easily here.",
     "story": [
       {
@@ -1257,7 +1257,7 @@
   {
     "stageNumber": 13,
     "title": "Chapter 3: The Hills - Stage 3",
-    "image": "hill-canyon.png",
+    "image": "hill-canyon.jpg",
     "description": "A narrow gorge offers shelter from the wind - and the perfect place for an ambush.",
     "story": [
       {
@@ -1367,7 +1367,7 @@
   {
     "stageNumber": 14,
     "title": "Chapter 3: The Hills - Stage 4",
-    "image": "hill-ancient-wall.png",
+    "image": "hill-ancient-wall.jpg",
     "description": "They find a crumbling stone wall - the remnants of a long-fallen kingdom. Something stirs behind the stones.",
     "story": [
       {
@@ -1477,7 +1477,7 @@
   {
     "stageNumber": 15,
     "title": "Chapter 3: The Hills - Stage 5",
-    "image": "hill-storm.png",
+    "image": "hill-storm.jpg",
     "description": "A brutal storm crashes through the hills - and with it comes a legendary warrior long believed to be dead.",
     "story": [
       {
@@ -1588,7 +1588,7 @@
   {
     "stageNumber": 16,
     "title": "Chapter 4: The Forgotten Road - Stage 1",
-    "image": "cracked-road.png",
+    "image": "cracked-road.jpg",
     "description": "The remnants of an imperial road stretch before the party - shattered stone lined with dead trees and forgotten bones.",
     "story": [
       {
@@ -1693,7 +1693,7 @@
   {
     "stageNumber": 17,
     "title": "Chapter 4: The Forgotten Road - Stage 2",
-    "image": "collapsed-bridge.png",
+    "image": "collapsed-bridge.jpg",
     "description": "A collapsed bridge spans a dry riverbed. Crossing it draws the attention of something that does not belong in the mortal world.",
     "story": [
       {
@@ -1803,7 +1803,7 @@
   {
     "stageNumber": 18,
     "title": "Chapter 4: The Forgotten Road - Stage 3",
-    "image": "abandoned-village.png",
+    "image": "abandoned-village.jpg",
     "description": "The road passes through a dead village. Doors hang open, but nothing moves. That is, until night falls.",
     "story": [
       {
@@ -1913,7 +1913,7 @@
   {
     "stageNumber": 19,
     "title": "Chapter 4: The Forgotten Road - Stage 4",
-    "image": "broken-statue.png",
+    "image": "broken-statue.jpg",
     "description": "Statues of ancient emperors line the road - each shattered, each face defaced. One remains intact... and it breathes.",
     "story": [
       {
@@ -2023,7 +2023,7 @@
   {
     "stageNumber": 20,
     "title": "Chapter 4: The Forgotten Road - Stage 5",
-    "image": "sunken-temple.png",
+    "image": "sunken-temple.jpg",
     "description": "The road ends at a broken temple, clinging to the mountainside. Inside, a heretic prince still guards the old empire's final secret.",
     "story": [
       {
@@ -2134,7 +2134,7 @@
   {
     "stageNumber": 21,
     "title": "Chapter 5: The Wastelands - Stage 1",
-    "image": "blighted-plains.png",
+    "image": "blighted-plains.jpg",
     "description": "The fertile earth gives way to blackened dust and skeletal trees. The wind tastes of ash. The Wastelands begin.",
     "story": [
       {
@@ -2239,7 +2239,7 @@
   {
     "stageNumber": 22,
     "title": "Chapter 5: The Wastelands - Stage 2",
-    "image": "ashen-fissure.png",
+    "image": "ashen-fissure.jpg",
     "description": "A deep fissure cuts across the land. Crossing it requires passing over a brittle, bone-laced bridge watched by unseen eyes.",
     "story": [
       {
@@ -2339,7 +2339,7 @@
   {
     "stageNumber": 23,
     "title": "Chapter 5: The Wastelands - Stage 3",
-    "image": "corrupted-oasis.png",
+    "image": "corrupted-oasis.jpg",
     "description": "An oasis appears amidst the ruin, impossibly green. But the water is black and the trees whisper lies.",
     "story": [
       {
@@ -2444,7 +2444,7 @@
   {
     "stageNumber": 24,
     "title": "Chapter 5: The Wastelands - Stage 4",
-    "image": "ruined-outpost.png",
+    "image": "ruined-outpost.jpg",
     "description": "A ruined watchtower offers brief shelter. Inside, forgotten soldiers still stand guard - unaware they died long ago.",
     "story": [
       {
@@ -2544,7 +2544,7 @@
   {
     "stageNumber": 25,
     "title": "Chapter 5: The Wastelands - Stage 5",
-    "image": "black-spire.png",
+    "image": "black-spire.jpg",
     "description": "At the edge of the world rises the Black Spire, a monument of bone and hatred. Its guardian has stood for centuries - and never once fallen.",
     "story": [
       {
@@ -2650,7 +2650,7 @@
   {
     "stageNumber": 26,
     "title": "Chapter 6: The Bleeding Crags - Stage 1",
-    "image": "crimson-cliffs.png",
+    "image": "crimson-cliffs.jpg",
     "description": "The ground turns jagged, veins of red stone pulsing like a heartbeat beneath the earth. You've entered the Bleeding Crags.",
     "story": [
       {
@@ -2745,7 +2745,7 @@
   {
     "stageNumber": 27,
     "title": "Chapter 6: The Bleeding Crags - Stage 2",
-    "image": "shrine-of-screams.png",
+    "image": "shrine-of-screams.jpg",
     "description": "An ancient shrine stands defiled - once a place of healing, now echoing with the cries of blood offerings.",
     "story": [
       {
@@ -2840,7 +2840,7 @@
   {
     "stageNumber": 28,
     "title": "Chapter 6: The Bleeding Crags - Stage 3",
-    "image": "bone-ledges.png",
+    "image": "bone-ledges.jpg",
     "description": "The path narrows to knife-edged ledges, where the wind howls with lost voices and skeletal remains stir underfoot.",
     "story": [
       {
@@ -2930,7 +2930,7 @@
   {
     "stageNumber": 29,
     "title": "Chapter 6: The Bleeding Crags - Stage 4",
-    "image": "ritual-pit.png",
+    "image": "ritual-pit.jpg",
     "description": "A massive pit glows with crimson runes. Echoes of chants and screams spill from below. A ritual is underway.",
     "story": [
       {
@@ -3025,7 +3025,7 @@
   {
     "stageNumber": 30,
     "title": "Chapter 6: The Bleeding Crags - Stage 5",
-    "image": "throne-of-veins.png",
+    "image": "throne-of-veins.jpg",
     "description": "At the peak lies the Throne of Veins - a grotesque altar where the Blood Queen waits. She bleeds, and the world bleeds with her.",
     "story": [
       {
@@ -3121,7 +3121,7 @@
   {
     "stageNumber": 31,
     "title": "Chapter 7: The Glass Wastes - Stage 1",
-    "image": "shattered-dunes.png",
+    "image": "shattered-dunes.jpg",
     "description": "Sand becomes glass underfoot. Shards of reality reflect not just light, but memory. The Glass Wastes begin.",
     "story": [
       {
@@ -3216,7 +3216,7 @@
   {
     "stageNumber": 32,
     "title": "Chapter 7: The Glass Wastes - Stage 2",
-    "image": "fractured-temple.png",
+    "image": "fractured-temple.jpg",
     "description": "A once-great temple lies splintered in the sands - fragments of its time scattered across reality.",
     "story": [
       {
@@ -3311,7 +3311,7 @@
   {
     "stageNumber": 33,
     "title": "Chapter 7: The Glass Wastes - Stage 3",
-    "image": "crystal-canyon.png",
+    "image": "crystal-canyon.jpg",
     "description": "The canyon walls pulse with prismatic light, refracting moments you haven't lived. Something is watching through the shards.",
     "story": [
       {
@@ -3406,7 +3406,7 @@
   {
     "stageNumber": 34,
     "title": "Chapter 7: The Glass Wastes - Stage 4",
-    "image": "sunken-refraction.png",
+    "image": "sunken-refraction.jpg",
     "description": "Beneath a shifting dune lies a city trapped in a time loop. It restarts every hour, unaware of its own doom.",
     "story": [
       {
@@ -3501,7 +3501,7 @@
   {
     "stageNumber": 35,
     "title": "Chapter 7: The Glass Wastes - Stage 5",
-    "image": "heart-of-glass.png",
+    "image": "heart-of-glass.jpg",
     "description": "In the heart of the Wastes rises a crystalline tower. At its peak, the Chronarch awaits - master of fractured time.",
     "story": [
       {
@@ -3597,7 +3597,7 @@
   {
     "stageNumber": 36,
     "title": "Chapter 8: The Silent Deep - Stage 1",
-    "image": "descent-chasm.png",
+    "image": "descent-chasm.jpg",
     "description": "The sky vanishes. You descend into the earth's breathless core, past roots older than nations and echoes older than time.",
     "story": [
       {
@@ -3692,7 +3692,7 @@
   {
     "stageNumber": 37,
     "title": "Chapter 8: The Silent Deep - Stage 2",
-    "image": "fungal-sanctum.png",
+    "image": "fungal-sanctum.jpg",
     "description": "A forest of bioluminescent fungi pulses with sickly light. It breathes. And it's watching.",
     "story": [
       {
@@ -3787,7 +3787,7 @@
   {
     "stageNumber": 38,
     "title": "Chapter 8: The Silent Deep - Stage 3",
-    "image": "underground-river.png",
+    "image": "underground-river.jpg",
     "description": "A river of black water flows through a tomb of bones. The ferry waits - but the price is not coin.",
     "story": [
       {
@@ -3882,7 +3882,7 @@
   {
     "stageNumber": 39,
     "title": "Chapter 8: The Silent Deep - Stage 4",
-    "image": "forgotten-vaults.png",
+    "image": "forgotten-vaults.jpg",
     "description": "Doors sealed with runes older than empires creak open. Inside - the lost knowledge of ancient gods, and the things that guard it.",
     "story": [
       {
@@ -3977,7 +3977,7 @@
   {
     "stageNumber": 40,
     "title": "Chapter 8: The Silent Deep - Stage 5",
-    "image": "abyssal-core.png",
+    "image": "abyssal-core.jpg",
     "description": "At the deepest point lies a throne of black stone - and the Watcher Below, an ancient horror sealed in dreamless sleep.",
     "story": [
       {
@@ -4073,7 +4073,7 @@
   {
     "stageNumber": 41,
     "title": "Chapter 9: The Blighted Reach - Stage 1",
-    "image": "withered-plain.png",
+    "image": "withered-plain.jpg",
     "description": "You emerge into a broken world. The sky bleeds violet, and the ground cracks with every step. Life has fled - or become something worse.",
     "story": [
       {
@@ -4194,7 +4194,7 @@
   {
     "stageNumber": 42,
     "title": "Chapter 9: The Blighted Reach - Stage 2",
-    "image": "field-of-hollows.png",
+    "image": "field-of-hollows.jpg",
     "description": "Once a city, now a graveyard. The spirits here wear the faces of your loved ones - and they want you to stay.",
     "story": [
       {
@@ -4315,7 +4315,7 @@
   {
     "stageNumber": 43,
     "title": "Chapter 9: The Blighted Reach - Stage 3",
-    "image": "twisted-forest.png",
+    "image": "twisted-forest.jpg",
     "description": "A forest petrified mid-scream. Branches like claws. Roots like veins. And things that hunt without eyes.",
     "story": [
       {
@@ -4436,7 +4436,7 @@
   {
     "stageNumber": 44,
     "title": "Chapter 9: The Blighted Reach - Stage 4",
-    "image": "corrupted-shrine.png",
+    "image": "corrupted-shrine.jpg",
     "description": "A holy site, long defiled. Black flames flicker where once stood candles of prayer. Something still lingers within the sanctum.",
     "story": [
       {
@@ -4557,7 +4557,7 @@
   {
     "stageNumber": 45,
     "title": "Chapter 9: The Blighted Reach - Stage 5",
-    "image": "throne-of-roots.png",
+    "image": "throne-of-roots.jpg",
     "description": "At the center of the Blight lies the Heartroot, pulsing with stolen souls. Its guardian: a creature birthed of the Lich King's first sin.",
     "story": [
       {
@@ -4678,7 +4678,7 @@
   {
     "stageNumber": 46,
     "title": "Chapter 10: The Throne of Ash - Stage 1",
-    "image": "ashen-gate.png",
+    "image": "ashen-gate.jpg",
     "description": "At the edge of the broken world stands a gate forged from bone and sorrow. It only opens for those who carry both.",
     "story": [
       {
@@ -4766,7 +4766,7 @@
   {
     "stageNumber": 47,
     "title": "Chapter 10: The Throne of Ash - Stage 2",
-    "image": "hall-of-echoes.png",
+    "image": "hall-of-echoes.jpg",
     "description": "An endless hall of obsidian mirrors reflects not your form - but your failures. Here, the mind breaks before the body.",
     "story": [
       {
@@ -4855,7 +4855,7 @@
   {
     "stageNumber": 48,
     "title": "Chapter 10: The Throne of Ash - Stage 3",
-    "image": "vault-of-bones.png",
+    "image": "vault-of-bones.jpg",
     "description": "Pyramids of skulls, rivers of marrow. The Vault of Bones stores the essence of every soul the Lich King has devoured.",
     "story": [
       {
@@ -4943,7 +4943,7 @@
   {
     "stageNumber": 49,
     "title": "Chapter 10: The Throne of Ash - Stage 4",
-    "image": "crown-of-black-flame.png",
+    "image": "crown-of-black-flame.jpg",
     "description": "Before the throne lies the Crown of Black Flame - a sentient inferno, loyal only to its master.",
     "story": [
       {
@@ -5031,7 +5031,7 @@
   {
     "stageNumber": 50,
     "title": "Chapter 10: The Throne of Ash - Final Battle",
-    "image": "lich-king-throne.png",
+    "image": "lich-king-throne.jpg",
     "description": "At last, the Throne. The princess is bound in chains of grief. The Lich King rises, eyes burning with the end of all things.",
     "story": [
       {

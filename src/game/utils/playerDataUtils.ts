@@ -29,8 +29,8 @@ export function getMaxCardCost(level: number): number {
   const maxLevel = 50;
 
   // Shape parameters
-  const midpoint = 22; // Center of the curve
-  const steepness = 0.17; // Lower = smoother S-curve
+  const midpoint = 19; // Center of the curve
+  const steepness = 0.16; // Lower = smoother S-curve
 
   // Clamp level to range
   const clampedLevel = Math.max(1, Math.min(level, maxLevel));

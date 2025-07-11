@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import { createFancyButton } from '../utils/button';
 import { getMaxCardCost, loadPlayerData, loadStageData } from '../utils/playerDataUtils';
 import { PlayerData, Stage, StepItem } from '../objects/objects';
+import { playMusic } from '../utils/audio';
 
 export default class MainMenuScene extends Phaser.Scene {
   private background!: Phaser.GameObjects.Image;
@@ -17,6 +18,9 @@ export default class MainMenuScene extends Phaser.Scene {
   create() {
     this.playerData = loadPlayerData();
     this.background = this.add.image(this.scale.width / 2, this.scale.height / 2, 'bg_main').setDisplaySize(this.scale.width, this.scale.height).setAlpha(0);
+    
+    playMusic(this, "title");
+    
     this.tweens.add({
       targets: this.background,
       alpha: 1,
@@ -54,15 +58,17 @@ export default class MainMenuScene extends Phaser.Scene {
     const y = this.scale.height * 0.5;
 
     if (this.playerData.progress.currentStage == 1 && this.playerData.progress.currentStep == 0) {
-      createFancyButton(this, x, y, "Start Adventure", () => { this.scene.start('AdventureScene')}, 30);
-    } else {
-      createFancyButton(this, x, y, "Continue Adventure", () => { this.scene.start('AdventureScene')}, 30);
+      createFancyButton(this, x, y, "Start Adventure", () => { this.navigate('AdventureScene')}, 30);
+      createFancyButton(this, x, y + 80, "How to Play", () => { this.navigate('HowToPlayScene')}, 30);
+  } else {
+      createFancyButton(this, x, y, "Continue Adventure", () => { this.navigate('AdventureScene')}, 30);
       
       const { stage, stepIndex } = this.getRandomPastStep();
       
-      createFancyButton(this, x, y + 80, "Random Battle", () => { this.scene.start('CombatScene', { random: true, stageId: stage.stageNumber, stepId: stepIndex })}, 30);
+      createFancyButton(this, x, y + 80, "Random Battle", () => { this.navigate('CombatScene', { random: true, stageId: stage.stageNumber, stepId: stepIndex })}, 30);
 
-      createFancyButton(this, x, y + 160, "Collection", () => { this.scene.start('CollectionScene')}, 30);
+      createFancyButton(this, x, y + 160, "Collection", () => { this.navigate('CollectionScene')}, 30);
+      createFancyButton(this, x, y + 240, "How to Play", () => { this.navigate('HowToPlayScene')}, 30);
     }
   }
 
@@ -71,21 +77,29 @@ export default class MainMenuScene extends Phaser.Scene {
     const currentStep = this.playerData.progress.currentStep;
 
     const stages = loadStageData();
-    const eligibleStages = stages.filter(s => s.stageNumber <= maxStage);
+    const eligibleSteps: { stage: Stage; stepIndex: number }[] = [];
 
-    if (eligibleStages.length === 0) {
-      throw new Error("No eligible stages found.");
+    for (const stage of stages) {
+      if (stage.stageNumber < maxStage) {
+        for (let i = 0; i < stage.steps.length; i++) {
+          eligibleSteps.push({ stage, stepIndex: i });
+        }
+      } else if (stage.stageNumber === maxStage) {
+        for (let i = 0; i < currentStep; i++) {
+          eligibleSteps.push({ stage, stepIndex: i });
+        }
+      }
     }
 
-    const stage = Phaser.Utils.Array.GetRandom(eligibleStages);
-    let maxStepIndex = stage.steps.length - 1;
-
-    if (stage.stageNumber === maxStage) {
-      maxStepIndex = Math.min(currentStep - 1, maxStepIndex); // ensure it's within bounds
+    if (eligibleSteps.length === 0) {
+      throw new Error("No eligible past steps found.");
     }
 
-    const stepIndex = Phaser.Math.Between(0, maxStepIndex);
-    return { stage, stepIndex };
+    return Phaser.Utils.Array.GetRandom(eligibleSteps);
+  }
+
+  private navigate(scene: string, data?: any) {
+    this.scene.start(scene, data)
   }
 
 }

@@ -377,21 +377,18 @@ export default class DeckBuilderScene extends Phaser.Scene {
 
     const available = maxCost - totalCost;
 
-    if (!this.pointsText) {
-      this.pointsText = this.add.text(
-        this.scale.width / 2,
-        280,
-        `Available Points: ${available}/${maxCost}`,
-        {
-          fontSize: "20px",
-          fontFamily: "Cinzel",
-          color: "#ffffff",
-        }
-      ).setOrigin(0.5);
-    } else {
-      // bug here
-      console.log(`Available Points: ${available}/${maxCost}`);
-      //this.pointsText.setText(`Available Points: ${available}/${maxCost}`);
-    }
+    if (this.pointsText)
+      this.pointsText.destroy(true);
+
+    this.pointsText = this.add.text(
+      this.scale.width / 2,
+      280,
+      `Available Points: ${available}/${maxCost}`,
+      {
+        fontSize: "20px",
+        fontFamily: "Cinzel",
+        color: "#ffffff",
+      }
+    ).setOrigin(0.5);
   }
 }

@@ -4,6 +4,7 @@ import { loadPlayerData, loadStageData } from '../utils/playerDataUtils';
 import { PlayerData, Stage } from '../objects/objects';
 import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from '../utils/button';
 import { GlobalState } from '../objects/globalState';
+import { playMusic } from '../utils/audio';
 
 export default class AdventureScene extends Phaser.Scene {
   private bg!: Phaser.GameObjects.Image;
@@ -11,7 +12,7 @@ export default class AdventureScene extends Phaser.Scene {
   private visibleStageRange = { start: 1, end: this.stagesInChapter };
   private stages: Stage[] = [];
   private playerData: PlayerData;
-
+ 
   constructor() {
     super('AdventureScene');
   }
@@ -23,17 +24,20 @@ export default class AdventureScene extends Phaser.Scene {
     if (this.playerData) {
       const currentStageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
       const stageImage = `bg_stage_${currentStageGroup}`;
-      this.load.image(stageImage, `assets/backgrounds/chapters/${stageImage}.png`);
+      this.load.image(stageImage, `assets/backgrounds/chapters/${stageImage}.jpg`);
     }
   }
 
   create() {
     const stageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
     const stageImage = `bg_stage_${stageGroup}`;
+    const stageMusic = `music_stage_${stageGroup}`;
     this.bg = this.add.image(0, 0, stageImage).setOrigin(0, 0);
-
+    
     this.visibleStageRange.start = (stageGroup - 1) * this.stagesInChapter + 1;
     this.visibleStageRange.end = Math.min(this.visibleStageRange.start + this.stagesInChapter - 1, this.stages.length);
+
+    playMusic(this, stageMusic);
 
     this.setBackgroundPosition();
     this.placeStageMarkers();
