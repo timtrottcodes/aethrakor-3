@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 import { createFancyButton } from '../utils/button';
 import { getMaxCardCost, loadPlayerData, loadStageData } from '../utils/playerDataUtils';
 import { PlayerData, Stage, StepItem } from '../objects/objects';
-import { playMusic } from '../utils/audio';
+import { initAudioManager, playMusic } from '../utils/audio';
 
 export default class MainMenuScene extends Phaser.Scene {
   private background!: Phaser.GameObjects.Image;
@@ -19,6 +19,7 @@ export default class MainMenuScene extends Phaser.Scene {
     this.playerData = loadPlayerData();
     this.background = this.add.image(this.scale.width / 2, this.scale.height / 2, 'bg_main').setDisplaySize(this.scale.width, this.scale.height).setAlpha(0);
     
+    initAudioManager(this);
     playMusic(this, "title");
     
     this.tweens.add({

@@ -32,6 +32,14 @@ export class CardManager {
     return totalCost;
   }
 
+  public playerHasEligibleCardDrops(currentCards: string[]) {
+    const eligibleCards = this.cards.filter(
+      (card) =>
+        !currentCards.includes(card.id)
+    );
+    return eligibleCards.length > 0;
+  }
+
   getRandomCardsByRarity(
     rarities: Rarity[],
     count: number,

@@ -4,7 +4,7 @@ import { loadPlayerData, loadStageData } from '../utils/playerDataUtils';
 import { PlayerData, Stage } from '../objects/objects';
 import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from '../utils/button';
 import { GlobalState } from '../objects/globalState';
-import { playMusic } from '../utils/audio';
+import { initAudioManager, playMusic } from '../utils/audio';
 
 export default class AdventureScene extends Phaser.Scene {
   private bg!: Phaser.GameObjects.Image;
@@ -29,6 +29,8 @@ export default class AdventureScene extends Phaser.Scene {
   }
 
   create() {
+    initAudioManager(this);
+    
     const stageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
     const stageImage = `bg_stage_${stageGroup}`;
     const stageMusic = `music_stage_${stageGroup}`;

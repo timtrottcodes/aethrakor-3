@@ -5,7 +5,7 @@ import { CardManager } from '../objects/CardManager';
 import { loadPlayerData, savePlayerData } from '../utils/playerDataUtils';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { CardFace } from '../objects/objects';
-import { playSound } from '../utils/audio';
+import { initAudioManager, playSound } from '../utils/audio';
 
 export default class CardDropScene extends Phaser.Scene {
   constructor() {
@@ -19,6 +19,8 @@ export default class CardDropScene extends Phaser.Scene {
   create() {
     const cardManager = new CardManager();
     const playerData = loadPlayerData();
+
+    initAudioManager(this);
 
     var randomCard = cardManager.getWeightedRandomCardDrop(playerData.collection, playerData.level);
     if (randomCard) {

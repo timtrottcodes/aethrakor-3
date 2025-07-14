@@ -23,7 +23,7 @@ import { MonsterManager } from "../objects/MonsterManager";
 import { CardManager } from "../objects/CardManager";
 import { GlobalState } from "../objects/globalState";
 import { createSlantedFancyButton } from "../utils/button";
-import { playMusic, playSound } from "../utils/audio";
+import { initAudioManager, playMusic, playSound } from "../utils/audio";
 
 type CombatCard = {
   id: string;
@@ -97,6 +97,8 @@ export default class CombatScene extends Phaser.Scene {
   create() {
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
+
+    initAudioManager(this);
 
     if (this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss)
       playMusic(this, 'bossbattle');

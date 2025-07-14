@@ -1,5 +1,5 @@
 import { Boot } from './scenes/Boot';
-import { AUTO, Game } from 'phaser';
+import { Game } from 'phaser';
 import { Preloader } from './scenes/Preloader';
 
 import MainMenuScene from './scenes/MainMenuScene';
@@ -13,6 +13,7 @@ import { CardPreviewScene } from './scenes/CardPreviewScene ';
 import StoryScene from './scenes/StoryScene';
 import CollectionScene from './scenes/CollectionScene';
 import HowToPlayScene from './scenes/HowToPlayScene';
+import PausedScene from './scenes/PausedScene';
 
 const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
@@ -40,7 +41,8 @@ const config: Phaser.Types.Core.GameConfig = {
         CardPreviewScene,
         StoryScene,
         CollectionScene,
-        HowToPlayScene
+        HowToPlayScene,
+        PausedScene
     ]
 };
 

@@ -6,7 +6,7 @@ import { CardManager } from '../objects/CardManager';
 import { renderPlayerCard } from '../utils/renderPlayerCard';
 import { GlobalState } from '../objects/globalState';
 import { createFancyButton } from '../utils/button';
-import { playMusic, playSound } from '../utils/audio';
+import { initAudioManager, playMusic, playSound } from '../utils/audio';
 
 export default class ExplorationScene extends Phaser.Scene {
   private stageId!: number;
@@ -36,14 +36,16 @@ export default class ExplorationScene extends Phaser.Scene {
       this.playerData.progress.currentStep = 0;
       savePlayerData(this.playerData);
 
-      //const isChapterEnd = this.playerData.progress.currentStage % 5 === 1; // we just entered stage 6, 11, etc.
+      const isChapterEnd = this.playerData.progress.currentStage % 5 === 1; // we just entered stage 6, 11, etc.
 
       if (this.playerData.progress.currentStage > 50) {
         this.scene.start('VictoryScene');
-      } else {
+      } else if (this.cardManager.playerHasEligibleCardDrops(this.playerData.collection)) {
         // Guarentee card drop after each stage
-        GlobalState.lastScene = 'StoryScene'; //isChapterEnd ? 'StoryScene' : 'AdventureScene';
+        GlobalState.lastScene = isChapterEnd ? 'StoryScene' : 'AdventureScene';
         this.scene.start('CardDropScene');
+      } else {
+        this.scene.start(isChapterEnd ? 'StoryScene' : 'AdventureScene');
       }
     }
   }
@@ -55,6 +57,8 @@ export default class ExplorationScene extends Phaser.Scene {
   }
 
   create() {
+    initAudioManager(this);
+    
     this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
     
     const stageGroup = Math.floor((this.playerData.progress.currentStage - 1) / 5) + 1;
@@ -170,7 +174,7 @@ export default class ExplorationScene extends Phaser.Scene {
     const rand = Math.random();
 
     let outcome = 'continue';
-    if (rand < 0.16) 
+    if (rand < 0.16 && this.cardManager.playerHasEligibleCardDrops(this.playerData.collection)) 
       outcome = 'rareDrop';
     else  if (rand < 0.6) 
       outcome = 'battle';
