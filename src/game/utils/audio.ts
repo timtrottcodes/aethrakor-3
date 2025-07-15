@@ -68,9 +68,12 @@ function handleLoseFocus() {
     AudioState.wasPlaying = true;
   }
 
+  if (scene.scene.isActive(scene.scene.key)) scene.scene.pause(scene.scene.key);
   scene.scene.run("paused", {
     onResume: () => {
       scene.scene.stop("paused");
+      console.log(scene.scene.key);
+      scene.scene.resume(scene.scene.key);
       if (AudioState.music && AudioState.wasPlaying) {
         AudioState.music.resume();
         AudioState.wasPlaying = false;

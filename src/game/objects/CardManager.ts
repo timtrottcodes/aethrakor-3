@@ -60,12 +60,12 @@ export class CardManager {
 
   getWeightedRandomCardDrop(playerCollection: string[], playerLevel: number): Card | null {
     const rarityWeights: Record<Rarity, number> = {
-      [Rarity.Ordinary]: 255,
-      [Rarity.Common]: 235,
-      [Rarity.Uncommon]: 210,
-      [Rarity.Rare]: 150,
-      [Rarity.Epic]: 100,
-      [Rarity.Legendary]: 50
+      [Rarity.Ordinary]: 230,
+      [Rarity.Common]: 220,
+      [Rarity.Uncommon]: 200,
+      [Rarity.Rare]: 140,
+      [Rarity.Epic]: 110,
+      [Rarity.Legendary]: 100
     };
 
     const levelThresholds: Record<Rarity, number> = {
@@ -73,8 +73,8 @@ export class CardManager {
       [Rarity.Common]: 0,
       [Rarity.Uncommon]: 4,
       [Rarity.Rare]: 8,
-      [Rarity.Epic]: 20,
-      [Rarity.Legendary]: 32
+      [Rarity.Epic]: 18,
+      [Rarity.Legendary]: 30
     };
 
     const eligibleCardsByRarity: Record<Rarity, Card[]> = {

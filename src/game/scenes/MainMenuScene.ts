@@ -1,8 +1,8 @@
 // scenes/MainMenuScene.ts
 import Phaser from 'phaser';
 import { createFancyButton } from '../utils/button';
-import { getMaxCardCost, loadPlayerData, loadStageData } from '../utils/playerDataUtils';
-import { PlayerData, Stage, StepItem } from '../objects/objects';
+import { loadPlayerData, loadStageData, newPlayer, savePlayerData } from '../utils/playerDataUtils';
+import { PlayerData, Stage } from '../objects/objects';
 import { initAudioManager, playMusic } from '../utils/audio';
 
 export default class MainMenuScene extends Phaser.Scene {
@@ -62,7 +62,16 @@ export default class MainMenuScene extends Phaser.Scene {
       createFancyButton(this, x, y, "Start Adventure", () => { this.navigate('AdventureScene')}, 30);
       createFancyButton(this, x, y + 80, "How to Play", () => { this.navigate('HowToPlayScene')}, 30);
   } else {
-      createFancyButton(this, x, y, "Continue Adventure", () => { this.navigate('AdventureScene')}, 30);
+
+    if (this.playerData.progress.currentStage > 50) {
+        createFancyButton(this, x, y, "New Game", () => { 
+          this.playerData = newPlayer();
+          savePlayerData(this.playerData);
+          this.scene.restart();
+        }, 30);
+      } else {
+        createFancyButton(this, x, y, "Continue Adventure", () => { this.navigate('AdventureScene')}, 30);
+      }
       
       const { stage, stepIndex } = this.getRandomPastStep();
       

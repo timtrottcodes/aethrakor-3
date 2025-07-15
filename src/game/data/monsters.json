@@ -405,7 +405,7 @@
     "name": "Dracolich",
     "description": "An undead dragon with arcane powers.",
     "rarity": "Epic",
-    "attack": 14,
+    "attack": 12,
     "health": 11,
     "specialAbility": "None"
   },
@@ -424,7 +424,7 @@
     "name": "Storm Revenant",
     "description": "Commands the skies with thunder.",
     "rarity": "Epic",
-    "attack": 15,
+    "attack": 14,
     "health": 11,
     "specialAbility": "None"
   },
@@ -433,7 +433,7 @@
     "name": "Fire Troll",
     "description": "Immune to pain, and stronger in fire.",
     "rarity": "Epic",
-    "attack": 16,
+    "attack": 14,
     "health": 12,
     "specialAbility": "None"
   },
@@ -460,8 +460,8 @@
     "name": "Blood Queen",
     "description": "Strikes from the shadows with deadly precision.",
     "rarity": "Legendary",
-    "attack": 15,
-    "health": 27,
+    "attack": 14,
+    "health": 25,
     "specialAbility": "None"
   },
 

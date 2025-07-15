@@ -82,6 +82,7 @@ export class Preloader extends Scene {
     this.load.image("deck-builder", "backgrounds/deck-builder.jpg");
     this.load.image("scratch", "ui/scratch.png");
     this.load.image("star", "ui/11571051.png");
+    this.load.image("confetti", "ui/confetti.png");
 
     this.load.audio('click', 'sfx/button-click-289742.mp3');
     this.load.audio('foot', 'sfx/st2-footstep-sfx-323055.mp3');

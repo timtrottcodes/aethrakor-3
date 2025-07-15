@@ -149,6 +149,8 @@ export default class CombatScene extends Phaser.Scene {
 
     let difficultyMultiplier = 1;
 
+    if (this.currentStage.stageNumber >= 50)
+      difficultyMultiplier = 1.32
     if (this.currentStage.stageNumber >= 46)
       difficultyMultiplier = 1.25
     else if (this.currentStage.stageNumber > 20)
@@ -589,7 +591,7 @@ export default class CombatScene extends Phaser.Scene {
 
     if (result === "victory") {
       // 10% card drop chance for normal gameplay
-      let dropChancePercent = 8;
+      let dropChancePercent = 10;
       
       if (this.nextScene !== "") {
         // 75% card drop chance for random battles

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { initAudioManager, playMusic } from '../utils/audio';
 
 export default class VictoryScene extends Phaser.Scene {
   constructor() {
@@ -6,12 +7,15 @@ export default class VictoryScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('victory-bg', 'assets/images/victory_background.jpg'); // Replace with your image path
+    this.load.image('victory-bg', 'assets/backgrounds/victory.jpg'); // Replace with your image path
     this.load.image('confetti', 'assets/ui/confetti.png'); // Particle texture
   }
 
   create() {
     const { width, height } = this.scale;
+
+    initAudioManager(this);
+    playMusic(this, "victory");
 
     // Background
     this.add.image(width / 2, height / 2, 'victory-bg').setDisplaySize(width, height);
@@ -33,23 +37,24 @@ export default class VictoryScene extends Phaser.Scene {
 
     this.add.text(width / 2, 140, storyText, {
       fontFamily: 'Cinzel',
-      fontSize: '28px',
+      fontSize: '26px',
       color: '#ffffff',
       align: 'center',
       wordWrap: { width: width - 120 },
     }).setOrigin(0.5, 0).setDepth(1);
 
     // Confetti Particle Emitter
-    this.add.particles(this.scale.width / 2, this.scale.height / 2, 'confetti', {
+    this.add.particles(0, 0, 'confetti', {
       x: { min: 0, max: width },
       y: 0,
-      lifespan: 4000,
+      lifespan: 4300,
       speedY: { min: 100, max: 300 },
       scale: { start: 0.5, end: 0 },
       quantity: 4,
       frequency: 200,
       rotate: { min: -180, max: 180 },
-      blendMode: 'ADD'
+      blendMode: 'ADD',
+      color: [0xffffff,0xffff00,0x00ff00,0xff0000]
     });
 
     // Main Menu Button

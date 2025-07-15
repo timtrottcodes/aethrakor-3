@@ -108,7 +108,7 @@ export function loadStageData() {
 
 /* end exp calc */
 
-function newPlayer() {
+export function newPlayer() {
   const defaultPlayerData: PlayerData = {
     level: 1,
     currentExp: 0,
