@@ -1,4 +1,4 @@
-# Aetherios 3: Return to Ashes by Tim Trott
+# Aethrakor 3: Return to Ashes by Tim Trott
 
 ## Introduction
 
@@ -21,15 +21,15 @@ While it's not a dungeon crawler, it lays the groundwork for one — and represe
 
 ## 🚀 Getting Started
 
-➡️ The best way to play this game is to play online at [TimTrottCodes](https://timtrottcodes.github.io/).
+➡️ The best way to play this game is to play online at [TimTrottCodes](https://timtrottcodes.pages.dev/).
 
 To run the game locally:
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/timtrottcodes/aetherios-3
-   cd aetherios-3
+   git clone https://github.com/timtrottcodes/aethrakor-3
+   cd aethrakor-3
    ```
 
 2. **Install dependencies**
