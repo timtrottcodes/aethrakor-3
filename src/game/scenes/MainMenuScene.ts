@@ -1,42 +1,49 @@
 // scenes/MainMenuScene.ts
-import Phaser from 'phaser';
-import { createFancyButton } from '../utils/button';
-import { loadPlayerData, loadStageData, newPlayer, savePlayerData } from '../utils/playerDataUtils';
-import { PlayerData, Stage } from '../objects/objects';
-import { initAudioManager, playMusic } from '../utils/audio';
+import Phaser from "phaser";
+import { createFancyButton } from "../utils/button";
+import { PlayerData, Stage } from "../objects/objects";
+import { initAudioManager, playMusic } from "../utils/audio";
+import { addUIOverlay } from "../utils/addUIOverlay";
+import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { StageManager } from "../objects/StageManager";
 
 export default class MainMenuScene extends Phaser.Scene {
   private background!: Phaser.GameObjects.Image;
-  private logo!: Phaser.GameObjects.Image;  
+  private logo!: Phaser.GameObjects.Image;
   private sublogo!: Phaser.GameObjects.Image;
   private playerData: PlayerData;
-  
+
   constructor() {
-    super('MainMenuScene');
+    super("MainMenuScene");
   }
 
   create() {
-    this.playerData = loadPlayerData();
-    this.background = this.add.image(this.scale.width / 2, this.scale.height / 2, 'bg_main').setDisplaySize(this.scale.width, this.scale.height).setAlpha(0);
-    
+    this.background = this.add
+      .image(this.scale.width / 2, this.scale.height / 2, "bg_main")
+      .setDisplaySize(this.scale.width, this.scale.height)
+      .setAlpha(0);
+
+    addUIOverlay(this);
     initAudioManager(this);
     playMusic(this, "title");
-    
+
     this.tweens.add({
       targets: this.background,
       alpha: 1,
       duration: 1000,
-      onComplete: () => this.showLogo()
+      onComplete: () => this.showLogo(),
     });
   }
 
   private showLogo() {
-    this.logo = this.add.image(this.scale.width / 2, 200, 'logo')
+    this.logo = this.add
+      .image(this.scale.width / 2, 200, "logo")
       .setAlpha(0)
       .setScale(0.8)
       .setOrigin(0.5);
-    
-    this.sublogo = this.add.image(this.scale.width / 2, 350, 'sublogo')
+
+    this.sublogo = this.add
+      .image(this.scale.width / 2, 350, "sublogo")
       .setAlpha(0)
       .setOrigin(0.5);
 
@@ -44,49 +51,108 @@ export default class MainMenuScene extends Phaser.Scene {
       targets: this.logo,
       alpha: 1,
       duration: 1000,
-      onComplete: () => this.showButton()
+      onComplete: () => this.showButton(),
     });
 
     this.tweens.add({
       targets: this.sublogo,
       alpha: 1,
-      duration: 1000
+      duration: 1000,
     });
-  }  
-    
+  }
+
   private showButton() {
     const x = this.scale.width / 2;
     const y = this.scale.height * 0.5;
 
-    if (this.playerData.progress.currentStage == 1 && this.playerData.progress.currentStep == 0) {
-      createFancyButton(this, x, y, "Start Adventure", () => { this.navigate('AdventureScene')}, 30);
-      createFancyButton(this, x, y + 80, "How to Play", () => { this.navigate('HowToPlayScene')}, 30);
-  } else {
-
-    if (this.playerData.progress.currentStage > 50) {
-        createFancyButton(this, x, y, "New Game", () => { 
-          this.playerData = newPlayer();
-          savePlayerData(this.playerData);
-          this.scene.restart();
-        }, 30);
+    if (PlayerDataManager.instance.data.progress.currentStage == 1 && PlayerDataManager.instance.data.progress.currentStep == 0) {
+      createFancyButton(
+        this,
+        x,
+        y,
+        "Start Adventure",
+        () => {
+          this.navigate("AdventureScene");
+        },
+        30
+      );
+      createFancyButton(
+        this,
+        x,
+        y + 80,
+        "How to Play",
+        () => {
+          this.navigate("HowToPlayScene");
+        },
+        30
+      );
+    } else {
+      if (PlayerDataManager.instance.data.progress.currentStage > 50) {
+        createFancyButton(
+          this,
+          x,
+          y,
+          "New Game",
+          () => {
+            PlayerDataManager.instance.newGame();
+            this.scene.restart();
+          },
+          30
+        );
       } else {
-        createFancyButton(this, x, y, "Continue Adventure", () => { this.navigate('AdventureScene')}, 30);
+        createFancyButton(
+          this,
+          x,
+          y,
+          "Continue Adventure",
+          () => {
+            this.navigate("AdventureScene");
+          },
+          30
+        );
       }
-      
-      const { stage, stepIndex } = this.getRandomPastStep();
-      
-      createFancyButton(this, x, y + 80, "Random Battle", () => { this.navigate('CombatScene', { random: true, stageId: stage.stageNumber, stepId: stepIndex })}, 30);
 
-      createFancyButton(this, x, y + 160, "Collection", () => { this.navigate('CollectionScene')}, 30);
-      createFancyButton(this, x, y + 240, "How to Play", () => { this.navigate('HowToPlayScene')}, 30);
+      const { stage, stepIndex } = this.getRandomPastStep();
+
+      createFancyButton(
+        this,
+        x,
+        y + 80,
+        "Random Battle",
+        () => {
+          this.navigate("CombatScene", { random: true, stageId: stage.stageNumber, stepId: stepIndex });
+        },
+        30
+      );
+
+      createFancyButton(
+        this,
+        x,
+        y + 160,
+        "Collection",
+        () => {
+          this.navigate("CollectionScene");
+        },
+        30
+      );
+      createFancyButton(
+        this,
+        x,
+        y + 240,
+        "How to Play",
+        () => {
+          this.navigate("HowToPlayScene");
+        },
+        30
+      );
     }
   }
 
-  private getRandomPastStep(): { stage: Stage, stepIndex: number } {
-    const maxStage = this.playerData.progress.currentStage;
-    const currentStep = this.playerData.progress.currentStep;
+  private getRandomPastStep(): { stage: Stage; stepIndex: number } {
+    const maxStage = PlayerDataManager.instance.data.progress.currentStage;
+    const currentStep = PlayerDataManager.instance.data.progress.currentStep;
 
-    const stages = loadStageData();
+    const stages = StageManager.instance.stages;
     const eligibleSteps: { stage: Stage; stepIndex: number }[] = [];
 
     for (const stage of stages) {
@@ -109,7 +175,6 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   private navigate(scene: string, data?: any) {
-    this.scene.start(scene, data)
+    this.scene.start(scene, data);
   }
-
 }

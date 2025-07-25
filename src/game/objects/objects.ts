@@ -1,17 +1,17 @@
 export enum Rarity {
   Ordinary = "Ordinary",
-  Common = 'Common',
-  Uncommon = 'Uncommon',
-  Rare = 'Rare',
-  Epic = 'Epic',
-  Legendary = 'Legendary'
+  Common = "Common",
+  Uncommon = "Uncommon",
+  Rare = "Rare",
+  Epic = "Epic",
+  Legendary = "Legendary",
 }
 
 export enum SpecialAbility {
-  None = 'None',
-  Taunt = 'Taunt',
-  DualStrike = 'DualStrike',
-  Healer = 'Healer',
+  None = "None",
+  Taunt = "Taunt",
+  DualStrike = "DualStrike",
+  Healer = "Healer",
 }
 
 export const rarityOrder: Record<Rarity, number> = {
@@ -20,7 +20,7 @@ export const rarityOrder: Record<Rarity, number> = {
   [Rarity.Rare]: 2,
   [Rarity.Uncommon]: 3,
   [Rarity.Common]: 4,
-  [Rarity.Ordinary]: 5
+  [Rarity.Ordinary]: 5,
 };
 
 export const rarityCost: Record<Rarity, number> = {
@@ -29,7 +29,7 @@ export const rarityCost: Record<Rarity, number> = {
   [Rarity.Rare]: 5,
   [Rarity.Uncommon]: 3,
   [Rarity.Common]: 2,
-  [Rarity.Ordinary]: 1
+  [Rarity.Ordinary]: 1,
 };
 
 export const rarityColors: Record<Rarity, string> = {
@@ -64,7 +64,16 @@ export interface PlayerData {
   collection: string[];
   equippedCards: string[];
   progress: PlayerProgress;
+  settings: AudioPreferences;
 }
+
+export type AudioPreferences = {
+  muteAll: boolean;
+  muteMusic: boolean;
+  muteSound: boolean;
+  musicVolume: number;
+  soundVolume: number;
+};
 
 export interface Stage {
   stageNumber: number;
@@ -90,10 +99,10 @@ export enum StepType {
   Random = "Random",
   Boss = "Boss",
   Miniboss = "Miniboss",
-  FixedMob = "FixedMob"
+  FixedMob = "FixedMob",
 }
 
 export enum CardFace {
-  Front = 'Front',
-  Back = 'Back'
+  Front = "Front",
+  Back = "Back",
 }

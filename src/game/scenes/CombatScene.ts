@@ -1,29 +1,13 @@
-import {
-  Card,
-  CardFace,
-  PlayerData,
-  Rarity,
-  rarityOrder,
-  SpecialAbility,
-  Stage,
-  StepItem,
-  StepType,
-} from "../objects/objects";
-import {
-  grantPlayerExp,
-  loadPlayerData,
-  loadStageData,
-  savePlayerData,
-} from "../utils/playerDataUtils";
-import {
-  renderPlayerCard,
-  updateHealthOverlay,
-} from "../utils/renderPlayerCard";
+import { Card, CardFace, Rarity, rarityOrder, SpecialAbility, Stage, StepItem, StepType } from "../objects/objects";
+import { renderPlayerCard, updateHealthOverlay } from "../utils/renderPlayerCard";
 import { MonsterManager } from "../objects/MonsterManager";
 import { CardManager } from "../objects/CardManager";
 import { GlobalState } from "../objects/globalState";
 import { createSlantedFancyButton } from "../utils/button";
 import { initAudioManager, playMusic, playSound } from "../utils/audio";
+import { addUIOverlay } from "../utils/addUIOverlay";
+import { StageManager } from "../objects/StageManager";
+import { PlayerDataManager } from "../objects/PlayerDataManager";
 
 type CombatCard = {
   id: string;
@@ -45,7 +29,6 @@ interface CombatSceneData {
 }
 
 export default class CombatScene extends Phaser.Scene {
-  private playerData: PlayerData;
   private cardManager!: CardManager;
   private monsterManager!: MonsterManager;
   private playerCards: CombatCard[] = [];
@@ -64,33 +47,25 @@ export default class CombatScene extends Phaser.Scene {
   }
 
   init(data: CombatSceneData): void {
-    this.stages = loadStageData();
-    this.playerData = loadPlayerData();
+    this.stages = StageManager.instance.stages;
 
     if (data.random === true) {
       this.stageId = data.stageId;
       this.stepId = data.stepId;
       this.nextScene = "MainMenuScene";
     } else {
-      this.stageId = this.playerData.progress.currentStage;
-      this.stepId = this.playerData.progress.currentStep;
+      this.stageId = PlayerDataManager.instance.data.progress.currentStage;
+      this.stepId = PlayerDataManager.instance.data.progress.currentStep;
       this.nextScene = "";
     }
 
-    this.currentStage = this.stages.find(
-      (s) => s.stageNumber === this.stageId
-    )!;
-    this.currentStep = JSON.parse(
-      JSON.stringify(this.currentStage.steps[this.stepId!])
-    );
+    this.currentStage = this.stages.find((s) => s.stageNumber === this.stageId)!;
+    this.currentStep = JSON.parse(JSON.stringify(this.currentStage.steps[this.stepId!]));
   }
 
   preload() {
     if (this.currentStage) {
-      this.load.image(
-        this.currentStage.image,
-        `assets/backgrounds/stages/${this.currentStage.image}`
-      );
+      this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
     }
   }
 
@@ -98,18 +73,13 @@ export default class CombatScene extends Phaser.Scene {
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
 
+    addUIOverlay(this);
     initAudioManager(this);
 
-    if (this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss)
-      playMusic(this, 'bossbattle');
-    else
-      playMusic(this, 'battle');
+    if (this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss) playMusic(this, "bossbattle");
+    else playMusic(this, "battle");
 
-    this.add
-      .image(0, 0, this.currentStage.image)
-      .setOrigin(0)
-      .setDisplaySize(this.scale.width, this.scale.height)
-      .setDepth(0);
+    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
     const centerX = this.scale.width / 2;
     let spacing = 140;
@@ -120,15 +90,10 @@ export default class CombatScene extends Phaser.Scene {
     if (this.currentStep.type == StepType.Boss) {
       const bossId = this.currentStep.enemies.shift();
       const bossCard = this.monsterManager.getById(bossId!);
-      monsterData = this.monsterManager.getRandomMonstersFromList(
-        this.currentStep.enemies,
-        4
-      );
+      monsterData = this.monsterManager.getRandomMonstersFromList(this.currentStep.enemies, 4);
       monsterData.splice(2, 0, bossCard!);
     } else {
-      monsterData = this.monsterManager.getRandomMonstersFromList(
-        this.currentStep.enemies
-      );
+      monsterData = this.monsterManager.getRandomMonstersFromList(this.currentStep.enemies);
       monsterData.sort((a, b) => {
         if (b.rarity !== a.rarity) {
           return rarityOrder[a.rarity] - rarityOrder[b.rarity];
@@ -143,28 +108,18 @@ export default class CombatScene extends Phaser.Scene {
     }
 
     let bossOffset = 0;
-    const isBossStep =
-      this.currentStep.type === StepType.Boss ||
-      this.currentStep.type === StepType.Miniboss;
+    const isBossStep = this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss;
 
     let difficultyMultiplier = 1;
 
-    if (this.currentStage.stageNumber >= 50)
-      difficultyMultiplier = 1.32
-    if (this.currentStage.stageNumber >= 46)
-      difficultyMultiplier = 1.25
-    else if (this.currentStage.stageNumber > 20)
-      difficultyMultiplier = 1.12
-    else if (this.currentStage.stageNumber <= 10)
-      difficultyMultiplier = 0.8
+    if (this.currentStage.stageNumber >= 50) difficultyMultiplier = 1.32;
+    if (this.currentStage.stageNumber >= 46) difficultyMultiplier = 1.25;
+    else if (this.currentStage.stageNumber > 20) difficultyMultiplier = 1.12;
+    else if (this.currentStage.stageNumber <= 10) difficultyMultiplier = 0.8;
 
     this.monsterCards = monsterData.map((card, i) => {
       const isBossCard = isBossStep && i === 2;
-      const scale = isBossCard
-        ? this.cardScale + 0.01
-        : isBossStep
-        ? this.cardScale - 0.01
-        : this.cardScale;
+      const scale = isBossCard ? this.cardScale + 0.01 : isBossStep ? this.cardScale - 0.01 : this.cardScale;
 
       const x = centerX - 2 * spacing + i * spacing - 65 + bossOffset;
       const y = 120;
@@ -192,7 +147,7 @@ export default class CombatScene extends Phaser.Scene {
     });
 
     this.add
-      .text(20, this.scale.height - 90, `Level: ${this.playerData.level}`, {
+      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
         fontFamily: "Cinzel, serif",
         fontSize: "16px",
         color: "#ffffff",
@@ -208,36 +163,24 @@ export default class CombatScene extends Phaser.Scene {
       })
       .setDepth(2);
 
-    if (this.playerData.level < 50)
+    if (PlayerDataManager.instance.data.level < 50)
       this.add
-        .text(
-          20,
-          this.scale.height - 50,
-          `EXP to next level: ${this.playerData.expToNextLevel}`,
-          {
-            fontFamily: "Cinzel, serif",
-            fontSize: "16px",
-            color: "#ffffff",
-          }
-        )
+        .text(20, this.scale.height - 50, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
+          fontFamily: "Cinzel, serif",
+          fontSize: "16px",
+          color: "#ffffff",
+        })
         .setDepth(2);
 
     spacing = 140;
     // Player cards
-    this.playerCards = this.playerData.equippedCards
+    this.playerCards = PlayerDataManager.instance.data.equippedCards
       .map((cardId, i) => {
         const card = this.cardManager.getById(cardId);
         if (card) {
           const x = centerX - 2 * spacing + i * spacing - 65;
           const y = this.scale.height - 300;
-          const sprite = renderPlayerCard(
-            this,
-            card,
-            x,
-            y,
-            this.cardScale,
-            CardFace.Front
-          );
+          const sprite = renderPlayerCard(this, card, x, y, this.cardScale, CardFace.Front);
           return {
             id: card.id,
             name: card.name,
@@ -256,10 +199,7 @@ export default class CombatScene extends Phaser.Scene {
   }
 
   private async runCombatLoop() {
-    while (
-      this.playerCards.some((c) => c && c.currentHealth > 0) &&
-      this.monsterCards.some((c) => c && c.currentHealth > 0)
-    ) {
+    while (this.playerCards.some((c) => c && c.currentHealth > 0) && this.monsterCards.some((c) => c && c.currentHealth > 0)) {
       await this.runCombatRound();
     }
 
@@ -281,28 +221,15 @@ export default class CombatScene extends Phaser.Scene {
           this.applyHealing(this.playerCards, player);
         }
 
-        const attackCount =
-          player.specialAbility === SpecialAbility.DualStrike ? 2 : 1;
+        const attackCount = player.specialAbility === SpecialAbility.DualStrike ? 2 : 1;
 
         for (let a = 0; a < attackCount; a++) {
           const monsterTarget = this.findNextAlive(i, this.monsterCards);
           if (monsterTarget) {
-            const { damage, isCritical } = this.calculateDamage(
-              player.baseAttack
-            );
-            monsterTarget.currentHealth = Math.max(
-              monsterTarget.currentHealth - damage,
-              0
-            );
-            const hpPercent =
-              (monsterTarget.currentHealth / monsterTarget.maxHealth) * 100;
-            await this.animateAttack(
-              player,
-              monsterTarget,
-              damage,
-              isCritical,
-              hpPercent
-            );
+            const { damage, isCritical } = this.calculateDamage(player.baseAttack);
+            monsterTarget.currentHealth = Math.max(monsterTarget.currentHealth - damage, 0);
+            const hpPercent = (monsterTarget.currentHealth / monsterTarget.maxHealth) * 100;
+            await this.animateAttack(player, monsterTarget, damage, isCritical, hpPercent);
           }
         }
       }
@@ -312,37 +239,18 @@ export default class CombatScene extends Phaser.Scene {
       if (monster) {
         const playerTarget = this.findNextAlive(i, this.playerCards);
         if (playerTarget) {
-          const { damage, isCritical } = this.calculateDamage(
-            monster.baseAttack,
-            monster.rarity
-          );
-          playerTarget.currentHealth = Math.max(
-            playerTarget.currentHealth - damage,
-            0
-          );
-          const hpPercent =
-            (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
-          await this.animateAttack(
-            monster,
-            playerTarget,
-            damage,
-            isCritical,
-            hpPercent
-          );
+          const { damage, isCritical } = this.calculateDamage(monster.baseAttack, monster.rarity);
+          playerTarget.currentHealth = Math.max(playerTarget.currentHealth - damage, 0);
+          const hpPercent = (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
+          await this.animateAttack(monster, playerTarget, damage, isCritical, hpPercent);
         }
       }
     }
   }
 
-  private findNextAlive(
-    initialTarget: number,
-    cards: CombatCard[]
-  ): CombatCard | null {
+  private findNextAlive(initialTarget: number, cards: CombatCard[]): CombatCard | null {
     // First, check for Taunt abilitys
-    const tauntTarget = cards.find(
-      (c) =>
-        c && c.currentHealth > 0 && c.specialAbility === SpecialAbility.Taunt
-    );
+    const tauntTarget = cards.find((c) => c && c.currentHealth > 0 && c.specialAbility === SpecialAbility.Taunt);
     if (tauntTarget) return tauntTarget;
 
     const total = cards.length;
@@ -372,8 +280,7 @@ export default class CombatScene extends Phaser.Scene {
     const variance = Phaser.Math.FloatBetween(0.9, 1.1);
     let isCritical = Phaser.Math.Between(1, 20) <= 2;
 
-    if ((rarity && rarity === Rarity.Epic) || rarity === Rarity.Legendary)
-      isCritical = Phaser.Math.Between(1, 20) <= 4;
+    if ((rarity && rarity === Rarity.Epic) || rarity === Rarity.Legendary) isCritical = Phaser.Math.Between(1, 20) <= 4;
 
     const critMultiplier = isCritical ? 1.25 : 1;
     const damage = Math.round(baseAttack * variance * critMultiplier);
@@ -382,33 +289,19 @@ export default class CombatScene extends Phaser.Scene {
   }
 
   private applyHealing(allies: CombatCard[], healer: CombatCard) {
-    const damagedAllies = allies.filter(
-      (c) => c && c.currentHealth > 0 && c.currentHealth < c.maxHealth
-    );
+    const damagedAllies = allies.filter((c) => c && c.currentHealth > 0 && c.currentHealth < c.maxHealth);
     if (damagedAllies.length === 0) return;
 
     const { damage } = this.calculateDamage(healer.baseAttack);
     const healPerCard = Math.floor(damage / damagedAllies.length);
 
     for (const card of damagedAllies) {
-      card.currentHealth = Math.min(
-        card.currentHealth + healPerCard,
-        card.maxHealth
-      );
-      updateHealthOverlay(
-        card.sprite,
-        (card.currentHealth / card.maxHealth) * 100
-      );
+      card.currentHealth = Math.min(card.currentHealth + healPerCard, card.maxHealth);
+      updateHealthOverlay(card.sprite, (card.currentHealth / card.maxHealth) * 100);
     }
   }
 
-  private async animateAttack(
-    attacker: CombatCard,
-    defender: CombatCard,
-    damage: number,
-    isCritical: boolean,
-    hpPercent: number
-  ): Promise<void> {
+  private async animateAttack(attacker: CombatCard, defender: CombatCard, damage: number, isCritical: boolean, hpPercent: number): Promise<void> {
     const attackerSprite = attacker.sprite;
     const defenderSprite = defender.sprite;
     const scene = attackerSprite.scene;
@@ -423,16 +316,9 @@ export default class CombatScene extends Phaser.Scene {
     const moveDirection = this.playerCards.includes(attacker) ? -1 : 1; // up for player, down for monster
 
     // Create scratch effect sprite but keep invisible initially
-    const scratch = scene.add.sprite(
-      defenderSprite.x,
-      defenderSprite.y,
-      "scratch"
-    );
+    const scratch = scene.add.sprite(defenderSprite.x, defenderSprite.y, "scratch");
     scratch.setOrigin(0.5, 0.5);
-    scratch.setPosition(
-      defenderSprite.x + defenderSprite.displayWidth / 2,
-      defenderSprite.y + defenderSprite.displayHeight / 2
-    );
+    scratch.setPosition(defenderSprite.x + defenderSprite.displayWidth / 2, defenderSprite.y + defenderSprite.displayHeight / 2);
     scratch.setAlpha(0);
     scratch.setDepth(defenderSprite.depth + 1); // on top of card
     scratch.setScale(0.01); // start tiny
@@ -465,19 +351,14 @@ export default class CombatScene extends Phaser.Scene {
 
     // Floating damage text animation
     const damageText = scene.add
-      .text(
-        defenderSprite.x + defenderSprite.displayWidth / 2,
-        defenderSprite.y + defenderSprite.displayHeight / 2,
-        `-${damage}`,
-        {
-          fontFamily: "Trade Winds",
-          fontSize: "42px",
-          color: isCritical ? "#ff4444" : "#ffff00",
-          fontStyle: isCritical ? "bold" : "normal",
-          stroke: "#000000",
-          strokeThickness: 3,
-        }
-      )
+      .text(defenderSprite.x + defenderSprite.displayWidth / 2, defenderSprite.y + defenderSprite.displayHeight / 2, `-${damage}`, {
+        fontFamily: "Trade Winds",
+        fontSize: "42px",
+        color: isCritical ? "#ff4444" : "#ffff00",
+        fontStyle: isCritical ? "bold" : "normal",
+        stroke: "#000000",
+        strokeThickness: 3,
+      })
       .setOrigin(0.5)
       .setAlpha(0)
       .setScale(0.75)
@@ -503,10 +384,7 @@ export default class CombatScene extends Phaser.Scene {
 
     // Red screen pulse on critical hit to player
     if (isCritical && !this.playerCards.includes(attacker)) {
-      const flash = scene.add
-        .rectangle(0, 0, scene.scale.width, scene.scale.height, 0xff0000, 0.65)
-        .setOrigin(0)
-        .setDepth(200);
+      const flash = scene.add.rectangle(0, 0, scene.scale.width, scene.scale.height, 0xff0000, 0.65).setOrigin(0).setDepth(200);
 
       scene.tweens.add({
         targets: flash,
@@ -562,17 +440,12 @@ export default class CombatScene extends Phaser.Scene {
     this.add.rectangle(0, 0, width, height, 0x000000, 0.8).setOrigin(0);
 
     this.add
-      .text(
-        width / 2,
-        height / 2 - 120,
-        result === "victory" ? "Victory!" : "Defeat",
-        {
-          fontFamily: "Cinzel, serif",
-          fontSize: "48px",
-          color: "#ffffff",
-          fontStyle: "bold",
-        }
-      )
+      .text(width / 2, height / 2 - 120, result === "victory" ? "Victory!" : "Defeat", {
+        fontFamily: "Cinzel, serif",
+        fontSize: "48px",
+        color: "#ffffff",
+        fontStyle: "bold",
+      })
       .setOrigin(0.5);
 
     const messageText =
@@ -592,19 +465,17 @@ export default class CombatScene extends Phaser.Scene {
     if (result === "victory") {
       // 10% card drop chance for normal gameplay
       let dropChancePercent = 10;
-      
+
       if (this.nextScene !== "") {
         // 75% card drop chance for random battles
-        dropChancePercent = 75
+        dropChancePercent = 75;
       }
 
       if (Phaser.Math.Between(1, 100) <= dropChancePercent) {
         if (this.nextScene == "") {
           GlobalState.lastScene = "ExplorationScene";
-          grantPlayerExp(this.playerData, true);
-          this.playerData.progress.currentStep =
-            this.playerData.progress.currentStep + 1;
-          savePlayerData(this.playerData);
+          PlayerDataManager.instance.grantExp(true);
+          PlayerDataManager.instance.data.progress.currentStep = PlayerDataManager.instance.data.progress.currentStep + 1;
           this.navigate("CardDropScene");
           return;
         } else {
@@ -615,73 +486,35 @@ export default class CombatScene extends Phaser.Scene {
       }
 
       if (this.nextScene === "") {
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 60,
-          "Continue Adventure",
-          () => {
-            grantPlayerExp(this.playerData, true);
-            this.playerData.progress.currentStep =
-              this.playerData.progress.currentStep + 1;
-            savePlayerData(this.playerData);
-            this.navigate("ExplorationScene");
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, "Continue Adventure", () => {
+          PlayerDataManager.instance.grantExp(true);
+          PlayerDataManager.instance.data.progress.currentStep = PlayerDataManager.instance.data.progress.currentStep + 1;
+          this.navigate("ExplorationScene");
+        });
       } else {
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 60,
-          "Continue",
-          () => {
-            this.navigate(this.nextScene);
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, "Continue", () => {
+          this.navigate(this.nextScene);
+        });
       }
     } else {
       if (this.nextScene === "") {
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 60,
-          "Fight Again",
-          () => {
-            this.navigate("CombatScene");
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, "Fight Again", () => {
+          this.navigate("CombatScene");
+        });
 
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 140,
-          "Deck Builder",
-          () => {
-            GlobalState.lastScene = this.scene.key;
-            this.navigate("DeckBuilderScene");
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 140, "Deck Builder", () => {
+          GlobalState.lastScene = this.scene.key;
+          this.navigate("DeckBuilderScene");
+        });
 
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 220,
-          "Main Menu",
-          () => {
-            GlobalState.lastScene = this.scene.key;
-            this.navigate("MainMenuScene");
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 220, "Main Menu", () => {
+          GlobalState.lastScene = this.scene.key;
+          this.navigate("MainMenuScene");
+        });
       } else {
-        createSlantedFancyButton(
-          this,
-          width / 2,
-          height / 2 + 60,
-          "Continue",
-          () => {
-            this.navigate(this.nextScene, { random: true });
-          }
-        );
+        createSlantedFancyButton(this, width / 2, height / 2 + 60, "Continue", () => {
+          this.navigate(this.nextScene, { random: true });
+        });
       }
     }
   }

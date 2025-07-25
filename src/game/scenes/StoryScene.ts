@@ -1,52 +1,50 @@
-import Phaser from 'phaser';
-import { loadPlayerData } from '../utils/playerDataUtils';
-import { PlayerData, Stage, StepType } from '../objects/objects';
-import stagesData from '../data/stages.json';
+import Phaser from "phaser";
+import { Stage, StepType } from "../objects/objects";
+import stagesData from "../data/stages.json";
+import { addUIOverlay } from "../utils/addUIOverlay";
+import { PlayerDataManager } from "../objects/PlayerDataManager";
 
 export default class StoryScene extends Phaser.Scene {
-  private playerData: PlayerData; 
-  private stages: Stage[]; 
+  private stages: Stage[];
   private currentStage: Stage;
   private dialogContainer: Phaser.GameObjects.Container;
   private storyIndex: number = 0;
 
   constructor() {
-    super('StoryScene');
+    super("StoryScene");
   }
 
   preload() {
-    this.playerData = loadPlayerData();
-    this.stages = stagesData.map(stage => ({
+    this.stages = stagesData.map((stage) => ({
       ...stage,
-      steps: stage.steps.map(step => {
+      steps: stage.steps.map((step) => {
         const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
         return {
           ...step,
-          type: StepType[formattedType as keyof typeof StepType]
+          type: StepType[formattedType as keyof typeof StepType],
         };
-      })
+      }),
     }));
     this.storyIndex = 0;
-    this.currentStage = this.stages.find(s => s.stageNumber === this.playerData.progress.currentStage)!;
+    this.currentStage = this.stages.find((s) => s.stageNumber === PlayerDataManager.instance.data.progress.currentStage)!;
     this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
-    this.currentStage.story.forEach(s => {
-      if (s.image != "")
-        this.load.image(s.image, `assets/characters/${s.image}.jpg`);
+    this.currentStage.story.forEach((s) => {
+      if (s.image != "") this.load.image(s.image, `assets/characters/${s.image}.jpg`);
     });
   }
 
   create() {
-    
+    addUIOverlay(this);
     this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height);
     this.dialogContainer = this.add.container();
     this.showDialog();
 
-    this.input.on('pointerdown', () => {
+    this.input.on("pointerdown", () => {
       this.storyIndex++;
       if (this.storyIndex < this.currentStage.story.length) {
         this.showDialog();
       } else {
-          this.scene.start('ExplorationScene');
+        this.scene.start("ExplorationScene");
       }
     });
   }
@@ -55,7 +53,7 @@ export default class StoryScene extends Phaser.Scene {
     this.dialogContainer.removeAll(true);
 
     const entry = this.currentStage.story[this.storyIndex];
-    const isNarrator = entry.name === 'Narrator';
+    const isNarrator = entry.name === "Narrator";
     const isLeft = this.storyIndex % 2 === 0;
 
     // Portrait image
@@ -65,8 +63,8 @@ export default class StoryScene extends Phaser.Scene {
     // Create the text box
     const textBox = this.add.text(0, 0, entry.lines, {
       fontFamily: "Cinzel, serif",
-      fontSize: '22px',
-      color: '#ffffff',
+      fontSize: "22px",
+      color: "#ffffff",
       wordWrap: { width: 450 },
       padding: { x: 20, y: 20 },
     });
@@ -99,5 +97,4 @@ export default class StoryScene extends Phaser.Scene {
 
     this.dialogContainer.add([portrait, container]);
   }
-
 }

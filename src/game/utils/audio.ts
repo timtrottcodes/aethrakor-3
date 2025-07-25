@@ -1,31 +1,16 @@
 // AudioManager.ts
 import Phaser from "phaser";
-
-export type AudioPreferences = {
-  muteAll: boolean;
-  muteMusic: boolean;
-  muteSound: boolean;
-  musicVolume: number;
-  soundVolume: number;
-};
+import { PlayerDataManager } from "../objects/PlayerDataManager";
 
 const AudioState: {
   music: Phaser.Sound.BaseSound | null;
   tween?: Phaser.Tweens.Tween;
   pendingKey?: string;
-  prefs: AudioPreferences;
   currentScene?: Phaser.Scene;
   wasPlaying?: boolean;
   tempSounds: Phaser.Sound.BaseSound[];
 } = {
   music: null,
-  prefs: {
-    muteAll: false,
-    muteMusic: false,
-    muteSound: false,
-    musicVolume: 0.8,
-    soundVolume: 1,
-  },
   tempSounds: [],
 };
 
@@ -72,7 +57,6 @@ function handleLoseFocus() {
   scene.scene.run("paused", {
     onResume: () => {
       scene.scene.stop("paused");
-      console.log(scene.scene.key);
       scene.scene.resume(scene.scene.key);
       if (AudioState.music && AudioState.wasPlaying) {
         AudioState.music.resume();
@@ -84,10 +68,10 @@ function handleLoseFocus() {
 
 // Play a sound effect
 export function playSound(scene: Phaser.Scene, key: string, volume = 1) {
-  if (AudioState.prefs.muteAll || AudioState.prefs.muteSound) return;
+  if (PlayerDataManager.instance.data.settings.muteAll || PlayerDataManager.instance.data.settings.muteSound) return;
 
   const sfx = scene.sound.add(key, {
-    volume: volume * AudioState.prefs.soundVolume,
+    volume: volume * PlayerDataManager.instance.data.settings.soundVolume,
   });
 
   AudioState.tempSounds.push(sfx);
@@ -105,7 +89,7 @@ export function playSound(scene: Phaser.Scene, key: string, volume = 1) {
 
 // Play music, fade old music out if needed
 export function playMusic(scene: Phaser.Scene, key: string) {
-  if (AudioState.prefs.muteAll || AudioState.prefs.muteMusic) return;
+  if (PlayerDataManager.instance.data.settings.muteAll || PlayerDataManager.instance.data.settings.muteMusic) return;
   if (AudioState.music?.isPlaying && AudioState.music.key === key) return;
 
   AudioState.currentScene = scene;
@@ -156,7 +140,7 @@ function playMusicTrack(scene: Phaser.Scene, key: string) {
 
   AudioState.tween = scene.tweens.add({
     targets: newMusic,
-    volume: AudioState.prefs.musicVolume,
+    volume: PlayerDataManager.instance.data.settings.musicVolume,
     duration: 1000,
   });
 }
@@ -182,4 +166,22 @@ export function cleanupSounds() {
   });
 
   AudioState.tempSounds = [];
+}
+
+export function updateMusicState() {
+  if (!AudioState.music) return;
+
+  if (PlayerDataManager.instance.data.settings.muteAll || PlayerDataManager.instance.data.settings.muteMusic || PlayerDataManager.instance.data.settings.musicVolume === 0) {
+    if (AudioState.music.isPlaying) {
+      AudioState.music.stop();
+    }
+  } else {
+    if (!AudioState.music.isPlaying) {
+      AudioState.music.play({ loop: true });
+    }
+
+    (AudioState.music as Phaser.Sound.WebAudioSound | Phaser.Sound.HTML5AudioSound)
+      .setVolume(PlayerDataManager.instance.data.settings.musicVolume)
+      .setVolume(PlayerDataManager.instance.data.settings.musicVolume);
+  }
 }

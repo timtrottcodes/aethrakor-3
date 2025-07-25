@@ -1,14 +1,6 @@
 import { Card, CardFace, Rarity, rarityColors, rarityCost } from "../objects/objects";
 
-export function renderPlayerCard(
-  scene: Phaser.Scene,
-  card: Card,
-  x: number,
-  y: number,
-  scale: number = 1,
-  face: CardFace = CardFace.Front,
-  onClick?: () => void
-): Phaser.GameObjects.Container {
+export function renderPlayerCard(scene: Phaser.Scene, card: Card, x: number, y: number, scale: number = 1, face: CardFace = CardFace.Front, onClick?: () => void): Phaser.GameObjects.Container {
   const baseWidth = 768;
   const baseHeight = 1024;
   const cornerRadius = 6;
@@ -26,31 +18,23 @@ export function renderPlayerCard(
 
     const health = 100;
     const healthPercent = health / 100;
-    const healthOverlayHeight = scaleHeight * healthPercent; 
+    const healthOverlayHeight = scaleHeight * healthPercent;
     const healthOverlayColor = 0x808080;
     const healthOverlay = scene.add
-      .rectangle(0, healthOverlayHeight, scaleWidth, scaleHeight-healthOverlayHeight, healthOverlayColor, 0.7) // Initial height is 0 (full health)
+      .rectangle(0, healthOverlayHeight, scaleWidth, scaleHeight - healthOverlayHeight, healthOverlayColor, 0.7) // Initial height is 0 (full health)
       .setOrigin(0) // Anchor to bottom center
       .setVisible(true);
 
     // Name this child so we can find it later
-    healthOverlay.name = 'healthOverlay';
+    healthOverlay.name = "healthOverlay";
     container.add(healthOverlay);
-    
   } else {
-    const backImage = scene.add
-      .image(0, 0, "card_back")
-      .setOrigin(0)
-      .setDisplaySize(scaleWidth, scaleHeight);
+    const backImage = scene.add.image(0, 0, "card_back").setOrigin(0).setDisplaySize(scaleWidth, scaleHeight);
     container.add(backImage);
   }
 
   if (onClick) {
-    const hitArea = scene.add
-      .rectangle(0, 0, scaleWidth, scaleHeight)
-      .setOrigin(0)
-      .setInteractive({ useHandCursor: true })
-      .setVisible(true);
+    const hitArea = scene.add.rectangle(0, 0, scaleWidth, scaleHeight).setOrigin(0).setInteractive({ useHandCursor: true }).setVisible(true);
     hitArea.on("pointerdown", () => {
       onClick();
     });
@@ -62,25 +46,17 @@ export function renderPlayerCard(
 }
 
 export function updateHealthOverlay(container: Phaser.GameObjects.Container, healthPercent: number = 100) {
-  const overlay = container.getByName('healthOverlay') as Phaser.GameObjects.Rectangle;
+  const overlay = container.getByName("healthOverlay") as Phaser.GameObjects.Rectangle;
   if (!overlay) return;
 
-  const healthOverlayHeight = container.height - (container.height * (healthPercent/100)); 
+  const healthOverlayHeight = container.height - container.height * (healthPercent / 100);
   const healthOverlayColor = 0x333333;
   overlay.height = healthOverlayHeight;
   overlay.y = container.height - healthOverlayHeight;
-  overlay.fillColor = healthOverlayColor
+  overlay.fillColor = healthOverlayColor;
 }
 
-function renderCardFront(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number,
-  width: number,
-  height: number,
-  cornerRadius: number
-) {
+function renderCardFront(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number, width: number, height: number, cornerRadius: number) {
   const cardImage = scene.add
     .image(0, 0, `${card.id}`)
     .setOrigin(0)
@@ -95,12 +71,7 @@ function renderCardFront(
   renderCardBorder(scene, container, scale, width, height, cornerRadius, card.rarity);
 }
 
-function renderLevelBadge(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number
-) {
+function renderLevelBadge(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number) {
   const levelX = 80 * scale;
   const levelY = 80 * scale;
 
@@ -108,10 +79,10 @@ function renderLevelBadge(
 
   // Create the text object
   const levelBackground = scene.add
-    .text(levelX, levelY, '⬟', {
+    .text(levelX, levelY, "⬟", {
       fontFamily: "Arial",
       fontSize: `${backgroundfontSize}px`,
-      fontStyle: "bold"
+      fontStyle: "bold",
     })
     .setOrigin(0.5);
 
@@ -134,28 +105,22 @@ function renderLevelBadge(
   container.add(levelText);
 }
 
-function renderHealthBadge(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number,
-  height: number
-) {
+function renderHealthBadge(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number, height: number) {
   const levelX = 80 * scale;
-  const levelY = (height * scale) - Math.max(80 * scale, 12);
+  const levelY = height * scale - Math.max(80 * scale, 12);
 
   const backgroundfontSize = Math.max(120 * scale, 21);
   const levelBackground = scene.add
-    .text(levelX, levelY, '❤', {
+    .text(levelX, levelY, "❤", {
       fontFamily: "Arial",
       fontSize: `${backgroundfontSize}px`,
       fontStyle: `bold`,
-      color: '#000000'
+      color: "#000000",
     })
     .setOrigin(0.5);
 
   scene.time.delayedCall(0, () => {
-    applyStyledGradient(levelBackground, '#ea2803');
+    applyStyledGradient(levelBackground, "#ea2803");
   });
   container.add(levelBackground);
 
@@ -172,30 +137,23 @@ function renderHealthBadge(
   container.add(levelText);
 }
 
-function renderAttackBadge(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number,
-  width: number,
-  height: number
-) {
+function renderAttackBadge(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number, width: number, height: number) {
   const backgroundfontSize = Math.max(120 * scale, 21);
 
-  const levelX = (width * scale) - Math.max(80 * scale, 12);
-  const levelY = (height * scale) - Math.max(80 * scale, 12);
+  const levelX = width * scale - Math.max(80 * scale, 12);
+  const levelY = height * scale - Math.max(80 * scale, 12);
 
   const levelBackground = scene.add
-    .text(levelX, levelY, '⛊', {
+    .text(levelX, levelY, "⛊", {
       fontFamily: "Arial",
       fontSize: `${backgroundfontSize}px`,
       fontStyle: `bold`,
-      color: '#000'
+      color: "#000",
     })
     .setOrigin(0.5);
 
   scene.time.delayedCall(0, () => {
-    applyStyledGradient(levelBackground, '#627d4d');
+    applyStyledGradient(levelBackground, "#627d4d");
   });
   container.add(levelBackground);
 
@@ -206,26 +164,19 @@ function renderAttackBadge(
       fontFamily: "Cinzel",
       fontSize: `${levelfontSize}px`,
       fontStyle: `bold`,
-      color: "#fff"
+      color: "#fff",
     })
     .setOrigin(0.5);
   container.add(levelText);
 }
 
-function renderRarityStars(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number,
-  width: number
-) {
+function renderRarityStars(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number, width: number) {
   const starCount = getRarityStarCount(card.rarity);
   const starSymbol = "\u2605\uFE0E";
   const baseStarSize = 80 * scale;
   const starSize = Math.max(baseStarSize, 24);
   const spacing = -5;
-  const totalWidth =
-    starCount > 0 ? starSize * starCount + spacing * (starCount - 1) : 0;
+  const totalWidth = starCount > 0 ? starSize * starCount + spacing * (starCount - 1) : 0;
   let startX = (width * scale - totalWidth) / 2 + starSize / 2;
 
   if (card.rarity === Rarity.Epic || card.rarity === Rarity.Legendary) {
@@ -246,14 +197,7 @@ function renderRarityStars(
   }
 }
 
-function renderNameBar(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  card: Card,
-  scale: number,
-  width: number,
-  height: number
-) {
+function renderNameBar(scene: Phaser.Scene, container: Phaser.GameObjects.Container, card: Card, scale: number, width: number, height: number) {
   const nameBarHeightOffset = 64 * scale;
   const nameBarHeight = Math.max(nameBarHeightOffset, 36);
 
@@ -279,15 +223,7 @@ function renderNameBar(
   container.add(nameText);
 }
 
-function renderCardBorder(
-  scene: Phaser.Scene,
-  container: Phaser.GameObjects.Container,
-  scale: number,
-  width: number,
-  height: number,
-  cornerRadius: number,
-  rarity: Rarity
-) {
+function renderCardBorder(scene: Phaser.Scene, container: Phaser.GameObjects.Container, scale: number, width: number, height: number, cornerRadius: number, rarity: Rarity) {
   const border = scene.add.graphics();
   border.lineStyle(2, parseInt(rarityColors[rarity].replace("#", ""), 16));
   border.strokeRoundedRect(0, 0, width * scale, height * scale, cornerRadius);
@@ -311,13 +247,13 @@ function getRarityStarCount(rarity: Rarity): number {
   }
 }
 
-function hexToRgb(hex: string): { r: number, g: number, b: number } {
-  hex = hex.replace('#', '');
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  hex = hex.replace("#", "");
   const bigint = parseInt(hex, 16);
   return {
     r: (bigint >> 16) & 255,
     g: (bigint >> 8) & 255,
-    b: bigint & 255
+    b: bigint & 255,
   };
 }
 
@@ -325,34 +261,26 @@ function rgbToRgbaString(r: number, g: number, b: number, a = 1): string {
   return `rgba(${r},${g},${b},${a})`;
 }
 
-function lighten(rgb: { r: number, g: number, b: number }, percent: number): string {
-  return rgbToRgbaString(
-    Math.min(255, rgb.r + 255 * percent),
-    Math.min(255, rgb.g + 255 * percent),
-    Math.min(255, rgb.b + 255 * percent)
-  );
+function lighten(rgb: { r: number; g: number; b: number }, percent: number): string {
+  return rgbToRgbaString(Math.min(255, rgb.r + 255 * percent), Math.min(255, rgb.g + 255 * percent), Math.min(255, rgb.b + 255 * percent));
 }
 
-function darken(rgb: { r: number, g: number, b: number }, percent: number): string {
-  return rgbToRgbaString(
-    Math.max(0, rgb.r - 255 * percent),
-    Math.max(0, rgb.g - 255 * percent),
-    Math.max(0, rgb.b - 255 * percent)
-  );
+function darken(rgb: { r: number; g: number; b: number }, percent: number): string {
+  return rgbToRgbaString(Math.max(0, rgb.r - 255 * percent), Math.max(0, rgb.g - 255 * percent), Math.max(0, rgb.b - 255 * percent));
 }
 
 function applyStyledGradient(
   textObj: Phaser.GameObjects.Text,
   baseColor: string // hex like "#d8e1e7"
 ) {
-  const ctx = textObj.canvas.getContext('2d')!;
+  const ctx = textObj.canvas.getContext("2d")!;
   const width = textObj.width;
 
   const base = hexToRgb(baseColor);
-  const colorStart = lighten(base, 0.4);    // lightest
+  const colorStart = lighten(base, 0.4); // lightest
   const colorMid1 = rgbToRgbaString(base.r, base.g, base.b); // base
-  const colorMid2 = darken(base, 0.2);    // subtle highlight
-  const colorEnd = darken(base, 0.05);      // darkest
+  const colorMid2 = darken(base, 0.2); // subtle highlight
+  const colorEnd = darken(base, 0.05); // darkest
 
   const gradient = ctx.createLinearGradient(0, 0, width, 0);
   gradient.addColorStop(0.0, colorStart);
@@ -362,4 +290,3 @@ function applyStyledGradient(
 
   textObj.setFill(gradient);
 }
-

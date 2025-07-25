@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { addUIOverlay } from "../utils/addUIOverlay";
 
 export default class HowToPlayScene extends Phaser.Scene {
   private scrollY = 0;
@@ -12,16 +13,13 @@ export default class HowToPlayScene extends Phaser.Scene {
   }
 
   create() {
+    addUIOverlay(this);
+
     const { width, height } = this.scale;
 
-    this.add.image(0, 0, 'deck-builder')
-      .setOrigin(0)
-      .setDisplaySize(this.scale.width, this.scale.height)
-      .setDepth(0);
+    this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
-    this.add
-      .rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6)
-      .setOrigin(0);
+    this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6).setOrigin(0);
 
     // Title
     this.add

@@ -1,12 +1,12 @@
 import Phaser from "phaser";
-import { Card, CardFace, PlayerData, Rarity, rarityOrder } from "../objects/objects";
+import { CardFace, rarityOrder } from "../objects/objects";
 import { renderPlayerCard } from "../utils/renderPlayerCard";
-import { loadPlayerData } from "../utils/playerDataUtils";
 import { CardManager } from "../objects/CardManager";
 import { createFancyButton } from "../utils/button";
+import { addUIOverlay } from "../utils/addUIOverlay";
+import { PlayerDataManager } from "../objects/PlayerDataManager";
 
 export default class CollectionScene extends Phaser.Scene {
-  private playerData!: PlayerData;
   private cardManager: CardManager;
   private collectionContainer!: Phaser.GameObjects.Container;
   private scrollbar?: Phaser.GameObjects.Rectangle;
@@ -18,28 +18,21 @@ export default class CollectionScene extends Phaser.Scene {
   }
 
   create() {
-    this.playerData = loadPlayerData();
+    addUIOverlay(this);
 
-    this.add.image(0, 0, 'deck-builder')
-      .setOrigin(0)
-      .setDisplaySize(this.scale.width, this.scale.height)
-      .setDepth(0);
+    this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
     this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4).setOrigin(0);
 
-    this.add.text(this.scale.width / 2, 40, "Card Collection", {
-      fontFamily: "Cinzel",
-      fontSize: "32px",
-      color: "#fff",
-    }).setOrigin(0.5);
+    this.add
+      .text(this.scale.width / 2, 40, "Card Collection", {
+        fontFamily: "Cinzel",
+        fontSize: "32px",
+        color: "#fff",
+      })
+      .setOrigin(0.5);
 
-    createFancyButton(
-      this,
-      this.scale.width / 2,
-      this.scale.height - 60,
-      'Back to Menu',
-      () => this.scene.start("MainMenuScene")
-    ).setDepth(10);
+    createFancyButton(this, this.scale.width / 2, this.scale.height - 60, "Back to Menu", () => this.scene.start("MainMenuScene")).setDepth(10);
 
     this.createCollectionList();
   }
@@ -58,9 +51,7 @@ export default class CollectionScene extends Phaser.Scene {
     if (this.scrollbar) this.scrollbar.destroy();
     if (this.listBackground) this.listBackground.destroy();
 
-    this.listBackground = this.add
-      .rectangle(listX - 10, listY - 10, listWidth + 20, listHeight + 20, 0x000000, 0.7)
-      .setOrigin(0);
+    this.listBackground = this.add.rectangle(listX - 10, listY - 10, listWidth + 20, listHeight + 20, 0x000000, 0.7).setOrigin(0);
 
     const maskShape = this.add.graphics();
     maskShape.fillRect(listX, listY, listWidth, listHeight);
@@ -81,23 +72,13 @@ export default class CollectionScene extends Phaser.Scene {
     let rowHeight = 0;
 
     allCards.forEach((card, index) => {
-      const isOwned = this.playerData.collection.includes(card.id);
+      const isOwned = PlayerDataManager.instance.data.collection.includes(card.id);
       const face = isOwned ? CardFace.Front : CardFace.Back;
 
-      const cardContainer = renderPlayerCard(
-        this,
-        card,
-        0,
-        0,
-        cardScale,
-        face,
-        () => { 
-            if (face === CardFace.Front)
-                this.scene.launch('CardPreviewScene', { data: card });
-            else 
-                null;
-        }
-      );
+      const cardContainer = renderPlayerCard(this, card, 0, 0, cardScale, face, () => {
+        if (face === CardFace.Front) this.scene.launch("CardPreviewScene", { data: card });
+        else null;
+      });
 
       const cardWidth = cardContainer.getBounds().width;
       const cardHeight = cardContainer.getBounds().height;
@@ -123,14 +104,7 @@ export default class CollectionScene extends Phaser.Scene {
     // Scrollbar
     const scrollbarWidth = 6;
     const scrollbarHeight = Math.max((listHeight / this.collectionContainer.height) * listHeight, 20);
-    this.scrollbar = this.add.rectangle(
-      listX + listWidth - scrollbarWidth,
-      listY,
-      scrollbarWidth,
-      scrollbarHeight,
-      0xffffff,
-      0.4
-    ).setOrigin(0, 0);
+    this.scrollbar = this.add.rectangle(listX + listWidth - scrollbarWidth, listY, scrollbarWidth, scrollbarHeight, 0xffffff, 0.4).setOrigin(0, 0);
 
     // Scrolling logic
     const updateScroll = () => {

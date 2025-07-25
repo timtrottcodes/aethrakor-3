@@ -1,41 +1,40 @@
 // scenes/AdventureScene.ts
-import Phaser from 'phaser';
-import { loadPlayerData, loadStageData } from '../utils/playerDataUtils';
-import { PlayerData, Stage } from '../objects/objects';
-import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from '../utils/button';
-import { GlobalState } from '../objects/globalState';
-import { initAudioManager, playMusic } from '../utils/audio';
+import Phaser from "phaser";
+import { Stage } from "../objects/objects";
+import { createDisabledSlantedFancyButton, createFancyButton, createSlantedFancyButton } from "../utils/button";
+import { GlobalState } from "../objects/globalState";
+import { initAudioManager, playMusic } from "../utils/audio";
+import { addUIOverlay } from "../utils/addUIOverlay";
+import { StageManager } from "../objects/StageManager";
+import { PlayerDataManager } from "../objects/PlayerDataManager";
 
 export default class AdventureScene extends Phaser.Scene {
   private bg!: Phaser.GameObjects.Image;
   private stagesInChapter = 5;
   private visibleStageRange = { start: 1, end: this.stagesInChapter };
   private stages: Stage[] = [];
-  private playerData: PlayerData;
- 
+
   constructor() {
-    super('AdventureScene');
+    super("AdventureScene");
   }
 
   async preload() {
-    this.stages = loadStageData();
-    this.playerData = loadPlayerData();
+    this.stages = StageManager.instance.stages;
 
-    if (this.playerData) {
-      const currentStageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
-      const stageImage = `bg_stage_${currentStageGroup}`;
-      this.load.image(stageImage, `assets/backgrounds/chapters/${stageImage}.jpg`);
-    }
+    const currentStageGroup = Math.floor((PlayerDataManager.instance.data.progress.currentStage - 1) / this.stagesInChapter) + 1;
+    const stageImage = `bg_stage_${currentStageGroup}`;
+    this.load.image(stageImage, `assets/backgrounds/chapters/${stageImage}.jpg`);
   }
 
   create() {
     initAudioManager(this);
-    
-    const stageGroup = Math.floor((this.playerData.progress.currentStage - 1) / this.stagesInChapter) + 1;
+    addUIOverlay(this);
+
+    const stageGroup = Math.floor((PlayerDataManager.instance.data.progress.currentStage - 1) / this.stagesInChapter) + 1;
     const stageImage = `bg_stage_${stageGroup}`;
     const stageMusic = `music_stage_${stageGroup}`;
     this.bg = this.add.image(0, 0, stageImage).setOrigin(0, 0);
-    
+
     this.visibleStageRange.start = (stageGroup - 1) * this.stagesInChapter + 1;
     this.visibleStageRange.end = Math.min(this.visibleStageRange.start + this.stagesInChapter - 1, this.stages.length);
 
@@ -48,7 +47,7 @@ export default class AdventureScene extends Phaser.Scene {
   }
 
   public getCurrentStage(): number {
-    return this.playerData.progress.currentStage;
+    return PlayerDataManager.instance.data.progress.currentStage;
   }
 
   private setBackgroundPosition() {
@@ -64,8 +63,8 @@ export default class AdventureScene extends Phaser.Scene {
     const groupEnd = this.visibleStageRange.end;
     const groupRange = groupEnd - groupStart;
 
-    const stageProgressInGroup = this.playerData.progress.currentStage - groupStart;
-    const scrollProgress = 1 - ((stageProgressInGroup / groupRange) * 0.9);
+    const stageProgressInGroup = PlayerDataManager.instance.data.progress.currentStage - groupStart;
+    const scrollProgress = 1 - (stageProgressInGroup / groupRange) * 0.9;
 
     const scrollY = offsetY * scrollProgress;
     this.bg.setY(-scrollY);
@@ -80,44 +79,38 @@ export default class AdventureScene extends Phaser.Scene {
       const stageIndex = i - this.visibleStageRange.start;
       const x = this.scale.width / 2;
       const y = baseY - stageIndex * spacing;
-      const stage = this.stages.find(s => s.stageNumber === i);
+      const stage = this.stages.find((s) => s.stageNumber === i);
 
-      if (i === this.playerData.progress.currentStage) {
-        createSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, () => {
-          if (this.playerData.progress.currentStep == 0)
-            this.scene.start('StoryScene')
-          else
-            this.scene.start('ExplorationScene')
-        }, 18, 30);
+      if (i === PlayerDataManager.instance.data.progress.currentStage) {
+        createSlantedFancyButton(
+          this,
+          x,
+          y,
+          stage ? stage.title : `Stage ${i}`,
+          () => {
+            if (PlayerDataManager.instance.data.progress.currentStep == 0) this.scene.start("StoryScene");
+            else this.scene.start("ExplorationScene");
+          },
+          18,
+          30
+        );
       } else {
         createDisabledSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, 18, 30);
-      } 
+      }
     }
   }
 
   private addDeckBuilderButton() {
-    createFancyButton(
-      this,
-      this.scale.width / 2,
-      this.scale.height - 150,
-      'Deck Builder',
-      () => {
-        this.scene.stop("AdventureScene");
-        GlobalState.lastScene = this.scene.key;
-        this.scene.start('DeckBuilderScene');
-      }
-    );    
+    createFancyButton(this, this.scale.width / 2, this.scale.height - 150, "Deck Builder", () => {
+      this.scene.stop("AdventureScene");
+      GlobalState.lastScene = this.scene.key;
+      this.scene.start("DeckBuilderScene");
+    });
   }
 
   private addMainMenuButton() {
-    createFancyButton(
-      this,
-      this.scale.width / 2,
-      this.scale.height - 80,
-      'Main Menu',
-      () => {
-        this.scene.start('MainMenuScene');
-      }
-    );    
+    createFancyButton(this, this.scale.width / 2, this.scale.height - 80, "Main Menu", () => {
+      this.scene.start("MainMenuScene");
+    });
   }
 }

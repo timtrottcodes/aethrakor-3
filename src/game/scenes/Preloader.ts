@@ -14,26 +14,14 @@ export class Preloader extends Scene {
     const barHeight = 32;
 
     // Black background covering entire scene
-    this.add.rectangle(
-      centerX,
-      centerY,
-      this.cameras.main.width,
-      this.cameras.main.height,
-      0x000000
-    );
+    this.add.rectangle(centerX, centerY, this.cameras.main.width, this.cameras.main.height, 0x000000);
 
     // Outline of progress bar (centered)
     const outline = this.add.rectangle(centerX, centerY, barWidth, barHeight);
     outline.setStrokeStyle(2, 0xffffff);
 
     // Progress bar itself: start with minimal width
-    const bar = this.add.rectangle(
-      centerX - barWidth / 2,
-      centerY,
-      1,
-      barHeight - 4,
-      0xffffff
-    );
+    const bar = this.add.rectangle(centerX - barWidth / 2, centerY, 1, barHeight - 4, 0xffffff);
     bar.setOrigin(0, 0.5); // anchor left center to grow width to the right
 
     // Optional: percentage text below bar
@@ -84,30 +72,30 @@ export class Preloader extends Scene {
     this.load.image("star", "ui/11571051.png");
     this.load.image("confetti", "ui/confetti.png");
 
-    this.load.audio('click', 'sfx/button-click-289742.mp3');
-    this.load.audio('foot', 'sfx/st2-footstep-sfx-323055.mp3');
-    this.load.audio('horn', 'sfx/relaxing-music-original-viking-attacking-battle-horn-116623.mp3');
-    this.load.audio('fanfare', 'sfx/success-fanfare-trumpets-6185.mp3');
-    this.load.audio('punch', 'sfx/punch-140236.mp3');
-    this.load.audio('swordhit', 'sfx/hit-swing-sword-small-2-95566.mp3');
-    this.load.audio('scratch', 'sfx/paper-rip-fast-252617.mp3');
+    this.load.audio("click", "sfx/button-click-289742.mp3");
+    this.load.audio("foot", "sfx/st2-footstep-sfx-323055.mp3");
+    this.load.audio("horn", "sfx/relaxing-music-original-viking-attacking-battle-horn-116623.mp3");
+    this.load.audio("fanfare", "sfx/success-fanfare-trumpets-6185.mp3");
+    this.load.audio("punch", "sfx/punch-140236.mp3");
+    this.load.audio("swordhit", "sfx/hit-swing-sword-small-2-95566.mp3");
+    this.load.audio("scratch", "sfx/paper-rip-fast-252617.mp3");
 
-    this.load.audio('title', 'sfx/music-intro.mp3');
-    this.load.audio('battle', 'sfx/music-battle.mp3');
-    this.load.audio('bossbattle', 'sfx/music-boss-battle.mp3');
-    this.load.audio('defeat', 'sfx/music-defeat.mp3');
-    this.load.audio('victory', 'sfx/music-victory.mp3');
+    this.load.audio("title", "sfx/music-intro.mp3");
+    this.load.audio("battle", "sfx/music-battle.mp3");
+    this.load.audio("bossbattle", "sfx/music-boss-battle.mp3");
+    this.load.audio("defeat", "sfx/music-defeat.mp3");
+    this.load.audio("victory", "sfx/music-victory.mp3");
 
-    this.load.audio('music_stage_1', 'sfx/music_stage_1.mp3');
-    this.load.audio('music_stage_2', 'sfx/music_stage_2.mp3');
-    this.load.audio('music_stage_3', 'sfx/music_stage_3.mp3');
-    this.load.audio('music_stage_4', 'sfx/music_stage_4.mp3');
-    this.load.audio('music_stage_5', 'sfx/music_stage_5.mp3');
-    this.load.audio('music_stage_6', 'sfx/music_stage_6.mp3');
-    this.load.audio('music_stage_7', 'sfx/music_stage_7.mp3');
-    this.load.audio('music_stage_8', 'sfx/music_stage_8.mp3');
-    this.load.audio('music_stage_9', 'sfx/music_stage_9.mp3');
-    this.load.audio('music_stage_10', 'sfx/music_stage_10.mp3');
+    this.load.audio("music_stage_1", "sfx/music_stage_1.mp3");
+    this.load.audio("music_stage_2", "sfx/music_stage_2.mp3");
+    this.load.audio("music_stage_3", "sfx/music_stage_3.mp3");
+    this.load.audio("music_stage_4", "sfx/music_stage_4.mp3");
+    this.load.audio("music_stage_5", "sfx/music_stage_5.mp3");
+    this.load.audio("music_stage_6", "sfx/music_stage_6.mp3");
+    this.load.audio("music_stage_7", "sfx/music_stage_7.mp3");
+    this.load.audio("music_stage_8", "sfx/music_stage_8.mp3");
+    this.load.audio("music_stage_9", "sfx/music_stage_9.mp3");
+    this.load.audio("music_stage_10", "sfx/music_stage_10.mp3");
   }
 
   async create() {
@@ -120,10 +108,7 @@ export class Preloader extends Scene {
 
   async loadWebFont(fontName: string, url: string): Promise<void> {
     // Build a FontFace instance with Google Fonts URL
-    const font = new FontFace(
-      fontName,
-      'url('+url+')'
-    );
+    const font = new FontFace(fontName, "url(" + url + ")");
 
     try {
       const loadedFont = await font.load();
