@@ -1,7 +1,8 @@
 import Phaser from "phaser";
 import { addUIOverlay } from "../utils/addUIOverlay";
+import { BaseScene } from "./BaseScene";
 
-export default class HowToPlayScene extends Phaser.Scene {
+export default class HowToPlayScene extends BaseScene {
   private scrollY = 0;
   private contentHeight = 0;
   private scrollMask!: Phaser.Display.Masks.GeometryMask;
@@ -13,16 +14,13 @@ export default class HowToPlayScene extends Phaser.Scene {
   }
 
   create() {
-    addUIOverlay(this);
+    super.create();
 
     const { width, height } = this.scale;
 
-    this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
-
-    this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6).setOrigin(0);
-
-    // Title
-    this.add
+    const bg = this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6).setOrigin(0);
+    const title = this.add
       .text(width / 2, 80, "How to Play", {
         fontFamily: "Cinzel",
         fontSize: "48px",
@@ -31,7 +29,7 @@ export default class HowToPlayScene extends Phaser.Scene {
       .setOrigin(0.5);
 
     // Scrollable content container
-    this.content = this.add.container(0, 0);
+    this.content = this.make.container({x:0, y:0, add:false});
 
     const instructions = [
       "You start the game with 8 random cards.",
@@ -112,5 +110,8 @@ export default class HowToPlayScene extends Phaser.Scene {
     btn.on("pointerdown", () => {
       this.scene.start("MainMenuScene");
     });
+
+    this.contentContainer.add([bg,overlay,title,this.content,btn]);
+    addUIOverlay(this);
   }
 }

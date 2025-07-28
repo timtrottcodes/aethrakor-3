@@ -15,19 +15,34 @@ import CollectionScene from "./scenes/CollectionScene";
 import HowToPlayScene from "./scenes/HowToPlayScene";
 import PausedScene from "./scenes/PausedScene";
 
+const calculateGameSize = () => {
+  const aspectRatio = 720 / 1280;
+  let width = window.innerWidth;
+  let height = window.visualViewport?.height || window.innerHeight;
+
+  if (width / height > aspectRatio) {
+    width = height * aspectRatio;
+  } else {
+    height = width / aspectRatio;
+  }
+
+  return { width, height };
+};
+
+const { width, height } = calculateGameSize();
+
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: 720,
-  height: 1280,
+  width,
+  height,
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
-  },
-  audio: {
-    disableWebAudio: true,
-  },
+    width: 720,
+    height: 1280,
+  }, 
   parent: "game-container",
-  backgroundColor: "#028af8",
+  backgroundColor: "#000000",
   scene: [
     Boot,
     Preloader,
@@ -47,7 +62,18 @@ const config: Phaser.Types.Core.GameConfig = {
 };
 
 const StartGame = (parent: string) => {
-  return new Game({ ...config, parent });
+  const game = new Game({ ...config, parent });
+
+  window.addEventListener("resize", () => {
+    const { width, height } = calculateGameSize();
+    game.scale.resize(width, height);
+    console.log("resize to",width, height)
+
+    game.canvas.style.width = `${width}px`;
+    game.canvas.style.height = `${height}px`;
+  });
+
+  return game;
 };
 
 export default StartGame;

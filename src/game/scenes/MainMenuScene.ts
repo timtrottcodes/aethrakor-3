@@ -1,34 +1,35 @@
 // scenes/MainMenuScene.ts
 import Phaser from "phaser";
 import { createFancyButton } from "../utils/button";
-import { PlayerData, Stage } from "../objects/objects";
+import { Stage } from "../objects/objects";
 import { initAudioManager, playMusic } from "../utils/audio";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
 import { StageManager } from "../objects/StageManager";
+import { BaseScene } from "./BaseScene";
 
-export default class MainMenuScene extends Phaser.Scene {
-  private background!: Phaser.GameObjects.Image;
+export default class MainMenuScene extends BaseScene {
   private logo!: Phaser.GameObjects.Image;
   private sublogo!: Phaser.GameObjects.Image;
-  private playerData: PlayerData;
 
   constructor() {
     super("MainMenuScene");
   }
 
   create() {
-    this.background = this.add
+    super.create();
+    const bg = this.add
       .image(this.scale.width / 2, this.scale.height / 2, "bg_main")
       .setDisplaySize(this.scale.width, this.scale.height)
       .setAlpha(0);
+    this.contentContainer.add(bg);
 
     addUIOverlay(this);
     initAudioManager(this);
     playMusic(this, "title");
 
     this.tweens.add({
-      targets: this.background,
+      targets: bg,
       alpha: 1,
       duration: 1000,
       onComplete: () => this.showLogo(),
@@ -59,6 +60,8 @@ export default class MainMenuScene extends Phaser.Scene {
       alpha: 1,
       duration: 1000,
     });
+
+    this.contentContainer.add([this.logo,this.sublogo])
   }
 
   private showButton() {

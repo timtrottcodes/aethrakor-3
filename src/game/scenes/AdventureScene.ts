@@ -7,8 +7,9 @@ import { initAudioManager, playMusic } from "../utils/audio";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { StageManager } from "../objects/StageManager";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
 
-export default class AdventureScene extends Phaser.Scene {
+export default class AdventureScene extends BaseScene {
   private bg!: Phaser.GameObjects.Image;
   private stagesInChapter = 5;
   private visibleStageRange = { start: 1, end: this.stagesInChapter };
@@ -27,13 +28,14 @@ export default class AdventureScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     initAudioManager(this);
-    addUIOverlay(this);
 
     const stageGroup = Math.floor((PlayerDataManager.instance.data.progress.currentStage - 1) / this.stagesInChapter) + 1;
     const stageImage = `bg_stage_${stageGroup}`;
     const stageMusic = `music_stage_${stageGroup}`;
     this.bg = this.add.image(0, 0, stageImage).setOrigin(0, 0);
+    this.contentContainer.add(this.bg);
 
     this.visibleStageRange.start = (stageGroup - 1) * this.stagesInChapter + 1;
     this.visibleStageRange.end = Math.min(this.visibleStageRange.start + this.stagesInChapter - 1, this.stages.length);
@@ -44,6 +46,7 @@ export default class AdventureScene extends Phaser.Scene {
     this.placeStageMarkers();
     this.addDeckBuilderButton();
     this.addMainMenuButton();
+    addUIOverlay(this);
   }
 
   public getCurrentStage(): number {

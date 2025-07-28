@@ -5,8 +5,9 @@ import { CardManager } from "../objects/CardManager";
 import { createFancyButton } from "../utils/button";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
 
-export default class CollectionScene extends Phaser.Scene {
+export default class CollectionScene extends BaseScene {
   private cardManager: CardManager;
   private collectionContainer!: Phaser.GameObjects.Container;
   private scrollbar?: Phaser.GameObjects.Rectangle;
@@ -18,13 +19,11 @@ export default class CollectionScene extends Phaser.Scene {
   }
 
   create() {
-    addUIOverlay(this);
+    super.create();
 
-    this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
-
-    this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4).setOrigin(0);
-
-    this.add
+    const bg = this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4).setOrigin(0);
+    const title = this.add
       .text(this.scale.width / 2, 40, "Card Collection", {
         fontFamily: "Cinzel",
         fontSize: "32px",
@@ -34,7 +33,10 @@ export default class CollectionScene extends Phaser.Scene {
 
     createFancyButton(this, this.scale.width / 2, this.scale.height - 60, "Back to Menu", () => this.scene.start("MainMenuScene")).setDepth(10);
 
+    this.contentContainer.add([bg,overlay,title]);
+
     this.createCollectionList();
+    addUIOverlay(this);
   }
 
   private createCollectionList() {
@@ -57,7 +59,12 @@ export default class CollectionScene extends Phaser.Scene {
     maskShape.fillRect(listX, listY, listWidth, listHeight);
     const mask = maskShape.createGeometryMask();
 
-    this.collectionContainer = this.add.container(listX, listY);
+    this.collectionContainer = this.make.container({
+        x: listX,
+        y: listY,
+        add: false
+      });
+        
     this.collectionContainer.setMask(mask);
 
     const allCards = this.cardManager.getAll().sort((a, b) => {
@@ -135,6 +142,8 @@ export default class CollectionScene extends Phaser.Scene {
     });
 
     this.input.on("pointerup", () => (isDragging = false));
+
+    this.contentContainer.add([this.collectionContainer,this.scrollbar])
 
     updateScroll();
   }

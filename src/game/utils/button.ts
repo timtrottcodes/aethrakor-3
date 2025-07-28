@@ -1,6 +1,7 @@
+import { BaseScene } from "../scenes/BaseScene";
 import { playSound } from "./audio";
 
-export function createFancyButton(scene: Phaser.Scene, x: number, y: number, label: string, onClick: () => void, fontSize = 20, padding: number = 30): Phaser.GameObjects.Container {
+export function createFancyButton(scene: BaseScene, x: number, y: number, label: string, onClick: () => void, fontSize = 20, padding: number = 30): Phaser.GameObjects.Container {
   const backgroundColor = 0x2a2a2a;
   const borderColor = 0xffd700;
 
@@ -19,7 +20,11 @@ export function createFancyButton(scene: Phaser.Scene, x: number, y: number, lab
   const width = textWidth + padding * 2;
   const height = textHeight + padding;
 
-  const container = scene.add.container(x, y);
+  const container = scene.make.container({
+    x,
+    y,
+    add: false
+  });
 
   // Background rectangle
   const background = scene.add.rectangle(0, 0, width, height, backgroundColor).setOrigin(0.5);
@@ -52,10 +57,11 @@ export function createFancyButton(scene: Phaser.Scene, x: number, y: number, lab
   });
 
   container.add([background, inner, glow, text, buttonZone]);
+  scene.contentContainer.add(container);
   return container;
 }
 
-export function createSlantedFancyButton(scene: Phaser.Scene, x: number, y: number, label: string, onClick: () => void, fontSize = 32, padding: number = 30): Phaser.GameObjects.Container {
+export function createSlantedFancyButton(scene: BaseScene, x: number, y: number, label: string, onClick: () => void, fontSize = 32, padding: number = 30): Phaser.GameObjects.Container {
   const slant = 20; // how much the sides slant in pixels
   const inset = 5;
 
@@ -106,12 +112,18 @@ export function createSlantedFancyButton(scene: Phaser.Scene, x: number, y: numb
     onClick();
   });
 
-  const container = scene.add.container(x, y, [background, inner, glow, text, buttonZone]);
+  const container = scene.make.container({
+    x,
+    y,
+    add: false
+  });
 
+  container.add([background, inner, glow, text, buttonZone]);
+  scene.contentContainer.add(container);
   return container;
 }
 
-export function createDisabledSlantedFancyButton(scene: Phaser.Scene, x: number, y: number, label: string, fontSize = 32, padding: number = 20): Phaser.GameObjects.Container {
+export function createDisabledSlantedFancyButton(scene: BaseScene, x: number, y: number, label: string, fontSize = 32, padding: number = 20): Phaser.GameObjects.Container {
   const slant = 20; // how much the sides slant in pixels
   const inset = 5;
   const alpha = 0.65;
@@ -150,7 +162,13 @@ export function createDisabledSlantedFancyButton(scene: Phaser.Scene, x: number,
   inner.lineStyle(1, 0xffcc00, alpha);
   inner.strokePoints(innerPoints, true);
 
-  const container = scene.add.container(x, y, [background, inner, text]);
+  const container = scene.make.container({
+    x,
+    y,
+    add: false
+  });
 
+  container.add([background, inner, text]);
+  scene.contentContainer.add(container);
   return container;
 }

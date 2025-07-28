@@ -1,11 +1,12 @@
 import { Card, CardFace } from "../objects/objects";
 import { renderPlayerCard } from "../utils/renderPlayerCard";
+import { BaseScene } from "./BaseScene";
 
-export class CardPreviewScene extends Phaser.Scene {
+export class CardPreviewScene extends BaseScene {
   private cardData!: Card;
 
   constructor() {
-    super({ key: "CardPreviewScene" });
+    super("CardPreviewScene");
   }
 
   init(data: { data: Card }) {
@@ -13,6 +14,7 @@ export class CardPreviewScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     const { width: screenWidth, height: screenHeight } = this.scale;
 
     const overlay = this.add.rectangle(0, 0, screenWidth, screenHeight, 0x000000, 0.9).setOrigin(0).setInteractive();
@@ -54,6 +56,8 @@ export class CardPreviewScene extends Phaser.Scene {
       .setOrigin(0.5, 0)
       .setWordWrapWidth(600);
     descriptionText.setText(this.cardData.description);
+
+    this.contentContainer.add([overlay,centeredContainer,descriptionText]);
   }
 
   private closePreview(container: Phaser.GameObjects.Container) {

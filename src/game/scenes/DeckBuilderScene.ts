@@ -6,8 +6,9 @@ import { GlobalState } from "../objects/globalState";
 import { createFancyButton } from "../utils/button";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
 
-export default class DeckBuilderScene extends Phaser.Scene {
+export default class DeckBuilderScene extends BaseScene {
   private cardManager: CardManager;
   private collectionCardsContainers: Phaser.GameObjects.Container[] = [];
   private equippedGroup!: Phaser.GameObjects.Group;
@@ -23,14 +24,12 @@ export default class DeckBuilderScene extends Phaser.Scene {
   }
 
   create() {
-    addUIOverlay(this);
+    super.create();
     this.cardManager = new CardManager();
 
-    this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
-
-    this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4).setOrigin(0);
-
-    this.add
+    const bg = this.add.image(0, 0, "deck-builder").setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.4).setOrigin(0);
+    const title = this.add
       .text(this.scale.width / 2, 40, "Deck Builder", {
         fontFamily: "Cinzel",
         fontSize: "32px",
@@ -38,12 +37,15 @@ export default class DeckBuilderScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
+    this.contentContainer.add([bg,overlay,title]);
+
     createFancyButton(this, this.scale.width / 2, this.scale.height - 60, "Confirm Selection", () => {
       if (this.isValidDeck) {
         this.closeDeckBuilderScene();
       }
     });
 
+    addUIOverlay(this);
     this.refreshUI();
   }
 
@@ -122,7 +124,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
     }
 
     // Scrollable container
-    this.collectionContainer = this.add.container(listX, listY);
+    this.collectionContainer = this.make.container({x: listX, y:listY, add:false});
 
     this.collectionContainer.setMask(mask);
 
@@ -240,6 +242,7 @@ export default class DeckBuilderScene extends Phaser.Scene {
 
     scrollY = Phaser.Math.Clamp(previousScrollY, 0, Math.max(0, this.collectionContainer.height - listHeight));
     this.collectionContainer.y = listY - scrollY;
+    this.contentContainer.add(this.collectionContainer);
     updateScroll(); // also updates scrollbar position
   }
 
@@ -319,12 +322,13 @@ export default class DeckBuilderScene extends Phaser.Scene {
 
     if (this.pointsText) this.pointsText.destroy(true);
 
-    this.pointsText = this.add
+    const txtAvailable = this.pointsText = this.add
       .text(this.scale.width / 2, 280, `Available Points: ${available}/${maxCost}`, {
         fontSize: "20px",
         fontFamily: "Cinzel",
         color: "#ffffff",
       })
       .setOrigin(0.5);
+    this.contentContainer.add(txtAvailable);
   }
 }

@@ -9,8 +9,9 @@ import { initAudioManager, playMusic, playSound } from "../utils/audio";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
 import { StageManager } from "../objects/StageManager";
+import { BaseScene } from "./BaseScene";
 
-export default class ExplorationScene extends Phaser.Scene {
+export default class ExplorationScene extends BaseScene {
   private stageId!: number;
   private stepIndex: number = 0;
   private cards: Phaser.GameObjects.Image[] = [];
@@ -56,14 +57,34 @@ export default class ExplorationScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     initAudioManager(this);
-    addUIOverlay(this);
 
-    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    const bg = this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
     const stageGroup = Math.floor((PlayerDataManager.instance.data.progress.currentStage - 1) / 5) + 1;
     const stageMusic = `music_stage_${stageGroup}`;
     playMusic(this, stageMusic);
+
+    const txtLevel = this.add
+      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: "16px",
+        color: "#ffffff",
+      })
+      .setDepth(2);
+
+    // Display progress bar
+    const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
+    const txtProgress = this.add
+      .text(20, this.scale.height - 70, `${this.currentStage.title} - Progress: ${progressPercent}%`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: "16px",
+        color: "#ffffff",
+      })
+      .setDepth(2);
+
+    this.contentContainer.add([bg,txtLevel,txtProgress]);
 
     // Display player cards
     const spacing = 140;
@@ -74,47 +95,33 @@ export default class ExplorationScene extends Phaser.Scene {
       if (card) {
         var cardContainer = renderPlayerCard(this, card, x, this.scale.height - 300, 0.17, CardFace.Front, () => this.scene.launch("CardPreviewScene", { data: card }));
         cardContainer.setDepth(2);
+        this.contentContainer.add(cardContainer);
       }
     }
 
-    this.add
-      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
-        fontFamily: "Cinzel, serif",
-        fontSize: "16px",
-        color: "#ffffff",
-      })
-      .setDepth(2);
-
-    // Display progress bar
-    const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
-    this.add
-      .text(20, this.scale.height - 70, `${this.currentStage.title} - Progress: ${progressPercent}%`, {
-        fontFamily: "Cinzel, serif",
-        fontSize: "16px",
-        color: "#ffffff",
-      })
-      .setDepth(2);
-
-    if (PlayerDataManager.instance.data.level < 50)
-      this.add
+    if (PlayerDataManager.instance.data.level < 50) {
+      const txtExp = this.add
         .text(20, this.scale.height - 50, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
           fontFamily: "Cinzel, serif",
           fontSize: "16px",
           color: "#ffffff",
         })
         .setDepth(2);
+        this.contentContainer.add(txtExp);
+    }
 
     const maxPoints = this.cardManager.getMaxCardCost(PlayerDataManager.instance.data.level);
     const usedPoints = this.cardManager.getUsedCardCost(PlayerDataManager.instance.data.equippedCards);
     const availablePoints = maxPoints - usedPoints;
     if (availablePoints > 0) {
-      this.add
+      const txtAvailablePoints = this.add
         .text(20, this.scale.height - 30, `Available points: ${availablePoints}`, {
           fontFamily: "Cinzel, serif",
           fontSize: "16px",
           color: "#ffffff",
         })
         .setDepth(2);
+      this.contentContainer.add(txtAvailablePoints);
 
       createFancyButton(
         this,
@@ -132,6 +139,7 @@ export default class ExplorationScene extends Phaser.Scene {
 
     // Draw card choices
     this.showCardChoices();
+    addUIOverlay(this);
   }
 
   private showCardChoices() {
@@ -148,8 +156,8 @@ export default class ExplorationScene extends Phaser.Scene {
         .setDepth(2);
 
       card.on("pointerdown", () => this.handleCardChoice(card));
-
       this.cards.push(card);
+      this.contentContainer.add(card);
     }
   }
 
@@ -225,6 +233,7 @@ export default class ExplorationScene extends Phaser.Scene {
       .setScale(1)
       .setAlpha(1)
       .setDepth(1); // Between original background (0) and UI controls
+    this.contentContainer.add(bgZoom);
 
     // Match its display size to the canvas (optional, if you need to fill screen exactly)
     const scaleX = this.scale.width / bgZoom.width;
@@ -253,7 +262,7 @@ export default class ExplorationScene extends Phaser.Scene {
     const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0xff0000, 0.5).setOrigin(0, 0).setDepth(100);
 
     // Create "BATTLE!" text
-    this.add
+    const battleText = this.add
       .text(this.scale.width / 2, this.scale.height / 2, "BATTLE!", {
         fontFamily: "Cinzel, serif",
         fontSize: "64px",
@@ -265,6 +274,8 @@ export default class ExplorationScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setAlpha(0.75)
       .setDepth(101);
+
+    this.contentContainer.add([overlay,battleText]);
 
     // Define the pulse sequence (fade in/out) manually
     const pulseDuration = 500; // milliseconds per fade in/out

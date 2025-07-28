@@ -1,7 +1,7 @@
-import Phaser from "phaser";
 import { initAudioManager, playMusic } from "../utils/audio";
+import { BaseScene } from "./BaseScene";
 
-export default class VictoryScene extends Phaser.Scene {
+export default class VictoryScene extends BaseScene {
   constructor() {
     super("VictoryScene");
   }
@@ -12,13 +12,14 @@ export default class VictoryScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     const { width, height } = this.scale;
 
     initAudioManager(this);
     playMusic(this, "victory");
 
     // Background
-    this.add.image(width / 2, height / 2, "victory-bg").setDisplaySize(width, height);
+    const bg = this.add.image(width / 2, height / 2, "victory-bg").setDisplaySize(width, height);
 
     // Semi-transparent rounded rectangle overlay
     const overlay = this.add.graphics();
@@ -35,7 +36,7 @@ export default class VictoryScene extends Phaser.Scene {
       "Your tale became legend, and together,\n" +
       "you lived happily ever after.";
 
-    this.add
+    const text = this.add
       .text(width / 2, 140, storyText, {
         fontFamily: "Cinzel",
         fontSize: "26px",
@@ -47,7 +48,7 @@ export default class VictoryScene extends Phaser.Scene {
       .setDepth(1);
 
     // Confetti Particle Emitter
-    this.add.particles(0, 0, "confetti", {
+    const parrticles = this.add.particles(0, 0, "confetti", {
       x: { min: 0, max: width },
       y: 0,
       lifespan: 4300,
@@ -75,5 +76,7 @@ export default class VictoryScene extends Phaser.Scene {
     button.on("pointerdown", () => {
       this.scene.start("MainMenuScene"); // Adjust if your menu scene is named differently
     });
+
+    this.contentContainer.add([bg,overlay,text,parrticles,button]);
   }
 }

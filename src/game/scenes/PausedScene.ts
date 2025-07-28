@@ -1,10 +1,10 @@
-import Phaser from "phaser";
+import { BaseScene } from "./BaseScene";
 
-export default class PausedScene extends Phaser.Scene {
+export default class PausedScene extends BaseScene {
   private onResumeCallback?: () => void;
 
   constructor() {
-    super({ key: "paused" });
+    super("paused");
   }
 
   init(data: { onResume?: () => void }) {
@@ -12,10 +12,11 @@ export default class PausedScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     const { width, height } = this.scale;
 
     // Dim overlay
-    this.add.rectangle(0, 0, width, height, 0x000000, 0.75).setOrigin(0);
+    const overlay = this.add.rectangle(0, 0, width, height, 0x000000, 0.75).setOrigin(0);
 
     // Gold border inset by 15px
     const border = this.add.graphics();
@@ -52,6 +53,8 @@ export default class PausedScene extends Phaser.Scene {
     // Input to resume
     this.input.once("pointerdown", () => this.resumeGame());
     this.input.keyboard?.once("keydown", () => this.resumeGame());
+
+    this.contentContainer.add([overlay,border,text,subtext]);
   }
 
   private resumeGame() {

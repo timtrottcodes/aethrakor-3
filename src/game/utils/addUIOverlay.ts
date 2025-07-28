@@ -3,12 +3,13 @@ import { updateMusicState } from "./audio";
 import { StageManager } from "../objects/StageManager";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
 import { AudioPreferences } from "../objects/objects";
+import { BaseScene } from "../scenes/BaseScene";
 
 type BooleanAudioPrefKeys = {
   [K in keyof AudioPreferences]: AudioPreferences[K] extends boolean ? K : never;
 }[keyof AudioPreferences];
 
-export function addUIOverlay(scene: Phaser.Scene) {
+export function addUIOverlay(scene: BaseScene) {
   // --- 1. PROGRESS BAR ---
   const totalSteps = StageManager.instance.stages.length;
   const currentStep = PlayerDataManager.instance.data.progress.currentStage;
@@ -38,11 +39,13 @@ export function addUIOverlay(scene: Phaser.Scene) {
   cogIcon.on("pointerdown", () => {
     openSettingsPanel(scene);
   });
+
+  scene.contentContainer.add([progressBar,cogIcon])
 }
 
-function openSettingsPanel(scene: Phaser.Scene) {
+function openSettingsPanel(scene: BaseScene) {
   const bg = scene.add
-    .rectangle(scene.scale.width / 2, scene.scale.height / 2, 300, 250, 0x000000, 0.8)
+    .rectangle(scene.scale.width / 2, scene.scale.height / 2, 300, 280, 0x000000, 0.8)
     .setStrokeStyle(1, 0xffd700)
     .setDepth(1001);
 
@@ -53,6 +56,7 @@ function openSettingsPanel(scene: Phaser.Scene) {
     { key: "muteAll", label: "Mute All" },
     { key: "muteMusic", label: "Mute Music" },
     { key: "muteSound", label: "Mute Sound" },
+    { key: "vibration", label: "Vibration" },
   ];
 
   const elements: Phaser.GameObjects.GameObject[] = [bg];
@@ -79,25 +83,27 @@ function openSettingsPanel(scene: Phaser.Scene) {
 
   // Volume Sliders (text-based for simplicity)
   const musicLabel = scene.add
-    .text(bg.x! - 100, bg.y! + 40, "Music Vol", labelStyle)
+    .text(bg.x! - 100, bg.y! + 70, "Music Vol", labelStyle)
     .setOrigin(0, 0.5)
     .setDepth(1001);
   const soundLabel = scene.add
-    .text(bg.x! - 100, bg.y! + 80, "Sound Vol", labelStyle)
+    .text(bg.x! - 100, bg.y! + 110, "Sound Vol", labelStyle)
     .setOrigin(0, 0.5)
     .setDepth(1001);
 
   const musicValue = scene.add
-    .text(bg.x! + 60, bg.y! + 40, `${Math.round(PlayerDataManager.instance.data.settings.musicVolume * 100)}%`, toggleStyle)
+    .text(bg.x! + 60, bg.y! + 70, `${Math.round(PlayerDataManager.instance.data.settings.musicVolume * 100)}%`, toggleStyle)
     .setOrigin(0, 0.5)
     .setDepth(1001)
     .setInteractive({ useHandCursor: true });
 
   const soundValue = scene.add
-    .text(bg.x! + 60, bg.y! + 80, `${Math.round(PlayerDataManager.instance.data.settings.soundVolume * 100)}%`, toggleStyle)
+    .text(bg.x! + 60, bg.y! + 110, `${Math.round(PlayerDataManager.instance.data.settings.soundVolume * 100)}%`, toggleStyle)
     .setOrigin(0, 0.5)
     .setDepth(1001)
     .setInteractive({ useHandCursor: true });
+
+
 
   musicValue.on("pointerdown", () => {
     PlayerDataManager.instance.data.settings.musicVolume = (PlayerDataManager.instance.data.settings.musicVolume + 0.1) % 1.1;
@@ -117,4 +123,6 @@ function openSettingsPanel(scene: Phaser.Scene) {
   bg.setInteractive().on("pointerdown", () => {
     elements.forEach((e) => e.destroy());
   });
+
+  scene.contentContainer.add(elements);
 }

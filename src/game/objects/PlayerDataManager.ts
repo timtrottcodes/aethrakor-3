@@ -19,6 +19,7 @@ export class PlayerDataManager {
       muteSound: false,
       musicVolume: 0.5,
       soundVolume: 0.9,
+      vibration: true
     };
     this.data = this.createAutoSavingProxy(playerData);
   }
@@ -80,6 +81,7 @@ export class PlayerDataManager {
         muteSound: false,
         musicVolume: 0.5,
         soundVolume: 0.9,
+        vibration: true
       },
     };
 

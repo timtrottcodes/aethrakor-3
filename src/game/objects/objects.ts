@@ -73,6 +73,7 @@ export type AudioPreferences = {
   muteSound: boolean;
   musicVolume: number;
   soundVolume: number;
+  vibration: boolean;
 };
 
 export interface Stage {

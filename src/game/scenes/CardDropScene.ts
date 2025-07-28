@@ -6,8 +6,9 @@ import { renderPlayerCard } from "../utils/renderPlayerCard";
 import { CardFace } from "../objects/objects";
 import { initAudioManager, playSound } from "../utils/audio";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
 
-export default class CardDropScene extends Phaser.Scene {
+export default class CardDropScene extends BaseScene {
   constructor() {
     super("CardDropScene");
   }
@@ -17,6 +18,7 @@ export default class CardDropScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     const cardManager = new CardManager();
 
     initAudioManager(this);
@@ -28,14 +30,14 @@ export default class CardDropScene extends Phaser.Scene {
       playSound(this, "fanfare");
 
       // Add overlay
-      this.add.image(this.scale.width / 2, this.scale.height / 2, "bg_drop").setDisplaySize(this.scale.width, this.scale.height);
+      const bg = this.add.image(this.scale.width / 2, this.scale.height / 2, "bg_drop").setDisplaySize(this.scale.width, this.scale.height);
       const overlay = this.add.rectangle(0, 0, this.scale.width, this.scale.height, 0x000000, 0.6).setOrigin(0).setInteractive();
       overlay.once("pointerdown", () => {
         this.closeDropScene();
       });
 
       // Add fireworks
-      this.add.particles(this.scale.width / 2, this.scale.height / 2, "star", {
+      const particles = this.add.particles(this.scale.width / 2, this.scale.height / 2, "star", {
         speed: { min: -400, max: 400 },
         lifespan: 3000,
         gravityY: 0,
@@ -69,8 +71,8 @@ export default class CardDropScene extends Phaser.Scene {
         .setWordWrapWidth(600);
       descriptionText.setText(randomCard.description);
 
-      this.add.text(this.scale.width / 2, 80, "New Companion Found!", { fontFamily: "Cinzel", fontSize: "32px", color: "#ffffff" }).setOrigin(0.5);
-      this.add.text(this.scale.width / 2, 125, "Visit the Deck Builder to add review and add to your champions.", { fontFamily: "Cinzel", fontSize: "18px", color: "#ffffff" }).setOrigin(0.5);
+      const title = this.add.text(this.scale.width / 2, 80, "New Companion Found!", { fontFamily: "Cinzel", fontSize: "32px", color: "#ffffff" }).setOrigin(0.5);
+      const help = this.add.text(this.scale.width / 2, 125, "Visit the Deck Builder to add review and add to your champions.", { fontFamily: "Cinzel", fontSize: "18px", color: "#ffffff" }).setOrigin(0.5);
 
       // Animate
       this.tweens.add({
@@ -79,6 +81,8 @@ export default class CardDropScene extends Phaser.Scene {
         ease: "Back.Out",
         duration: 300,
       });
+
+      this.contentContainer.add([bg,overlay,particles,centeredContainer,descriptionText, title, help]);
     } else {
       this.closeDropScene();
     }

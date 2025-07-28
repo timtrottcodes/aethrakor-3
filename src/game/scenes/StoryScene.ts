@@ -1,10 +1,11 @@
 import Phaser from "phaser";
-import { Stage, StepType } from "../objects/objects";
-import stagesData from "../data/stages.json";
+import { Stage } from "../objects/objects";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
+import { StageManager } from "../objects/StageManager";
 
-export default class StoryScene extends Phaser.Scene {
+export default class StoryScene extends BaseScene {
   private stages: Stage[];
   private currentStage: Stage;
   private dialogContainer: Phaser.GameObjects.Container;
@@ -15,16 +16,7 @@ export default class StoryScene extends Phaser.Scene {
   }
 
   preload() {
-    this.stages = stagesData.map((stage) => ({
-      ...stage,
-      steps: stage.steps.map((step) => {
-        const formattedType = step.type.charAt(0).toUpperCase() + step.type.slice(1).toLowerCase();
-        return {
-          ...step,
-          type: StepType[formattedType as keyof typeof StepType],
-        };
-      }),
-    }));
+    this.stages = StageManager.instance.stages;
     this.storyIndex = 0;
     this.currentStage = this.stages.find((s) => s.stageNumber === PlayerDataManager.instance.data.progress.currentStage)!;
     this.load.image(this.currentStage.image, `assets/backgrounds/stages/${this.currentStage.image}`);
@@ -34,10 +26,17 @@ export default class StoryScene extends Phaser.Scene {
   }
 
   create() {
-    addUIOverlay(this);
-    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height);
-    this.dialogContainer = this.add.container();
+    super.create();
+
+    const bg = this.add
+      .image(this.scale.width / 2, this.scale.height / 2, this.currentStage.image)
+      .setDisplaySize(this.scale.width, this.scale.height)
+      .setScale(1);
+
+    this.dialogContainer = this.make.container({x:0,y:0,add:false});
     this.showDialog();
+
+    this.contentContainer.add([bg, this.dialogContainer]);
 
     this.input.on("pointerdown", () => {
       this.storyIndex++;
@@ -47,6 +46,7 @@ export default class StoryScene extends Phaser.Scene {
         this.scene.start("ExplorationScene");
       }
     });
+    addUIOverlay(this);
   }
 
   showDialog() {

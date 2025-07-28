@@ -1,8 +1,8 @@
-import { Scene } from "phaser";
 import cardData from "../data/cards.json";
 import monsterData from "../data/monsters.json";
+import { BaseScene } from "./BaseScene";
 
-export class Preloader extends Scene {
+export class Preloader extends BaseScene {
   constructor() {
     super("Preloader");
   }
@@ -14,7 +14,7 @@ export class Preloader extends Scene {
     const barHeight = 32;
 
     // Black background covering entire scene
-    this.add.rectangle(centerX, centerY, this.cameras.main.width, this.cameras.main.height, 0x000000);
+    const bg = this.add.rectangle(centerX, centerY, this.cameras.main.width, this.cameras.main.height, 0x000000);
 
     // Outline of progress bar (centered)
     const outline = this.add.rectangle(centerX, centerY, barWidth, barHeight);
@@ -99,6 +99,7 @@ export class Preloader extends Scene {
   }
 
   async create() {
+    super.create();
     await this.loadWebFont("Cinzel", "https://fonts.gstatic.com/s/cinzel/v25/8vIJ7ww63mVu7gt79mT7.woff2");
     await this.loadWebFont("Trade Winds", "https://fonts.gstatic.com/s/tradewinds/v17/AYCPpXPpYNIIT7h8-QenM0Jt5vM.woff2");
 

@@ -8,6 +8,7 @@ import { initAudioManager, playMusic, playSound } from "../utils/audio";
 import { addUIOverlay } from "../utils/addUIOverlay";
 import { StageManager } from "../objects/StageManager";
 import { PlayerDataManager } from "../objects/PlayerDataManager";
+import { BaseScene } from "./BaseScene";
 
 type CombatCard = {
   id: string;
@@ -28,7 +29,7 @@ interface CombatSceneData {
   stepId?: number;
 }
 
-export default class CombatScene extends Phaser.Scene {
+export default class CombatScene extends BaseScene {
   private cardManager!: CardManager;
   private monsterManager!: MonsterManager;
   private playerCards: CombatCard[] = [];
@@ -70,16 +71,35 @@ export default class CombatScene extends Phaser.Scene {
   }
 
   create() {
+    super.create();
     this.monsterManager = new MonsterManager();
     this.cardManager = new CardManager();
 
-    addUIOverlay(this);
     initAudioManager(this);
 
     if (this.currentStep.type === StepType.Boss || this.currentStep.type === StepType.Miniboss) playMusic(this, "bossbattle");
     else playMusic(this, "battle");
 
-    this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+    const bg = this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
+
+    const txtLevel = this.add
+      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: "16px",
+        color: "#ffffff",
+      })
+      .setDepth(2);
+
+    // Display progress bar
+    const txtProgress = this.add
+      .text(20, this.scale.height - 70, `${this.currentStage.title}`, {
+        fontFamily: "Cinzel, serif",
+        fontSize: "16px",
+        color: "#ffffff",
+      })
+      .setDepth(2);
+
+    this.contentContainer.add([bg,txtLevel,txtProgress])
 
     const centerX = this.scale.width / 2;
     let spacing = 140;
@@ -128,6 +148,7 @@ export default class CombatScene extends Phaser.Scene {
       card.attack = Math.ceil(card.attack * difficultyMultiplier);
 
       const sprite = renderPlayerCard(this, card, x, y, scale, CardFace.Front);
+      this.contentContainer.add(sprite);
 
       if (isBossCard) {
         bossOffset = 15; // offset to compensate for boss card size
@@ -146,31 +167,16 @@ export default class CombatScene extends Phaser.Scene {
       };
     });
 
-    this.add
-      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
-        fontFamily: "Cinzel, serif",
-        fontSize: "16px",
-        color: "#ffffff",
-      })
-      .setDepth(2);
-
-    // Display progress bar
-    this.add
-      .text(20, this.scale.height - 70, `${this.currentStage.title}`, {
-        fontFamily: "Cinzel, serif",
-        fontSize: "16px",
-        color: "#ffffff",
-      })
-      .setDepth(2);
-
-    if (PlayerDataManager.instance.data.level < 50)
-      this.add
+    if (PlayerDataManager.instance.data.level < 50) {
+      const txtExpReq = this.add
         .text(20, this.scale.height - 50, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
           fontFamily: "Cinzel, serif",
           fontSize: "16px",
           color: "#ffffff",
         })
         .setDepth(2);
+        this.contentContainer.add(txtExpReq)
+    }
 
     spacing = 140;
     // Player cards
@@ -181,6 +187,7 @@ export default class CombatScene extends Phaser.Scene {
           const x = centerX - 2 * spacing + i * spacing - 65;
           const y = this.scale.height - 300;
           const sprite = renderPlayerCard(this, card, x, y, this.cardScale, CardFace.Front);
+          this.contentContainer.add(sprite);
           return {
             id: card.id,
             name: card.name,
@@ -195,6 +202,7 @@ export default class CombatScene extends Phaser.Scene {
       })
       .filter((c): c is CombatCard => c !== undefined);
 
+    addUIOverlay(this);
     this.showBattleIntroAnimation(() => this.runCombatLoop());
   }
 
@@ -242,7 +250,7 @@ export default class CombatScene extends Phaser.Scene {
           const { damage, isCritical } = this.calculateDamage(monster.baseAttack, monster.rarity);
           playerTarget.currentHealth = Math.max(playerTarget.currentHealth - damage, 0);
           const hpPercent = (playerTarget.currentHealth / playerTarget.maxHealth) * 100;
-          await this.animateAttack(monster, playerTarget, damage, isCritical, hpPercent);
+          await this.animateAttack(monster, playerTarget, damage, isCritical, hpPercent, true);
         }
       }
     }
@@ -301,7 +309,7 @@ export default class CombatScene extends Phaser.Scene {
     }
   }
 
-  private async animateAttack(attacker: CombatCard, defender: CombatCard, damage: number, isCritical: boolean, hpPercent: number): Promise<void> {
+  private async animateAttack(attacker: CombatCard, defender: CombatCard, damage: number, isCritical: boolean, hpPercent: number, isPlayerDefending: boolean = false): Promise<void> {
     const attackerSprite = attacker.sprite;
     const defenderSprite = defender.sprite;
     const scene = attackerSprite.scene;
@@ -348,6 +356,13 @@ export default class CombatScene extends Phaser.Scene {
     });
 
     this.playRandomSound();
+
+    if (PlayerDataManager.instance.data.settings.vibration && navigator.vibrate && isPlayerDefending) {
+      if (hpPercent <= 0)
+        navigator.vibrate([100,250]);
+      else
+        navigator.vibrate(100);
+    }
 
     // Floating damage text animation
     const damageText = scene.add
@@ -437,9 +452,9 @@ export default class CombatScene extends Phaser.Scene {
     const { width, height } = this.scale;
 
     // Semi-transparent black background
-    this.add.rectangle(0, 0, width, height, 0x000000, 0.8).setOrigin(0);
+    const overlay = this.add.rectangle(0, 0, width, height, 0x000000, 0.8).setOrigin(0);
 
-    this.add
+    const title = this.add
       .text(width / 2, height / 2 - 120, result === "victory" ? "Victory!" : "Defeat", {
         fontFamily: "Cinzel, serif",
         fontSize: "48px",
@@ -453,7 +468,7 @@ export default class CombatScene extends Phaser.Scene {
         ? "You've triumphed! Your tactics are improving. Press on to your next challenge!"
         : "Your champions have fallen. Try playing your strongest cards and refining your deck in the builder. Use the random battle feature to build your deck.";
 
-    this.add
+    const text = this.add
       .text(width / 2, height / 2 - 40, messageText, {
         fontFamily: "Cinzel, serif",
         fontSize: "20px",
@@ -461,6 +476,8 @@ export default class CombatScene extends Phaser.Scene {
         wordWrap: { width: width * 0.8 },
       })
       .setOrigin(0.5);
+
+    this.contentContainer.add([overlay,title,text]);
 
     if (result === "victory") {
       // 10% card drop chance for normal gameplay
@@ -540,6 +557,8 @@ export default class CombatScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setAlpha(0)
       .setDepth(1001);
+
+    this.contentContainer.add([overlay,battleText]);
 
     // Fade in overlay
     this.tweens.add({
