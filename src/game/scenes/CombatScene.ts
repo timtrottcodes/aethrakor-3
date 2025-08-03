@@ -83,18 +83,18 @@ export default class CombatScene extends BaseScene {
     const bg = this.add.image(0, 0, this.currentStage.image).setOrigin(0).setDisplaySize(this.scale.width, this.scale.height).setDepth(0);
 
     const txtLevel = this.add
-      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
+      .text(20, this.scale.height - 110, `Level: ${PlayerDataManager.instance.data.level}`, {
         fontFamily: "Cinzel, serif",
-        fontSize: "16px",
+        fontSize: "20px",
         color: "#ffffff",
       })
       .setDepth(2);
 
     // Display progress bar
     const txtProgress = this.add
-      .text(20, this.scale.height - 70, `${this.currentStage.title}`, {
+      .text(20, this.scale.height - 85, `${this.currentStage.title}`, {
         fontFamily: "Cinzel, serif",
-        fontSize: "16px",
+        fontSize: "20px",
         color: "#ffffff",
       })
       .setDepth(2);
@@ -169,9 +169,9 @@ export default class CombatScene extends BaseScene {
 
     if (PlayerDataManager.instance.data.level < 50) {
       const txtExpReq = this.add
-        .text(20, this.scale.height - 50, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
+        .text(20, this.scale.height - 60, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
           fontFamily: "Cinzel, serif",
-          fontSize: "16px",
+          fontSize: "20px",
           color: "#ffffff",
         })
         .setDepth(2);

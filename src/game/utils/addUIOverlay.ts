@@ -40,7 +40,10 @@ export function addUIOverlay(scene: BaseScene) {
     openSettingsPanel(scene);
   });
 
-  scene.contentContainer.add([progressBar,cogIcon])
+  scene.contentContainer.add([progressBar,cogIcon]);
+  
+  if (PlayerDataManager.instance.data.settings.performanceEnabled)
+    addPerformanceDebugOverlay(scene);
 }
 
 function openSettingsPanel(scene: BaseScene) {
@@ -126,3 +129,47 @@ function openSettingsPanel(scene: BaseScene) {
 
   scene.contentContainer.add(elements);
 }
+
+function addPerformanceDebugOverlay(scene: Phaser.Scene) {
+
+  const style = { font: "12px monospace", fill: "#0f0", backgroundColor: "#000a" };
+
+  const debugText = scene.add.text(10, 10, "", style)
+    .setDepth(1000)
+    .setScrollFactor(0)
+    .setPadding(4)
+    .setOrigin(0)
+    .setFixedSize(200, 70);
+
+  let frameCount = 0;
+  let lastTime = performance.now();
+  let fps = 0;
+
+  scene.time.addEvent({
+    delay: 500,
+    loop: true,
+    callback: () => {
+      const now = performance.now();
+      fps = Math.round((frameCount / (now - lastTime)) * 1000);
+      frameCount = 0;
+      lastTime = now;
+
+      const gameObjects = scene.children.list.length;
+      const sceneKey = scene.scene.key;
+      const mem = (performance as any).memory;
+      const usedJSHeap = mem ? `${(mem.usedJSHeapSize / 1024 / 1024).toFixed(1)} MB` : "N/A";
+
+      debugText.setText([
+        `Scene: ${sceneKey}`,
+        `FPS: ${fps}`,
+        `Objects: ${gameObjects}`,
+        `Heap: ${usedJSHeap}`
+      ]);
+    }
+  });
+
+  scene.events.on('postupdate', () => {
+    frameCount++;
+  });
+}
+

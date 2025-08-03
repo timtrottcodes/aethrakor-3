@@ -67,9 +67,9 @@ export default class ExplorationScene extends BaseScene {
     playMusic(this, stageMusic);
 
     const txtLevel = this.add
-      .text(20, this.scale.height - 90, `Level: ${PlayerDataManager.instance.data.level}`, {
+      .text(20, this.scale.height - 110, `Level: ${PlayerDataManager.instance.data.level}`, {
         fontFamily: "Cinzel, serif",
-        fontSize: "16px",
+        fontSize: "20px",
         color: "#ffffff",
       })
       .setDepth(2);
@@ -77,9 +77,9 @@ export default class ExplorationScene extends BaseScene {
     // Display progress bar
     const progressPercent = Math.floor((this.stepIndex / this.currentStage.steps.length) * 100);
     const txtProgress = this.add
-      .text(20, this.scale.height - 70, `${this.currentStage.title} - Progress: ${progressPercent}%`, {
+      .text(20, this.scale.height - 85, `${this.currentStage.title} - Progress: ${progressPercent}%`, {
         fontFamily: "Cinzel, serif",
-        fontSize: "16px",
+        fontSize: "20px",
         color: "#ffffff",
       })
       .setDepth(2);
@@ -101,9 +101,9 @@ export default class ExplorationScene extends BaseScene {
 
     if (PlayerDataManager.instance.data.level < 50) {
       const txtExp = this.add
-        .text(20, this.scale.height - 50, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
+        .text(20, this.scale.height - 60, `EXP to next level: ${PlayerDataManager.instance.data.expToNextLevel}`, {
           fontFamily: "Cinzel, serif",
-          fontSize: "16px",
+          fontSize: "20px",
           color: "#ffffff",
         })
         .setDepth(2);
@@ -115,9 +115,9 @@ export default class ExplorationScene extends BaseScene {
     const availablePoints = maxPoints - usedPoints;
     if (availablePoints > 0) {
       const txtAvailablePoints = this.add
-        .text(20, this.scale.height - 30, `Available points: ${availablePoints}`, {
+        .text(20, this.scale.height - 35, `Available points: ${availablePoints}`, {
           fontFamily: "Cinzel, serif",
-          fontSize: "16px",
+          fontSize: "20px",
           color: "#ffffff",
         })
         .setDepth(2);
@@ -133,7 +133,7 @@ export default class ExplorationScene extends BaseScene {
           GlobalState.lastScene = this.scene.key;
           this.scene.start("DeckBuilderScene");
         },
-        16
+        18
       );
     }
 

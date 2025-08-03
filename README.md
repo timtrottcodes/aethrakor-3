@@ -186,7 +186,6 @@ Additional sound effects:
 * Tear Sound Effect by [Aman Kumar on Pixabay](https://pixabay.com/users/tanweraman-29554143/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=252617)
 * Success Sound Effect by [freesound_community on Pixabay](https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=82815)
 * Defeat Sound Effect by [Eiklo on Pixabay](https://pixabay.com/users/eiklo-41248033/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=303896)
-Here is the updated section for your `README.md` to reflect the use of **Google Analytics** in the online version, while remaining clear about the self-hosted privacy:
 
 ## 🛡️ Data Storage & Privacy
 

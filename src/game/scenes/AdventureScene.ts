@@ -94,11 +94,11 @@ export default class AdventureScene extends BaseScene {
             if (PlayerDataManager.instance.data.progress.currentStep == 0) this.scene.start("StoryScene");
             else this.scene.start("ExplorationScene");
           },
-          18,
+          24,
           30
         );
       } else {
-        createDisabledSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, 18, 30);
+        createDisabledSlantedFancyButton(this, x, y, stage ? stage.title : `Stage ${i}`, 22, 30);
       }
     }
   }
@@ -108,12 +108,12 @@ export default class AdventureScene extends BaseScene {
       this.scene.stop("AdventureScene");
       GlobalState.lastScene = this.scene.key;
       this.scene.start("DeckBuilderScene");
-    });
+    }, 22);
   }
 
   private addMainMenuButton() {
     createFancyButton(this, this.scale.width / 2, this.scale.height - 80, "Main Menu", () => {
       this.scene.start("MainMenuScene");
-    });
+    }, 22);
   }
 }

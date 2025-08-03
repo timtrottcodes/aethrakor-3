@@ -121,6 +121,7 @@ export default class DeckBuilderScene extends BaseScene {
         .rectangle(listX - 10, listY - 10, listWidth + 20, listHeight + 20, 0x000000, 0.7)
         .setOrigin(0)
         .setName("listBackground");
+      this.contentContainer.add(this.listBackground);
     }
 
     // Scrollable container
