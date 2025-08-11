@@ -21,7 +21,7 @@ While it's not a dungeon crawler, it lays the groundwork for one — and represe
 
 ## 🚀 Getting Started
 
-➡️ The best way to play this game is to play online at [TimTrottCodes](https://timtrottcodes.pages.dev/).
+👉 The best way to play this game is to [play online here](https://timtrottcodes.github.io/index.html).
 
 To run the game locally:
 
